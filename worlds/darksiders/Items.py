@@ -97,6 +97,10 @@ gear_and_equipments = {
     'Voidwalker': 85
 }
 
+hearts_of_the_chosen = {
+    'Heart of the Chosen' : 87,
+}
+
 lifestones = {
     'Lifestone':90
     #'Lifestone Griever': 91,
@@ -136,9 +140,10 @@ passive_abilities = {
 }
 
 primary_weapons = {
-    'Progressive Blade': 130,
+    'Progressive Chaoseater': 130,
     #'Chaoseater': 131,
-    #'Armageddon Blade': 132
+    'Armageddon Blade': 132,
+    'Armageddon Blade Shards': 133
 }
 
 secondary_weapons = {
@@ -193,7 +198,7 @@ wrath_shards = {
     #'Wrath Shard 20': 200
 }
 
-ITEM_NAME_TO_ID = abyssal_armor_pieces | artifacts | consumables | enhancements | legendary_enhancements | gear_and_equipments | lifestones | lifestone_shards | passive_abilities | primary_weapons | secondary_weapons | souls_chests | wrath_abilities | wrath_cores | wrath_shards
+ITEM_NAME_TO_ID = abyssal_armor_pieces | artifacts | consumables | enhancements | keys | legendary_enhancements | gear_and_equipments | hearts_of_the_chosen | lifestones | lifestone_shards | passive_abilities | primary_weapons | secondary_weapons | souls_chests | wrath_abilities | wrath_cores | wrath_shards
 
 DEFAULT_ITEM_CLASSIFICATION = {
     "abyssal_armor_pieces": ItemClassification.useful,
@@ -202,6 +207,8 @@ DEFAULT_ITEM_CLASSIFICATION = {
     "enhancements": ItemClassification.useful,
     "legendary_enhancements": ItemClassification.useful,
     "gear_and_equipments": ItemClassification.progression,
+    "keys": ItemClassification.progression,
+    "hearts_of_the_chosen": ItemClassification.progression,
     "lifestones": ItemClassification.useful,
     "lifestone_shards": ItemClassification.useful,
     "passive_abilities": ItemClassification.progression,
@@ -228,8 +235,12 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
             classification = DEFAULT_ITEM_CLASSIFICATION["enhancements"]
         case name if name in legendary_enhancements:
             classification = DEFAULT_ITEM_CLASSIFICATION["legendary_enhancements"]
+        case name if name in keys:
+            classification = DEFAULT_ITEM_CLASSIFICATION["keys"]
         case name if name in gear_and_equipments:
             classification = DEFAULT_ITEM_CLASSIFICATION["gear_and_equipments"]
+        case name if name in hearts_of_the_chosen:
+            classification = DEFAULT_ITEM_CLASSIFICATION["hearts_of_the_chosen"]
         case name if name in lifestones:
             classification = DEFAULT_ITEM_CLASSIFICATION["lifestones"]
         case name if name in lifestone_shards:
@@ -237,9 +248,12 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
         case name if name in passive_abilities:
             classification = DEFAULT_ITEM_CLASSIFICATION["passive_abilities"]
         case name if name in primary_weapons:
-            classification = DEFAULT_ITEM_CLASSIFICATION["primary_weapons"]
+            if name == "Progressive Chaoseater":
+                classification = ItemClassification.useful
+            else:
+                classification = DEFAULT_ITEM_CLASSIFICATION["primary_weapons"]
         case name if name in secondary_weapons:
-            if name == "Tremor_Gauntlet":
+            if name == "Progressive Gauntlet":
                 classification = ItemClassification.progression
             else:
                 classification = DEFAULT_ITEM_CLASSIFICATION["secondary_weapons"]
@@ -288,8 +302,14 @@ def create_all_items(world: DSWorld) -> None:
             for name, item_id in legendary_enhancements.items():
                 itempool.append(world.create_item(name))
 
+    for i in range(4):
+        itempool.append(world.create_item("Beholder Key"))
+
     for name, item_id in gear_and_equipments.items():
         itempool.append(world.create_item(name))
+
+    for i in range (4):
+        itempool.append(world.create_item("Heart of the Chosen"))
 
     for i in range(world.options.lifestones):
         itempool.append(world.create_item("Lifestone"))
@@ -303,8 +323,10 @@ def create_all_items(world: DSWorld) -> None:
     for name, item_id in passive_abilities.items():
         itempool.append(world.create_item(name))
 
-    for i in range(5):
-        itempool.append(world.create_item('Progressive Blade'))
+    for i in range(4):
+        itempool.append(world.create_item('Progressive Chaoseater'))
+    for i in range(7):
+        itempool.append(world.create_item('Armageddon Blade Shards'))
 
     for i in range(4):
         itempool.append(world.create_item('Progressive Scythe'))
@@ -314,13 +336,13 @@ def create_all_items(world: DSWorld) -> None:
         itempool.append(world.create_item(name))
 
     for i in range(world.options.wrath_cores):
-        itempool.append(world.create_item('Wrath_Core'))
+        itempool.append(world.create_item('Wrath Core'))
 
     if world.options.wrath_shards > 0:
         starting_wrath = 2
         for i in range(10 - starting_wrath - world.options.wrath_cores):
             for i in range(4):
-                itempool.append(world.create_item('Wrath_Shard'))
+                itempool.append(world.create_item('Wrath Shard'))
     
     number_of_items = len(itempool)
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))

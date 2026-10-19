@@ -11,7 +11,7 @@ class DifficultyLevel(Choice):
     option_normal = 1
     option_apocalyptic = 2
 
-    default = 1
+    default = option_normal
 
 class LogicRules(Choice):
     """
@@ -26,7 +26,7 @@ class LogicRules(Choice):
     option_hard = 1
     option_glitched = 2
 
-    default = 1
+    default = option_hard
 
 class Abyssanity(Toggle):
     """Shuffles the Abyssal Armor Pieces into the item pool and adds their locations to the world."""
@@ -47,7 +47,7 @@ class Enhansanity(Choice):
     option_legendary = 2
     option_all = 3
 
-    default = 1
+    default = option_all
 
 class Lifestones(Range):
     """Determines the number of Lifestones available in the game. Each lifestone boosts War maximum health."""
@@ -69,9 +69,9 @@ class LifestonesShards(Choice):
     display_name = "Lifestones Shards"
     option_none = 0
     #option_less = 1
-    option_max = 2
+    option_max = 1
 
-    default = 1
+    default = option_max
 
 class WrathCores(Range):
     """Determines the number of Wrath Cores available in the game. Each Wrath Core boosts War's maximum Wrath."""
@@ -80,7 +80,7 @@ class WrathCores(Range):
     range_start = 0
     range_end = 2
 
-    default = 3
+    default = 2
 
 class WrathShards(Choice):
     """
@@ -93,13 +93,14 @@ class WrathShards(Choice):
     display_name = "Wrath Shards"
     option_none = 0
     #option_less = 1
-    option_max = 2
+    option_max = 1
 
-    default = 1
+    default = option_max
 
 @dataclass
 class DSOptions(PerGameCommonOptions):
     difficulty_level: DifficultyLevel
+    logic_rules: LogicRules
     abyssanity: Abyssanity
     artisanity: Artisanity
     enhansanity: Enhansanity
@@ -128,33 +129,36 @@ option_groups = [
 ]
 option_presets = {
     "default": {
-        "difficulty_level": 1,
+        "difficulty_level": DifficultyLevel.option_normal,
+        "logic_rules": LogicRules.option_hard,
         "abyssanity": True,
         "artisanity": True,
-        "enhansanity": True,
+        "enhansanity": Enhansanity.option_basic,
         "lifestones": 5,
-        "lifestones_shards": 2,
+        "lifestones_shards": LifestonesShards.option_max,
         "wrath_cores": 3,
-        "wrath_shards": 2
+        "wrath_shards": WrathShards.option_max
     },
     "Easy": {
-        "difficulty_level": 0,
+        "difficulty_level": DifficultyLevel.option_easy,
+        "logic_rules": LogicRules.option_casual,
         "abyssanity": False,
         "artisanity": False,
-        "enhansanity": False,
+        "enhansanity": Enhansanity.option_none,
         "lifestones": 9,
-        "lifestones_shards": 0,
+        "lifestones_shards": LifestonesShards.option_none,
         "wrath_cores": 8,
-        "wrath_shards": 0
+        "wrath_shards": WrathShards.option_none
     },
     "Yes": {
-        "difficulty_level": 2,
+        "difficulty_level": DifficultyLevel.option_apocalyptic,
+        "logic_rules": LogicRules.option_glitched,
         "abyssanity": True,
         "artisanity": True,
-        "enhansanity": True,
+        "enhansanity": Enhansanity.option_all,
         "lifestones": 0,
-        "lifestones_shards": 1,
+        "lifestones_shards": LifestonesShards.option_none,
         "wrath_cores": 0,
-        "wrath_shards": 1
+        "wrath_shards": WrathShards.option_none
     }
 }
