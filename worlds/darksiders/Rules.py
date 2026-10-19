@@ -40,7 +40,7 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     ashlands_1_to_ashlands_2 = world.get_entrance("The Ashlands 1 to The Ashlands 2")
     world.set_rule(ashlands_1_to_ashlands_2, CAN_SLOW_TIME_FROM_AFAR)
-
+ 
     ashlands_access_tunnel_1_to_ashlands_access_tunnel_2 = world.get_entrance("The Ashlands Access Tunnel 1 to The Ashlands Access Tunnel 2")
     world.set_rule(ashlands_access_tunnel_1_to_ashlands_access_tunnel_2, HAS_CROSSBLADE)
 
