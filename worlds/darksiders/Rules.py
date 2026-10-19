@@ -44,6 +44,9 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     ashlands_access_tunnel_1_to_ashlands_access_tunnel_2 = world.get_entrance("The Ashlands Access Tunnel 1 to The Ashlands Access Tunnel 2")
     world.set_rule(ashlands_access_tunnel_1_to_ashlands_access_tunnel_2, HAS_CROSSBLADE)
 
+    crossroads_to_library = world.get_entrance("The Crossroads to The Library")
+    world.set_rule(crossroads_to_library, HAS_EARTHCALLER)
+
     dry_road_to_ashlands_access_tunnel = world.get_entrance("Dry Road to Ashlands Access Tunnel 1")
     world.set_rule(dry_road_to_ashlands_access_tunnel, CAN_HURT_GOREMAW)
 

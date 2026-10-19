@@ -46,6 +46,7 @@ def create_all_regions(world: DSWorld) -> None:
     hollows_access_tunnel = Region("The Hollows Access Tunnel", world.player, world.multiworld)
     iron_canopy_1 = Region("Iron Canopy 1", world.player, world.multiworld)
     leviathan_drift = Region("Leviathan's Drift", world.player, world.multiworld)
+    library = Region("The Library", world.player, world.multiworld)
     menu = Region("Menu", world.player, world.multiworld)
     scalding_gallow = Region("Scalding Gallow", world.player, world.multiworld)
     #seraphim_hotel = Region("Seraphim Hotel", world.player, world.multiworld)
@@ -95,6 +96,7 @@ def create_all_regions(world: DSWorld) -> None:
         hollows_access_tunnel,
         iron_canopy_1,
         leviathan_drift,
+        library,
         menu,
         scalding_gallow,
         #seraphim_hotel,
@@ -148,6 +150,7 @@ def connect_regions(world: DSWorld) -> None:
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
+    library = world.get_region("The Library")
     menu = world.get_region("Menu")
     scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
@@ -235,6 +238,10 @@ def connect_regions(world: DSWorld) -> None:
     choking_grounds_to_vulgrim_shop = Entrance(world.player, "The Choking Grounds to Vulgrim's Shop", parent = choking_grounds)
     choking_grounds.exits.append(choking_grounds_to_vulgrim_shop)
     choking_grounds_to_vulgrim_shop.connect(vulgrim_shop)
+
+    crossroads_to_library = Entrance(world.player, "The Crossroads to The Library", parent = crossroads)
+    crossroads.exits.append(crossroads_to_library)
+    crossroads_to_library.connect(library)
 
     crossroads_to_scalding_gallow = Entrance(world.player, "The Crossroads to Scalding Gallow", parent = crossroads)
     crossroads.exits.append(crossroads_to_scalding_gallow)

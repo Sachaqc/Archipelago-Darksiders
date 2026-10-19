@@ -234,6 +234,7 @@ def create_regular_locations(world: DSWorld) -> None:
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
+    library = world.get_region("The Library")
     menu = world.get_region("Menu")
     scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
@@ -314,10 +315,6 @@ def create_regular_locations(world: DSWorld) -> None:
          'Crossroads Rare Chest Blocked by Ice',
          'Crossroads Life Chest NE Crater',
          'Crossroads Secret Chest Destroy Fire Hydrants',
-         'Library Currency Chest South of Fleshburners',
-         'Library Life Chest Entrance',
-         'Library Life Chest Submarine Cave',
-         'Library Life Chest North',
     ])
     crossroads.add_locations(crossroads_locations, DSLocation)
 
@@ -433,6 +430,14 @@ def create_regular_locations(world: DSWorld) -> None:
     ])
     hollows_access_tunnel.add_locations(hollows_access_tunnel_locations, DSLocation)
 
+    library_locations = get_location_names_with_ids([
+         'Library Currency Chest South of Fleshburners',
+         'Library Life Chest Entrance',
+         'Library Life Chest Submarine Cave',
+         'Library Life Chest North',
+    ])
+    library.add_locations(library_locations, DSLocation)
+
     scalding_gallow_locations = get_location_names_with_ids([
         'Scalding Gallow Abyssal Armor Piece Near Entrance',
         'Scalding Gallow Abyssal Armor Piece Under Central Platform',
@@ -544,6 +549,7 @@ def create_events(world: DSWorld) -> None:
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
+    library = world.get_region("The Library")
     menu = world.get_region("Menu")
     scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
