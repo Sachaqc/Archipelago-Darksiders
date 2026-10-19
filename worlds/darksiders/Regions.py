@@ -21,20 +21,17 @@ def create_all_regions(world: DSWorld) -> None:
     ashlands_2 = Region("The Ashlands 2", world.player, world.multiworld)
     ashlands_access_tunnel_1 = Region("The Ashlands Access Tunnel 1", world.player, world.multiworld)
     ashlands_access_tunnel_2 = Region("The Ashlands Access Tunnel 2", world.player, world.multiworld)
-    black_throne = Region("Black Throne", world.player, world.multiworld)
+    black_throne_1 = Region("Black Throne 1", world.player, world.multiworld)
+    black_throne_boss_room = Region("Black Throne Boss Room", world.player, world.multiworld)
     broken_stair = Region("The Broken Stair", world.player, world.multiworld)
     choking_grounds = Region("The Choking Grounds", world.player, world.multiworld)
     crossroads = Region("The Crossroads", world.player, world.multiworld)
-    destroyed_city = Region("The Destroyed City", world.player, world.multiworld)
     drowned_pass = Region("Drowned Pass", world.player, world.multiworld)
     drowned_pass_access_tunnel = Region("Drowned Pass Access Tunnel", world.player, world.multiworld)
     dry_road = Region("The Dry Road", world.player, world.multiworld)
     dry_road_access_tunnel_1 = Region("The Dry Road Access Tunnel 1", world.player, world.multiworld)
     dry_road_access_tunnel_2 = Region("The Dry Road Access Tunnel 2", world.player, world.multiworld)
-    earth = Region("Earth", world.player, world.multiworld)
     eden = Region("Eden", world.player, world.multiworld)
-    heaven = Region("Heaven", world.player, world.multiworld)
-    hell = Region("Hell", world.player, world.multiworld)
     hollows_1 = Region("The Hollows 1", world.player, world.multiworld) #Before gas pipes
     hollows_2 = Region("The Hollows 2", world.player, world.multiworld) #Before First Beholder Key
     hollows_3 = Region("The Hollows 3", world.player, world.multiworld) #Before Second Beholder Key
@@ -47,19 +44,16 @@ def create_all_regions(world: DSWorld) -> None:
     hollows_10 = Region("The Hollows 10", world.player, world.multiworld) #Passed Block of Ice filling room with water
     hollows_boss_room = Region("The Hollows Boss Room", world.player, world.multiworld)
     hollows_access_tunnel = Region("The Hollows Access Tunnel", world.player, world.multiworld)
-    iron_canopy = Region("Iron Canopy", world.player, world.multiworld)
+    iron_canopy_1 = Region("Iron Canopy 1", world.player, world.multiworld)
     leviathan_drift = Region("Leviathan's Drift", world.player, world.multiworld)
     menu = Region("Menu", world.player, world.multiworld)
     scalding_gallow = Region("Scalding Gallow", world.player, world.multiworld)
     #seraphim_hotel = Region("Seraphim Hotel", world.player, world.multiworld)
-    shadow_realm = Region("Shadow Realm", world.player, world.multiworld)
     silitha_loom = Region("Silitha's Loom", world.player, world.multiworld)
     serpent_holes = Region("Serpent Holes", world.player, world.multiworld)
     sh_to_anvil_ford = Region("Serpent Hole to Anvil's Ford", world.player, world.multiworld)
     sh_to_dry_road = Region("Serpent Hole to Dry Road", world.player, world.multiworld)
     sh_to_twilight_cathedral = Region("Serpent Hole to Twilight Cathedral", world.player, world.multiworld)
-    soul_bridge = Region("Soul Bridge", world.player, world.multiworld)
-    three_kingdoms = Region("Three Kingdoms", world.player, world.multiworld)
     tree_of_knowledge = Region("Tree of Knowledge", world.player, world.multiworld)
     twilight_cathedral_exterior = Region("Twilight Cathedral Exterior", world.player, world.multiworld)
     twilight_cathedral_1 = Region("Twilight Cathedral 1", world.player, world.multiworld) #Before first beholder key
@@ -67,7 +61,6 @@ def create_all_regions(world: DSWorld) -> None:
     twilight_cathedral_3 = Region("Twilight Cathedral 3", world.player, world.multiworld) #After Crossblade
     twilight_cathedral_boss_room = Region("Twilight Cathedral Boss Room", world.player, world.multiworld)
     vulgrim_shop = Region("Vulgrim's Shop", world.player, world.multiworld)
-    well_of_souls = Region("Well of Souls", world.player, world.multiworld)
 
     regions = [
         anvil_ford,
@@ -77,20 +70,17 @@ def create_all_regions(world: DSWorld) -> None:
         ashlands_2,
         ashlands_access_tunnel_1,
         ashlands_access_tunnel_2,
-        black_throne,
+        black_throne_1,
+        black_throne_boss_room,
         broken_stair,
         choking_grounds,
         crossroads,
-        destroyed_city,
         drowned_pass,
         drowned_pass_access_tunnel,
         dry_road,
         dry_road_access_tunnel_1,
         dry_road_access_tunnel_2,
-        earth,
         eden,
-        heaven,
-        hell,
         hollows_1,
         hollows_2,
         hollows_3,
@@ -103,19 +93,16 @@ def create_all_regions(world: DSWorld) -> None:
         hollows_10,
         hollows_boss_room,
         hollows_access_tunnel,
-        iron_canopy,
+        iron_canopy_1,
         leviathan_drift,
         menu,
         scalding_gallow,
         #seraphim_hotel,
-        shadow_realm,
         silitha_loom,
         serpent_holes,
         sh_to_anvil_ford,
         sh_to_dry_road,
         sh_to_twilight_cathedral,
-        soul_bridge,
-        three_kingdoms,
         tree_of_knowledge,
         twilight_cathedral_exterior,
         twilight_cathedral_1,
@@ -123,7 +110,6 @@ def create_all_regions(world: DSWorld) -> None:
         twilight_cathedral_3,
         twilight_cathedral_boss_room,
         vulgrim_shop,
-        well_of_souls
     ]
 
     world.multiworld.regions += regions
@@ -137,20 +123,17 @@ def connect_regions(world: DSWorld) -> None:
     ashlands_2 = world.get_region("The Ashlands 2")
     ashlands_access_tunnel_1 = world.get_region("The Ashlands Access Tunnel 1")
     ashlands_access_tunnel_2 = world.get_region("The Ashlands Access Tunnel 2")
-    black_throne = world.get_region("Black Throne")
+    black_throne_1 = world.get_region("Black Throne 1")
+    black_throne_boss_room = world.get_region("Black Throne Boss Room")
     broken_stair = world.get_region("The Broken Stair")
     choking_grounds = world.get_region("The Choking Grounds")
     crossroads = world.get_region("The Crossroads")
-    destroyed_city = world.get_region("The Destroyed City")
     drowned_pass = world.get_region("Drowned Pass")
     drowned_pass_access_tunnel = world.get_region("Drowned Pass Access Tunnel")
     dry_road = world.get_region("The Dry Road")
     dry_road_access_tunnel_1 = world.get_region("The Dry Road Access Tunnel 1")
     dry_road_access_tunnel_2 = world.get_region("The Dry Road Access Tunnel 2")
-    earth = world.get_region("Earth")
     eden = world.get_region("Eden")
-    heaven = world.get_region("Heaven")
-    hell = world.get_region("Hell")
     hollows_1 = world.get_region("The Hollows 1")
     hollows_2 = world.get_region("The Hollows 2")
     hollows_3 = world.get_region("The Hollows 3")
@@ -163,21 +146,16 @@ def connect_regions(world: DSWorld) -> None:
     hollows_10 = world.get_region("The Hollows 10")
     hollows_boss_room = world.get_region("The Hollows Boss Room")
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
-    iron_canopy = world.get_region("Iron Canopy")
+    iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
     menu = world.get_region("Menu")
     scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
-    shadow_realm = world.get_region("Shadow Realm")
     silitha_loom = world.get_region("Silitha's Loom")
     serpent_holes = world.get_region("Serpent Holes")
     sh_to_anvil_ford = world.get_region("Serpent Hole to Anvil's Ford")
     sh_to_dry_road = world.get_region("Serpent Hole to Dry Road")
     sh_to_twilight_cathedral = world.get_region("Serpent Hole to Twilight Cathedral")
-    soul_bridge = world.get_region("Soul Bridge")
-    broken_stair = world.get_region("The Broken Stair")
-    crossroads = world.get_region("The Crossroads")
-    three_kingdoms = world.get_region("Three Kingdoms")
     tree_of_knowledge = world.get_region("Tree of Knowledge")
     twilight_cathedral_exterior = world.get_region("Twilight Cathedral Exterior")
     twilight_cathedral_1 = world.get_region("Twilight Cathedral 1")
@@ -185,7 +163,6 @@ def connect_regions(world: DSWorld) -> None:
     twilight_cathedral_3 = world.get_region("Twilight Cathedral 3")
     twilight_cathedral_boss_room = world.get_region("Twilight Cathedral Boss Room")
     vulgrim_shop = world.get_region("Vulgrim's Shop")
-    well_of_souls = world.get_region("Well of Souls")
 
     anvil_ford_to_anvil_ford_challenge_area = Entrance(world.player, "Anvil's Ford to Anvil's Ford Challenge Area", parent = anvil_ford)
     anvil_ford.exits.append(anvil_ford_to_anvil_ford_challenge_area)
@@ -211,6 +188,10 @@ def connect_regions(world: DSWorld) -> None:
     ashlands_1.exits.append(ashlands_1_to_ashlands_2)
     ashlands_1_to_ashlands_2.connect(ashlands_2)
 
+    ashlands_1_to_leviathan_drift = Entrance(world.player, "The Ashlands to Leviathan's Drift", parent = ashlands_1)
+    ashlands_1.exits.append(ashlands_1_to_leviathan_drift)
+    ashlands_1_to_leviathan_drift.connect(leviathan_drift)
+
     ashlands_access_tunnel_1_to_ashlands_access_tunnel_2 = Entrance(world.player, "The Ashlands Access Tunnel 1 to The Ashlands Access Tunnel 2", parent = ashlands_access_tunnel_1)
     ashlands_access_tunnel_1.exits.append(ashlands_access_tunnel_1_to_ashlands_access_tunnel_2)
     ashlands_access_tunnel_1_to_ashlands_access_tunnel_2.connect(ashlands_access_tunnel_2)
@@ -226,6 +207,10 @@ def connect_regions(world: DSWorld) -> None:
     ashlands_access_tunnel_2_to_vulgrim_shop = Entrance(world.player, "The Ashlands Access Tunnel 2 to Vulgrim's Shop", parent = ashlands_access_tunnel_2)
     ashlands_access_tunnel_2.exits.append(ashlands_access_tunnel_2_to_vulgrim_shop)
     ashlands_access_tunnel_2_to_vulgrim_shop.connect(vulgrim_shop)
+
+    black_throne_1_to_black_throne_boss_room = Entrance(world.player, "Black Throne 1 to Black Throne Boss Room", parent = black_throne_1)
+    black_throne_1.exits.append(black_throne_1_to_black_throne_boss_room)
+    black_throne_1_to_black_throne_boss_room.connect(black_throne_boss_room)
 
     broken_stair_to_twilight_cathedral_1 = Entrance(world.player, "The Broken Stair to Twilight Cathedral 1", parent = broken_stair)
     broken_stair.exits.append(broken_stair_to_twilight_cathedral_1)
@@ -272,7 +257,7 @@ def connect_regions(world: DSWorld) -> None:
     drowned_pass_to_vulgrim_shop.connect(vulgrim_shop)
 
     drowned_pass_access_tunnel_to_drowned_pass = Entrance(world.player, "Drowned Pass Access Tunnel to Drowned Pass", parent = drowned_pass_access_tunnel)
-    scalding_gallow.exits.append(drowned_pass_access_tunnel_to_drowned_pass)
+    drowned_pass_access_tunnel.exits.append(drowned_pass_access_tunnel_to_drowned_pass)
     drowned_pass_access_tunnel_to_drowned_pass.connect(drowned_pass)
 
     drowned_pass_access_tunnel_to_serpent_holes = Entrance(world.player, "Drowned Pass Access Tunnel to Serpent Holes", parent = drowned_pass_access_tunnel)
@@ -302,6 +287,10 @@ def connect_regions(world: DSWorld) -> None:
     dry_road_access_tunnel_2_to_dry_road = Entrance(world.player, "Dry Road Access Tunnel 2 to Dry Road", parent = dry_road_access_tunnel_2)
     dry_road_access_tunnel_2.exits.append(dry_road_access_tunnel_2_to_dry_road)
     dry_road_access_tunnel_2_to_dry_road.connect(dry_road_access_tunnel_2)
+
+    eden_to_tree_of_knowledge = Entrance(world.player, "Eden to Three of Knowledge", parent = eden)
+    eden.exits.append(eden_to_tree_of_knowledge)
+    eden_to_tree_of_knowledge.connect(tree_of_knowledge)
 
     hollows_1_to_hollows_2 = Entrance(world.player, "The Hollows 1 to The Hollows 2", parent = hollows_1)
     hollows_1.exits.append(hollows_1_to_hollows_2)
@@ -347,13 +336,25 @@ def connect_regions(world: DSWorld) -> None:
     hollows_10.exits.append(hollows_10_to_hollows_boss_room)
     hollows_10_to_hollows_boss_room.connect(hollows_boss_room)
 
+    iron_canopy_1_to_silitha_loom = Entrance(world.player, "Iron Canopy 1 to Silitha's Loom", parent = iron_canopy_1)
+    iron_canopy_1.exits.append(iron_canopy_1_to_silitha_loom)
+    iron_canopy_1_to_silitha_loom.connect(silitha_loom)
+
     hollows_access_tunnel_to_hollows_1 = Entrance(world.player, "The Hollows Access Tunnel to The Hollows 1", parent = hollows_access_tunnel)
     hollows_access_tunnel.exits.append(hollows_access_tunnel_to_hollows_1)
     hollows_access_tunnel_to_hollows_1.connect(hollows_1)
 
+    leviathan_drift_to_eden = Entrance(world.player, "Leviathan's Drift to Eden", parent = leviathan_drift)
+    leviathan_drift.exits.append(leviathan_drift_to_eden)
+    leviathan_drift_to_eden.connect(eden)
+
     menu_to_crossroads = Entrance(world.player, "Menu to The Crossroads", parent = menu)
     menu.exits.append(menu_to_crossroads)
     menu_to_crossroads.connect(crossroads)
+
+    scalding_gallow_to_black_throne_1 = Entrance(world.player, "Scalding Gallow to Black Throne 1", parent = scalding_gallow)
+    scalding_gallow.exits.append(scalding_gallow_to_black_throne_1)
+    scalding_gallow_to_black_throne_1.connect(black_throne_1)
 
     scalding_gallow_to_choking_grounds = Entrance(world.player, "Scalding Gallow to The Choking Grounds", parent = scalding_gallow)
     scalding_gallow.exits.append(scalding_gallow_to_choking_grounds)
@@ -366,6 +367,10 @@ def connect_regions(world: DSWorld) -> None:
     scalding_gallow_to_dry_road_access_tunnel_1 = Entrance(world.player, "Scalding Gallow to Dry Road Access Tunnel 1", parent = scalding_gallow)
     scalding_gallow.exits.append(scalding_gallow_to_dry_road_access_tunnel_1)
     scalding_gallow_to_dry_road_access_tunnel_1.connect(dry_road_access_tunnel_1)
+
+    scalding_gallow_to_iron_canopy_1 = Entrance(world.player, "Scalding Gallow to Iron Canopy 1", parent = scalding_gallow)
+    scalding_gallow.exits.append(scalding_gallow_to_iron_canopy_1)
+    scalding_gallow_to_iron_canopy_1.connect(iron_canopy_1)
 
     scalding_gallow_to_serpent_holes = Entrance(world.player, "Scalding Gallow to Serpent Holes", parent = scalding_gallow)
     scalding_gallow.exits.append(scalding_gallow_to_serpent_holes)

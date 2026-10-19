@@ -8,7 +8,7 @@ from rule_builder.rules import Has, HasAll, HasAny, Rule
 if TYPE_CHECKING:
     from .World import DSWorld
 
-CAN_BEAT_ABADDON = HasAll("Armageddon Blade", "Mask of Shadows", "Ruin", "Shadowflight")
+CAN_BEAT_ABADDON = Has("Armageddon Blade Shards", count = 7) & HasAll("Mask of Shadows", "Ruin", "Shadowflight")
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Progressive Chaoseater", "Progressive Gauntlet", "Progressive Scythe")
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
 CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
@@ -19,7 +19,10 @@ HAS_CROSSBLADE = Has("Crossblade")
 HAS_EARTHCALLER = Has("Earthcaller")
 HAS_GAUNTLET = Has("Progressive Gauntlet")
 HAS_MASK = Has("Mask of Shadows")
+HAS_RUIN = Has("Ruin")
 HAS_SHADOWFLIGHT = Has("Shadowflight")
+HAS_SOUL_BRIDGE = Has("Soul Bridge")
+HAS_VOIDWALKER = Has("Voidwalker")
 
 def set_all_rules(world: DSWorld) -> None:
     
@@ -80,8 +83,17 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     hollows_1_to_hollows_2 = world.get_entrance("The Hollows 1 to The Hollows 2")
     world.set_rule(hollows_1_to_hollows_2, HAS_CROSSBLADE)
 
+    leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
+    world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
+
+    scalding_gallow_to_black_throne_1 = world.get_entrance("Scalding Gallow to Black Throne 1")
+    world.set_rule(scalding_gallow_to_black_throne_1, Has("Heart of the Chosen", count = 4))
+
     scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to The Choking Grounds")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
+
+    scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy 1")
+    world.set_rule(scalding_gallow_to_iron_canopy, HAS_SOUL_BRIDGE)
 
     scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road Access Tunnel 1")
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)

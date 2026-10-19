@@ -85,7 +85,7 @@ legendary_enhancements = {
     'Wars Glory' : 75,
     'Strifes Offering' : 76,
     'Furys Embrace' : 77,
-    'Deaths Blessing' : 77,
+    'Deaths Blessing' : 78,
 }
 
 gear_and_equipments = {
@@ -136,7 +136,8 @@ passive_abilities = {
     'Chronomancer': 122,
     'Ruin': 123,
     'Serpent Holes': 124,
-    'Shadowflight': 125
+    'Shadowflight': 125,
+    'Soul Bridge': 126,
 }
 
 primary_weapons = {
@@ -330,6 +331,9 @@ def create_all_items(world: DSWorld) -> None:
 
     for i in range(4):
         itempool.append(world.create_item('Progressive Scythe'))
+
+    itempool.append(world.create_item('Progressive Gauntlet'))
+    for i in range(4):
         itempool.append(world.create_item('Progressive Gauntlet'))
 
     for name, item_id in wrath_abilities.items():
