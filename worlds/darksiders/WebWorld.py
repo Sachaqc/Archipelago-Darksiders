@@ -8,10 +8,10 @@ from .Options import option_groups, option_presets
 class DSWeb(WebWorld):
     
     game = "Darksiders"
-
-    theme = "stone"
     
     rich_text_options_doc = True
+    theme = "stone"
+    bug_report_page = "https://github.com/Sachaqc/Archipelago-Darksiders/issues"
 
     setup_en = Tutorial(
         "Multiworld Setup Guide",
@@ -22,8 +22,8 @@ class DSWeb(WebWorld):
         ["Sachaqc"],
     )
 
-    #game_info_languages = ["en"]
     tutorials = [setup_en]
+    game_info_languages = ["en"]
 
     option_groups = option_groups
     option_presets = option_presets
