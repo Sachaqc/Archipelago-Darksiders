@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from .World import DSWorld
 
 abyssal_armor_pieces = {
-    'Abyssal Armor Piece': 1,
+    'Abyssal Armor Piece': 1, #armor/item_armorpiece
     #'Abyssal Armor Piece 1': 2,
     #'Abyssal Armor Piece 2': 3,
     #'Abyssal Armor Piece 3': 4,
@@ -19,12 +19,13 @@ abyssal_armor_pieces = {
     #'Abyssal Armor Piece 8': 9,
     #'Abyssal Armor Piece 9': 10,
     #'Abyssal Armor Piece 10': 11
+    # Abyssal armor : armor/item_abyssumarmor
 }
 
 artifacts = {
-    'Soldier Artifact': 20,
-    'Champion Artifact': 21,
-    'Overlord Artifact': 22,
+    'Soldier Artifact': 20, #items/artifact_pawn
+    'Champion Artifact': 21, #items/artifact_general
+    'Overlord Artifact': 22, #items/artifact_master
     #'Champion Artifact 1': 23,
     #'Champion Artifact 2': 24,
     #'Champion Artifact 3': 25,
@@ -54,7 +55,7 @@ artifacts = {
 }
 
 consumables = {
-    'Empty Container': 50,
+    'Empty Container': 50, #items/item_consumableslot
     'Life Essence': 51,
     'Greater Life Essence': 52,
     'Possession': 53,
@@ -64,45 +65,42 @@ consumables = {
 }
 
 enhancements = {
-    'Bane' : 60,
-    'Bloodthirst': 61,
-    'Carnage': 62,
-    'Combat Lore': 63,
-    'Death Blessing': 64,
-    'Fury Embrace': 65,
-    'Hellfire': 66,
-    'Ravager': 67,
-    'Reaper': 68,
-    'Strife Offering': 69,
-    'Weapon Master': 70,
+    'Bane' : 60, #weapon_enhancements/common_bane
+    'Bloodthirst': 61, #weapon_enhancements/common_leech
+    'Carnage': 62, #weapon_enhancements/common_ire
+    'Combat Lore': 63, #weapon_enhancements/common_divination
+    'Hellfire': 64, #weapon_enhancements/common_brimstone
+    'Ravager': 65, #weapon_enhancements/common_desecration
+    'Reaper': 66, #weapon_enhancements/common_reaper
+    'Weapon Master': 67, #weapon_enhancements/common_transfixion
 }
 
 keys = {
-    'Beholder Key': 59
+    'Beholder Key': 59 #items/item_dungeonkey
 }
 
 legendary_enhancements = {
-    'Wars Glory' : 75,
-    'Strifes Offering' : 76,
-    'Furys Embrace' : 77,
-    'Deaths Blessing' : 78,
+    'Wars Glory' : 75, #weapon_enhancements/legendary_warswrath
+    'Strifes Offering' : 76, #weapon_enhancements/legendary_strifesprowess
+    'Furys Embrace' : 77, #weapon_enhancements/legendary_furysmadness
+    'Deaths Blessing' : 78, #weapon_enhancements/legendary_deathsblessing
 }
 
 gear_and_equipments = {
-    'Abyssal Chain' : 80,
-    'Crossblade': 81,
-    'Earthcaller': 82,
-    'Mask of Shadows': 83,
-    'Mercy': 84,
-    'Voidwalker': 85
+    'Abyssal Chain' : 80, #gear_ghosthook/playergearghosthook
+    'Crossblade': 81, #gear_crossblade/playergearcrossblade
+    'Earthcaller': 82, #gear_horn/playergearhorn
+    'Mask of Shadows': 83, #gear_eyeoflilith/playergeareyeoflilith
+    'Mercy': 84, #weapon_strifesgun/strifes_gun
+    'Voidwalker': 85 #gear_voidwalker/playergearvoidwalker
 }
 
 hearts_of_the_chosen = {
-    'Heart of the Chosen' : 87,
+    'Heart of the Chosen' : 87, #items/item_demonheart
 }
 
 lifestones = {
-    'Lifestone':90
+    'Lifestone':90 #items/item_healthstone
     #'Lifestone Griever': 91,
     #'Lifestone Silitha': 92,
     #'Lifestone Straga': 93,
@@ -111,7 +109,7 @@ lifestones = {
 }
 
 lifestone_shards = {
-    'Lifestone Shard':100
+    'Lifestone Shard':100 #items/item_healthshard
     #'Lifestone Shard 1': 101,
     #'Lifestone Shard 2': 102,
     #'Lifestone Shard 3': 103,
@@ -131,28 +129,29 @@ lifestone_shards = {
 }
 
 passive_abilities = {
-    'Block Counter': 120,
-    'Chaos Form': 121,
-    'Chronomancer': 122,
-    'Ruin': 123,
-    'Serpent Holes': 124,
-    'Shadowflight': 125,
-    'Soul Bridge': 126,
+    'Block Counter': 120, #items/item_blockcounter
+    'Chaos Form': 121, #item_havocform/item_havocform
+    'Chronomancer': 122, #item_frenzy/item_frenzy
+    'Ruin': 123, #items/item_ruinshard
+    'Serpent Holes': 124, #items/item_teleportability
+    'Shadowflight': 125, #gear_tempestcloak/playergeartempestcloak
+    'Soul Bridge': 126, #items/item_soulbridgeshard
 }
 
 primary_weapons = {
     'Progressive Chaoseater': 130,
     #'Chaoseater': 131,
-    'Armageddon Blade': 132,
-    'Armageddon Blade Shards': 133
+    'Armageddon Blade': 132, #items/item_armageddonsword
+    'Armageddon Blade Shards': 133 #items/item_swordpiece
+    #'Sword Key': 131, #ch_com/weapon_swordkey
 }
 
 secondary_weapons = {
     'Progressive Scythe': 140,
-    #'Harvester': 141,
-    #'Scythe': 142,
+    #'Harvester': 141, #harvester/harvester
+    #'Scythe': 142, #hellraiser/hellraiser
     'Progressive Gauntlet': 143,
-    #'Tremor Gauntlet': 144
+    #'Tremor Gauntlet': 144 #gauntlets/weapon_gauntlets
 }
 
 souls_chests = {
@@ -162,21 +161,21 @@ souls_chests = {
 }
 
 wrath_abilities = {
-    'Affliction': 160,
-    'Blade Geyser': 161,
-    'Immolation': 162,
-    'Stoneskin': 163
+    'Affliction': 160, #wrath_affliction/wrath_affliction
+    'Blade Geyser': 161, #wrath_bladegeyser/wrath_bladegeyser ???????
+    'Immolation': 162, #wrath_immolation/wrath_immolation
+    'Stoneskin': 163 #wrath_stoneskin/wrath_stoneskin
 }
 
 wrath_cores = {
-    'Wrath Core': 170,
+    'Wrath Core': 170, #items/item_wrathstone
     #'Wrath Core 1': 171,
     #'Wrath Core 2': 172,
     #'Wrath Core 3': 173
 }
 
 wrath_shards = {
-    'Wrath Shard': 180,
+    'Wrath Shard': 180, #items/item_wrathshard
     #'Wrath Shard 1': 181,
     #'Wrath Shard 2': 182,
     #'Wrath Shard 3': 183,
