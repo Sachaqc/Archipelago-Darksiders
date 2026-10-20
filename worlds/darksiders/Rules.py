@@ -10,8 +10,14 @@ if TYPE_CHECKING:
 
 CAN_BEAT_ABADDON = Has("Armageddon Blade Shards", count = 7) & HasAll("Mask of Shadows", "Ruin", "Shadowflight")
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Progressive Chaoseater", "Progressive Gauntlet", "Progressive Scythe")
+CAN_CLIMB_DEMONIC_GROWTH = True
+CAN_DOUBLE_JUMP = True
+CAN_DRAG_OBJECTS = True
+CAN_GRAB_BOMBS = True
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
+CAN_LEDGE_GRAB = True
 CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
+CAN_TYROLEAN_TRAVERSE = True
 HAS_ABYSSAL_CHAIN = Has("Abyssal Chain")
 HAS_CHAOS_FORM = Has("Chaos Form")
 HAS_CHRONOMANCER = Has("Chronomancer")
