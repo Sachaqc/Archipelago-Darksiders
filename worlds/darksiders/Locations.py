@@ -189,7 +189,7 @@ LOCATION_NAME_TO_ID = abyssal_armor_pieces | artifacts | chained_cubes | chests
 
 class DSLocation(Location):
 
-    game = "Darksiders Warmastered Edition"
+    game = "Darksiders"
 
 def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
 

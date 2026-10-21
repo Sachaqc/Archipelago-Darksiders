@@ -7,151 +7,88 @@ from BaseClasses import Item, ItemClassification
 if TYPE_CHECKING:
     from .World import DSWorld
 
-abyssal_armor_pieces = {
+abyssal_armor = {
     'Abyssal Armor Piece': 1, #armor/item_armorpiece
-    #'Abyssal Armor Piece 1': 2,
-    #'Abyssal Armor Piece 2': 3,
-    #'Abyssal Armor Piece 3': 4,
-    #'Abyssal Armor Piece 4': 5,
-    #'Abyssal Armor Piece 5': 6,
-    #'Abyssal Armor Piece 6': 7,
-    #'Abyssal Armor Piece 7': 8,
-    #'Abyssal Armor Piece 8': 9,
-    #'Abyssal Armor Piece 9': 10,
-    #'Abyssal Armor Piece 10': 11
-    # Abyssal armor : armor/item_abyssumarmor
+    'Abyssal armor': 2, #armor/item_abyssumarmor
 }
 
 artifacts = {
-    'Soldier Artifact': 20, #items/artifact_pawn
-    'Champion Artifact': 21, #items/artifact_general
-    'Overlord Artifact': 22, #items/artifact_master
-    #'Champion Artifact 1': 23,
-    #'Champion Artifact 2': 24,
-    #'Champion Artifact 3': 25,
-    #'Champion Artifact 4': 26,
-    #'Champion Artifact 5': 27,
-    #'Champion Artifact 6': 28,
-    #'Soldier Artifact 1': 29,
-    #'Soldier Artifact 2': 30,
-    #'Soldier Artifact 3': 31,
-    #'Soldier Artifact 4': 32,
-    #'Soldier Artifact 5': 33,
-    #'Soldier Artifact 6': 34,
-    #'Soldier Artifact 7': 35,
-    #'Soldier Artifact 8': 36,
-    #'Soldier Artifact 9': 37,
-    #'Soldier Artifact 10': 38,
-    #'Soldier Artifact 11': 39,
-    #'Soldier Artifact 12': 40,
-    #'Soldier Artifact 13': 41,
-    #'Soldier Artifact 14': 42,
-    #'Soldier Artifact 15': 43,
-    #'Soldier Artifact 16': 44,
-    #'Soldier Artifact 17': 45,
-    #'Soldier Artifact 18': 46,
-    #'Soldier Artifact 19': 47,
-    #'Soldier Artifact 20': 48
+    'Soldier Artifact': 10, #items/artifact_pawn
+    'Champion Artifact': 11, #items/artifact_general
+    'Overlord Artifact': 12, #items/artifact_master
 }
 
 consumables = {
-    'Empty Container': 50, #items/item_consumableslot
-    'Life Essence': 51,
-    'Greater Life Essence': 52,
-    'Possession': 53,
-    'Rage Essence': 54,
-    'Greater Rage Essence': 55,
-    'Undying': 56
+    'Empty Container': 20, #items/item_consumableslot
+    'Life Essence': 21,
+    'Greater Life Essence': 22,
+    'Possession': 23,
+    'Rage Essence': 24,
+    'Greater Rage Essence': 25,
+    'Undying': 26
 }
 
 enhancements = {
-    'Bane' : 60, #weapon_enhancements/common_bane
-    'Bloodthirst': 61, #weapon_enhancements/common_leech
-    'Carnage': 62, #weapon_enhancements/common_ire
-    'Combat Lore': 63, #weapon_enhancements/common_divination
-    'Hellfire': 64, #weapon_enhancements/common_brimstone
-    'Ravager': 65, #weapon_enhancements/common_desecration
-    'Reaper': 66, #weapon_enhancements/common_reaper
-    'Weapon Master': 67, #weapon_enhancements/common_transfixion
+    'Bane' : 30, #weapon_enhancements/common_bane
+    'Bloodthirst': 31, #weapon_enhancements/common_leech
+    'Carnage': 32, #weapon_enhancements/common_ire
+    'Combat Lore': 33, #weapon_enhancements/common_divination
+    'Hellfire': 34, #weapon_enhancements/common_brimstone
+    'Ravager': 35, #weapon_enhancements/common_desecration
+    'Reaper': 36, #weapon_enhancements/common_reaper
+    'Weapon Master': 37, #weapon_enhancements/common_transfixion
+    'Wars Glory' : 40, #weapon_enhancements/legendary_warswrath
+    'Strifes Offering' : 41, #weapon_enhancements/legendary_strifesprowess
+    'Furys Embrace' : 42, #weapon_enhancements/legendary_furysmadness
+    'Deaths Blessing' : 43, #weapon_enhancements/legendary_deathsblessing
 }
 
 keys = {
-    'Beholder Key': 59 #items/item_dungeonkey
-}
-
-legendary_enhancements = {
-    'Wars Glory' : 75, #weapon_enhancements/legendary_warswrath
-    'Strifes Offering' : 76, #weapon_enhancements/legendary_strifesprowess
-    'Furys Embrace' : 77, #weapon_enhancements/legendary_furysmadness
-    'Deaths Blessing' : 78, #weapon_enhancements/legendary_deathsblessing
+    'Beholder Key': 50 #items/item_dungeonkey
 }
 
 gear_and_equipments = {
-    'Abyssal Chain' : 80, #gear_ghosthook/playergearghosthook
-    'Crossblade': 81, #gear_crossblade/playergearcrossblade
-    'Earthcaller': 82, #gear_horn/playergearhorn
-    'Mask of Shadows': 83, #gear_eyeoflilith/playergeareyeoflilith
-    'Mercy': 84, #weapon_strifesgun/strifes_gun
-    'Voidwalker': 85 #gear_voidwalker/playergearvoidwalker
+    'Abyssal Chain' : 60, #gear_ghosthook/playergearghosthook
+    'Crossblade': 61, #gear_crossblade/playergearcrossblade
+    'Earthcaller': 62, #gear_horn/playergearhorn
+    'Mask of Shadows': 63, #gear_eyeoflilith/playergeareyeoflilith
+    'Mercy': 64, #weapon_strifesgun/strifes_gun
+    'Voidwalker': 65 #gear_voidwalker/playergearvoidwalker
+}
+
+health = {
+    'Lifestone': 70, #items/item_healthstone
+    'Lifestone Shard': 71, #items/item_healthshard
 }
 
 hearts_of_the_chosen = {
-    'Heart of the Chosen' : 87, #items/item_demonheart
-}
-
-lifestones = {
-    'Lifestone':90 #items/item_healthstone
-    #'Lifestone Griever': 91,
-    #'Lifestone Silitha': 92,
-    #'Lifestone Straga': 93,
-    #'Lifestone Stygian': 94,
-    #'Lifestone Tiamat': 95
-}
-
-lifestone_shards = {
-    'Lifestone Shard':100 #items/item_healthshard
-    #'Lifestone Shard 1': 101,
-    #'Lifestone Shard 2': 102,
-    #'Lifestone Shard 3': 103,
-    #'Lifestone Shard 4': 105,
-    #'Lifestone Shard 5': 105,
-    #'Lifestone Shard 6': 106,
-    #'Lifestone Shard 7': 107,
-    #'Lifestone Shard 8': 108,
-    #'Lifestone Shard 9': 109,
-    #'Lifestone Shard 10': 110,
-    #'Lifestone Shard 11': 111,
-    #'Lifestone Shard 12': 112,
-    #'Lifestone Shard 13': 113,
-    #'Lifestone Shard 14': 114,
-    #'Lifestone Shard 15': 115,
-    #'Lifestone Shard 16': 116
+    'Heart of the Chosen' : 80, #items/item_demonheart
 }
 
 passive_abilities = {
-    'Block Counter': 120, #items/item_blockcounter
-    'Chaos Form': 121, #item_havocform/item_havocform
-    'Chronomancer': 122, #item_frenzy/item_frenzy
-    'Ruin': 123, #items/item_ruinshard
-    'Serpent Holes': 124, #items/item_teleportability
-    'Shadowflight': 125, #gear_tempestcloak/playergeartempestcloak
-    'Soul Bridge': 126, #items/item_soulbridgeshard
+    'Block Counter': 90, #items/item_blockcounter
+    'Chaos Form': 91, #item_havocform/item_havocform
+    'Chronomancer': 92, #item_frenzy/item_frenzy
+    'Ruin': 93, #items/item_ruinshard
+    'Serpent Holes': 94, #items/item_teleportability
+    'Shadowflight': 95, #gear_tempestcloak/playergeartempestcloak
+    'Soul Bridge': 96, #items/item_soulbridgeshard
 }
 
 primary_weapons = {
-    'Progressive Chaoseater': 130,
-    #'Chaoseater': 131,
-    'Armageddon Blade': 132, #items/item_armageddonsword
-    'Armageddon Blade Shards': 133 #items/item_swordpiece
-    #'Sword Key': 131, #ch_com/weapon_swordkey
+    'Progressive Chaoseater': 100,
+    'Chaoseater': 101, #sword/warsword
+    'Armageddon Blade': 102, #items/item_armageddonsword
+    'Armageddon Blade Shards': 103 #items/item_swordpiece
+    #'Sword Key': 104, #ch_com/weapon_swordkey
 }
 
 secondary_weapons = {
-    'Progressive Scythe': 140,
-    #'Harvester': 141, #harvester/harvester
-    #'Scythe': 142, #hellraiser/hellraiser
-    'Progressive Gauntlet': 143,
-    #'Tremor Gauntlet': 144 #gauntlets/weapon_gauntlets
+    'Progressive Scythe': 110,
+    'Harvester': 111, #harvester/harvester
+    'Scythe': 112, #hellraiser/hellraiser
+    'Progressive Gauntlet': 113,
+    'Tremor Gauntlet': 114 #gauntlets/weapon_gauntlets
 }
 
 souls_chests = {
@@ -160,91 +97,58 @@ souls_chests = {
     'Wrath': 152
 }
 
+wrath = {
+    'Wrath Core': 120, #items/item_wrathstone
+    'Wrath Shard': 121, #items/item_wrathshard
+}
+
 wrath_abilities = {
-    'Affliction': 160, #wrath_affliction/wrath_affliction
-    'Blade Geyser': 161, #wrath_bladegeyser/wrath_bladegeyser ???????
-    'Immolation': 162, #wrath_immolation/wrath_immolation
-    'Stoneskin': 163 #wrath_stoneskin/wrath_stoneskin
+    'Affliction': 130, #wrath_affliction/wrath_affliction
+    'Blade Geyser': 131, #wrath_bladegeyser/wrath_bladegeyser ???????
+    'Immolation': 132, #wrath_immolation/wrath_immolation
+    'Stoneskin': 133 #wrath_stoneskin/wrath_stoneskin
 }
 
-wrath_cores = {
-    'Wrath Core': 170, #items/item_wrathstone
-    #'Wrath Core 1': 171,
-    #'Wrath Core 2': 172,
-    #'Wrath Core 3': 173
-}
-
-wrath_shards = {
-    'Wrath Shard': 180, #items/item_wrathshard
-    #'Wrath Shard 1': 181,
-    #'Wrath Shard 2': 182,
-    #'Wrath Shard 3': 183,
-    #'Wrath Shard 4': 184,
-    #'Wrath Shard 5': 185,
-    #'Wrath Shard 6': 186,
-    #'Wrath Shard 7': 187,
-    #'Wrath Shard 8': 188,
-    #'Wrath Shard 9': 189,
-    #'Wrath Shard 10': 190,
-    #'Wrath Shard 11': 191,
-    #'Wrath Shard 12': 192,
-    #'Wrath Shard 13': 193,
-    #'Wrath Shard 14': 194,
-    #'Wrath Shard 15': 195,
-    #'Wrath Shard 16': 196,
-    #'Wrath Shard 17': 197,
-    #'Wrath Shard 18': 198,
-    #'Wrath Shard 19': 199,
-    #'Wrath Shard 20': 200
-}
-
-ITEM_NAME_TO_ID = abyssal_armor_pieces | artifacts | consumables | enhancements | keys | legendary_enhancements | gear_and_equipments | hearts_of_the_chosen | lifestones | lifestone_shards | passive_abilities | primary_weapons | secondary_weapons | souls_chests | wrath_abilities | wrath_cores | wrath_shards
+ITEM_NAME_TO_ID = abyssal_armor | artifacts | consumables | enhancements | gear_and_equipments | health | hearts_of_the_chosen | keys | passive_abilities | primary_weapons | secondary_weapons | souls_chests | wrath | wrath_abilities
 
 DEFAULT_ITEM_CLASSIFICATION = {
-    "abyssal_armor_pieces": ItemClassification.useful,
+    "abyssal_armor": ItemClassification.useful,
     "artifacts": ItemClassification.progression,
     "consumables": ItemClassification.filler,
     "enhancements": ItemClassification.useful,
-    "legendary_enhancements": ItemClassification.useful,
     "gear_and_equipments": ItemClassification.progression,
-    "keys": ItemClassification.progression,
+    "health": ItemClassification.useful,
     "hearts_of_the_chosen": ItemClassification.progression,
-    "lifestones": ItemClassification.useful,
-    "lifestone_shards": ItemClassification.useful,
+    "keys": ItemClassification.progression,
     "passive_abilities": ItemClassification.progression,
     "primary_weapons": ItemClassification.progression,
     "secondary_weapons": ItemClassification.useful,
     "souls_chests": ItemClassification.filler,
+    "wrath": ItemClassification.useful,
     "wrath_abilities": ItemClassification.useful,
-    "wrath_cores": ItemClassification.useful,
-    "wrath_shards": ItemClassification.useful
 }
 
 class DSItem(Item):
 
-    game: str = "Darksiders Warmastered Edition"
+    game: str = "Darksiders"
 
 def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem:
 
     match name:
-        case name if name in abyssal_armor_pieces:
-            classification = DEFAULT_ITEM_CLASSIFICATION["abyssal_armor_pieces"]
+        case name if name in abyssal_armor:
+            classification = DEFAULT_ITEM_CLASSIFICATION["abyssal_armor"]
         case name if name in artifacts:
             classification = DEFAULT_ITEM_CLASSIFICATION["artifacts"]
         case name if name in enhancements:
             classification = DEFAULT_ITEM_CLASSIFICATION["enhancements"]
-        case name if name in legendary_enhancements:
-            classification = DEFAULT_ITEM_CLASSIFICATION["legendary_enhancements"]
         case name if name in keys:
             classification = DEFAULT_ITEM_CLASSIFICATION["keys"]
         case name if name in gear_and_equipments:
             classification = DEFAULT_ITEM_CLASSIFICATION["gear_and_equipments"]
+        case name if name in health:
+            classification = DEFAULT_ITEM_CLASSIFICATION["health"]
         case name if name in hearts_of_the_chosen:
             classification = DEFAULT_ITEM_CLASSIFICATION["hearts_of_the_chosen"]
-        case name if name in lifestones:
-            classification = DEFAULT_ITEM_CLASSIFICATION["lifestones"]
-        case name if name in lifestone_shards:
-            classification = DEFAULT_ITEM_CLASSIFICATION["lifestone_shards"]
         case name if name in passive_abilities:
             classification = DEFAULT_ITEM_CLASSIFICATION["passive_abilities"]
         case name if name in primary_weapons:
@@ -257,14 +161,10 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
                 classification = ItemClassification.progression
             else:
                 classification = DEFAULT_ITEM_CLASSIFICATION["secondary_weapons"]
-        case name if name in souls_chests:
-            classification = DEFAULT_ITEM_CLASSIFICATION["souls_chests"]
+        case name if name in wrath:
+            classification = DEFAULT_ITEM_CLASSIFICATION["wrath"]
         case name if name in wrath_abilities:
             classification = DEFAULT_ITEM_CLASSIFICATION["wrath_abilities"]
-        case name if name in wrath_cores:
-            classification = DEFAULT_ITEM_CLASSIFICATION["wrath_cores"]
-        case name if name in wrath_shards:
-            classification = DEFAULT_ITEM_CLASSIFICATION["wrath_shards"]
         case _: 
             classification = ItemClassification.filler
 
