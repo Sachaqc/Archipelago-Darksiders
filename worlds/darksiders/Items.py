@@ -193,14 +193,6 @@ def create_all_items(world: DSWorld) -> None:
         case 1:
             for name, item_id in enhancements.items():
                 itempool.append(world.create_item(name))
-        case 2:
-            for name, item_id in legendary_enhancements.items():
-                itempool.append(world.create_item(name))
-        case 3:
-            for name, item_id in enhancements.items():
-                itempool.append(world.create_item(name))
-            for name, item_id in legendary_enhancements.items():
-                itempool.append(world.create_item(name))
 
     for i in range(4):
         itempool.append(world.create_item("Beholder Key"))

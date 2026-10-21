@@ -38,16 +38,10 @@ class Artisanity(Toggle):
 
     display_name = "Artisanity"
 
-class Enhansanity(Choice):
+class Enhansanity(Toggle):
     """Shuffles the Enhancements into the item pool and adds their locations to the world."""
 
     display_name = "Enhansanity"
-    option_none = 0
-    option_basic = 1
-    option_legendary = 2
-    option_all = 3
-
-    default = option_all
 
 class Lifestones(Range):
     """Determines the number of Lifestones available in the game. Each lifestone boosts War maximum health."""
@@ -133,7 +127,7 @@ option_presets = {
         "logic_rules": LogicRules.option_hard,
         "abyssanity": True,
         "artisanity": True,
-        "enhansanity": Enhansanity.option_basic,
+        "enhansanity": True,
         "lifestones": 5,
         "lifestones_shards": LifestonesShards.option_max,
         "wrath_cores": 3,
@@ -144,7 +138,7 @@ option_presets = {
         "logic_rules": LogicRules.option_casual,
         "abyssanity": False,
         "artisanity": False,
-        "enhansanity": Enhansanity.option_none,
+        "enhansanity": False,
         "lifestones": 9,
         "lifestones_shards": LifestonesShards.option_none,
         "wrath_cores": 8,
@@ -155,7 +149,7 @@ option_presets = {
         "logic_rules": LogicRules.option_glitched,
         "abyssanity": True,
         "artisanity": True,
-        "enhansanity": Enhansanity.option_all,
+        "enhansanity": True,
         "lifestones": 0,
         "lifestones_shards": LifestonesShards.option_none,
         "wrath_cores": 0,
