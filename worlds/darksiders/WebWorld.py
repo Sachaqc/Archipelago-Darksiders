@@ -22,8 +22,8 @@ class DSWeb(WebWorld):
         ["Sachaqc"],
     )
 
-    tutorials = [setup_en]
     game_info_languages = ["en"]
+    tutorials = [setup_en]
 
     option_groups = option_groups
     option_presets = option_presets
