@@ -38,7 +38,7 @@ def create_all_regions(world: DSWorld) -> None:
 
     world.multiworld.regions += regions
 
-    create_region_from_json(world, "Anvil ford.json")
+    create_region_from_json(world, "Anvil Ford.json")
     create_region_from_json(world, "Ashlands.json")
     create_region_from_json(world, "Crossroads.json")
     create_region_from_json(world, "Choking Grounds.json")
