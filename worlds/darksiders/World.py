@@ -5,7 +5,7 @@ from typing import Any
 
 from worlds.AutoWorld import World
 
-from . import Items, Locations, Options, Regions, Rules, WebWorld
+from . import Items, Locations, Options, Regions, Rules, Utils, WebWorld
 
 class DSWorld(World):
     """Darksiders Warmastered Edition is an hack-and-slash action-adventure game what the player takes the role of War, one of the four horsemen of the apocalypse stranded alone on Earth after the event of the Apocalypse."""

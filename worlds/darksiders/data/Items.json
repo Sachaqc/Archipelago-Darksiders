@@ -1,0 +1,352 @@
+{
+    "Abilities": {
+        "Block Counter": {
+            "ID": 1,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item items/item_blockcounter"
+        },
+        "Chaos Form": {
+            "ID": 2,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item item_havocform/item_havocform"
+        },
+        "Chronomancer": {
+            "ID": 3,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item item_frenzy/item_frenzy"
+        },
+        "Ruin": {
+            "ID": 4,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item items/item_ruinshard"
+        },
+        "Serpent Holes": {
+            "ID": 5,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item items/item_teleportability"
+        },
+        "Shadowflight": {
+            "ID": 6,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_tempestcloak/playergeartempestcloak"
+        },
+        "Soul Bridge": {
+            "ID": 7,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item items/item_soulbridgeshard"
+        }
+    },
+    "Abyssal Armor": {
+        "Abyssal Armor Piece": {
+            "ID": 10,
+            "progressive": false,
+            "console": "/pickup_item armor/item_armorpiece"
+        },
+        "Abyssal Armor": {
+            "ID": 11,
+            "progressive": false,
+            "console": "/pickup_item armor/item_abyssumarmor"
+        }
+    },
+    "Artifacts": {
+        "Soldier Artifact": {
+            "ID": 20,
+            "progressive": false,
+            "console": "/pickup_item items/artifact_pawn"
+        },
+        "Champion Artifact": {
+            "ID": 21,
+            "progressive": false,
+            "console": "/pickup_item items/artifact_general"
+        },
+        "Overlord Artifact": {
+            "ID": 22,
+            "progressive": false,
+            "console": "/pickup_item items/artifact_master"
+        }
+    },
+    "Consumables": {
+        "Empty Container": {
+            "ID": 30,
+            "progressive": false,
+            "console": "/pickup_item items/item_consumableslot"
+        },
+        "Life Essence": {
+            "ID": 31,
+            "progressive": false
+        },
+        "Greater Life Essence": {
+            "ID": 32,
+            "progressive": false
+        },
+        "Possession": {
+            "ID": 33,
+            "progressive": false
+        },
+        "Rage Essence": {
+            "ID": 34,
+            "progressive": false
+        },
+        "Greater Rage Essence": {
+            "ID": 35,
+            "progressive": false
+        },
+        "Undying": {
+            "ID": 36,
+            "progressive": false
+        }
+    },
+    "Enhancements": {
+        "Bane": {
+            "ID": 40,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_bane"
+        },
+        "Bloodthirst": {
+            "ID": 41,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_leech"
+        },
+        "Carnage": {
+            "ID": 42,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_ire"
+        },
+        "Combat Lore": {
+            "ID": 43,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_divination"
+        },
+        "Hellfire": {
+            "ID": 44,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_brimstone"
+        },
+        "Ravager": {
+            "ID": 45,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_desecration"
+        },
+        "Reaper": {
+            "ID": 46,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_reaper"
+        },
+        "Weapon Master": {
+            "ID": 47,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/common_transfixion"
+        },
+        "Wars Glory": {
+            "ID": 50,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/legendary_warswrath"
+        },
+        "Strifes Offering": {
+            "ID": 51,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/legendary_strifesprowess"
+        },
+        "Furys Embrace": {
+            "ID": 52,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/legendary_furysmadness"
+        },
+        "Deaths Blessing": {
+            "ID": 53,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_enhancements/legendary_deathsblessing"
+        }
+    },
+    "Keys": {
+        "Beholder Key": {
+            "ID": 60,
+            "progressive": false,
+            "number": 4,
+            "console": "/pickup_item items/item_dungeonkey"
+        },
+        "Heart of the Chosen": {
+            "ID": 90,
+            "progressive": false,
+            "number": 4,
+            "console": "/pickup_item items/item_demonheart"
+        }
+    },
+    "Gear": {
+        "Abyssal Chain": {
+            "ID": 70,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_ghosthook/playergearghosthook"
+        },
+        "Crossblade": {
+            "ID": 71,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_crossblade/playergearcrossblade"
+        },
+        "Earthcaller": {
+            "ID": 72,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_horn/playergearhorn"
+        },
+        "Mask of Shadows": {
+            "ID": 73,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_eyeoflilith/playergeareyeoflilith"
+        },
+        "Mercy": {
+            "ID": 74,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item weapon_strifesgun/strifes_gun"
+        },
+        "Voidwalker": {
+            "ID": 75,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gear_voidwalker/playergearvoidwalker"
+        }
+    },
+    "Health": {
+        "Lifestone": {
+            "ID": 80,
+            "progressive": false,
+            "console": "/pickup_item items/item_healthstone"
+        },
+        "Lifestone Shard": {
+            "ID": 81,
+            "progressive": false,
+            "console": "/pickup_item items/item_healthshard"
+        }
+    },
+    "Primary Weapons": {
+        "Progressive Chaoseater": {
+            "ID": 100,
+            "progressive": true,
+            "number": 4
+        },
+        "Chaoseater": {
+            "ID": 101,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item sword/warsword"
+        },
+        "Armageddon Blade": {
+            "ID": 102,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item items/item_armageddonsword"
+        },
+        "Armageddon Blade Shards": {
+            "ID": 103,
+            "progressive": false,
+            "number": 7,
+            "console": "/pickup_item items/item_swordpiece"
+        },
+        "Sword Key": {
+            "ID": 104,
+            "progressive": false,
+            "console": "/pickup_item ch_com/weapon_swordkey"
+        }
+    },
+    "Secondary Weapons": {
+        "Progressive Scythe": {
+            "ID": 110,
+            "progressive": true,
+            "number": 4
+        },
+        "Harvester": {
+            "ID": 111,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item harvester/harvester"
+        },
+        "Hellraiser": {
+            "ID": 112,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item hellraiser/hellraiser"
+        },
+        "Progressive Gauntlet": {
+            "ID": 113,
+            "progressive": true,
+            "number": 4
+        },
+        "Tremor Gauntlet": {
+            "ID": 114,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item gauntlets/weapon_gauntlets"
+        }
+    },
+    "Souls": {
+        "Currency": {
+            "ID": 120,
+            "progressive": false
+        },
+        "Health": {
+            "ID": 121,
+            "progressive": false
+        },
+        "Wrath": {
+            "ID": 122,
+            "progressive": false
+        }
+    },
+    "Wrath": {
+        "Wrath Core": {
+            "ID": 130,
+            "progressive": false,
+            "console": "/pickup_item items/item_wrathstone"
+        },
+        "Wrath Shard": {
+            "ID": 131,
+            "progressive": false,
+            "console": "/pickup_item items/item_wrathshard"
+        }
+    },
+    "Wrath Abilities": {
+        "Affliction": {
+            "ID": 140,
+            "progressive": false,
+            "console": "/pickup_item wrath_affliction/wrath_affliction"
+        },
+        "Blade Geyser": {
+            "ID": 141,
+            "progressive": false,
+            "console": "/pickup_item wrath_bladegeyser/wrath_bladegeyser"
+        },
+        "Immolation": {
+            "ID": 142,
+            "progressive": false,
+            "console": "/pickup_item wrath_immolation/wrath_immolation"
+        },
+        "Stoneskin": {
+            "ID": 143,
+            "progressive": false,
+            "console": "/pickup_item wrath_stoneskin/wrath_stoneskin"
+        }
+    }
+}

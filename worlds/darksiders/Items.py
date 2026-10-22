@@ -4,6 +4,8 @@ from typing import Optional, TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
 
+from .Utils import data_path, json_read
+
 if TYPE_CHECKING:
     from .World import DSWorld
 
@@ -109,24 +111,13 @@ wrath_abilities = {
     'Stoneskin': 133 #wrath_stoneskin/wrath_stoneskin
 }
 
-ITEM_NAME_TO_ID = abyssal_armor | artifacts | consumables | enhancements | gear_and_equipments | health | hearts_of_the_chosen | keys | passive_abilities | primary_weapons | secondary_weapons | souls_chests | wrath | wrath_abilities
+ITEM_NAME_TO_ID = {}
 
-DEFAULT_ITEM_CLASSIFICATION = {
-    "abyssal_armor": ItemClassification.useful,
-    "artifacts": ItemClassification.progression,
-    "consumables": ItemClassification.filler,
-    "enhancements": ItemClassification.useful,
-    "gear_and_equipments": ItemClassification.progression,
-    "health": ItemClassification.useful,
-    "hearts_of_the_chosen": ItemClassification.progression,
-    "keys": ItemClassification.progression,
-    "passive_abilities": ItemClassification.progression,
-    "primary_weapons": ItemClassification.progression,
-    "secondary_weapons": ItemClassification.useful,
-    "souls_chests": ItemClassification.filler,
-    "wrath": ItemClassification.useful,
-    "wrath_abilities": ItemClassification.useful,
-}
+item_json = json_read(data_path("Items.json"))
+
+for item_group, item_group_data in item_json.items():
+    for item, item_data in item_group_data.items():
+        ITEM_NAME_TO_ID[item] = item_data.get("ID")
 
 class DSItem(Item):
 
@@ -134,37 +125,37 @@ class DSItem(Item):
 
 def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem:
 
+    item_json = json_read(data_path("Items.json"))
+
     match name:
-        case name if name in abyssal_armor:
-            classification = DEFAULT_ITEM_CLASSIFICATION["abyssal_armor"]
-        case name if name in artifacts:
-            classification = DEFAULT_ITEM_CLASSIFICATION["artifacts"]
-        case name if name in enhancements:
-            classification = DEFAULT_ITEM_CLASSIFICATION["enhancements"]
-        case name if name in keys:
-            classification = DEFAULT_ITEM_CLASSIFICATION["keys"]
-        case name if name in gear_and_equipments:
-            classification = DEFAULT_ITEM_CLASSIFICATION["gear_and_equipments"]
-        case name if name in health:
-            classification = DEFAULT_ITEM_CLASSIFICATION["health"]
-        case name if name in hearts_of_the_chosen:
-            classification = DEFAULT_ITEM_CLASSIFICATION["hearts_of_the_chosen"]
-        case name if name in passive_abilities:
-            classification = DEFAULT_ITEM_CLASSIFICATION["passive_abilities"]
-        case name if name in primary_weapons:
+        case name if name in item_json.get("Abilities"):
+            classification = ItemClassification.progression
+        case name if name in item_json.get("Abyssal Armor"):
+            classification = ItemClassification.useful
+        case name if name in item_json.get("Artifacts"):
+            classification = ItemClassification.progression
+        case name if name in item_json.get("Enhancements"):
+            classification = ItemClassification.useful
+        case name if name in item_json.get("Keys"):
+            classification = ItemClassification.progression
+        case name if name in item_json.get("Gear"):
+            classification = ItemClassification.progression
+        case name if name in item_json.get("Health"):
+            classification = ItemClassification.useful
+        case name if name in item_json.get("Primary Weapons"):
             if name == "Progressive Chaoseater":
                 classification = ItemClassification.useful
             else:
-                classification = DEFAULT_ITEM_CLASSIFICATION["primary_weapons"]
-        case name if name in secondary_weapons:
+                classification = ItemClassification.progression
+        case name if name in item_json.get("Secondary Weapons"):
             if name == "Progressive Gauntlet":
                 classification = ItemClassification.progression
             else:
-                classification = DEFAULT_ITEM_CLASSIFICATION["secondary_weapons"]
-        case name if name in wrath:
-            classification = DEFAULT_ITEM_CLASSIFICATION["wrath"]
-        case name if name in wrath_abilities:
-            classification = DEFAULT_ITEM_CLASSIFICATION["wrath_abilities"]
+                classification = ItemClassification.useful
+        case name if name in item_json.get("Wrath"):
+            classification = ItemClassification.useful
+        case name if name in item_json.get("Wrath Abilities"):
+            classification = ItemClassification.useful
         case _: 
             classification = ItemClassification.filler
 
@@ -178,6 +169,15 @@ def create_all_items(world: DSWorld) -> None:
 
     itempool: list[Item] = []
 
+    item_json = json_read(data_path("Items.json"))
+
+    for item_group, item_group_data in item_json.items():
+        for item, item_data in item_group_data.items():
+            if 'number' in item_data:
+                print(item_data.get("number"))
+                for i in range(item_data.get("number")):
+                    itempool.append(world.create_item(item))
+
     if world.options.abyssanity:
         for i in range(10):
             itempool.append(world.create_item("Abyssal Armor Piece"))
@@ -189,20 +189,6 @@ def create_all_items(world: DSWorld) -> None:
             itempool.append(world.create_item("Champion Artifact"))
         itempool.append(world.create_item("Overlord Artifact"))
 
-    match world.options.enhansanity:
-        case 1:
-            for name, item_id in enhancements.items():
-                itempool.append(world.create_item(name))
-
-    for i in range(4):
-        itempool.append(world.create_item("Beholder Key"))
-
-    for name, item_id in gear_and_equipments.items():
-        itempool.append(world.create_item(name))
-
-    for i in range (4):
-        itempool.append(world.create_item("Heart of the Chosen"))
-
     for i in range(world.options.lifestones):
         itempool.append(world.create_item("Lifestone"))
 
@@ -211,24 +197,6 @@ def create_all_items(world: DSWorld) -> None:
         for i in range(10 - starting_health - world.options.lifestones):
             for i in range(4):
                 itempool.append(world.create_item('Lifestone Shard'))
-
-    for name, item_id in passive_abilities.items():
-        itempool.append(world.create_item(name))
-
-    for i in range(4):
-        itempool.append(world.create_item('Progressive Chaoseater'))
-    for i in range(7):
-        itempool.append(world.create_item('Armageddon Blade Shards'))
-
-    for i in range(4):
-        itempool.append(world.create_item('Progressive Scythe'))
-
-    itempool.append(world.create_item('Progressive Gauntlet'))
-    for i in range(4):
-        itempool.append(world.create_item('Progressive Gauntlet'))
-
-    for name, item_id in wrath_abilities.items():
-        itempool.append(world.create_item(name))
 
     for i in range(world.options.wrath_cores):
         itempool.append(world.create_item('Wrath Core'))
@@ -244,3 +212,4 @@ def create_all_items(world: DSWorld) -> None:
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
     itempool += [world.create_filler() for _ in range(needed_number_of_filler_items)]
     world.multiworld.itempool += itempool
+    print(itempool)
