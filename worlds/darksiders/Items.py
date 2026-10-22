@@ -195,16 +195,16 @@ def create_all_items(world: DSWorld) -> None:
     if world.options.lifestones_shards > 0:
         starting_health = 1
         for i in range(10 - starting_health - world.options.lifestones):
-            for i in range(4):
+            for i in range(world.options.lifestones_shards*2):
                 itempool.append(world.create_item('Lifestone Shard'))
 
     for i in range(world.options.wrath_cores):
         itempool.append(world.create_item('Wrath Core'))
 
-    if world.options.wrath_shards > 0:
+    if world.options.wrath_cores > 0:
         starting_wrath = 2
         for i in range(10 - starting_wrath - world.options.wrath_cores):
-            for i in range(4):
+            for i in range(world.options.wrath_cores*2):
                 itempool.append(world.create_item('Wrath Shard'))
     
     number_of_items = len(itempool)

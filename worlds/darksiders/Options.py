@@ -57,8 +57,8 @@ class LifestonesShards(Choice):
 
     display_name = "Lifestones Shards"
     option_none = 0
-    #option_less = 1
-    option_max = 1
+    option_half = 1
+    option_max = 2
 
     default = option_max
 
@@ -81,8 +81,8 @@ class WrathShards(Choice):
 
     display_name = "Wrath Shards"
     option_none = 0
-    #option_less = 1
-    option_max = 1
+    option_half = 1
+    option_max = 2
 
     default = option_max
 
