@@ -33,10 +33,10 @@ HAS_SOUL_BRIDGE = Has("Soul Bridge")
 HAS_VOIDWALKER = Has("Voidwalker")
 
 def set_all_rules(world: DSWorld) -> None:
-    
+
     set_all_entrance_rules(world)
     set_all_location_rules(world)
-    set_completion_condition(world)
+    set_completion_condition(world) 
 
 def set_all_entrance_rules(world: DSWorld) -> None:
 

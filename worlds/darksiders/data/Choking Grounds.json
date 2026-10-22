@@ -3,18 +3,10 @@
         "name": "The Choking Grounds",
         "entrances": {
             "The Choking Grounds to The Broken Stair": {
-                "vanilla target": "The Broken Stair",
-                "rule": {
-                    "logic": "Casual",
-                    "requirements": ["Earthcaller"]
-                }
+                "vanilla target": "The Broken Stair"
             },
             "The Choking Grounds to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": {
-                    "logic": "Casual",
-                    "requirements": ["Serpent Holes"]
-                }
+                "vanilla target": "Serpent Holes"
             },
             "The Choking Grounds to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -37,11 +29,7 @@
                 "vanilla item": "Health"
             },
             "Choking Grounds Life Chest in NE Building": {
-                "vanilla item": "Hellfire",
-                "rule": {
-                    "logic": "Casual",
-                    "requirements": ["Crossblade", "Progressive Gauntlet", "Shadowflight"]
-                }
+                "vanilla item": "Hellfire"
             },
             "Choking Grounds Life Chest North of Cemetery": {
                 "vanilla item": "Health"

@@ -6,8 +6,7 @@
                 "vanilla target": "Drowned Pass"
             },
             "Drowned Pass Access Tunnel to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": "HAS_SERPENT_HOLES"
+                "vanilla target": "Serpent Holes"
             },
             "Drowned Pass Access Tunnel to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -15,8 +14,7 @@
         },
         "locations": {
             "Drowned Pass Access Tunnel Champion Artifact": {
-                "vanilla item": "Currency",
-                "rule": "HAS_ABYSSAL_CHAIN"
+                "vanilla item": "Currency"
             },
             "Drowned Pass Access Tunnel Currency Chest East Nook": {
                 "vanilla item": "Currency"
@@ -27,8 +25,7 @@
         "name": "Drowned Pass",
         "entrances": {
             "Drowned Pass to Anvil's Ford Access Tunnel": {
-                "vanilla target": "Anvil's Ford Access Tunnel",
-                "rule": "HAS_EARTHCALLER"
+                "vanilla target": "Anvil's Ford Access Tunnel"
             }
         },
         "locations": {
@@ -51,8 +48,7 @@
                 "vanilla item": "Hellfire"
             },
             "Drowned Pass Wrath Chest Blocked by Ice": {
-                "vanilla item": "Health",
-                "rule": "HAS_GAUNTLET"
+                "vanilla item": "Health"
             }
         }
     }

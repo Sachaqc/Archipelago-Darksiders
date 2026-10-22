@@ -6,8 +6,7 @@
                 "vanilla target": "Twilight Cathedral Exterior"
             },
             "Twilight Cathedral Exterior to Serpent Hole": {
-                "vanilla target": "Serpent Holes",
-                "rule": "HAS_SERPENT_HOLES"
+                "vanilla target": "Serpent Holes"
             },
             "Twilight Cathedral Exterior to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -49,8 +48,7 @@
         },
         "locations": {
             "Twilight Cathedral Currency Chest Exterior Blocked by Ice": {
-                "vanilla item": "Currency",
-                "rule": "HAS_GAUNTLET"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest NE of Exterior": {
                 "vanilla item": "Currency"
@@ -69,8 +67,7 @@
         },
         "locations": {
             "Twilight Cathedral Soldier Artifact South Wing": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest South Wing Main Gallery": {
                 "vanilla item": "Currency"
@@ -82,8 +79,7 @@
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Beholder Key Chest South Wing": {
-                "vanilla item": "Currency",
-                "rule": "HAS_CROSSBLADE"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Hoardseeker Chest South Wing": {
                 "vanilla item": "Currency"
@@ -105,12 +101,10 @@
         },
         "locations": {
             "Twilight Cathedral Chained Cube": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Champion Artifact North Wing": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest South Wing Conscript Room": {
                 "vanilla item": "Currency"
@@ -138,8 +132,7 @@
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Soldier Artifact Bridge Room": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Beholder Key Chest Three Blades East Path": {
                 "vanilla item": "Currency"
@@ -166,8 +159,7 @@
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest North of Three Statues": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral Wrath Chest before Platform Room": {
                 "vanilla item": "Currency"
@@ -190,8 +182,7 @@
                 "vanilla reward": "Heart of the Chosen"
             },
             "Item Reward": {
-                "vanilla item": "Lifestone",
-                "rule": "HAS_CROSSBLADE"
+                "vanilla item": "Lifestone"
             }
         }
     }

@@ -3,8 +3,7 @@
         "name": "The Dry Road Access Tunnel 1",
         "entrances": {
             "Dry Road Access Tunnel 1 to Dry Road Access Tunnel 2": {
-                "vanilla target": "The Dry Road Access Tunnel 2",
-                "rule": "HAS_GAUNTLET & HAS_CHRONOMANCER"
+                "vanilla target": "The Dry Road Access Tunnel 2"
             }
         },
         "locations": {
@@ -17,8 +16,7 @@
         "name": "The Dry Road Access Tunnel 2",
         "entrances": {
             "Dry Road Access Tunnel 2 to Dry Road": {
-                "vanilla target": "The Dry Road",
-                "rule": "HAS_CHAOS_FORM"
+                "vanilla target": "The Dry Road"
             }
         },
         "locations": {
@@ -37,12 +35,10 @@
         "name": "The Dry Road",
         "entrances": {
             "Dry Road to Ashlands Access Tunnel 1": {
-                "vanilla target": "The Ashlands Access Tunnel 1",
-                "rule": "CAN_HURT_GOREMAW"
+                "vanilla target": "The Ashlands Access Tunnel 1"
             },
             "Dry Road to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": "HAS_SERPENT_HOLES"
+                "vanilla target": "Serpent Holes"
             },
             "Dry Road to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"

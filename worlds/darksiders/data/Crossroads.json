@@ -3,12 +3,10 @@
         "name": "The Crossroads",
         "entrances": {
             "The Crossroads to The Library": {
-                "vanilla target": "The Library",
-                "rule": "HAS_EARTHCALLER"
+                "vanilla target": "The Library"
             },
             "The Crossroads to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": "HAS_SERPENT_HOLES"
+                "vanilla target": "Serpent Holes"
             },
             "The Crossroads to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -31,8 +29,7 @@
                 "vanilla item": "Health"
             },
             "Crossroads Rare Chest Blocked by Ice": {
-                "vanilla item": "Hellfire",
-                "rule": "HAS_GAUNTLET"
+                "vanilla item": "Hellfire"
             },
             "Crossroads Life Chest NE Crater": {
                 "vanilla item": "Health"

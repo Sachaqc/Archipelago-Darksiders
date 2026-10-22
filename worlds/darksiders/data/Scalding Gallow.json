@@ -3,27 +3,22 @@
         "name": "Scalding Gallow",
         "entrances": {
             "Scalding Gallow to Black Throne 1": {
-                "vanilla target": "Black Throne 1",
-                "rule": "Has('Heart of the Chosen', count = 4)"
+                "vanilla target": "Black Throne 1"
             },
             "Scalding Gallow to The Choking Grounds": {
-                "vanilla target": "The Choking Grounds",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla target": "The Choking Grounds"
             },
             "Scalding Gallow to Drowned Pass Access Tunnel": {
                 "vanilla target": "Drowned Pass Access Tunnel"
             },
             "Scalding Gallow to Dry Road Access Tunnel 1": {
-                "vanilla target": "The Dry Road Access Tunnel 1",
-                "rule": "HAS_GAUNTLET"
+                "vanilla target": "The Dry Road Access Tunnel 1"
             },
             "Scalding Gallow to Iron Canopy 1": {
-                "vanilla target": "Iron Canopy 1",
-                "rule": "HAS_SOUL_BRIDGE"
+                "vanilla target": "Iron Canopy 1"
             },
             "Scalding Gallow to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": "HAS_SERPENT_HOLES"
+                "vanilla target": "Serpent Holes"
             },
             "Scalding Gallow to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -32,27 +27,17 @@
         "events": {
             "Phantom General defeated": {},
             "Samael's first Reward": {},
-            "Trade first Heart of the Chosen": {
-                "rule": "Has('Heart of the Chosen', count = 1)"
-            },
-            "Trade second Heart of the Chosen": {
-                "rule": "Has('Heart of the Chosen', count = 2)"
-            },
-            "Trade third Heart of the Chosen": {
-                "rule": "Has('Heart of the Chosen', count = 3)"
-            },
-            "Trade fourth Heart of the Chosen": {
-                "rule": "Has('Heart of the Chosen', count = 4)"
-            }
+            "Trade first Heart of the Chosen": {},
+            "Trade second Heart of the Chosen": {},
+            "Trade third Heart of the Chosen": {},
+            "Trade fourth Heart of the Chosen": {}
         },
         "locations": {
             "Scalding Gallow Abyssal Armor Piece Near Entrance": {
-                "vanilla item": "Abyssal Armor Piece",
-                "rule": "HAS_CROSSBLADE"
+                "vanilla item": "Abyssal Armor Piece"
             },
             "Scalding Gallow Abyssal Armor Piece Under Central Platform": {
-                "vanilla item": "Abyssal Armor Piece",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Abyssal Armor Piece"
             },
             "Scalding Gallow Currency Chest 2nd Floor": {
                 "vanilla item": "Currency"

@@ -8,8 +8,7 @@
         },
         "locations": {
             "The Hollows Access Tunnel Currency Chest Dead End": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Access Tunnel Currency Chest Stream Walkthrough": {
                 "vanilla item": "Currency"
@@ -22,16 +21,13 @@
             "The Hollows 1 to The Hollows 2": {
                 "vanilla target": "The Hollows 2"
             },
-            "entrances": {
-                "The Hollows 1 to The Hollows 5": {
-                    "vanilla target": "The Hollows 5"
-                }
+            "The Hollows 1 to The Hollows 5": {
+                "vanilla target": "The Hollows 5"
             }
         },
         "locations": {
             "The Hollows Currency Chest Top Balcony": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Currency Chest South of Clocktower": {
                 "vanilla item": "Currency"
@@ -56,8 +52,7 @@
                 "vanilla item": "Currency"
             },
             "The Hollows Beholder Key Chest in Current": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Currency Chest after Submerged Passage": {
                 "vanilla item": "Currency"
@@ -88,8 +83,7 @@
                 "vanilla item": "Currency"
             },
             "The Hollows Beholder Key Chest after Chained Cube": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Life Chest after Chained Cube": {
                 "vanilla item": "Currency"
@@ -105,12 +99,10 @@
         },
         "locations": {
             "The Hollows Life Chest after Water-Filled Hallway": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "The Hollows Map Chest at Surface of Flooded Room": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Wrath Chest after Water-Filled Hallway": {
                 "vanilla item": "Currency"
@@ -126,16 +118,13 @@
             "The Hollows 5 to The Hollows 6": {
                 "vanilla target": "The Hollows 6"
             },
-            "entrances": {
-                "The Hollows 5 to The Hollows 9": {
-                    "vanilla target": "The Hollows 9"
-                }
+            "The Hollows 5 to The Hollows 9": {
+                "vanilla target": "The Hollows 9"
             }
         },
         "locations": {
             "The Hollows Life Chest behind Train Cars": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             }
         }
     },
@@ -148,12 +137,10 @@
         },
         "locations": {
             "The Hollows Currency Chest SE of Locust Room": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "The Hollows Life Chest North of Locust Room": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             }
         }
     },
@@ -166,8 +153,7 @@
         },
         "locations": {
             "The Hollows Currency Chest between Ice Blocks": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             }
         }
     },
@@ -175,12 +161,10 @@
         "name": "The Hollows 8",
         "locations": {
             "The Hollows Champion Artifact in Pipe Leading North": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "The Hollows Beholder Key Chest inside Floor Hole": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             }
         }
     },
@@ -193,12 +177,10 @@
         },
         "locations": {
             "The Hollows Life Chest in Griever Tunnel": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "The Hollows Currency Chest under Goremaw": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             },
             "The Hollows Hoardseeker Chest SW of Grappleclaws Room": {
                 "vanilla item": "Currency"
@@ -217,12 +199,10 @@
         },
         "locations": {
             "The Hollows Life Chest before Boss Room": {
-                "vanilla item": "Currency",
-                "rule": "CAN_BREAK_CHAINED_CUBES"
+                "vanilla item": "Currency"
             },
             "The Hollows Wrath Chest over Flooded Room": {
-                "vanilla item": "Currency",
-                "rule": "HAS_SHADOWFLIGHT"
+                "vanilla item": "Currency"
             }
         }
     },
@@ -233,8 +213,7 @@
                 "vanilla reward": "Heart of the Chosen"
             },
             "Item Reward": {
-                "vanilla item": "Lifestone",
-                "rule": "HAS_CROSSBLADE"
+                "vanilla item": "Lifestone"
             }
         }
     }

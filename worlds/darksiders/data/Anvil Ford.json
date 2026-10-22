@@ -6,11 +6,7 @@
                 "vanilla target": "Anvil's Ford"
             },
             "Anvil's Ford Access Tunnel to Serpent Holes": {
-                "vanilla target": "Serpent Holes",
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_SERPENT_HOLES"]
-                }
+                "vanilla target": "Serpent Holes"
             },
             "Anvil's Ford Access Tunnel to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
@@ -21,46 +17,23 @@
         "name": "Anvil's Ford",
         "entrances": {
             "Anvil's Ford to Anvil's Ford Challenge Area": {
-                "vanilla target": "Anvil's Ford Challenge Area",
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_CHAOS_FORM"]
-                }
+                "vanilla target": "Anvil's Ford Challenge Area"
             }
         },
         "events": {
-            "Ulthane defeated": {
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_CHAOS_FORM"]
-                }
-            }
+            "Ulthane defeated": {}
         }
     },
     {
         "name": "Anvil's Ford Challenge Area",
         "entrances": {
             "Anvil's Ford Challenge Area to The Hollows Access Tunnel": {
-                "vanilla target": "The Hollows Access Tunnel",
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_CROSSBLADE"]
-                }
+                "vanilla target": "The Hollows Access Tunnel"
             }
         },
         "events": {
-            "Ulthane outscored": {
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_CHAOS_FORM"]
-                }
-            },
-            "Uriel 1 defeated": {
-                "rule": {
-                    "logic": "Casual",
-                    "constants": ["HAS_CROSSBLADE"]
-                }
-            }
+            "Ulthane outscored": {},
+            "Uriel 1 defeated": {}
         },
         "locations": {
             "Anvil Ford Challenge Currency Chest Lower Platform": {
