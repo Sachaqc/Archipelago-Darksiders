@@ -9,108 +9,6 @@ from .Utils import data_path, json_read
 if TYPE_CHECKING:
     from .World import DSWorld
 
-abyssal_armor = {
-    'Abyssal Armor Piece': 1, #armor/item_armorpiece
-    'Abyssal armor': 2, #armor/item_abyssumarmor
-}
-
-artifacts = {
-    'Soldier Artifact': 10, #items/artifact_pawn
-    'Champion Artifact': 11, #items/artifact_general
-    'Overlord Artifact': 12, #items/artifact_master
-}
-
-consumables = {
-    'Empty Container': 20, #items/item_consumableslot
-    'Life Essence': 21,
-    'Greater Life Essence': 22,
-    'Possession': 23,
-    'Rage Essence': 24,
-    'Greater Rage Essence': 25,
-    'Undying': 26
-}
-
-enhancements = {
-    'Bane' : 30, #weapon_enhancements/common_bane
-    'Bloodthirst': 31, #weapon_enhancements/common_leech
-    'Carnage': 32, #weapon_enhancements/common_ire
-    'Combat Lore': 33, #weapon_enhancements/common_divination
-    'Hellfire': 34, #weapon_enhancements/common_brimstone
-    'Ravager': 35, #weapon_enhancements/common_desecration
-    'Reaper': 36, #weapon_enhancements/common_reaper
-    'Weapon Master': 37, #weapon_enhancements/common_transfixion
-    'Wars Glory' : 40, #weapon_enhancements/legendary_warswrath
-    'Strifes Offering' : 41, #weapon_enhancements/legendary_strifesprowess
-    'Furys Embrace' : 42, #weapon_enhancements/legendary_furysmadness
-    'Deaths Blessing' : 43, #weapon_enhancements/legendary_deathsblessing
-}
-
-keys = {
-    'Beholder Key': 50 #items/item_dungeonkey
-}
-
-gear_and_equipments = {
-    'Abyssal Chain' : 60, #gear_ghosthook/playergearghosthook
-    'Crossblade': 61, #gear_crossblade/playergearcrossblade
-    'Earthcaller': 62, #gear_horn/playergearhorn
-    'Mask of Shadows': 63, #gear_eyeoflilith/playergeareyeoflilith
-    'Mercy': 64, #weapon_strifesgun/strifes_gun
-    'Voidwalker': 65 #gear_voidwalker/playergearvoidwalker
-}
-
-health = {
-    'Lifestone': 70, #items/item_healthstone
-    'Lifestone Shard': 71, #items/item_healthshard
-}
-
-hearts_of_the_chosen = {
-    'Heart of the Chosen' : 80, #items/item_demonheart
-}
-
-passive_abilities = {
-    'Block Counter': 90, #items/item_blockcounter
-    'Chaos Form': 91, #item_havocform/item_havocform
-    'Chronomancer': 92, #item_frenzy/item_frenzy
-    'Ruin': 93, #items/item_ruinshard
-    'Serpent Holes': 94, #items/item_teleportability
-    'Shadowflight': 95, #gear_tempestcloak/playergeartempestcloak
-    'Soul Bridge': 96, #items/item_soulbridgeshard
-}
-
-primary_weapons = {
-    'Progressive Chaoseater': 100,
-    'Chaoseater': 101, #sword/warsword
-    'Armageddon Blade': 102, #items/item_armageddonsword
-    'Armageddon Blade Shards': 103 #items/item_swordpiece
-    #'Sword Key': 104, #ch_com/weapon_swordkey
-}
-
-secondary_weapons = {
-    'Progressive Scythe': 110,
-    'Harvester': 111, #harvester/harvester
-    'Scythe': 112, #hellraiser/hellraiser
-    'Progressive Gauntlet': 113,
-    'Tremor Gauntlet': 114 #gauntlets/weapon_gauntlets
-}
-
-souls_chests = {
-    'Currency': 150,
-    'Health': 151,
-    'Wrath': 152
-}
-
-wrath = {
-    'Wrath Core': 120, #items/item_wrathstone
-    'Wrath Shard': 121, #items/item_wrathshard
-}
-
-wrath_abilities = {
-    'Affliction': 130, #wrath_affliction/wrath_affliction
-    'Blade Geyser': 131, #wrath_bladegeyser/wrath_bladegeyser ???????
-    'Immolation': 132, #wrath_immolation/wrath_immolation
-    'Stoneskin': 133 #wrath_stoneskin/wrath_stoneskin
-}
-
 ITEM_NAME_TO_ID = {}
 
 item_json = json_read(data_path("Items.json"))
@@ -163,7 +61,9 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
 
 def get_random_filler_item_name(world: DSWorld) -> str:
 
-    return world.random.choice(list(consumables.keys() | souls_chests.keys()))
+    item_json = json_read(data_path("Items.json"))
+
+    return world.random.choice(list(item_json.get("Consumables").keys() | item_json.get("Souls").keys()))
 
 def create_all_items(world: DSWorld) -> None:
 
