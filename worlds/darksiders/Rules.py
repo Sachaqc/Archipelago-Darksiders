@@ -171,6 +171,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     twilight_cathedral_soldier_artifact_south_wing = world.get_location("Twilight Cathedral Soldier Artifact South Wing")
     world.set_rule(world.get_location("Twilight Cathedral Soldier Artifact South Wing"), HAS_SHADOWFLIGHT)
 
+
 def set_completion_condition(world: DSWorld) -> None:
 
     world.set_completion_rule(Has("Victory"))
