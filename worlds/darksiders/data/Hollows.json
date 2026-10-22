@@ -1,0 +1,241 @@
+[
+    {
+        "name": "The Hollows Access Tunnel",
+        "entrances": {
+            "The Hollows Access Tunnel to The Hollows 1": {
+                "vanilla target": "The Hollows 1"
+            }
+        },
+        "locations": {
+            "The Hollows Access Tunnel Currency Chest Dead End": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Access Tunnel Currency Chest Stream Walkthrough": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 1",
+        "entrances": {
+            "The Hollows 1 to The Hollows 2": {
+                "vanilla target": "The Hollows 2"
+            },
+            "entrances": {
+                "The Hollows 1 to The Hollows 5": {
+                    "vanilla target": "The Hollows 5"
+                }
+            }
+        },
+        "locations": {
+            "The Hollows Currency Chest Top Balcony": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Currency Chest South of Clocktower": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Currency Chest Top of Stairwell": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Life Chest West Corridor": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 2",
+        "entrances": {
+            "The Hollows 2 to The Hollows 3": {
+                "vanilla target": "The Hollows 3"
+            }
+        },
+        "locations": {
+            "The Hollows Abyssal Armor Piece": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Beholder Key Chest in Current": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Currency Chest after Submerged Passage": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Currency Chest SW of Gas": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Life Chest South Wall Nook": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Rare Chest over Submerged Passage": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Wrath Chest after Submerged Passage": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 3",
+        "entrances": {
+            "The Hollows 3 to The Hollows 4": {
+                "vanilla target": "The Hollows 4"
+            }
+        },
+        "locations": {
+            "The Hollows Chained Cube": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Beholder Key Chest after Chained Cube": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Life Chest after Chained Cube": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 4",
+        "entrances": {
+            "The Hollows 4 to The Hollows 1": {
+                "vanilla target": "The Hollows 1"
+            }
+        },
+        "locations": {
+            "The Hollows Life Chest after Water-Filled Hallway": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            },
+            "The Hollows Map Chest at Surface of Flooded Room": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Wrath Chest after Water-Filled Hallway": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Soldier Artifact South of Platforms": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 5",
+        "entrances": {
+            "The Hollows 5 to The Hollows 6": {
+                "vanilla target": "The Hollows 6"
+            },
+            "entrances": {
+                "The Hollows 5 to The Hollows 9": {
+                    "vanilla target": "The Hollows 9"
+                }
+            }
+        },
+        "locations": {
+            "The Hollows Life Chest behind Train Cars": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 6",
+        "entrances": {
+            "The Hollows 6 to The Hollows 7": {
+                "vanilla target": "The Hollows 7"
+            }
+        },
+        "locations": {
+            "The Hollows Currency Chest SE of Locust Room": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            },
+            "The Hollows Life Chest North of Locust Room": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 7",
+        "entrances": {
+            "The Hollows 7 to The Hollows 8": {
+                "vanilla target": "The Hollows 8"
+            }
+        },
+        "locations": {
+            "The Hollows Currency Chest between Ice Blocks": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 8",
+        "locations": {
+            "The Hollows Champion Artifact in Pipe Leading North": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            },
+            "The Hollows Beholder Key Chest inside Floor Hole": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 9",
+        "entrances": {
+            "The Hollows 9 to The Hollows 10": {
+                "vanilla target": "The Hollows 10"
+            }
+        },
+        "locations": {
+            "The Hollows Life Chest in Griever Tunnel": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            },
+            "The Hollows Currency Chest under Goremaw": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            },
+            "The Hollows Hoardseeker Chest SW of Grappleclaws Room": {
+                "vanilla item": "Currency"
+            },
+            "The Hollows Life Chest West of Grappleclaws Room": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "The Hollows 10",
+        "entrances": {
+            "The Hollows 10 to The Hollows Boss Room": {
+                "vanilla target": "The Hollows Boss Room"
+            }
+        },
+        "locations": {
+            "The Hollows Life Chest before Boss Room": {
+                "vanilla item": "Currency",
+                "rule": "CAN_BREAK_CHAINED_CUBES"
+            },
+            "The Hollows Wrath Chest over Flooded Room": {
+                "vanilla item": "Currency",
+                "rule": "HAS_SHADOWFLIGHT"
+            }
+        }
+    },
+    {
+        "name": "The Hollows Boss Room",
+        "events": {
+            "The Griever defeated": {
+                "vanilla reward": "Heart of the Chosen"
+            },
+            "Item Reward": {
+                "vanilla item": "Lifestone",
+                "rule": "HAS_CROSSBLADE"
+            }
+        }
+    }
+]

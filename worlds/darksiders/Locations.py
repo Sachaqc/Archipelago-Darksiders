@@ -188,6 +188,13 @@ chests = {
 
 LOCATION_NAME_TO_ID = abyssal_armor_pieces | artifacts | chained_cubes | chests
 
+#location_json = json_read(data_path("Anvil Ford.json"))
+
+#for Region, region_data in location_json.items():
+#    if 'locations' in region_data:
+#        for location, location_data in region_data.items():
+#            LOCATION_NAME_TO_ID[location] = location_data.get("ID")
+
 class DSLocation(Location):
 
     game = "Darksiders"
@@ -203,17 +210,6 @@ def create_all_locations(world: DSWorld) -> None:
 
 def create_regular_locations(world: DSWorld) -> None:
 
-    hollows_1 = world.get_region("The Hollows 1")
-    hollows_2 = world.get_region("The Hollows 2")
-    hollows_3 = world.get_region("The Hollows 3")
-    hollows_4 = world.get_region("The Hollows 4")
-    hollows_5 = world.get_region("The Hollows 5")
-    hollows_6 = world.get_region("The Hollows 6")
-    hollows_7 = world.get_region("The Hollows 7")
-    hollows_8 = world.get_region("The Hollows 8")
-    hollows_9 = world.get_region("The Hollows 9")
-    hollows_10 = world.get_region("The Hollows 10")
-    hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
 
     create_locations_from_json(world, "Anvil Ford.json")
@@ -221,84 +217,8 @@ def create_regular_locations(world: DSWorld) -> None:
     create_locations_from_json(world, "Choking Grounds.json")
     create_locations_from_json(world, "Crossroads.json")
     create_locations_from_json(world, "Drowned Pass.json")
-    create_locations_from_json(world, "Dry road.json")
-
-    hollows_1_locations = get_location_names_with_ids([
-        'The Hollows Currency Chest Top Balcony',
-        'The Hollows Currency Chest South of Clocktower',
-        'The Hollows Currency Chest Top of Stairwell',
-        'The Hollows Life Chest West Corridor',
-    ])
-    hollows_1.add_locations(hollows_1_locations, DSLocation)
-
-    hollows_2_locations = get_location_names_with_ids([
-        'Hollows Abyssal Armor Piece',
-        'The Hollows Beholder Key Chest in Current',
-        'The Hollows Currency Chest after Submerged Passage',
-        'The Hollows Currency Chest SW of Gas',
-        'The Hollows Life Chest South Wall Nook',
-        'The Hollows Rare Chest over Submerged Passage',
-        'The Hollows Wrath Chest after Submerged Passage',
-    ])
-    hollows_2.add_locations(hollows_2_locations, DSLocation)
-
-    hollows_3_locations = get_location_names_with_ids([
-        'The Hollows Chained Cube',
-        'The Hollows Beholder Key Chest after Chained Cube',
-        'The Hollows Life Chest after Chained Cube'
-    ])
-    hollows_3.add_locations(hollows_3_locations, DSLocation)
-
-    hollows_4_locations = get_location_names_with_ids([
-        'The Hollows Life Chest after Water-Filled Hallway',
-        'The Hollows Map Chest at Surface of Flooded Room',
-        'The Hollows Wrath Chest after Water-Filled Hallway',
-        'The Hollows Soldier Artifact South of Platforms',
-    ])
-    hollows_4.add_locations(hollows_4_locations, DSLocation)
-
-    hollows_5_locations = get_location_names_with_ids([
-        'The Hollows Life Chest behind Train Cars'
-    ])
-    hollows_5.add_locations(hollows_5_locations, DSLocation)
-
-    hollows_6_locations = get_location_names_with_ids([
-        'The Hollows Currency Chest SE of Locust Room',
-        'The Hollows Life Chest North of Locust Room',
-    ])
-    hollows_6.add_locations(hollows_6_locations, DSLocation)
-
-    hollows_7_locations = get_location_names_with_ids([
-        'The Hollows Currency Chest between Ice Blocks',
-    ])
-    hollows_7.add_locations(hollows_7_locations, DSLocation)
-
-    hollows_8_locations = get_location_names_with_ids([
-        'The Hollows Champion Artifact in Pipe Leading North',
-        'The Hollows Beholder Key Chest inside Floor Hole',
-    ])
-    hollows_8.add_locations(hollows_8_locations, DSLocation)
-
-    hollows_9_locations = get_location_names_with_ids([
-        'The Hollows Life Chest in Griever Tunnel',
-        'The Hollows Currency Chest under Goremaw',
-        'The Hollows Hoardseeker Chest SW of Grappleclaws Room',
-        'The Hollows Life Chest West of Grappleclaws Room',
-    ])
-    hollows_9.add_locations(hollows_9_locations, DSLocation)
-
-    hollows_10_locations = get_location_names_with_ids([
-        'The Hollows Life Chest before Boss Room',
-        'The Hollows Wrath Chest over Flooded Room',
-    ])
-    hollows_10.add_locations(hollows_10_locations, DSLocation)
-
-    hollows_access_tunnel_locations = get_location_names_with_ids([
-        'The Hollows Access Tunnel Currency Chest Dead End',
-        'The Hollows Access Tunnel Currency Chest Stream Walkthrough',
-    ])
-    hollows_access_tunnel.add_locations(hollows_access_tunnel_locations, DSLocation)
-
+    create_locations_from_json(world, "Dry Road.json")
+    create_locations_from_json(world, "Hollows.json")
     create_locations_from_json(world, "Library.json")
     create_locations_from_json(world, "Menu.json")
     create_locations_from_json(world, "Scalding Gallow.json")
