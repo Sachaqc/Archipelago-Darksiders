@@ -48,6 +48,9 @@
                 "vanilla target": "Vulgrim's Shop"
             }
         },
+        "events": {
+            "Uriel 2 defeated": {}
+        },
         "locations": {
             "Dry Road Currency Chest South of Vulgrim": {
                 "vanilla item": "Currency"
