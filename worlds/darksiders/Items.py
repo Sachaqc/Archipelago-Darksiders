@@ -74,7 +74,6 @@ def create_all_items(world: DSWorld) -> None:
     for item_group, item_group_data in item_json.items():
         for item, item_data in item_group_data.items():
             if 'number' in item_data:
-                print(item_data.get("number"))
                 for i in range(item_data.get("number")):
                     itempool.append(world.create_item(item))
 
