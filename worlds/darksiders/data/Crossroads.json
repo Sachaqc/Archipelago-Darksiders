@@ -1,0 +1,45 @@
+[
+    {
+        "name": "The Crossroads",
+        "entrances": {
+            "The Crossroads to The Library": {
+                "vanilla target": "The Library",
+                "rule": "HAS_EARTHCALLER"
+            },
+            "The Crossroads to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "The Crossroads to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "Crossroads Currency Chest Down Stairs": {
+                "vanilla item": "Currency"
+            },
+            "Crossroads Currency Chest South Crater": {
+                "vanilla item": "Currency"
+            },
+            "Crossroads Currency Chest in Subway Station": {
+                "vanilla item": "Currency"
+            },
+            "Crossroads Life Chest Behind Gholen West": {
+                "vanilla item": "Health"
+            },
+            "Crossroads Life Chest Behind Gholen North": {
+                "vanilla item": "Health"
+            },
+            "Crossroads Rare Chest Blocked by Ice": {
+                "vanilla item": "Hellfire",
+                "rule": "HAS_GAUNTLET"
+            },
+            "Crossroads Life Chest NE Crater": {
+                "vanilla item": "Health"
+            },
+            "Crossroads Secret Chest Destroy Fire Hydrants": {
+                "vanilla item": "Currency"
+            }
+        }
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Menu",
+        "entrances": {
+            "Menu to The Crossroads": {
+                "vanilla target": "The Crossroads"
+            }
+        }
+    }
+]

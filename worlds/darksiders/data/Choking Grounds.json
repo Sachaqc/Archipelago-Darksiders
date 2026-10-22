@@ -1,0 +1,60 @@
+[
+    {
+        "name": "The Choking Grounds",
+        "entrances": {
+            "The Choking Grounds to The Broken Stair": {
+                "vanilla target": "The Broken Stair",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Earthcaller"]
+                }
+            },
+            "The Choking Grounds to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Serpent Holes"]
+                }
+            },
+            "The Choking Grounds to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "Choking Grounds Soldier Artifact North of Vulgrim": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Soldier Artifact South in Sarcophagus": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Currency Chest North of Cemetery": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Currency Chest NE South of the ramp": {
+                "vanilla item": "Health"
+            },
+            "Choking Grounds Currency Chest 1st Floor Left of Tormented Gate": {
+                "vanilla item": "Health"
+            },
+            "Choking Grounds Life Chest in NE Building": {
+                "vanilla item": "Hellfire",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Crossblade", "Progressive Gauntlet", "Shadowflight"]
+                }
+            },
+            "Choking Grounds Life Chest North of Cemetery": {
+                "vanilla item": "Health"
+            },
+            "Choking Grounds Wrath Chest 2nd Floor Left of Tormented Gate": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Secret Chest Destroy Gravestones with Crosses": {
+                "vanilla item": "Health"
+            },
+            "Choking Grounds Access Cave Currency Chest in Lava Pool": {
+                "vanilla item": "Health"
+            }
+        }
+    }
+]

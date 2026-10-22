@@ -7,6 +7,7 @@ from rule_builder.rules import Has
 
 from .Items import DSItem
 from .Rules import CAN_BEAT_ABADDON, HAS_ABYSSAL_CHAIN, HAS_CHAOS_FORM, HAS_CROSSBLADE, HAS_GAUNTLET, HAS_MASK, HAS_RUIN, HAS_VOIDWALKER
+from .Utils import data_path, json_read
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -202,23 +203,23 @@ def create_all_locations(world: DSWorld) -> None:
 
 def create_regular_locations(world: DSWorld) -> None:
 
-    anvil_ford = world.get_region("Anvil's Ford")
-    anvil_ford_access_tunnel = world.get_region("Anvil's Ford Access Tunnel")
-    anvil_ford_challenge_area = world.get_region("Anvil's Ford Challenge Area")
-    ashlands_1 = world.get_region("The Ashlands 1")
-    ashlands_2 = world.get_region("The Ashlands 2")
-    ashlands_access_tunnel_1 = world.get_region("The Ashlands Access Tunnel 1")
-    ashlands_access_tunnel_2 = world.get_region("The Ashlands Access Tunnel 2")
+    #anvil_ford = world.get_region("Anvil's Ford")
+    #anvil_ford_access_tunnel = world.get_region("Anvil's Ford Access Tunnel")
+    #anvil_ford_challenge_area = world.get_region("Anvil's Ford Challenge Area")
+    #ashlands_1 = world.get_region("The Ashlands 1")
+    #ashlands_2 = world.get_region("The Ashlands 2")
+    #ashlands_access_tunnel_1 = world.get_region("The Ashlands Access Tunnel 1")
+    #ashlands_access_tunnel_2 = world.get_region("The Ashlands Access Tunnel 2")
     black_throne_1 = world.get_region("Black Throne 1")
     black_throne_boss_room = world.get_region("Black Throne Boss Room")
-    broken_stair = world.get_region("The Broken Stair")
-    choking_grounds = world.get_region("The Choking Grounds")
-    crossroads = world.get_region("The Crossroads")
-    drowned_pass = world.get_region("Drowned Pass")
-    drowned_pass_access_tunnel = world.get_region("Drowned Pass Access Tunnel")
-    dry_road = world.get_region("The Dry Road")
-    dry_road_access_tunnel_1 = world.get_region("The Dry Road Access Tunnel 1")
-    dry_road_access_tunnel_2 = world.get_region("The Dry Road Access Tunnel 2")
+    #broken_stair = world.get_region("The Broken Stair")
+    #choking_grounds = world.get_region("The Choking Grounds")
+    #crossroads = world.get_region("The Crossroads")
+    #drowned_pass = world.get_region("Drowned Pass")
+    #drowned_pass_access_tunnel = world.get_region("Drowned Pass Access Tunnel")
+    #dry_road = world.get_region("The Dry Road")
+    #dry_road_access_tunnel_1 = world.get_region("The Dry Road Access Tunnel 1")
+    #dry_road_access_tunnel_2 = world.get_region("The Dry Road Access Tunnel 2")
     eden = world.get_region("Eden")
     hollows_1 = world.get_region("The Hollows 1")
     hollows_2 = world.get_region("The Hollows 2")
@@ -234,125 +235,137 @@ def create_regular_locations(world: DSWorld) -> None:
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
-    library = world.get_region("The Library")
-    menu = world.get_region("Menu")
-    scalding_gallow = world.get_region("Scalding Gallow")
+    #library = world.get_region("The Library")
+    #menu = world.get_region("Menu")
+    #scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
     silitha_loom = world.get_region("Silitha's Loom")
-    serpent_holes = world.get_region("Serpent Holes")
-    sh_to_anvil_ford = world.get_region("Serpent Hole to Anvil's Ford")
-    sh_to_dry_road = world.get_region("Serpent Hole to Dry Road")
-    sh_to_twilight_cathedral = world.get_region("Serpent Hole to Twilight Cathedral")
+    #serpent_holes = world.get_region("Serpent Holes")
+    #sh_to_anvil_ford = world.get_region("Serpent Hole to Anvil's Ford")
+    #sh_to_dry_road = world.get_region("Serpent Hole to Dry Road")
+    #sh_to_twilight_cathedral = world.get_region("Serpent Hole to Twilight Cathedral")
     tree_of_knowledge = world.get_region("Tree of Knowledge")
-    twilight_cathedral_exterior = world.get_region("Twilight Cathedral Exterior")
-    twilight_cathedral_1 = world.get_region("Twilight Cathedral 1")
-    twilight_cathedral_2 = world.get_region("Twilight Cathedral 2")
-    twilight_cathedral_3 = world.get_region("Twilight Cathedral 3")
-    twilight_cathedral_boss_room = world.get_region("Twilight Cathedral Boss Room")
-    vulgrim_shop = world.get_region("Vulgrim's Shop")
+    #twilight_cathedral_exterior = world.get_region("Twilight Cathedral Exterior")
+    #twilight_cathedral_1 = world.get_region("Twilight Cathedral 1")
+    #twilight_cathedral_2 = world.get_region("Twilight Cathedral 2")
+    #twilight_cathedral_3 = world.get_region("Twilight Cathedral 3")
+    #twilight_cathedral_boss_room = world.get_region("Twilight Cathedral Boss Room")
+    #vulgrim_shop = world.get_region("Vulgrim's Shop")
 
-    anvil_ford_challenge_area_locations = get_location_names_with_ids([
-        'Anvil Ford Challenge Currency Chest Lower Platform',
-        'Anvil Ford Challenge Life Chest Inside Large Crystal',
-        'Anvil Ford Challenge Life Chest Inside Small Crystals',
-        'Anvil Ford Challenge Life Chest after Toss',
-        'Anvil Ford Challenge Life Chest before Toss',
-        'Anvil Ford Challenge Life Chest Elevator Shaft',
-        'Anvil Ford Challenge Life Chest East Uriel Arena',
-        'Anvil Ford Challenge Life Chest West Uriel Arena',
-        'Anvil Ford Challenge Wrath Chest after Demonic Growth',
-    ])
-    anvil_ford_challenge_area.add_locations(anvil_ford_challenge_area_locations, DSLocation)
+    #anvil_ford_challenge_area_locations = get_location_names_with_ids([
+    #    'Anvil Ford Challenge Currency Chest Lower Platform',
+    #    'Anvil Ford Challenge Life Chest Inside Large Crystal',
+    #    'Anvil Ford Challenge Life Chest Inside Small Crystals',
+    #    'Anvil Ford Challenge Life Chest after Toss',
+    #    'Anvil Ford Challenge Life Chest before Toss',
+    #    'Anvil Ford Challenge Life Chest Elevator Shaft',
+    #    'Anvil Ford Challenge Life Chest East Uriel Arena',
+    #    'Anvil Ford Challenge Life Chest West Uriel Arena',
+    #    'Anvil Ford Challenge Wrath Chest after Demonic Growth',
+    #])
+    #anvil_ford_challenge_area.add_locations(anvil_ford_challenge_area_locations, DSLocation)
 
-    ashlands_2_locations = get_location_names_with_ids([
-        'The Ashlands Currency Chest up the Ramp',
-    ])
-    ashlands_2.add_locations(ashlands_2_locations, DSLocation)
+    create_locations_from_json(world, "Anvil Ford.json")
 
-    ashlands_access_tunnel_1_locations = get_location_names_with_ids([
-        'The Ashlands Access Tunnel Currency Chest by Three Goremaws',
-        'The Ashlands Access Tunnel Rare Chest by Goremaw',
-    ])
-    ashlands_access_tunnel_1.add_locations(ashlands_access_tunnel_1_locations, DSLocation)
+    #ashlands_2_locations = get_location_names_with_ids([
+    #    'The Ashlands Currency Chest up the Ramp',
+    #])
+    #ashlands_2.add_locations(ashlands_2_locations, DSLocation)
 
-    ashlands_access_tunnel_2_locations = get_location_names_with_ids([
-        'The Ashlands Access Tunnel Life Blocked by Ice',
-    ])
-    ashlands_access_tunnel_2.add_locations(ashlands_access_tunnel_2_locations, DSLocation)
+    #ashlands_access_tunnel_1_locations = get_location_names_with_ids([
+    #    'The Ashlands Access Tunnel Currency Chest by Three Goremaws',
+    #    'The Ashlands Access Tunnel Rare Chest by Goremaw',
+    #])
+    #ashlands_access_tunnel_1.add_locations(ashlands_access_tunnel_1_locations, DSLocation)
 
-    broken_stair_locations = get_location_names_with_ids([
-        'Broken Stair Soldier Artifact Near Entrance',
-        'Broken Stair Access Tunnel Currency Chest',
-        'Broken Stair Beholder Key Chest',
-        'Broken Stair Currency Chest SE Down Stairs',
-        'Broken Stair Currency Chest SW 2nd Floor',
-        'Broken Stair Currency Chest after Geysers',
-        'Broken Stair Life Chest East Submerged Tunnel',
-        'Broken Stair Life Chest after Geysers',
-    ])
-    broken_stair.add_locations(broken_stair_locations, DSLocation)
+    #ashlands_access_tunnel_2_locations = get_location_names_with_ids([
+    #    'The Ashlands Access Tunnel Life Blocked by Ice',
+    #])
+    #ashlands_access_tunnel_2.add_locations(ashlands_access_tunnel_2_locations, DSLocation)
 
-    choking_grounds_locations = get_location_names_with_ids([
-        'Choking Grounds Soldier Artifact North of Vulgrim',
-        'Choking Grounds Soldier Artifact South in Sarcophagus',
-        'Choking Grounds Currency Chest North of Cemetery',
-        'Choking Grounds Currency Chest NE South of the ramp',
-        'Choking Grounds Currency Chest 1st Floor Left of Tormented Gate',
-        'Choking Grounds Life Chest in NE Building',
-        'Choking Grounds Life Chest North of Cemetery',
-        'Choking Grounds Wrath Chest 2nd Floor Left of Tormented Gate',
-        'Choking Grounds Secret Chest Destroy Gravestones with Crosses',
-        'Choking Grounds Access Cave Currency Chest in Lava Pool',
-    ])
-    choking_grounds.add_locations(choking_grounds_locations, DSLocation)
+    create_locations_from_json(world, "Ashlands.json")
 
-    crossroads_locations = get_location_names_with_ids([
-         'Crossroads Currency Chest Down Stairs',
-         'Crossroads Currency Chest South Crater',
-         'Crossroads Currency Chest in Subway Station',
-         'Crossroads Life Chest Behind Gholen West',
-         'Crossroads Life Chest Behind Gholen North',
-         'Crossroads Rare Chest Blocked by Ice',
-         'Crossroads Life Chest NE Crater',
-         'Crossroads Secret Chest Destroy Fire Hydrants',
-    ])
-    crossroads.add_locations(crossroads_locations, DSLocation)
+    #broken_stair_locations = get_location_names_with_ids([
+    #    'Broken Stair Soldier Artifact Near Entrance',
+    #    'Broken Stair Access Tunnel Currency Chest',
+    #    'Broken Stair Beholder Key Chest',
+    #    'Broken Stair Currency Chest SE Down Stairs',
+    #    'Broken Stair Currency Chest SW 2nd Floor',
+    #    'Broken Stair Currency Chest after Geysers',
+    #    'Broken Stair Life Chest East Submerged Tunnel',
+    #    'Broken Stair Life Chest after Geysers',
+    #])
+    #broken_stair.add_locations(broken_stair_locations, DSLocation)
 
-    drowned_pass_locations = get_location_names_with_ids([
-        'Drowned Pass Abyssal Armor Piece',
-        'Drowned Pass Soldier Artifact Cave Under Waterfall',
-        'Drowned Pass Soldier Artifact Underwater Building',
-        'Drowned Pass Currency Chest after Submerged Cave',
-        'Drowned Pass Currency Chest Building Semi Submerged',
-        'Drowned Pass Life Chest after Crystal Switch Platform',
-        'Drowned Pass Wrath Chest Blocked by Ice',
-    ])
-    drowned_pass.add_locations(drowned_pass_locations, DSLocation)
+    #choking_grounds_locations = get_location_names_with_ids([
+    #    'Choking Grounds Soldier Artifact North of Vulgrim',
+    #    'Choking Grounds Soldier Artifact South in Sarcophagus',
+    #    'Choking Grounds Currency Chest North of Cemetery',
+    #    'Choking Grounds Currency Chest NE South of the ramp',
+    #    'Choking Grounds Currency Chest 1st Floor Left of Tormented Gate',
+    #    'Choking Grounds Life Chest in NE Building',
+    #    'Choking Grounds Life Chest North of Cemetery',
+    #    'Choking Grounds Wrath Chest 2nd Floor Left of Tormented Gate',
+    #    'Choking Grounds Secret Chest Destroy Gravestones with Crosses',
+    #    'Choking Grounds Access Cave Currency Chest in Lava Pool',
+    #])
+    #choking_grounds.add_locations(choking_grounds_locations, DSLocation)
 
-    dry_road_locations = get_location_names_with_ids([
-        'Dry Road Currency Chest South of Vulgrim',
-        'Dry Road Life Chest East of Artifact',
-        'Dry Road Soldier Artifact'
-    ])
-    dry_road.add_locations(dry_road_locations, DSLocation)
+    create_locations_from_json(world, "Choking Grounds.json")
 
-    drowned_pass_access_tunnel_locations = get_location_names_with_ids([
-        'Drowned Pass Access Tunnel Champion Artifact',
-        'Drowned Pass Access Tunnel Currency Chest East Nook',
-    ])
-    drowned_pass_access_tunnel.add_locations(drowned_pass_access_tunnel_locations, DSLocation)
+    #crossroads_locations = get_location_names_with_ids([
+    #     'Crossroads Currency Chest Down Stairs',
+    #     'Crossroads Currency Chest South Crater',
+    #     'Crossroads Currency Chest in Subway Station',
+    #     'Crossroads Life Chest Behind Gholen West',
+    #     'Crossroads Life Chest Behind Gholen North',
+    #     'Crossroads Rare Chest Blocked by Ice',
+    #     'Crossroads Life Chest NE Crater',
+    #     'Crossroads Secret Chest Destroy Fire Hydrants',
+    #])
+    #crossroads.add_locations(crossroads_locations, DSLocation)
 
-    dry_road_access_tunnel_1_locations = get_location_names_with_ids([
-        'Dry Road Access Tunnel Currency Chest South of Entrance',
-    ])
-    dry_road_access_tunnel_1.add_locations(dry_road_access_tunnel_1_locations, DSLocation)
+    create_locations_from_json(world, "Crossroads.json")
 
-    dry_road_access_tunnel_2_locations = get_location_names_with_ids([
-        'Dry Road Access Tunnel Currency Chest North of Chronosphere',
-        'Dry Road Access Tunnel Currency Chest Up the Stairs',
-        'Dry Road Access Tunnel Soldier Artifact'
-    ])
-    dry_road_access_tunnel_2.add_locations(dry_road_access_tunnel_2_locations, DSLocation)
+    #drowned_pass_locations = get_location_names_with_ids([
+    #    'Drowned Pass Abyssal Armor Piece',
+    #    'Drowned Pass Soldier Artifact Cave Under Waterfall',
+    #    'Drowned Pass Soldier Artifact Underwater Building',
+    #    'Drowned Pass Currency Chest after Submerged Cave',
+    #    'Drowned Pass Currency Chest Building Semi Submerged',
+    #    'Drowned Pass Life Chest after Crystal Switch Platform',
+    #    'Drowned Pass Wrath Chest Blocked by Ice',
+    #])
+    #drowned_pass.add_locations(drowned_pass_locations, DSLocation)
+
+    #drowned_pass_access_tunnel_locations = get_location_names_with_ids([
+    #    'Drowned Pass Access Tunnel Champion Artifact',
+    #    'Drowned Pass Access Tunnel Currency Chest East Nook',
+    #])
+    #drowned_pass_access_tunnel.add_locations(drowned_pass_access_tunnel_locations, DSLocation)
+
+    create_locations_from_json(world, "Drowned Pass.json")
+
+    #dry_road_locations = get_location_names_with_ids([
+    #    'Dry Road Currency Chest South of Vulgrim',
+    #    'Dry Road Life Chest East of Artifact',
+    #    'Dry Road Soldier Artifact'
+    #])
+    #dry_road.add_locations(dry_road_locations, DSLocation)
+
+    #dry_road_access_tunnel_1_locations = get_location_names_with_ids([
+    #    'Dry Road Access Tunnel Currency Chest South of Entrance',
+    #])
+    #dry_road_access_tunnel_1.add_locations(dry_road_access_tunnel_1_locations, DSLocation)
+
+    #dry_road_access_tunnel_2_locations = get_location_names_with_ids([
+    #    'Dry Road Access Tunnel Currency Chest North of Chronosphere',
+    #    'Dry Road Access Tunnel Currency Chest Up the Stairs',
+    #    'Dry Road Access Tunnel Soldier Artifact'
+    #])
+    #dry_road_access_tunnel_2.add_locations(dry_road_access_tunnel_2_locations, DSLocation)
+
+    create_locations_from_json(world, "Dry road.json")
 
     hollows_1_locations = get_location_names_with_ids([
         'The Hollows Currency Chest Top Balcony',
@@ -430,22 +443,28 @@ def create_regular_locations(world: DSWorld) -> None:
     ])
     hollows_access_tunnel.add_locations(hollows_access_tunnel_locations, DSLocation)
 
-    library_locations = get_location_names_with_ids([
-         'Library Currency Chest South of Fleshburners',
-         'Library Life Chest Entrance',
-         'Library Life Chest Submarine Cave',
-         'Library Life Chest North',
-    ])
-    library.add_locations(library_locations, DSLocation)
+    #library_locations = get_location_names_with_ids([
+    #     'Library Currency Chest South of Fleshburners',
+    #     'Library Life Chest Entrance',
+    #     'Library Life Chest Submarine Cave',
+    #     'Library Life Chest North',
+    #])
+    #library.add_locations(library_locations, DSLocation)
 
-    scalding_gallow_locations = get_location_names_with_ids([
-        'Scalding Gallow Abyssal Armor Piece Near Entrance',
-        'Scalding Gallow Abyssal Armor Piece Under Central Platform',
-        'Scalding Gallow Currency Chest 2nd Floor',
-        'Scalding Gallow Currency Chest West Near Vulgrim',
-        'Scalding Gallow Wrath Chest Above Vulgrim',
-    ])
-    scalding_gallow.add_locations(scalding_gallow_locations, DSLocation)
+    create_locations_from_json(world, "Library.json")
+
+    create_locations_from_json(world, "Menu.json")
+
+    #scalding_gallow_locations = get_location_names_with_ids([
+    #    'Scalding Gallow Abyssal Armor Piece Near Entrance',
+    #    'Scalding Gallow Abyssal Armor Piece Under Central Platform',
+    #    'Scalding Gallow Currency Chest 2nd Floor',
+    #    'Scalding Gallow Currency Chest West Near Vulgrim',
+    #    'Scalding Gallow Wrath Chest Above Vulgrim',
+    #])
+    #scalding_gallow.add_locations(scalding_gallow_locations, DSLocation)
+
+    create_locations_from_json(world, "Scalding Gallow.json")
 
     #seraphim_hotel_locations = get_location_names_with_ids([
     #    'Seraphim Hotel Life Chest 1',
@@ -453,84 +472,88 @@ def create_regular_locations(world: DSWorld) -> None:
     #])
     #seraphim_hotel.add_locations(seraphim_hotel_locations, DSLocation)
 
-    sh_to_anvil_ford_locations = get_location_names_with_ids([
-    'Serpent Hole to Anvil\'s Ford Chest',
-    ])
-    sh_to_anvil_ford.add_locations(sh_to_anvil_ford_locations, DSLocation)
+    #sh_to_anvil_ford_locations = get_location_names_with_ids([
+    #'Serpent Hole to Anvil\'s Ford Chest',
+    #])
+    #sh_to_anvil_ford.add_locations(sh_to_anvil_ford_locations, DSLocation)
 
-    sh_to_dry_road_locations = get_location_names_with_ids([
-    'Serpent Hole to Dry Road Chest',
-    ])
-    sh_to_dry_road.add_locations(sh_to_dry_road_locations, DSLocation)
+    #sh_to_dry_road_locations = get_location_names_with_ids([
+    #'Serpent Hole to Dry Road Chest',
+    #])
+    #sh_to_dry_road.add_locations(sh_to_dry_road_locations, DSLocation)
 
-    sh_to_twilight_cathedral_locations = get_location_names_with_ids([
-    'Serpent Hole to Twilight Cathedral Chest',
-    ])
-    sh_to_twilight_cathedral.add_locations(sh_to_twilight_cathedral_locations, DSLocation)
+    #sh_to_twilight_cathedral_locations = get_location_names_with_ids([
+    #'Serpent Hole to Twilight Cathedral Chest',
+    #])
+    #sh_to_twilight_cathedral.add_locations(sh_to_twilight_cathedral_locations, DSLocation)
 
-    twilight_cathedral_exterior_locations = get_location_names_with_ids([
-        'Twilight Cathedral Currency Chest Exterior Blocked by Ice',
-        'Twilight Cathedral Currency Chest NE of Exterior',
-        'Twilight Cathedral Currency Chest South of Exterior'
-    ])
-    twilight_cathedral_exterior.add_locations(twilight_cathedral_exterior_locations, DSLocation)
+    create_locations_from_json(world, "Serpent Holes.json")
 
-    twilight_cathedral_1_locations = get_location_names_with_ids([
-        'Twilight Cathedral Soldier Artifact South Wing',
-        'Twilight Cathedral Currency Chest South Wing Main Gallery',
-        'Twilight Cathedral Life Chest South Wing First Room',
-        'Twilight Cathedral Rare Chest South Wing',
-        'Twilight Cathedral Beholder Key Chest South Wing',
-        'Twilight Cathedral Hoardseeker Chest South Wing',
-        'Twilight Cathedral Map Chest South Wing'
-    ])
-    twilight_cathedral_1.add_locations(twilight_cathedral_1_locations, DSLocation)
+    #twilight_cathedral_exterior_locations = get_location_names_with_ids([
+    #    'Twilight Cathedral Currency Chest Exterior Blocked by Ice',
+    #    'Twilight Cathedral Currency Chest NE of Exterior',
+    #    'Twilight Cathedral Currency Chest South of Exterior'
+    #])
+    #twilight_cathedral_exterior.add_locations(twilight_cathedral_exterior_locations, DSLocation)
 
-    twilight_cathedral_2_locations = get_location_names_with_ids([
-        'Twilight Cathedral Chained Cube',
-        'Twilight Cathedral Champion Artifact North Wing',
-        'Twilight Cathedral Currency Chest South Wing Conscript Room',
-        'Twilight Cathedral Life Chest North Wing Basement',
-        'Twilight Cathedral Life Chest North Wing Under Crystal',
-        'Twilight Cathedral Life Chest South Wing Conscript Room',
-    ])
-    twilight_cathedral_2.add_locations(twilight_cathedral_2_locations, DSLocation)
+    #twilight_cathedral_1_locations = get_location_names_with_ids([
+    #    'Twilight Cathedral Soldier Artifact South Wing',
+    #    'Twilight Cathedral Currency Chest South Wing Main Gallery',
+    #    'Twilight Cathedral Life Chest South Wing First Room',
+    #    'Twilight Cathedral Rare Chest South Wing',
+    #    'Twilight Cathedral Beholder Key Chest South Wing',
+    #    'Twilight Cathedral Hoardseeker Chest South Wing',
+    #    'Twilight Cathedral Map Chest South Wing'
+    #])
+    #twilight_cathedral_1.add_locations(twilight_cathedral_1_locations, DSLocation)
 
-    twilight_cathedral_3_locations = get_location_names_with_ids([
-        'Twilight Cathedral Abyssal Armor Piece',
-        'Twilight Cathedral Soldier Artifact Bridge Room',
-        'Twilight Cathedral Beholder Key Chest Three Blades East Path',
-        'Twilight Cathedral Currency Chest Below Abyssal Armor Chest',
-        'Twilight Cathedral Currency Chest East of Elevated Platforms',
-        'Twilight Cathedral Currency Chest North after Lava Fall',
-        'Twilight Cathedral Currency Chest Rot Mauler Room',
-        'Twilight Cathedral Currency Chest South after Lava Fall',
-        'Twilight Cathedral Life Chest after The Jailer',
-        'Twilight Cathedral Life Chest before Platform Room',
-        'Twilight Cathedral Life Chest North of Three Statues',
-        'Twilight Cathedral Wrath Chest before Platform Room',
-        'Twilight Cathedral Wrath Chest Below Abyssal Armor Chest',
-        'Twilight Cathedral Wrath Chest Three Blades East Path',
-        'Twilight Cathedral Secret Chest Light 8 Torches'
-    ])
-    twilight_cathedral_3.add_locations(twilight_cathedral_3_locations, DSLocation)
+    #twilight_cathedral_2_locations = get_location_names_with_ids([
+    #    'Twilight Cathedral Chained Cube',
+    #    'Twilight Cathedral Champion Artifact North Wing',
+    #    'Twilight Cathedral Currency Chest South Wing Conscript Room',
+    #    'Twilight Cathedral Life Chest North Wing Basement',
+    #    'Twilight Cathedral Life Chest North Wing Under Crystal',
+    #    'Twilight Cathedral Life Chest South Wing Conscript Room',
+    #])
+    #twilight_cathedral_2.add_locations(twilight_cathedral_2_locations, DSLocation)
+
+    #twilight_cathedral_3_locations = get_location_names_with_ids([
+    #    'Twilight Cathedral Abyssal Armor Piece',
+    #    'Twilight Cathedral Soldier Artifact Bridge Room',
+    #    'Twilight Cathedral Beholder Key Chest Three Blades East Path',
+    #    'Twilight Cathedral Currency Chest Below Abyssal Armor Chest',
+    #    'Twilight Cathedral Currency Chest East of Elevated Platforms',
+    #    'Twilight Cathedral Currency Chest North after Lava Fall',
+    #    'Twilight Cathedral Currency Chest Rot Mauler Room',
+    #    'Twilight Cathedral Currency Chest South after Lava Fall',
+    #    'Twilight Cathedral Life Chest after The Jailer',
+    #    'Twilight Cathedral Life Chest before Platform Room',
+    #    'Twilight Cathedral Life Chest North of Three Statues',
+    #    'Twilight Cathedral Wrath Chest before Platform Room',
+    #    'Twilight Cathedral Wrath Chest Below Abyssal Armor Chest',
+    #    'Twilight Cathedral Wrath Chest Three Blades East Path',
+    #    'Twilight Cathedral Secret Chest Light 8 Torches'
+    #])
+    #twilight_cathedral_3.add_locations(twilight_cathedral_3_locations, DSLocation)
+
+    create_locations_from_json(world, "Twilight Cathedral.json")
 
 def create_events(world: DSWorld) -> None:
 
-    anvil_ford = world.get_region("Anvil's Ford")
-    anvil_ford_access_tunnel = world.get_region("Anvil's Ford Access Tunnel")
-    anvil_ford_challenge_area = world.get_region("Anvil's Ford Challenge Area")
-    ashlands_1 = world.get_region("The Ashlands 1")
-    ashlands_2 = world.get_region("The Ashlands 2")
-    ashlands_access_tunnel_1 = world.get_region("The Ashlands Access Tunnel 1")
-    ashlands_access_tunnel_2 = world.get_region("The Ashlands Access Tunnel 2")
+    #anvil_ford = world.get_region("Anvil's Ford")
+    #anvil_ford_access_tunnel = world.get_region("Anvil's Ford Access Tunnel")
+    #anvil_ford_challenge_area = world.get_region("Anvil's Ford Challenge Area")
+    #ashlands_1 = world.get_region("The Ashlands 1")
+    #ashlands_2 = world.get_region("The Ashlands 2")
+    #ashlands_access_tunnel_1 = world.get_region("The Ashlands Access Tunnel 1")
+    #ashlands_access_tunnel_2 = world.get_region("The Ashlands Access Tunnel 2")
     black_throne_1 = world.get_region("Black Throne 1")
     black_throne_boss_room = world.get_region("Black Throne Boss Room")
     broken_stair = world.get_region("The Broken Stair")
     choking_grounds = world.get_region("The Choking Grounds")
-    crossroads = world.get_region("The Crossroads")
-    drowned_pass = world.get_region("Drowned Pass")
-    drowned_pass_access_tunnel = world.get_region("Drowned Pass Access Tunnel")
+    #crossroads = world.get_region("The Crossroads")
+    #drowned_pass = world.get_region("Drowned Pass")
+    #drowned_pass_access_tunnel = world.get_region("Drowned Pass Access Tunnel")
     dry_road = world.get_region("The Dry Road")
     dry_road_access_tunnel_1 = world.get_region("The Dry Road Access Tunnel 1")
     dry_road_access_tunnel_2 = world.get_region("The Dry Road Access Tunnel 2")
@@ -549,43 +572,66 @@ def create_events(world: DSWorld) -> None:
     hollows_access_tunnel = world.get_region("The Hollows Access Tunnel")
     iron_canopy_1 = world.get_region("Iron Canopy 1")
     leviathan_drift = world.get_region("Leviathan's Drift")
-    library = world.get_region("The Library")
-    menu = world.get_region("Menu")
-    scalding_gallow = world.get_region("Scalding Gallow")
+    #library = world.get_region("The Library")
+    #menu = world.get_region("Menu")
+    #scalding_gallow = world.get_region("Scalding Gallow")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
     silitha_loom = world.get_region("Silitha's Loom")
-    serpent_holes = world.get_region("Serpent Holes")
-    sh_to_anvil_ford = world.get_region("Serpent Hole to Anvil's Ford")
-    sh_to_dry_road = world.get_region("Serpent Hole to Dry Road")
-    sh_to_twilight_cathedral = world.get_region("Serpent Hole to Twilight Cathedral")
+    #serpent_holes = world.get_region("Serpent Holes")
+    #sh_to_anvil_ford = world.get_region("Serpent Hole to Anvil's Ford")
+    #sh_to_dry_road = world.get_region("Serpent Hole to Dry Road")
+    #sh_to_twilight_cathedral = world.get_region("Serpent Hole to Twilight Cathedral")
     tree_of_knowledge = world.get_region("Tree of Knowledge")
-    twilight_cathedral_exterior = world.get_region("Twilight Cathedral Exterior")
-    twilight_cathedral_1 = world.get_region("Twilight Cathedral 1")
-    twilight_cathedral_2 = world.get_region("Twilight Cathedral 2")
-    twilight_cathedral_3 = world.get_region("Twilight Cathedral 3")
-    twilight_cathedral_boss_room = world.get_region("Twilight Cathedral Boss Room")
-    vulgrim_shop = world.get_region("Vulgrim's Shop")
+    #twilight_cathedral_exterior = world.get_region("Twilight Cathedral Exterior")
+    #twilight_cathedral_1 = world.get_region("Twilight Cathedral 1")
+    #twilight_cathedral_2 = world.get_region("Twilight Cathedral 2")
+    #twilight_cathedral_3 = world.get_region("Twilight Cathedral 3")
+    #twilight_cathedral_boss_room = world.get_region("Twilight Cathedral Boss Room")
+    #vulgrim_shop = world.get_region("Vulgrim's Shop")
 
-    anvil_ford.add_event(location_name = "Ulthane defeated", rule = HAS_CHAOS_FORM, location_type = DSLocation)
-    anvil_ford_challenge_area.add_event(location_name = "Ulthane outscored", rule = HAS_CHAOS_FORM, location_type = DSLocation)
-    anvil_ford_challenge_area.add_event(location_name = "Uriel 1 defeated", rule = HAS_CROSSBLADE, location_type = DSLocation)
-    black_throne_boss_room.add_event(location_name = "Stygian defeated", item_name = "Heart of the Chosen", rule = HAS_RUIN, location_type = DSLocation)
-    black_throne_boss_room.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
+    #anvil_ford.add_event(location_name = "Ulthane defeated", rule = HAS_CHAOS_FORM, location_type = DSLocation)
+    #anvil_ford_challenge_area.add_event(location_name = "Ulthane outscored", rule = HAS_CHAOS_FORM, location_type = DSLocation)
+    #anvil_ford_challenge_area.add_event(location_name = "Uriel 1 defeated", rule = HAS_CROSSBLADE, location_type = DSLocation)
+    black_throne_boss_room.add_event(location_name = "Straga defeated", item_name = "Straga Defeated", rule = HAS_VOIDWALKER, location_type = DSLocation)
+    black_throne_boss_room.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
     dry_road.add_event(location_name = "Uriel 2 defeated", rule = Has("Armageddon Blade Shards", count = 1), location_type = DSLocation)
     eden.add_event(location_name = "Shadow War defeated", rule = HAS_MASK, location_type = DSLocation)
     hollows_boss_room.add_event(location_name = "The Griever defeated", item_name = "Heart of the Chosen", rule = HAS_GAUNTLET, location_type = DSLocation)
     hollows_boss_room.add_event(location_name = "The Griever Item Reward", rule = HAS_GAUNTLET, location_type = DSLocation)
     leviathan_drift.add_event(location_name = "Abaddon The Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
-    leviathan_drift.add_event(location_name = "Straga defeated", item_name = "Straga Defeated", rule = HAS_VOIDWALKER, location_type = DSLocation)
-    leviathan_drift.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Phantom General defeated", location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Samael's first Reward", location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Trade first Heart of the Chosen", rule = Has("Heart of the Chosen", count = 1), location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Trade second Heart of the Chosen", rule = Has("Heart of the Chosen", count = 2), location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Trade third Heart of the Chosen", rule = Has("Heart of the Chosen", count = 3), location_type = DSLocation)
-    scalding_gallow.add_event(location_name = "Trade fourth Heart of the Chosen", rule = Has("Heart of the Chosen", count = 4), location_type = DSLocation)
+    leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of the Chosen", rule = HAS_RUIN, location_type = DSLocation)
+    leviathan_drift.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Phantom General defeated", location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Samael's first Reward", location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade first Heart of the Chosen", rule = Has("Heart of the Chosen", count = 1), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade second Heart of the Chosen", rule = Has("Heart of the Chosen", count = 2), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade third Heart of the Chosen", rule = Has("Heart of the Chosen", count = 3), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade fourth Heart of the Chosen", rule = Has("Heart of the Chosen", count = 4), location_type = DSLocation)
     silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of the Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
     silitha_loom.add_event(location_name = "Silitha Item Reward", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
-    twilight_cathedral_2.add_event(location_name = "The Jailer defeated", location_type = DSLocation)
-    twilight_cathedral_boss_room.add_event(location_name = "Tiamat defeated", item_name = "Heart of the Chosen", rule = HAS_CROSSBLADE, location_type = DSLocation)
-    twilight_cathedral_boss_room.add_event(location_name = "Tiamat Item Reward", rule = HAS_CROSSBLADE, location_type = DSLocation)
+    #twilight_cathedral_2.add_event(location_name = "The Jailer defeated", location_type = DSLocation)
+    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat defeated", item_name = "Heart of the Chosen", rule = HAS_CROSSBLADE, location_type = DSLocation)
+    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat Item Reward", rule = HAS_CROSSBLADE, location_type = DSLocation)
+
+def create_events_from_json(world: DSWorld, filename) -> None:
+
+    region_json = json_read(data_path(filename))
+
+    for region in region_json:
+        if 'events' in region:
+            this_region = world.get_region(region.get("name"))
+            for event_name, event_data in region.get("events").items():
+                if 'forced reward' in event_data:
+                    this_region.add_event(location_name = event_name, item_name = event_data.get("forced reward"), rule = event_data.get("rule"), location_type = DSLocation, item_type = DSItem)
+                else:
+                    this_region.add_event(location_name = event_name, rule = event_data.get("rule"), location_type = DSLocation)
+
+def create_locations_from_json(world: DSWorld, filename) -> None:
+
+    region_json = json_read(data_path(filename))
+
+    for region in region_json:
+        if 'locations' in region:
+            this_region = world.get_region(region_name = region.get("name"))
+            region_locations = get_location_names_with_ids(location_names = region.get("locations"))
+            this_region.add_locations(locations = region_locations, location_type = DSLocation)

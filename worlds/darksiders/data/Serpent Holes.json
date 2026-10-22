@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Vulgrim's Shop",
+        "locations": {
+            
+        }
+    },
+    {
+        "name": "Serpent Holes",
+        "entrances": {
+            "Serpent Holes to The Ashlands Access Tunnel 1": {
+                "vanilla target": "The Ashlands Access Tunnel 1",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Broken Stair": {
+                "vanilla target": "The Broken Stair",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Choking Grounds": {
+                "vanilla target": "The Choking Grounds",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Crossroads": {
+                "vanilla target": "The Crossroads",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to Drowned Pass": {
+                "vanilla target": "Drowned Pass",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to Scalding Gallow": {
+                "vanilla target": "Serpent Holes",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Serpent Holes to Anvil's Ford": {
+                "vanilla target": "Serpent Holes to Anvil's Ford",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Serpent Holes to Dry Road": {
+                "vanilla target": "Serpent Holes to Dry Road",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Serpent Holes to The Serpent Holes to Twilight Cathedral": {
+                "vanilla target": "Serpent Holes to Twilight Cathedral",
+                "rule": "HAS_SERPENT_HOLES"
+            }
+        }
+    },
+    {
+        "name": "Serpent Holes to Anvil's Ford",
+        "entrances": {
+            "Serpent Holes to Anvil's Ford to Anvil's Ford Access Tunnel": {
+                "vanilla target": "Anvil's Ford Access Tunnel"
+            }
+        },
+        "locations": {
+            "Serpent Hole to Anvil's Ford Chest": {
+                "vanilla item": "Wrath Shard",
+                "rule": "HAS_ABYSSAL_CHAIN"
+            }
+        }
+    },
+    {
+        "name": "Serpent Holes to Dry Road",
+        "entrances": {
+            "Serpent Holes to Dry Road to Dry Road": {
+                "vanilla target": "The Dry Road"
+            }
+        },
+        "locations": {
+            "Serpent Hole to Dry Road Chest": {
+                "vanilla item": "Wrath Shard"
+            }
+        }
+    },
+    {
+        "name": "Serpent Holes to Twilight Cathedral",
+        "entrances": {
+            "Serpent Holes to Twilight Cathedral to Twilight Cathedral Exterior": {
+                "vanilla target": "Twilight Cathedral Exterior"
+            }
+        },
+        "locations": {
+            "Serpent Hole to Twilight Cathedral Chest": {
+                "vanilla item": "Lifestone Shard",
+                "rule": "HAS_SHADOWFLIGHT & HAS_MASK"
+            }
+        }
+    }
+]

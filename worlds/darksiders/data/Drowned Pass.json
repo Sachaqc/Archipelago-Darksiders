@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Drowned Pass Access Tunnel",
+        "entrances": {
+            "Drowned Pass Access Tunnel to Drowned Pass": {
+                "vanilla target": "Drowned Pass"
+            },
+            "Drowned Pass Access Tunnel to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "Drowned Pass Access Tunnel to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "Drowned Pass Access Tunnel Champion Artifact": {
+                "vanilla item": "Currency",
+                "rule": "HAS_ABYSSAL_CHAIN"
+            },
+            "Drowned Pass Access Tunnel Currency Chest East Nook": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Drowned Pass",
+        "entrances": {
+            "Drowned Pass to Anvil's Ford Access Tunnel": {
+                "vanilla target": "Anvil's Ford Access Tunnel",
+                "rule": "HAS_EARTHCALLER"
+            }
+        },
+        "locations": {
+            "Drowned Pass Abyssal Armor Piece": {
+                "vanilla item": "Currency"
+            },
+            "Drowned Pass Soldier Artifact Cave Under Waterfall": {
+                "vanilla item": "Currency"
+            },
+            "Drowned Pass Soldier Artifact Underwater Building": {
+                "vanilla item": "Currency"
+            },
+            "Drowned Pass Currency Chest after Submerged Cave": {
+                "vanilla item": "Health"
+            },
+            "Drowned Pass Currency Chest Building Semi Submerged": {
+                "vanilla item": "Health"
+            },
+            "Drowned Pass Life Chest after Crystal Switch Platform": {
+                "vanilla item": "Hellfire"
+            },
+            "Drowned Pass Wrath Chest Blocked by Ice": {
+                "vanilla item": "Health",
+                "rule": "HAS_GAUNTLET"
+            }
+        }
+    }
+]

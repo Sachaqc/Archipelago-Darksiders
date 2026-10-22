@@ -5,6 +5,8 @@ from typing import TYPE_CHECKING
 from rule_builder.options import OptionFilter
 from rule_builder.rules import Has, HasAll, HasAny, Rule
 
+from .Utils import data_path, json_read
+
 if TYPE_CHECKING:
     from .World import DSWorld
 
@@ -17,6 +19,7 @@ CAN_GRAB_BOMBS = True
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
 CAN_LEDGE_GRAB = True
 CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
+CAN_SWIM = True
 CAN_TYROLEAN_TRAVERSE = True
 HAS_ABYSSAL_CHAIN = Has("Abyssal Chain")
 HAS_CHAOS_FORM = Has("Chaos Form")
@@ -26,6 +29,7 @@ HAS_EARTHCALLER = Has("Earthcaller")
 HAS_GAUNTLET = Has("Progressive Gauntlet")
 HAS_MASK = Has("Mask of Shadows")
 HAS_RUIN = Has("Ruin")
+HAS_SERPENT_HOLES = Has("Serpent Holes")
 HAS_SHADOWFLIGHT = Has("Shadowflight")
 HAS_SOUL_BRIDGE = Has("Soul Bridge")
 HAS_VOIDWALKER = Has("Voidwalker")
@@ -59,6 +63,9 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     dry_road_access_tunnel_1_to_dry_road_access_tunnel_2 = world.get_entrance("Dry Road Access Tunnel 1 to Dry Road Access Tunnel 2")
     world.set_rule(dry_road_access_tunnel_1_to_dry_road_access_tunnel_2, HAS_GAUNTLET & HAS_CHRONOMANCER)
 
+    hollows_1_to_hollows_2 = world.get_entrance("The Hollows 1 to The Hollows 2")
+    world.set_rule(hollows_1_to_hollows_2, HAS_CROSSBLADE)
+
     hollows_1_to_hollows_5 = world.get_entrance("The Hollows 1 to The Hollows 5")
     world.set_rule(hollows_1_to_hollows_5, HAS_GAUNTLET)
 
@@ -83,14 +90,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     hollows_9_to_hollows_10 = world.get_entrance("The Hollows 9 to The Hollows 10")
     world.set_rule(hollows_9_to_hollows_10, HAS_GAUNTLET)
 
-    crossroads_to_scalding_gallow = world.get_entrance("The Crossroads to Scalding Gallow")
-    world.set_rule(crossroads_to_scalding_gallow, HAS_EARTHCALLER)
-
     drowned_pass_to_anvil_ford_access_tunnel = world.get_entrance("Drowned Pass to Anvil's Ford Access Tunnel")
     world.set_rule(drowned_pass_to_anvil_ford_access_tunnel, HAS_EARTHCALLER)
-
-    hollows_1_to_hollows_2 = world.get_entrance("The Hollows 1 to The Hollows 2")
-    world.set_rule(hollows_1_to_hollows_2, HAS_CROSSBLADE)
 
     leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
     world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
@@ -101,11 +102,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to The Choking Grounds")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
 
-    scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy 1")
-    world.set_rule(scalding_gallow_to_iron_canopy, HAS_SOUL_BRIDGE)
-
     scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road Access Tunnel 1")
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)
+
+    scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy 1")
+    world.set_rule(scalding_gallow_to_iron_canopy, HAS_SOUL_BRIDGE)
 
     twilight_cathedral_1_to_twilight_cathedral_2 = world.get_entrance("Twilight Cathedral 1 to Twilight Cathedral 2")
     world.set_rule(twilight_cathedral_1_to_twilight_cathedral_2, Has("Beholder Key", count = 1))
@@ -152,9 +153,6 @@ def set_all_location_rules(world: DSWorld) -> None:
     twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral Champion Artifact North Wing")
     world.set_rule(twilight_cathedral_champion_artifact_north_wing, HAS_SHADOWFLIGHT)
 
-    twilight_cathedral_soldier_artifact_south_wing = world.get_location("Twilight Cathedral Soldier Artifact South Wing")
-    world.set_rule(twilight_cathedral_soldier_artifact_south_wing, HAS_SHADOWFLIGHT)
-
     twilight_cathedral_chained_cube = world.get_location("Twilight Cathedral Chained Cube")
     world.set_rule(twilight_cathedral_chained_cube, CAN_BREAK_CHAINED_CUBES)
 
@@ -171,8 +169,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(twilight_cathedral_soldier_artifact_bridge_room, HAS_SHADOWFLIGHT)
 
     twilight_cathedral_soldier_artifact_south_wing = world.get_location("Twilight Cathedral Soldier Artifact South Wing")
-    world.set_rule(twilight_cathedral_soldier_artifact_south_wing, HAS_SHADOWFLIGHT)
-
+    world.set_rule(world.get_location("Twilight Cathedral Soldier Artifact South Wing"), HAS_SHADOWFLIGHT)
 
 def set_completion_condition(world: DSWorld) -> None:
 

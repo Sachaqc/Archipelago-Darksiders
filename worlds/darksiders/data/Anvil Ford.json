@@ -1,0 +1,95 @@
+[
+    {
+        "name": "Anvil's Ford Access Tunnel",
+        "entrances": {
+            "Anvil's Ford Access Tunnel to Anvil's Ford": {
+                "vanilla target": "Anvil's Ford"
+            },
+            "Anvil's Ford Access Tunnel to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_SERPENT_HOLES"]
+                }
+            },
+            "Anvil's Ford Access Tunnel to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        }
+    },
+    {
+        "name": "Anvil's Ford",
+        "entrances": {
+            "Anvil's Ford to Anvil's Ford Challenge Area": {
+                "vanilla target": "Anvil's Ford Challenge Area",
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_CHAOS_FORM"]
+                }
+            }
+        },
+        "events": {
+            "Ulthane defeated": {
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_CHAOS_FORM"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Anvil's Ford Challenge Area",
+        "entrances": {
+            "Anvil's Ford Challenge Area to The Hollows Access Tunnel": {
+                "vanilla target": "The Hollows Access Tunnel",
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_CROSSBLADE"]
+                }
+            }
+        },
+        "events": {
+            "Ulthane outscored": {
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_CHAOS_FORM"]
+                }
+            },
+            "Uriel 1 defeated": {
+                "rule": {
+                    "logic": "Casual",
+                    "constants": ["HAS_CROSSBLADE"]
+                }
+            }
+        },
+        "locations": {
+            "Anvil Ford Challenge Currency Chest Lower Platform": {
+                "vanilla item": "Currency"
+            },
+            "Anvil Ford Challenge Life Chest Inside Large Crystal": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest Inside Small Crystals": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest after Toss": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest before Toss": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest Elevator Shaft": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest East Uriel Arena": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Life Chest West Uriel Arena": {
+                "vanilla item": "Health"
+            },
+            "Anvil Ford Challenge Wrath Chest after Demonic Growth": {
+                "vanilla item": "Wrath Shard"
+            }
+        }
+    }
+]

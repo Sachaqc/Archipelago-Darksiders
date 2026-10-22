@@ -1,0 +1,78 @@
+[
+    {
+        "name": "The Ashlands Access Tunnel 1",
+        "entrances": {
+            "The Ashlands Access Tunnel 1 to The Ashlands Access Tunnel 2": {
+                "vanilla target": "The Ashlands Access Tunnel 2",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Crossblade"]
+                }
+            }
+        },
+        "locations": {
+            "The Ashlands Access Tunnel Currency Chest by Three Goremaws": {
+                "vanilla item": "Currency"
+            },
+            "The Ashlands Access Tunnel Rare Chest by Goremaw": {
+                "vanilla item": "Currency",
+                "rules": {
+                    "rule1": {"logic": "Casual","requirements": ["Crossblade"]},
+                    "rule2": {"logic": "Casual","requirements": ["Mercy"]}
+                }
+            }
+        }
+    },
+    {
+        "name": "The Ashlands Access Tunnel 2",
+        "entrances": {
+            "The Ashlands Access Tunnel 2 to The Ashlands 1": {
+                "vanilla target": "The Ashlands 1"
+            },
+            "The Ashlands Access Tunnel 2 to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Serpent Holes"]
+                }
+            },
+            "The Ashlands Access Tunnel 2 to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "The Ashlands Access Tunnel Life Blocked by Ice": {
+                "vanilla item": "Currency",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Progressive Gauntlet"]
+                }
+            }
+        }
+    },
+    {
+        "name": "The Ashlands 1",
+        "entrances": {
+            "The Ashlands 1 to The Ashlands 2": {
+                "vanilla target": "The Ashlands 2",
+                "rule": {
+                    "logic": "Casual",
+                    "requirements": ["Crossblade", "Chronomancer"]
+                }
+            }
+        }
+    },
+    {
+        "name": "The Ashlands 2",
+        "entrances": {
+            "The Ashlands to Leviathan's Drift": {
+                "vanilla target": "Leviathan's Drift"
+            }
+        },
+        "locations": {
+            "The Ashlands Currency Chest up the Ramp": {
+                "vanilla item": "Currency"
+            }
+        }
+    }
+]

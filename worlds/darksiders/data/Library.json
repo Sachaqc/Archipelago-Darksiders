@@ -1,0 +1,31 @@
+[
+    {
+        "name": "The Library",
+        "entrances": {
+            "The Library to Scalding Gallow": {
+                "vanilla target": "Scalding Gallow"
+            },
+            "The Library to Serpent Holes": {
+                "vanilla target": "Serpent Holes",
+                "rule": "HAS_SERPENT_HOLES"
+            },
+            "The Library to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "Library Currency Chest South of Fleshburners": {
+                "vanilla item": "Currency"
+            },
+            "Library Life Chest Entrance": {
+                "vanilla item": "Health"
+            },
+            "Library Life Chest Submarine Cave": {
+                "vanilla item": "Lifestone Shard"
+            },
+            "Library Life Chest North": {
+                "vanilla item": "Health"
+            }
+        }
+    }
+]
