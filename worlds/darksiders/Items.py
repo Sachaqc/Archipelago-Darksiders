@@ -212,4 +212,3 @@ def create_all_items(world: DSWorld) -> None:
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
     itempool += [world.create_filler() for _ in range(needed_number_of_filler_items)]
     world.multiworld.itempool += itempool
-    print(itempool)
