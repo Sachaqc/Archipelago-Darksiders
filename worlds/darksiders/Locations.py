@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 abyssal_armor_pieces = {
     'Drowned Pass Abyssal Armor Piece': 1,
-    'Hollows Abyssal Armor Piece': 2,
+    'The Hollows Abyssal Armor Piece': 2,
     'Scalding Gallow Abyssal Armor Piece Near Entrance': 3,
     'Scalding Gallow Abyssal Armor Piece Under Central Platform': 4,
     'Twilight Cathedral Abyssal Armor Piece': 5,
