@@ -81,6 +81,8 @@ def connect_regions(world: DSWorld) -> None:
     iron_canopy_1_to_silitha_loom = Entrance(world.player, "Iron Canopy 1 to Silitha's Loom", parent = iron_canopy_1)
     iron_canopy_1.exits.append(iron_canopy_1_to_silitha_loom)
     iron_canopy_1_to_silitha_loom.connect(silitha_loom)
+    
+    create_entrances_from_json(world, "Hollows.json")
 
     leviathan_drift_to_eden = Entrance(world.player, "Leviathan's Drift to Eden", parent = leviathan_drift)
     leviathan_drift.exits.append(leviathan_drift_to_eden)
