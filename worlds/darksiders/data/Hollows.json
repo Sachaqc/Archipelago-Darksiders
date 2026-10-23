@@ -8,9 +8,11 @@
         },
         "locations": {
             "Hollows Access Tunnel Currency Chest Dead End": {
+                "ID": 1000,
                 "vanilla item": "Currency"
             },
             "Hollows Access Tunnel Currency Chest Stream Walkthrough": {
+                "ID": 1001,
                 "vanilla item": "Currency"
             }
         }
@@ -27,15 +29,19 @@
         },
         "locations": {
             "Hollows Currency Chest Top Balcony": {
+                "ID": 1002,
                 "vanilla item": "Currency"
             },
             "Hollows Currency Chest South of Clocktower": {
+                "ID": 1003,
                 "vanilla item": "Currency"
             },
             "Hollows Currency Chest Top of Stairwell": {
+                "ID": 1004,
                 "vanilla item": "Currency"
             },
             "Hollows Life Chest West Corridor": {
+                "ID": 1005,
                 "vanilla item": "Currency"
             }
         }
@@ -49,24 +55,31 @@
         },
         "locations": {
             "Hollows Abyssal Armor Piece": {
+                "ID": 1006,
                 "vanilla item": "Currency"
             },
             "Hollows Beholder Key Chest in Current": {
+                "ID": 1007,
                 "vanilla item": "Currency"
             },
             "Hollows Currency Chest after Submerged Passage": {
+                "ID": 1008,
                 "vanilla item": "Currency"
             },
             "Hollows Currency Chest SW of Gas": {
+                "ID": 1009,
                 "vanilla item": "Currency"
             },
             "Hollows Life Chest South Wall Nook": {
+                "ID": 1010,
                 "vanilla item": "Currency"
             },
             "Hollows Rare Chest over Submerged Passage": {
+                "ID": 1011,
                 "vanilla item": "Currency"
             },
             "Hollows Wrath Chest after Submerged Passage": {
+                "ID": 1012,
                 "vanilla item": "Currency"
             }
         }
@@ -80,12 +93,15 @@
         },
         "locations": {
             "Hollows Chained Cube": {
+                "ID": 1013,
                 "vanilla item": "Currency"
             },
             "Hollows Beholder Key Chest after Chained Cube": {
+                "ID": 1014,
                 "vanilla item": "Currency"
             },
             "Hollows Life Chest after Chained Cube": {
+                "ID": 1015,
                 "vanilla item": "Currency"
             }
         }
@@ -99,15 +115,19 @@
         },
         "locations": {
             "Hollows Life Chest after Water-Filled Hallway": {
+                "ID": 1016,
                 "vanilla item": "Currency"
             },
             "Hollows Map Chest at Surface of Flooded Room": {
+                "ID": 1017,
                 "vanilla item": "Currency"
             },
             "Hollows Wrath Chest after Water-Filled Hallway": {
+                "ID": 1018,
                 "vanilla item": "Currency"
             },
             "Hollows Soldier Artifact South of Platforms": {
+                "ID": 1019,
                 "vanilla item": "Currency"
             }
         }
@@ -124,6 +144,7 @@
         },
         "locations": {
             "Hollows Life Chest behind Train Cars": {
+                "ID": 1020,
                 "vanilla item": "Currency"
             }
         }
@@ -137,9 +158,11 @@
         },
         "locations": {
             "Hollows Currency Chest SE of Locust Room": {
+                "ID": 1021,
                 "vanilla item": "Currency"
             },
             "Hollows Life Chest North of Locust Room": {
+                "ID": 1022,
                 "vanilla item": "Currency"
             }
         }
@@ -153,6 +176,7 @@
         },
         "locations": {
             "Hollows Currency Chest between Ice Blocks": {
+                "ID": 1023,
                 "vanilla item": "Currency"
             }
         }
@@ -161,9 +185,11 @@
         "name": "Hollows 8",
         "locations": {
             "Hollows Champion Artifact in Pipe Leading North": {
+                "ID": 1024,
                 "vanilla item": "Currency"
             },
             "Hollows Beholder Key Chest inside Floor Hole": {
+                "ID": 1025,
                 "vanilla item": "Currency"
             }
         }
@@ -177,15 +203,19 @@
         },
         "locations": {
             "Hollows Life Chest in Griever Tunnel": {
+                "ID": 1026,
                 "vanilla item": "Currency"
             },
             "Hollows Currency Chest under Goremaw": {
+                "ID": 1027,
                 "vanilla item": "Currency"
             },
             "Hollows Hoardseeker Chest SW of Grappleclaws Room": {
+                "ID": 1028,
                 "vanilla item": "Currency"
             },
             "Hollows Life Chest West of Grappleclaws Room": {
+                "ID": 1029,
                 "vanilla item": "Currency"
             }
         }
@@ -199,9 +229,11 @@
         },
         "locations": {
             "Hollows Life Chest before Boss Room": {
+                "ID": 1030,
                 "vanilla item": "Currency"
             },
             "Hollows Wrath Chest over Flooded Room": {
+                "ID": 1031,
                 "vanilla item": "Currency"
             }
         }

@@ -8,9 +8,11 @@
         },
         "locations": {
             "Ashlands Access Tunnel Currency Chest by Three Goremaws": {
+                "ID": 100,
                 "vanilla item": "Currency"
             },
             "Ashlands Access Tunnel Rare Chest by Goremaw": {
+                "ID": 101,
                 "vanilla item": "Currency"
             }
         }
@@ -30,6 +32,7 @@
         },
         "locations": {
             "Ashlands Access Tunnel Life Blocked by Ice": {
+                "ID": 102,
                 "vanilla item": "Currency"
             }
         }
@@ -51,6 +54,7 @@
         },
         "locations": {
             "Ashlands Currency Chest up the Ramp": {
+                "ID": 103,
                 "vanilla item": "Currency"
             }
         }

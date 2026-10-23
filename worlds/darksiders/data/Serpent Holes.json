@@ -13,7 +13,66 @@
             }
         },
         "locations": {
-            
+            "Item1": {
+                "ID": 1603,
+                "vanilla item": "Weapon Master"
+            },
+            "Item2": {
+                "ID": 1604,
+                "vanilla item": "Bane"
+            },
+            "Item3": {
+                "ID": 1605,
+                "vanilla item": "Wrath Shard"
+            },
+            "Item4": {
+                "ID": 1606,
+                "vanilla item": "Wrath Core"
+            },
+            "Item5": {
+                "ID": 1607,
+                "vanilla item": "Rage"
+            },
+            "Item6": {
+                "ID": 1608,
+                "vanilla item": "Greater Rage"
+            },
+            "Item7": {
+                "ID": 1609,
+                "vanilla item": "Life Essence"
+            },
+            "Item8": {
+                "ID": 1610,
+                "vanilla item": "Greater Life Essence"
+            },
+            "Item9": {
+                "ID": 1611,
+                "vanilla item": "Possession"
+            },
+            "Item10": {
+                "ID": 1612,
+                "vanilla item": "Undying"
+            },
+            "Item11": {
+                "ID": 1613,
+                "vanilla item": "Empty Container"
+            },
+            "Pcombo1": {
+                "ID": 1614,
+                "vanilla item": "180 Orbit Slash"
+            },
+            "Pcombo2": {
+                "ID": 1615,
+                "vanilla item": "Demon Edge"
+            },
+            "Pcombo3": {
+                "ID": 1616,
+                "vanilla item": "Devil's Cross"
+            },
+            "Pcombo4": {
+                "ID": 1617,
+                "vanilla item": "Flipsaw"
+            }
         }
     },
     {
@@ -57,6 +116,7 @@
         },
         "locations": {
             "Serpent Hole to Anvil's Ford Chest": {
+                "ID": 1600,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -70,6 +130,7 @@
         },
         "locations": {
             "Serpent Hole to Dry Road Chest": {
+                "ID": 1601,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -83,6 +144,7 @@
         },
         "locations": {
             "Serpent Hole to Twilight Cathedral Chest": {
+                "ID": 1602,
                 "vanilla item": "Lifestone Shard"
             }
         }

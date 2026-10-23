@@ -11,12 +11,15 @@
         },
         "locations": {
             "Twilight Cathedral Exterior Chest Blocked by Ice": {
+                "ID": 1700,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Exterior Chest NE of Entrance": {
+                "ID": 1701,
                 "vanilla item": "Health"
             },
             "Twilight Cathedral Exterior Chest South of Exterior": {
+                "ID": 1702,
                 "vanilla item": "Currency"
             }
         }
@@ -28,6 +31,7 @@
         },
         "locations": {
             "Twilight Cathedral Exterior Chest NW after Hooks": {
+                "ID": 1703,
                 "vanilla item": "Currency"
             }
         }
@@ -41,24 +45,31 @@
         },
         "locations": {
             "Twilight Cathedral Soldier Artifact South Wing": {
+                "ID": 1704,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest South Wing Main Gallery": {
+                "ID": 1705,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest South Wing First Room": {
+                "ID": 1706,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Rare Chest South Wing": {
+                "ID": 1707,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Beholder Key Chest South Wing": {
+                "ID": 1708,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Hoardseeker Chest South Wing": {
+                "ID": 1709,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Map Chest South Wing": {
+                "ID": 1710,
                 "vanilla item": "Currency"
             }
         }
@@ -75,21 +86,27 @@
         },
         "locations": {
             "Twilight Cathedral Chained Cube": {
+                "ID": 1711,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Champion Artifact North Wing": {
+                "ID": 1712,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest South Wing Conscript Room": {
+                "ID": 1713,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest North Wing Basement": {
+                "ID": 1714,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest North Wing Under Crystal": {
+                "ID": 1715,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest South Wing Conscript Room": {
+                "ID": 1716,
                 "vanilla item": "Currency"
             }
         }
@@ -103,48 +120,63 @@
         },
         "locations": {
             "Twilight Cathedral Abyssal Armor Piece": {
+                "ID": 1717,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Soldier Artifact Bridge Room": {
+                "ID": 1718,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Beholder Key Chest Three Blades East Path": {
+                "ID": 1719,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest Below Abyssal Armor Chest": {
+                "ID": 1720,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest East of Elevated Platforms": {
+                "ID": 1721,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest North after Lava Fall": {
+                "ID": 1722,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest Rot Mauler Room": {
+                "ID": 1723,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Currency Chest South after Lava Fall": {
+                "ID": 1724,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest after The Jailer": {
+                "ID": 1725,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest before Platform Room": {
+                "ID": 1726,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Life Chest North of Three Statues": {
+                "ID": 1727,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Wrath Chest before Platform Room": {
+                "ID": 1728,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Wrath Chest Below Abyssal Armor Chest": {
+                "ID": 1729,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Wrath Chest Three Blades East Path": {
+                "ID": 1730,
                 "vanilla item": "Currency"
             },
             "Twilight Cathedral Secret Chest Light 8 Torches": {
+                "ID": 1731,
                 "vanilla item": "Currency"
             }
         }

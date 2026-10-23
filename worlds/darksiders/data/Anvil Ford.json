@@ -37,30 +37,39 @@
         },
         "locations": {
             "Anvil Ford Challenge Currency Chest Lower Platform": {
+                "ID": 1,
                 "vanilla item": "Currency"
             },
             "Anvil Ford Challenge Life Chest Inside Large Crystal": {
+                "ID": 2,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest Inside Small Crystals": {
+                "ID": 3,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest after Toss": {
+                "ID": 4,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest before Toss": {
+                "ID": 5,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest Elevator Shaft": {
+                "ID": 6,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest East Uriel Arena": {
+                "ID": 7,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Life Chest West Uriel Arena": {
+                "ID": 8,
                 "vanilla item": "Health"
             },
             "Anvil Ford Challenge Wrath Chest after Demonic Growth": {
+                "ID": 9,
                 "vanilla item": "Wrath Shard"
             }
         }

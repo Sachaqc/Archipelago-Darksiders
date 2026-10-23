@@ -8,9 +8,11 @@
         },
         "locations": {
             "Choking Grounds Access Tunnel Abyssal Armor Chest": {
+            "ID": 500,
                 "vanilla item": "Currency"
             },
             "Choking Grounds Access Tunnel Chest in Lava River": {
+            "ID": 501,
                 "vanilla item": "Currency"
             }
         }
@@ -44,39 +46,51 @@
         },
         "locations": {
             "Choking Grounds Armaggedon Blade Shard in North Building": {
+            "ID": 502,
                 "vanilla item": "Soldier Artifact"
             },
             "Choking Grounds Artifact North of Vulgrim": {
+            "ID": 503,
                 "vanilla item": "Soldier Artifact"
             },
             "Choking Grounds Artifact South in Sarcophagus": {
+            "ID": 504,
                 "vanilla item": "Soldier Artifact"
             },
             "Choking Grounds Chest Bottom Floor of North Building": {
+            "ID": 505,
                 "vanilla item": "Currency"
             },
             "Choking Grounds Chest NE South of the Ramp": {
+            "ID": 506,
                 "vanilla item": "Currency"
             },
             "Choking Grounds Chest South Down the Stairs": {
+            "ID": 507,
                 "vanilla item": "Currency"
             },
             "Choking Grounds Chest Top Floor of North Building Blocked by Ice": {
+            "ID": 508,
                 "vanilla item": "Currency"
             },
             "Choking Grounds Chest North of Cemetery": {
+            "ID": 509,
                 "vanilla item": "Health"
             },
             "Choking Grounds Chest Top Floor of North Building": {
+            "ID": 510,
                 "vanilla item": "Lifestone Shard"
             },
             "Choking Grounds Chest 2nd Floor of North Building": {
+            "ID": 511,
                 "vanilla item": "Wrath Shard"
             },
             "Choking Grounds Rare Chest of North Building": {
+            "ID": 512,
                 "vanilla item": "Empty Container"
             },
             "Choking Grounds Secret Chest Destroy Gravestones with Crosses": {
+            "ID": 513,
                 "vanilla item": "Lifestone Shard"
             }
         }

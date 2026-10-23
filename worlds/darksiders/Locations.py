@@ -12,189 +12,37 @@ from .Utils import data_path, json_read
 if TYPE_CHECKING:
     from .World import DSWorld
 
-abyssal_armor_pieces = {
-    'Choking Grounds Access Tunnel Abyssal Armor Chest': 211,
-    'Drowned Pass Abyssal Armor Piece': 1,
-    'Hollows Abyssal Armor Piece': 2,
-    'Scalding Gallow Abyssal Armor Piece Near Library': 3,
-    'Scalding Gallow Abyssal Armor Piece Under Central Platform': 4,
-    'Twilight Cathedral Abyssal Armor Piece': 5,
-}
+def create_location_table_from_json(filename) -> None:
 
-armaggedon_shards = {
-    'Choking Grounds Armaggedon Blade Shard in North Building': 300,
-}
+    region_json = json_read(data_path(filename))
 
-artifacts = {
-    'Broken Stair Artifact': 29,
-    'Broken Stair Artifact Blocked by Ice': 30,
-    #'Choking Grounds Access Cave Soldier Artifact',
-    'Choking Grounds Artifact North of Vulgrim': 31,
-    'Choking Grounds Artifact South in Sarcophagus': 32,
-    'Crossroads Soldier Artifact in Subway Station': 33,
-    'Drowned Pass Access Tunnel Champion Artifact': 34,
-    'Drowned Pass Soldier Artifact Cave Under Waterfall': 35,
-    'Drowned Pass Soldier Artifact Underwater Building': 36,
-    'Dry Road Soldier Artifact': 37,
-    'Dry Road Access Tunnel Soldier Artifact': 38,
-    'Hollows Champion Artifact in Pipe Leading North': 39,
-    'Hollows Soldier Artifact Underwater': 40,
-    'Hollows Soldier Artifact South of Platforms': 41,
-    'Library Artifact on West Side': 216,
-    'Twilight Cathedral Champion Artifact North Wing': 42,
-    'Twilight Cathedral Soldier Artifact South Wing': 43,
-    'Twilight Cathedral Soldier Artifact Bridge Room': 44,
-}
+    for region in region_json:
+        if 'locations' in region:
+            for location, location_data in region.get("locations").items():
+                print(location)
+                LOCATION_NAME_TO_ID[location] = location_data.get("ID")
 
-"""
-boss_defeated = {
-    'Abaddon Destroyer': 70,
-    'Abyssal Gladiator': 71,
-    'Ash Titan': 72,
-    'Broodmother': 73,
-    'Griever': 74,
-    'Jailer': 75,
-    'Phantom General': 76,
-    'Shadow War': 77,
-    'Silitha': 78,
-    'Straga': 79,
-    'Stygian': 80,
-    'Three Guardians': 81,
-    'Tiamat': 82,
-    'Ulthane': 83,
-    'Uriel First Encounter': 84,
-    'Uriel Second Encounter': 85,
-    'Wicked K': 85,
-}
-"""
+#LOCATION_NAME_TO_ID = abyssal_armor_pieces | armaggedon_shards | artifacts | chained_cubes | chests
 
-chained_cubes = {
-    'Hollows Chained Cube': 90,
-    'Twilight Cathedral Chained Cube': 91,
-}
+LOCATION_NAME_TO_ID = {}
 
-chests = {
-    'Anvil Ford Challenge Currency Chest Lower Platform': 100,
-    'Anvil Ford Challenge Life Chest Inside Large Crystal': 101,
-    'Anvil Ford Challenge Life Chest Inside Small Crystals': 102,
-    'Anvil Ford Challenge Life Chest after Toss': 103,
-    'Anvil Ford Challenge Life Chest before Toss': 104,
-    'Anvil Ford Challenge Life Chest Elevator Shaft': 105,
-    'Anvil Ford Challenge Life Chest East Uriel Arena': 106,
-    'Anvil Ford Challenge Life Chest West Uriel Arena': 107,
-    'Anvil Ford Challenge Wrath Chest after Demonic Growth': 108,
-    #'Anvil Ford Challenge Wrath Chest after Demonic Growth': 1031,
-    'Ashlands Currency Chest up the Ramp': 109,
-    'Ashlands Access Tunnel Currency Chest by Three Goremaws': 110,
-    'Ashlands Access Tunnel Life Blocked by Ice': 111,
-    'Ashlands Access Tunnel Rare Chest by Goremaw': 112,
-    'Broken Stair Access Tunnel Chest': 113,
-    'Broken Stair Chest after Waterway': 114,
-    'Broken Stair Chest inside Building': 115,
-    'Broken Stair Chest near Vulgrim': 116,
-    'Broken Stair Chest at Highway\'s end': 117,
-    'Broken Stair Chest Bottom Floor of Last Building': 118,
-    'Broken Stair Chest Middle Floor of Last Building': 119,
-    'Broken Stair Chest under Billboard': 210,
-    'Choking Grounds Access Tunnel Chest in Lava River': 120,
-    'Choking Grounds Chest Bottom Floor of North Building': 121,
-    'Choking Grounds Chest NE South of the Ramp': 122,
-    'Choking Grounds Chest South Down the Stairs': 123,
-    'Choking Grounds Chest Top Floor of North Building Blocked by Ice': 124,
-    'Choking Grounds Chest North of Cemetery': 125,
-    'Choking Grounds Chest Top Floor of North Building': 126,
-    'Choking Grounds Chest 2nd Floor of North Building': 127,
-    'Choking Grounds Rare Chest of North Building': 212,
-    'Choking Grounds Secret Chest Destroy Gravestones with Crosses': 215,
-    'Crossroads Currency Chest Down Back Alley Stairs': 128,
-    'Crossroads Currency Chest in North Building': 129,
-    'Crossroads Currency Chest South Crater': 130,
-    'Crossroads Currency Chest in Subway Station': 131,
-    'Crossroads Life Chest East Crater': 132,
-    'Crossroads Life Chest in NE Back Alley': 133,
-    'Crossroads Life Chest West of Library': 134,
-    'Crossroads Rare Chest Blocked by Ice': 135,
-    'Crossroads Secret Chest Destroy Fire Hydrants': 213,
-    'Crossroads Soldier Artifact in Subway Station': 214,
-    'Drowned Pass Currency Chest after Submerged Cave': 136,
-    'Drowned Pass Currency Chest Building Semi Submerged': 137,
-    'Drowned Pass Life Chest after Crystal Switch Platform': 138,
-    'Drowned Pass Wrath Chest Blocked by Ice': 139,
-    'Drowned Pass Access Tunnel Currency Chest East Nook': 140,
-    'Dry Road Currency Chest South of Vulgrim': 141,
-    'Dry Road Life Chest East of Artifact': 142,
-    'Dry Road Access Tunnel Currency Chest North of Chronosphere': 143,
-    'Dry Road Access Tunnel Currency Chest South of Entrance': 144,
-    'Dry Road Access Tunnel Currency Chest Up the Stairs': 145,
-    'Hollows Beholder Key Chest after Chained Cube': 146,
-    'Hollows Beholder Key Chest in Current': 147,
-    'Hollows Beholder Key Chest inside Floor Hole': 148,
-    'Hollows Currency Chest after Submerged Passage': 149,
-    'Hollows Currency Chest between Ice Blocks': 150,
-    'Hollows Currency Chest SE of Locust Room': 151,
-    'Hollows Currency Chest South of Clocktower': 152,
-    'Hollows Currency Chest SW of Gas': 153,
-    'Hollows Currency Chest Top Balcony': 154,
-    'Hollows Currency Chest Top of Stairwell': 155,
-    'Hollows Currency Chest under Goremaw': 156,
-    'Hollows Hoardseeker Chest SW of Grappleclaws Room': 157,
-    'Hollows Life Chest after Chained Cube': 158,
-    'Hollows Life Chest after Water-Filled Hallway': 159,
-    'Hollows Life Chest before Boss Room': 160,
-    'Hollows Life Chest behind Train Cars': 161,
-    'Hollows Life Chest in Griever Tunnel': 162,
-    'Hollows Life Chest North of Locust Room': 163,
-    'Hollows Life Chest South Wall Nook': 164,
-    'Hollows Life Chest West Corridor': 165,
-    'Hollows Life Chest West of Grappleclaws Room': 166,
-    'Hollows Map Chest at Surface of Flooded Room': 167,
-    'Hollows Rare Chest over Submerged Passage': 168,
-    'Hollows Wrath Chest after Submerged Passage': 169,
-    'Hollows Wrath Chest after Water-Filled Hallway': 170,
-    'Hollows Wrath Chest over Flooded Room': 171,
-    'Hollows Access Tunnel Currency Chest Dead End': 172,
-    'Hollows Access Tunnel Currency Chest Stream Walkthrough': 173,
-    'Library Chest South of Fleshburners': 174,
-    'Library Wrath Chest North': 217,
-    'Library Life Chest Entrance': 175,
-    'Library Life Chest Submarine Cave': 176,
-    'Library Life Chest North': 177,
-    'Scalding Gallow Chest 2nd Floor Near Library': 178,
-    'Scalding Gallow Chest Near Vulgrim': 179,
-    'Scalding Gallow Chest Above Vulgrim': 180,
-    'Serpent Hole to Anvil\'s Ford Chest': 181,
-    'Serpent Hole to Dry Road Chest': 182,
-    'Serpent Hole to Twilight Cathedral Chest': 183,
-    'Twilight Cathedral Beholder Key Chest South Wing': 184,
-    'Twilight Cathedral Beholder Key Chest Three Blades East Path': 185,
-    'Twilight Cathedral Currency Chest Below Abyssal Armor Chest': 186,
-    'Twilight Cathedral Currency Chest East of Elevated Platforms': 187,
-    'Twilight Cathedral Exterior Chest Blocked by Ice': 188,
-    'Twilight Cathedral Exterior Chest NE of Entrance': 189,
-    'Twilight Cathedral Currency Chest North after Lava Fall': 190,
-    'Twilight Cathedral Currency Chest Rot Mauler Room': 191,
-    'Twilight Cathedral Currency Chest South after Lava Fall': 192,
-    'Twilight Cathedral Exterior Chest South of Exterior': 193,
-    'Twilight Cathedral Currency Chest South Wing Main Gallery': 194,
-    'Twilight Cathedral Currency Chest South Wing Conscript Room': 195,
-    'Twilight Cathedral Hoardseeker Chest South Wing': 196,
-    'Twilight Cathedral Life Chest after The Jailer': 197,
-    'Twilight Cathedral Life Chest before Platform Room': 198,
-    'Twilight Cathedral Life Chest North of Three Statues': 199,
-    'Twilight Cathedral Life Chest North Wing Basement': 200,
-    'Twilight Cathedral Life Chest South Wing Conscript Room': 201,
-    'Twilight Cathedral Life Chest South Wing First Room': 202,
-    'Twilight Cathedral Life Chest North Wing Under Crystal': 203,
-    'Twilight Cathedral Map Chest South Wing': 204,
-    'Twilight Cathedral Rare Chest South Wing': 205,
-    'Twilight Cathedral Secret Chest Light 8 Torches': 206,
-    'Twilight Cathedral Wrath Chest before Platform Room': 207,
-    'Twilight Cathedral Wrath Chest Below Abyssal Armor Chest': 208,
-    'Twilight Cathedral Wrath Chest Three Blades East Path': 209,
-    'Twilight Cathedral Exterior Chest NW after Hooks': 220,
-}
-
-LOCATION_NAME_TO_ID = abyssal_armor_pieces | armaggedon_shards | artifacts | chained_cubes | chests
+create_location_table_from_json("Anvil Ford.json")
+create_location_table_from_json("Ashlands.json")
+#create_location_table_from_json("Black Throne.json")
+create_location_table_from_json("Broken Stairs.json")
+create_location_table_from_json("Choking Grounds.json")
+create_location_table_from_json("Crossroads.json")
+create_location_table_from_json("Drowned Pass.json")
+create_location_table_from_json("Dry Road.json")
+#create_location_table_from_json("Eden.json")
+create_location_table_from_json("Hollows.json")
+#create_location_table_from_json("Iron Canopy.json")
+#create_location_table_from_json("Leviathan Drift.json")
+create_location_table_from_json("Library.json")
+create_location_table_from_json("Menu.json")
+create_location_table_from_json("Scalding Gallow.json")
+create_location_table_from_json("Serpent Holes.json")
+create_location_table_from_json("Twilight Cathedral.json")
 
 #location_json = json_read(data_path("Anvil Ford.json"))
 
