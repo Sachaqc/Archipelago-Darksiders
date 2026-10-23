@@ -15,6 +15,7 @@ CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
 CAN_DOUBLE_JUMP = True
 CAN_DRAG_OBJECTS = True
 CAN_GRAB_BOMBS = True
+CAN_HIT_CRYSTAL_BLADES = HasAny("Crossblade", "Mercy")
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
 CAN_LEDGE_GRAB = True
 CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
@@ -56,7 +57,7 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to Broken Stair 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
  
-    broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral Exterior 1")
+    broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
     world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
 
     choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair Access Tunnel")
@@ -81,16 +82,16 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(hollows_1_to_hollows_5, HAS_GAUNTLET)
 
     hollows_2_to_hollows_3 = world.get_entrance("Hollows 2 to Hollows 3")
-    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 3))
+    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4))
 
     hollows_3_to_hollows_4 = world.get_entrance("Hollows 3 to Hollows 4")
-    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 4) & HAS_GAUNTLET)
+    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5) & HAS_GAUNTLET)
 
     hollows_5_to_hollows_6 = world.get_entrance("Hollows 5 to Hollows 6")
     world.set_rule(hollows_5_to_hollows_6, HAS_CROSSBLADE)
 
     hollows_5_to_hollows_9 = world.get_entrance("Hollows 5 to Hollows 9")
-    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 5))
+    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6))
 
     hollows_6_to_hollows_7 = world.get_entrance("Hollows 6 to Hollows 7")
     world.set_rule(hollows_6_to_hollows_7, HAS_SHADOWFLIGHT)
@@ -121,12 +122,28 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     twilight_cathedral_exterior_1_to_2 = world.get_entrance("Twilight Cathedral Exterior 1 to Twilight Cathedral Exterior 2")
     world.set_rule(twilight_cathedral_exterior_1_to_2, HAS_ABYSSAL_CHAIN)
-
-    twilight_cathedral_1_to_twilight_cathedral_2 = world.get_entrance("Twilight Cathedral 1 to Twilight Cathedral 2")
-    world.set_rule(twilight_cathedral_1_to_twilight_cathedral_2, Has("Beholder Key", count = 2))
-
-    twilight_cathedral_2_to_twilight_cathedral_3 = world.get_entrance("Twilight Cathedral 2 to Twilight Cathedral 3")
-    world.set_rule(twilight_cathedral_2_to_twilight_cathedral_3, HAS_CROSSBLADE)
+    twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
+    world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2))
+    twilight_cathedral_entrance_to_NW = world.get_entrance("Twilight Cathedral Entrance to North Wing")
+    world.set_rule(twilight_cathedral_entrance_to_NW, Has("Crystal Blade"))
+    twilight_cathedral_NW_to_abyssal = world.get_entrance("Twilight Cathedral North Wing to Abyssal Chest Area")
+    world.set_rule(twilight_cathedral_NW_to_abyssal, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
+    twilight_cathedral_NW_to_abyssal = world.get_entrance("Twilight Cathedral Entrance to Basement")
+    world.set_rule(twilight_cathedral_NW_to_abyssal, CAN_HURT_GOREMAW)
+    twilight_cathedral_chained_cube_area_to_three_statues = world.get_entrance("Twilight Cathedral Chained Cube Area to Three Statues")
+    world.set_rule(twilight_cathedral_chained_cube_area_to_three_statues, HAS_CROSSBLADE)
+    twilight_cathedral_three_statues_to_west = world.get_entrance("Twilight Cathedral Three Statues to West Path")
+    world.set_rule(twilight_cathedral_three_statues_to_west, HAS_CROSSBLADE)
+    twilight_cathedral_three_statues_to_north = world.get_entrance("Twilight Cathedral Three Statues to North Path")
+    world.set_rule(twilight_cathedral_three_statues_to_north, HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
+    twilight_cathedral_three_statues_to_east = world.get_entrance("Twilight Cathedral Three Statues to East Path")
+    world.set_rule(twilight_cathedral_three_statues_to_east, HasAll("West Crystal Blade", "North Crystal Blade"))
+    twilight_cathedral_three_statues_to_south = world.get_entrance("Twilight Cathedral Three Statues to South Path")
+    world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3))
+    twilight_cathedral_three_statues_to_north_wing = world.get_entrance("Twilight Cathedral Three Statues to North Wing")
+    world.set_rule(twilight_cathedral_three_statues_to_north_wing, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
+    twilight_cathedral_north_wing_to_boss_room = world.get_entrance("Twilight Cathedral North Wing to Boss Room")
+    world.set_rule(twilight_cathedral_north_wing_to_boss_room, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
 
 
 def set_all_location_rules(world: DSWorld) -> None:
@@ -215,20 +232,16 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(twilight_cathedral_tiamat_defeated, HAS_CROSSBLADE)
     twilight_cathedral_tiamat_item_reward = world.get_location('Tiamat Item Reward')
     world.set_rule(twilight_cathedral_tiamat_item_reward, HAS_CROSSBLADE)
-    twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral Champion Artifact North Wing")
+    twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral North Wing Artifact")
     world.set_rule(twilight_cathedral_champion_artifact_north_wing, HAS_SHADOWFLIGHT)
     twilight_cathedral_chained_cube = world.get_location("Twilight Cathedral Chained Cube")
     world.set_rule(twilight_cathedral_chained_cube, CAN_BREAK_CHAINED_CUBES)
-    twilight_cathedral_beholder_key_chest_south_wing = world.get_location("Twilight Cathedral Beholder Key Chest South Wing")
+    twilight_cathedral_beholder_key_chest_south_wing = world.get_location("Twilight Cathedral South Wing Beholder Key Chest")
     world.set_rule(twilight_cathedral_beholder_key_chest_south_wing, HAS_CROSSBLADE)
     twilight_cathedral_chest_exterior_blocked_by_ice = world.get_location("Twilight Cathedral Exterior Chest Blocked by Ice")
     world.set_rule(twilight_cathedral_chest_exterior_blocked_by_ice, HAS_GAUNTLET)
-    twilight_cathedral_life_chest_north_of_three_statues = world.get_location("Twilight Cathedral Life Chest North of Three Statues")
-    world.set_rule(twilight_cathedral_life_chest_north_of_three_statues, HAS_SHADOWFLIGHT)
-    twilight_cathedral_soldier_artifact_bridge_room = world.get_location("Twilight Cathedral Soldier Artifact Bridge Room")
-    world.set_rule(twilight_cathedral_soldier_artifact_bridge_room, HAS_SHADOWFLIGHT)
-    twilight_cathedral_soldier_artifact_south_wing = world.get_location("Twilight Cathedral Soldier Artifact South Wing")
-    world.set_rule(twilight_cathedral_soldier_artifact_south_wing, HAS_SHADOWFLIGHT)
+    twilight_cathedral_hoardseeker_chest_south_wing = world.get_location("Twilight Cathedral South Wing Hoardseeker Chest")
+    world.set_rule(twilight_cathedral_hoardseeker_chest_south_wing, CAN_DETONATE_BOMBS & HAS_SHADOWFLIGHT)
 
 
 def set_completion_condition(world: DSWorld) -> None:

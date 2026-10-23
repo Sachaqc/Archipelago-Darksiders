@@ -139,8 +139,8 @@
     {
         "name": "Serpent Holes to Twilight Cathedral",
         "entrances": {
-            "Serpent Holes to Twilight Cathedral to Twilight Cathedral Exterior 1": {
-                "vanilla target": "Twilight Cathedral Exterior 1"
+            "Serpent Holes to Twilight Cathedral to Twilight Cathedral": {
+                "vanilla target": "Twilight Cathedral Exterior Main Area"
             }
         },
         "locations": {

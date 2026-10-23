@@ -52,8 +52,8 @@
     {
         "name": "Broken Stair 2",
         "entrances": {
-            "Broken Stair 2 to Twilight Cathedral Exterior 1": {
-                "vanilla target": "Twilight Cathedral Exterior 1"
+            "Broken Stair 2 to Twilight Cathedral": {
+                "vanilla target": "Twilight Cathedral Exterior Main Area"
             }
         },
         "locations": {

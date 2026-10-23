@@ -76,6 +76,7 @@
         "Empty Container": {
             "ID": 30,
             "progressive": false,
+            "number": 7,
             "console": "/pickup_item items/item_consumableslot"
         },
         "Life Essence": {
@@ -181,7 +182,7 @@
         "Beholder Key": {
             "ID": 60,
             "progressive": false,
-            "number": 5,
+            "number": 6,
             "console": "/pickup_item items/item_dungeonkey"
         },
         "Heart of the Chosen": {
@@ -195,7 +196,7 @@
         "Air Tremor Smash": {
             "ID": 180,
             "progressive": true,
-            "number": 1
+            "number": 2
         },
         "Earthbreaker": {
             "ID": 181,
@@ -215,7 +216,7 @@
         "Tremor Smash": {
             "ID": 184,
             "progressive": true,
-            "number": 2
+            "number": 3
         }
     },
     "Gear": {
