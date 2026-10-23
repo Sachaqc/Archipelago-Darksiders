@@ -1,9 +1,9 @@
 [
     {
-        "name": "The Dry Road Access Tunnel 1",
+        "name": "Dry Road Access Tunnel 1",
         "entrances": {
             "Dry Road Access Tunnel 1 to Dry Road Access Tunnel 2": {
-                "vanilla target": "The Dry Road Access Tunnel 2"
+                "vanilla target": "Dry Road Access Tunnel 2"
             }
         },
         "locations": {
@@ -13,10 +13,10 @@
         }
     },
     {
-        "name": "The Dry Road Access Tunnel 2",
+        "name": "Dry Road Access Tunnel 2",
         "entrances": {
             "Dry Road Access Tunnel 2 to Dry Road": {
-                "vanilla target": "The Dry Road"
+                "vanilla target": "Dry Road"
             }
         },
         "locations": {
@@ -32,10 +32,10 @@
         }
     },
     {
-        "name": "The Dry Road",
+        "name": "Dry Road",
         "entrances": {
             "Dry Road to Ashlands Access Tunnel 1": {
-                "vanilla target": "The Ashlands Access Tunnel 1"
+                "vanilla target": "Ashlands Access Tunnel 1"
             },
             "Dry Road to Serpent Holes": {
                 "vanilla target": "Serpent Holes"

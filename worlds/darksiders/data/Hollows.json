@@ -1,216 +1,216 @@
 [
     {
-        "name": "The Hollows Access Tunnel",
+        "name": "Hollows Access Tunnel",
         "entrances": {
-            "The Hollows Access Tunnel to The Hollows 1": {
-                "vanilla target": "The Hollows 1"
+            "Hollows Access Tunnel to Hollows 1": {
+                "vanilla target": "Hollows 1"
             }
         },
         "locations": {
-            "The Hollows Access Tunnel Currency Chest Dead End": {
+            "Hollows Access Tunnel Currency Chest Dead End": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Access Tunnel Currency Chest Stream Walkthrough": {
+            "Hollows Access Tunnel Currency Chest Stream Walkthrough": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 1",
+        "name": "Hollows 1",
         "entrances": {
-            "The Hollows 1 to The Hollows 2": {
-                "vanilla target": "The Hollows 2"
+            "Hollows 1 to Hollows 2": {
+                "vanilla target": "Hollows 2"
             },
-            "The Hollows 1 to The Hollows 5": {
-                "vanilla target": "The Hollows 5"
+            "Hollows 1 to Hollows 5": {
+                "vanilla target": "Hollows 5"
             }
         },
         "locations": {
-            "The Hollows Currency Chest Top Balcony": {
+            "Hollows Currency Chest Top Balcony": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Currency Chest South of Clocktower": {
+            "Hollows Currency Chest South of Clocktower": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Currency Chest Top of Stairwell": {
+            "Hollows Currency Chest Top of Stairwell": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Life Chest West Corridor": {
+            "Hollows Life Chest West Corridor": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 2",
+        "name": "Hollows 2",
         "entrances": {
-            "The Hollows 2 to The Hollows 3": {
-                "vanilla target": "The Hollows 3"
+            "Hollows 2 to Hollows 3": {
+                "vanilla target": "Hollows 3"
             }
         },
         "locations": {
-            "The Hollows Abyssal Armor Piece": {
+            "Hollows Abyssal Armor Piece": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Beholder Key Chest in Current": {
+            "Hollows Beholder Key Chest in Current": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Currency Chest after Submerged Passage": {
+            "Hollows Currency Chest after Submerged Passage": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Currency Chest SW of Gas": {
+            "Hollows Currency Chest SW of Gas": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Life Chest South Wall Nook": {
+            "Hollows Life Chest South Wall Nook": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Rare Chest over Submerged Passage": {
+            "Hollows Rare Chest over Submerged Passage": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Wrath Chest after Submerged Passage": {
+            "Hollows Wrath Chest after Submerged Passage": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 3",
+        "name": "Hollows 3",
         "entrances": {
-            "The Hollows 3 to The Hollows 4": {
-                "vanilla target": "The Hollows 4"
+            "Hollows 3 to Hollows 4": {
+                "vanilla target": "Hollows 4"
             }
         },
         "locations": {
-            "The Hollows Chained Cube": {
+            "Hollows Chained Cube": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Beholder Key Chest after Chained Cube": {
+            "Hollows Beholder Key Chest after Chained Cube": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Life Chest after Chained Cube": {
+            "Hollows Life Chest after Chained Cube": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 4",
+        "name": "Hollows 4",
         "entrances": {
-            "The Hollows 4 to The Hollows 1": {
-                "vanilla target": "The Hollows 1"
+            "Hollows 4 to Hollows 1": {
+                "vanilla target": "Hollows 1"
             }
         },
         "locations": {
-            "The Hollows Life Chest after Water-Filled Hallway": {
+            "Hollows Life Chest after Water-Filled Hallway": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Map Chest at Surface of Flooded Room": {
+            "Hollows Map Chest at Surface of Flooded Room": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Wrath Chest after Water-Filled Hallway": {
+            "Hollows Wrath Chest after Water-Filled Hallway": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Soldier Artifact South of Platforms": {
+            "Hollows Soldier Artifact South of Platforms": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 5",
+        "name": "Hollows 5",
         "entrances": {
-            "The Hollows 5 to The Hollows 6": {
-                "vanilla target": "The Hollows 6"
+            "Hollows 5 to Hollows 6": {
+                "vanilla target": "Hollows 6"
             },
-            "The Hollows 5 to The Hollows 9": {
-                "vanilla target": "The Hollows 9"
+            "Hollows 5 to Hollows 9": {
+                "vanilla target": "Hollows 9"
             }
         },
         "locations": {
-            "The Hollows Life Chest behind Train Cars": {
+            "Hollows Life Chest behind Train Cars": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 6",
+        "name": "Hollows 6",
         "entrances": {
-            "The Hollows 6 to The Hollows 7": {
-                "vanilla target": "The Hollows 7"
+            "Hollows 6 to Hollows 7": {
+                "vanilla target": "Hollows 7"
             }
         },
         "locations": {
-            "The Hollows Currency Chest SE of Locust Room": {
+            "Hollows Currency Chest SE of Locust Room": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Life Chest North of Locust Room": {
+            "Hollows Life Chest North of Locust Room": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 7",
+        "name": "Hollows 7",
         "entrances": {
-            "The Hollows 7 to The Hollows 8": {
-                "vanilla target": "The Hollows 8"
+            "Hollows 7 to Hollows 8": {
+                "vanilla target": "Hollows 8"
             }
         },
         "locations": {
-            "The Hollows Currency Chest between Ice Blocks": {
+            "Hollows Currency Chest between Ice Blocks": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 8",
+        "name": "Hollows 8",
         "locations": {
-            "The Hollows Champion Artifact in Pipe Leading North": {
+            "Hollows Champion Artifact in Pipe Leading North": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Beholder Key Chest inside Floor Hole": {
+            "Hollows Beholder Key Chest inside Floor Hole": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 9",
+        "name": "Hollows 9",
         "entrances": {
-            "The Hollows 9 to The Hollows 10": {
-                "vanilla target": "The Hollows 10"
+            "Hollows 9 to Hollows 10": {
+                "vanilla target": "Hollows 10"
             }
         },
         "locations": {
-            "The Hollows Life Chest in Griever Tunnel": {
+            "Hollows Life Chest in Griever Tunnel": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Currency Chest under Goremaw": {
+            "Hollows Currency Chest under Goremaw": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Hoardseeker Chest SW of Grappleclaws Room": {
+            "Hollows Hoardseeker Chest SW of Grappleclaws Room": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Life Chest West of Grappleclaws Room": {
+            "Hollows Life Chest West of Grappleclaws Room": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows 10",
+        "name": "Hollows 10",
         "entrances": {
-            "The Hollows 10 to The Hollows Boss Room": {
-                "vanilla target": "The Hollows Boss Room"
+            "Hollows 10 to Hollows Boss Room": {
+                "vanilla target": "Hollows Boss Room"
             }
         },
         "locations": {
-            "The Hollows Life Chest before Boss Room": {
+            "Hollows Life Chest before Boss Room": {
                 "vanilla item": "Currency"
             },
-            "The Hollows Wrath Chest over Flooded Room": {
+            "Hollows Wrath Chest over Flooded Room": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "The Hollows Boss Room",
+        "name": "Hollows Boss Room",
         "events": {
-            "The Griever defeated": {
-                "vanilla reward": "Heart of the Chosen"
+            "Griever defeated": {
+                "vanilla reward": "Heart of Chosen"
             },
             "Item Reward": {
                 "vanilla item": "Lifestone"

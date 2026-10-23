@@ -13,28 +13,34 @@ if TYPE_CHECKING:
     from .World import DSWorld
 
 abyssal_armor_pieces = {
+    'Choking Grounds Access Tunnel Abyssal Armor Chest': 211,
     'Drowned Pass Abyssal Armor Piece': 1,
-    'The Hollows Abyssal Armor Piece': 2,
-    'Scalding Gallow Abyssal Armor Piece Near Entrance': 3,
+    'Hollows Abyssal Armor Piece': 2,
+    'Scalding Gallow Abyssal Armor Piece Near Library': 3,
     'Scalding Gallow Abyssal Armor Piece Under Central Platform': 4,
     'Twilight Cathedral Abyssal Armor Piece': 5,
 }
 
+armaggedon_shards = {
+    'Choking Grounds Armaggedon Blade Shard in North Building': 300,
+}
+
 artifacts = {
-    'Broken Stair Soldier Artifact Near Entrance': 30,
+    'Broken Stair Artifact': 29,
+    'Broken Stair Artifact Blocked by Ice': 30,
     #'Choking Grounds Access Cave Soldier Artifact',
-    'Choking Grounds Soldier Artifact North of Vulgrim': 31,
-    'Choking Grounds Soldier Artifact South in Sarcophagus': 32,
+    'Choking Grounds Artifact North of Vulgrim': 31,
+    'Choking Grounds Artifact South in Sarcophagus': 32,
     'Crossroads Soldier Artifact in Subway Station': 33,
     'Drowned Pass Access Tunnel Champion Artifact': 34,
     'Drowned Pass Soldier Artifact Cave Under Waterfall': 35,
     'Drowned Pass Soldier Artifact Underwater Building': 36,
     'Dry Road Soldier Artifact': 37,
     'Dry Road Access Tunnel Soldier Artifact': 38,
-    'The Hollows Champion Artifact in Pipe Leading North': 39,
-    'The Hollows Soldier Artifact Underwater': 40,
-    'The Hollows Soldier Artifact South of Platforms': 41,
-    #'The Library Life Chest Entrance': 15,
+    'Hollows Champion Artifact in Pipe Leading North': 39,
+    'Hollows Soldier Artifact Underwater': 40,
+    'Hollows Soldier Artifact South of Platforms': 41,
+    'Library Artifact on West Side': 216,
     'Twilight Cathedral Champion Artifact North Wing': 42,
     'Twilight Cathedral Soldier Artifact South Wing': 43,
     'Twilight Cathedral Soldier Artifact Bridge Room': 44,
@@ -42,7 +48,7 @@ artifacts = {
 
 """
 boss_defeated = {
-    'Abaddon The Destroyer': 70,
+    'Abaddon Destroyer': 70,
     'Abyssal Gladiator': 71,
     'Ash Titan': 72,
     'Broodmother': 73,
@@ -63,7 +69,7 @@ boss_defeated = {
 """
 
 chained_cubes = {
-    'The Hollows Chained Cube': 90,
+    'Hollows Chained Cube': 90,
     'Twilight Cathedral Chained Cube': 91,
 }
 
@@ -78,33 +84,38 @@ chests = {
     'Anvil Ford Challenge Life Chest West Uriel Arena': 107,
     'Anvil Ford Challenge Wrath Chest after Demonic Growth': 108,
     #'Anvil Ford Challenge Wrath Chest after Demonic Growth': 1031,
-    'The Ashlands Currency Chest up the Ramp': 109,
-    'The Ashlands Access Tunnel Currency Chest by Three Goremaws': 110,
-    'The Ashlands Access Tunnel Life Blocked by Ice': 111,
-    'The Ashlands Access Tunnel Rare Chest by Goremaw': 112,
-    'Broken Stair Access Tunnel Currency Chest': 113,
-    'Broken Stair Beholder Key Chest': 114,
-    'Broken Stair Currency Chest SE Down Stairs': 115,
-    'Broken Stair Currency Chest SW 2nd Floor': 116,
-    'Broken Stair Currency Chest after Geysers': 117,
-    'Broken Stair Life Chest East Submerged Tunnel': 118,
-    'Broken Stair Life Chest after Geysers': 119,
-    'Choking Grounds Currency Chest North of Cemetery': 120,
-    'Choking Grounds Currency Chest NE South of the ramp': 121,
-    'Choking Grounds Currency Chest 1st Floor Left of Tormented Gate': 122,
-    'Choking Grounds Life Chest in NE Building': 123,
-    'Choking Grounds Life Chest North of Cemetery': 124,
-    'Choking Grounds Wrath Chest 2nd Floor Left of Tormented Gate': 125,
-    'Choking Grounds Secret Chest Destroy Gravestones with Crosses': 126,
-    'Choking Grounds Access Cave Currency Chest in Lava Pool': 127,
-    'Crossroads Currency Chest Down Stairs': 128,
-    'Crossroads Currency Chest South Crater': 129,
-    'Crossroads Currency Chest in Subway Station': 130,
-    'Crossroads Life Chest Behind Gholen West': 131,
-    'Crossroads Life Chest Behind Gholen North': 132,
-    'Crossroads Life Chest NE Crater': 133,
-    'Crossroads Rare Chest Blocked by Ice': 134,
-    'Crossroads Secret Chest Destroy Fire Hydrants': 135,
+    'Ashlands Currency Chest up the Ramp': 109,
+    'Ashlands Access Tunnel Currency Chest by Three Goremaws': 110,
+    'Ashlands Access Tunnel Life Blocked by Ice': 111,
+    'Ashlands Access Tunnel Rare Chest by Goremaw': 112,
+    'Broken Stair Access Tunnel Chest': 113,
+    'Broken Stair Chest after Waterway': 114,
+    'Broken Stair Chest inside Building': 115,
+    'Broken Stair Chest near Vulgrim': 116,
+    'Broken Stair Chest at Highway\'s end': 117,
+    'Broken Stair Chest Bottom Floor of Last Building': 118,
+    'Broken Stair Chest Middle Floor of Last Building': 119,
+    'Broken Stair Chest under Billboard': 210,
+    'Choking Grounds Access Tunnel Chest in Lava River': 120,
+    'Choking Grounds Chest Bottom Floor of North Building': 121,
+    'Choking Grounds Chest NE South of the Ramp': 122,
+    'Choking Grounds Chest South Down the Stairs': 123,
+    'Choking Grounds Chest Top Floor of North Building Blocked by Ice': 124,
+    'Choking Grounds Chest North of Cemetery': 125,
+    'Choking Grounds Chest Top Floor of North Building': 126,
+    'Choking Grounds Chest 2nd Floor of North Building': 127,
+    'Choking Grounds Rare Chest of North Building': 212,
+    'Choking Grounds Secret Chest Destroy Gravestones with Crosses': 215,
+    'Crossroads Currency Chest Down Back Alley Stairs': 128,
+    'Crossroads Currency Chest in North Building': 129,
+    'Crossroads Currency Chest South Crater': 130,
+    'Crossroads Currency Chest in Subway Station': 131,
+    'Crossroads Life Chest East Crater': 132,
+    'Crossroads Life Chest in NE Back Alley': 133,
+    'Crossroads Life Chest West of Library': 134,
+    'Crossroads Rare Chest Blocked by Ice': 135,
+    'Crossroads Secret Chest Destroy Fire Hydrants': 213,
+    'Crossroads Soldier Artifact in Subway Station': 214,
     'Drowned Pass Currency Chest after Submerged Cave': 136,
     'Drowned Pass Currency Chest Building Semi Submerged': 137,
     'Drowned Pass Life Chest after Crystal Switch Platform': 138,
@@ -115,46 +126,42 @@ chests = {
     'Dry Road Access Tunnel Currency Chest North of Chronosphere': 143,
     'Dry Road Access Tunnel Currency Chest South of Entrance': 144,
     'Dry Road Access Tunnel Currency Chest Up the Stairs': 145,
-    'The Hollows Beholder Key Chest after Chained Cube': 146,
-    'The Hollows Beholder Key Chest in Current': 147,
-    'The Hollows Beholder Key Chest inside Floor Hole': 148,
-    'The Hollows Currency Chest after Submerged Passage': 149,
-    'The Hollows Currency Chest between Ice Blocks': 150,
-    'The Hollows Currency Chest SE of Locust Room': 151,
-    'The Hollows Currency Chest South of Clocktower': 152,
-    'The Hollows Currency Chest SW of Gas': 153,
-    'The Hollows Currency Chest Top Balcony': 154,
-    'The Hollows Currency Chest Top of Stairwell': 155,
-    'The Hollows Currency Chest under Goremaw': 156,
-    'The Hollows Hoardseeker Chest SW of Grappleclaws Room': 157,
-    'The Hollows Life Chest after Chained Cube': 158,
-    'The Hollows Life Chest after Water-Filled Hallway': 159,
-    'The Hollows Life Chest before Boss Room': 160,
-    'The Hollows Life Chest behind Train Cars': 161,
-    'The Hollows Life Chest in Griever Tunnel': 162,
-    'The Hollows Life Chest North of Locust Room': 163,
-    'The Hollows Life Chest South Wall Nook': 164,
-    'The Hollows Life Chest West Corridor': 165,
-    'The Hollows Life Chest West of Grappleclaws Room': 166,
-    'The Hollows Map Chest at Surface of Flooded Room': 167,
-    'The Hollows Rare Chest over Submerged Passage': 168,
-    'The Hollows Wrath Chest after Submerged Passage': 169,
-    'The Hollows Wrath Chest after Water-Filled Hallway': 170,
-    'The Hollows Wrath Chest over Flooded Room': 171,
-    'The Hollows Access Tunnel Currency Chest Dead End': 172,
-    'The Hollows Access Tunnel Currency Chest Stream Walkthrough': 173,
-    #'The Crossroads Secret Chest Destroy Fire Hydrants': 15,
-    #'The Crossroads Secret Chest Destroy Fire Hydrants': 15,
-    'Library Currency Chest South of Fleshburners': 174,
-    #'The Library Life Chest Entrance': 15,
+    'Hollows Beholder Key Chest after Chained Cube': 146,
+    'Hollows Beholder Key Chest in Current': 147,
+    'Hollows Beholder Key Chest inside Floor Hole': 148,
+    'Hollows Currency Chest after Submerged Passage': 149,
+    'Hollows Currency Chest between Ice Blocks': 150,
+    'Hollows Currency Chest SE of Locust Room': 151,
+    'Hollows Currency Chest South of Clocktower': 152,
+    'Hollows Currency Chest SW of Gas': 153,
+    'Hollows Currency Chest Top Balcony': 154,
+    'Hollows Currency Chest Top of Stairwell': 155,
+    'Hollows Currency Chest under Goremaw': 156,
+    'Hollows Hoardseeker Chest SW of Grappleclaws Room': 157,
+    'Hollows Life Chest after Chained Cube': 158,
+    'Hollows Life Chest after Water-Filled Hallway': 159,
+    'Hollows Life Chest before Boss Room': 160,
+    'Hollows Life Chest behind Train Cars': 161,
+    'Hollows Life Chest in Griever Tunnel': 162,
+    'Hollows Life Chest North of Locust Room': 163,
+    'Hollows Life Chest South Wall Nook': 164,
+    'Hollows Life Chest West Corridor': 165,
+    'Hollows Life Chest West of Grappleclaws Room': 166,
+    'Hollows Map Chest at Surface of Flooded Room': 167,
+    'Hollows Rare Chest over Submerged Passage': 168,
+    'Hollows Wrath Chest after Submerged Passage': 169,
+    'Hollows Wrath Chest after Water-Filled Hallway': 170,
+    'Hollows Wrath Chest over Flooded Room': 171,
+    'Hollows Access Tunnel Currency Chest Dead End': 172,
+    'Hollows Access Tunnel Currency Chest Stream Walkthrough': 173,
+    'Library Chest South of Fleshburners': 174,
+    'Library Wrath Chest North': 217,
     'Library Life Chest Entrance': 175,
     'Library Life Chest Submarine Cave': 176,
     'Library Life Chest North': 177,
-    'Scalding Gallow Currency Chest 2nd Floor': 178,
-    'Scalding Gallow Currency Chest West Near Vulgrim': 179,
-    'Scalding Gallow Wrath Chest Above Vulgrim': 180,
-    #'Seraphim Hotel Life Chest 1': 1029,
-    #'Seraphim Hotel Life Chest 2': 1030,
+    'Scalding Gallow Chest 2nd Floor Near Library': 178,
+    'Scalding Gallow Chest Near Vulgrim': 179,
+    'Scalding Gallow Chest Above Vulgrim': 180,
     'Serpent Hole to Anvil\'s Ford Chest': 181,
     'Serpent Hole to Dry Road Chest': 182,
     'Serpent Hole to Twilight Cathedral Chest': 183,
@@ -162,12 +169,12 @@ chests = {
     'Twilight Cathedral Beholder Key Chest Three Blades East Path': 185,
     'Twilight Cathedral Currency Chest Below Abyssal Armor Chest': 186,
     'Twilight Cathedral Currency Chest East of Elevated Platforms': 187,
-    'Twilight Cathedral Currency Chest Exterior Blocked by Ice': 188,
-    'Twilight Cathedral Currency Chest NE of Exterior': 189,
+    'Twilight Cathedral Exterior Chest Blocked by Ice': 188,
+    'Twilight Cathedral Exterior Chest NE of Entrance': 189,
     'Twilight Cathedral Currency Chest North after Lava Fall': 190,
     'Twilight Cathedral Currency Chest Rot Mauler Room': 191,
     'Twilight Cathedral Currency Chest South after Lava Fall': 192,
-    'Twilight Cathedral Currency Chest South of Exterior': 193,
+    'Twilight Cathedral Exterior Chest South of Exterior': 193,
     'Twilight Cathedral Currency Chest South Wing Main Gallery': 194,
     'Twilight Cathedral Currency Chest South Wing Conscript Room': 195,
     'Twilight Cathedral Hoardseeker Chest South Wing': 196,
@@ -184,9 +191,10 @@ chests = {
     'Twilight Cathedral Wrath Chest before Platform Room': 207,
     'Twilight Cathedral Wrath Chest Below Abyssal Armor Chest': 208,
     'Twilight Cathedral Wrath Chest Three Blades East Path': 209,
+    'Twilight Cathedral Exterior Chest NW after Hooks': 220,
 }
 
-LOCATION_NAME_TO_ID = abyssal_armor_pieces | artifacts | chained_cubes | chests
+LOCATION_NAME_TO_ID = abyssal_armor_pieces | armaggedon_shards | artifacts | chained_cubes | chests
 
 #location_json = json_read(data_path("Anvil Ford.json"))
 
@@ -214,6 +222,7 @@ def create_regular_locations(world: DSWorld) -> None:
 
     create_locations_from_json(world, "Anvil Ford.json")
     create_locations_from_json(world, "Ashlands.json")
+    create_locations_from_json(world, "Broken Stairs.json")
     create_locations_from_json(world, "Choking Grounds.json")
     create_locations_from_json(world, "Crossroads.json")
     create_locations_from_json(world, "Drowned Pass.json")
@@ -235,9 +244,9 @@ def create_regular_locations(world: DSWorld) -> None:
 def create_events(world: DSWorld) -> None:
 
     black_throne_boss_room = world.get_region("Black Throne Boss Room")
-    dry_road = world.get_region("The Dry Road")
+    dry_road = world.get_region("Dry Road")
     eden = world.get_region("Eden")
-    hollows_boss_room = world.get_region("The Hollows Boss Room")
+    hollows_boss_room = world.get_region("Hollows Boss Room")
     leviathan_drift = world.get_region("Leviathan's Drift")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
     silitha_loom = world.get_region("Silitha's Loom")
@@ -249,21 +258,21 @@ def create_events(world: DSWorld) -> None:
     black_throne_boss_room.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
     dry_road.add_event(location_name = "Uriel 2 defeated", rule = Has("Armageddon Blade Shards", count = 1), location_type = DSLocation)
     eden.add_event(location_name = "Shadow War defeated", rule = HAS_MASK, location_type = DSLocation)
-    hollows_boss_room.add_event(location_name = "The Griever defeated", item_name = "Heart of the Chosen", rule = HAS_GAUNTLET, location_type = DSLocation)
-    hollows_boss_room.add_event(location_name = "The Griever Item Reward", rule = HAS_GAUNTLET, location_type = DSLocation)
-    leviathan_drift.add_event(location_name = "Abaddon The Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
-    leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of the Chosen", rule = HAS_RUIN, location_type = DSLocation)
+    hollows_boss_room.add_event(location_name = "Griever defeated", item_name = "Heart of Chosen", rule = HAS_GAUNTLET, location_type = DSLocation)
+    hollows_boss_room.add_event(location_name = "Griever Item Reward", rule = HAS_GAUNTLET, location_type = DSLocation)
+    leviathan_drift.add_event(location_name = "Abaddon Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
+    leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of Chosen", rule = HAS_RUIN, location_type = DSLocation)
     leviathan_drift.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
     #scalding_gallow.add_event(location_name = "Phantom General defeated", location_type = DSLocation)
     #scalding_gallow.add_event(location_name = "Samael's first Reward", location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade first Heart of the Chosen", rule = Has("Heart of the Chosen", count = 1), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade second Heart of the Chosen", rule = Has("Heart of the Chosen", count = 2), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade third Heart of the Chosen", rule = Has("Heart of the Chosen", count = 3), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade fourth Heart of the Chosen", rule = Has("Heart of the Chosen", count = 4), location_type = DSLocation)
-    silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of the Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade first Heart of Chosen", rule = Has("Heart of Chosen", count = 1), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade second Heart of Chosen", rule = Has("Heart of Chosen", count = 2), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade third Heart of Chosen", rule = Has("Heart of Chosen", count = 3), location_type = DSLocation)
+    #scalding_gallow.add_event(location_name = "Trade fourth Heart of Chosen", rule = Has("Heart of Chosen", count = 4), location_type = DSLocation)
+    silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
     silitha_loom.add_event(location_name = "Silitha Item Reward", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
-    #twilight_cathedral_2.add_event(location_name = "The Jailer defeated", location_type = DSLocation)
-    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat defeated", item_name = "Heart of the Chosen", rule = HAS_CROSSBLADE, location_type = DSLocation)
+    #twilight_cathedral_2.add_event(location_name = "Jailer defeated", location_type = DSLocation)
+    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat defeated", item_name = "Heart of Chosen", rule = HAS_CROSSBLADE, location_type = DSLocation)
     #twilight_cathedral_boss_room.add_event(location_name = "Tiamat Item Reward", rule = HAS_CROSSBLADE, location_type = DSLocation)
 
 def create_events_from_json(world: DSWorld, filename) -> None:

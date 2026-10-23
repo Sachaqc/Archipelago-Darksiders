@@ -1,6 +1,17 @@
 [
     {
         "name": "Vulgrim's Shop",
+        "events": {
+            "Trade All Soldier Artifacts": {
+                "vanilla reward": "Lifestone Shard"
+            },
+            "Trade All Champion Artifacts": {
+                "vanilla reward": "Lifestone Shard"
+            },
+            "Trade Overlord Artifact": {
+                "vanilla reward": "Wrath Core"
+            }
+        },
         "locations": {
             
         }
@@ -8,17 +19,17 @@
     {
         "name": "Serpent Holes",
         "entrances": {
-            "Serpent Holes to The Ashlands Access Tunnel 1": {
-                "vanilla target": "The Ashlands Access Tunnel 1"
+            "Serpent Holes to Ashlands Access Tunnel 1": {
+                "vanilla target": "Ashlands Access Tunnel 1"
             },
-            "Serpent Holes to The Broken Stair": {
-                "vanilla target": "The Broken Stair"
+            "Serpent Holes to Broken Stair 1": {
+                "vanilla target": "Broken Stair 1"
             },
-            "Serpent Holes to The Choking Grounds": {
-                "vanilla target": "The Choking Grounds"
+            "Serpent Holes to Choking Grounds": {
+                "vanilla target": "Choking Grounds"
             },
-            "Serpent Holes to The Crossroads": {
-                "vanilla target": "The Crossroads"
+            "Serpent Holes to Crossroads": {
+                "vanilla target": "Crossroads"
             },
             "Serpent Holes to Drowned Pass": {
                 "vanilla target": "Drowned Pass"
@@ -26,13 +37,13 @@
             "Serpent Holes to Scalding Gallow": {
                 "vanilla target": "Serpent Holes"
             },
-            "Serpent Holes to The Serpent Holes to Anvil's Ford": {
+            "Serpent Holes to Serpent Holes to Anvil's Ford": {
                 "vanilla target": "Serpent Holes to Anvil's Ford"
             },
-            "Serpent Holes to The Serpent Holes to Dry Road": {
+            "Serpent Holes to Serpent Holes to Dry Road": {
                 "vanilla target": "Serpent Holes to Dry Road"
             },
-            "Serpent Holes to The Serpent Holes to Twilight Cathedral": {
+            "Serpent Holes to Serpent Holes to Twilight Cathedral": {
                 "vanilla target": "Serpent Holes to Twilight Cathedral"
             }
         }
@@ -54,7 +65,7 @@
         "name": "Serpent Holes to Dry Road",
         "entrances": {
             "Serpent Holes to Dry Road to Dry Road": {
-                "vanilla target": "The Dry Road"
+                "vanilla target": "Dry Road"
             }
         },
         "locations": {
@@ -66,8 +77,8 @@
     {
         "name": "Serpent Holes to Twilight Cathedral",
         "entrances": {
-            "Serpent Holes to Twilight Cathedral to Twilight Cathedral Exterior": {
-                "vanilla target": "Twilight Cathedral Exterior"
+            "Serpent Holes to Twilight Cathedral to Twilight Cathedral Exterior 1": {
+                "vanilla target": "Twilight Cathedral Exterior 1"
             }
         },
         "locations": {

@@ -27,8 +27,8 @@
     {
         "name": "Anvil's Ford Challenge Area",
         "entrances": {
-            "Anvil's Ford Challenge Area to The Hollows Access Tunnel": {
-                "vanilla target": "The Hollows Access Tunnel"
+            "Anvil's Ford Challenge Area to Hollows Access Tunnel": {
+                "vanilla target": "Hollows Access Tunnel"
             }
         },
         "events": {

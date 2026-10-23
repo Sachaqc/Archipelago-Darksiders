@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Broken Stair Access Tunnel",
+        "entrances": {
+            "Broken Stair Access Tunnel to Broken Stair 1": {
+                "vanilla target": "Broken Stair 1"
+            }
+        },
+        "locations": {
+            "Broken Stair Artifact Blocked by Ice": {
+                "vanilla item": "Soldier Artifact"
+            },
+            "Broken Stair Access Tunnel Chest": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Broken Stair 1",
+        "entrances": {
+            "Broken Stair 1 to Broken Stair 2": {
+                "vanilla target": "Broken Stair 2"
+            },
+            "The Broken Stair to Serpent Holes": {
+                "vanilla target": "Serpent Holes"
+            },
+            "The Broken Stair to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "locations": {
+            "Broken Stair Artifact": {
+                "vanilla item": "Soldier Artifact"
+            },
+            "Broken Stair Chest after Waterway": {
+                "vanilla item": "Lifestone Shard"
+            },
+            "Broken Stair Chest inside Building": {
+                "vanilla item": "Currency"
+            },
+            "Broken Stair Chest near Vulgrim": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Broken Stair 2",
+        "entrances": {
+            "Broken Stair 2 to Twilight Cathedral Exterior 1": {
+                "vanilla target": "Twilight Cathedral Exterior 1"
+            }
+        },
+        "locations": {
+            "Broken Stair Chest at Highway's end": {
+                "vanilla item": "Lifestone Shard"
+            },
+            "Broken Stair Chest Bottom Floor of Last Building": {
+                "vanilla item": "Beholder Key"
+            },
+            "Broken Stair Chest Middle Floor of Last Building": {
+                "vanilla item": "Currency"
+            },
+            "Broken Stair Chest under Billboard": {
+                "vanilla item": "Currency"
+            }
+        }
+    }
+]

@@ -1,47 +1,83 @@
 [
     {
-        "name": "The Choking Grounds",
+        "name": "Choking Grounds Access Tunnel 1",
         "entrances": {
-            "The Choking Grounds to The Broken Stair": {
-                "vanilla target": "The Broken Stair"
-            },
-            "The Choking Grounds to Serpent Holes": {
-                "vanilla target": "Serpent Holes"
-            },
-            "The Choking Grounds to Vulgrim's Shop": {
-                "vanilla target": "Vulgrim's Shop"
+            "Choking Grounds Access Tunnel 1 to Choking Grounds Access Tunnel 2": {
+                "vanilla target": "Choking Grounds Access Tunnel 2"
             }
         },
         "locations": {
-            "Choking Grounds Soldier Artifact North of Vulgrim": {
+            "Choking Grounds Access Tunnel Abyssal Armor Chest": {
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Soldier Artifact South in Sarcophagus": {
+            "Choking Grounds Access Tunnel Chest in Lava River": {
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Choking Grounds Access Tunnel 2",
+        "entrances": {
+            "Choking Grounds Access Tunnel 2 to Choking Grounds": {
+                "vanilla target": "Choking Grounds"
+            }
+        }
+    },
+    {
+        "name": "Choking Grounds",
+        "entrances": {
+            "Choking Grounds to Broken Stair Access Tunnel": {
+                "vanilla target": "Broken Stair Access Tunnel"
+            },
+            "Choking Grounds to Serpent Holes": {
+                "vanilla target": "Serpent Holes"
+            },
+            "Choking Grounds to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
+            }
+        },
+        "events": {
+            "Choking Grounds Aerial Brawl Reward": {},
+            "Choking Grounds Speed Brawl Reward": {},
+            "Choking Grounds The Gory End Reward": {},
+            "Choking Grounds Venomous Reward": {}
+        },
+        "locations": {
+            "Choking Grounds Armaggedon Blade Shard in North Building": {
+                "vanilla item": "Soldier Artifact"
+            },
+            "Choking Grounds Artifact North of Vulgrim": {
+                "vanilla item": "Soldier Artifact"
+            },
+            "Choking Grounds Artifact South in Sarcophagus": {
+                "vanilla item": "Soldier Artifact"
+            },
+            "Choking Grounds Chest Bottom Floor of North Building": {
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Currency Chest North of Cemetery": {
+            "Choking Grounds Chest NE South of the Ramp": {
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Currency Chest NE South of the ramp": {
+            "Choking Grounds Chest South Down the Stairs": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Chest Top Floor of North Building Blocked by Ice": {
+                "vanilla item": "Currency"
+            },
+            "Choking Grounds Chest North of Cemetery": {
                 "vanilla item": "Health"
             },
-            "Choking Grounds Currency Chest 1st Floor Left of Tormented Gate": {
-                "vanilla item": "Health"
+            "Choking Grounds Chest Top Floor of North Building": {
+                "vanilla item": "Lifestone Shard"
             },
-            "Choking Grounds Life Chest in NE Building": {
-                "vanilla item": "Hellfire"
+            "Choking Grounds Chest 2nd Floor of North Building": {
+                "vanilla item": "Wrath Shard"
             },
-            "Choking Grounds Life Chest North of Cemetery": {
-                "vanilla item": "Health"
-            },
-            "Choking Grounds Wrath Chest 2nd Floor Left of Tormented Gate": {
-                "vanilla item": "Currency"
+            "Choking Grounds Rare Chest of North Building": {
+                "vanilla item": "Empty Container"
             },
             "Choking Grounds Secret Chest Destroy Gravestones with Crosses": {
-                "vanilla item": "Health"
-            },
-            "Choking Grounds Access Cave Currency Chest in Lava Pool": {
-                "vanilla item": "Health"
+                "vanilla item": "Lifestone Shard"
             }
         }
     }

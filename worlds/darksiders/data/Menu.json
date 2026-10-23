@@ -2,8 +2,8 @@
     {
         "name": "Menu",
         "entrances": {
-            "Menu to The Crossroads": {
-                "vanilla target": "The Crossroads"
+            "Menu to Crossroads": {
+                "vanilla target": "Crossroads"
             }
         }
     }

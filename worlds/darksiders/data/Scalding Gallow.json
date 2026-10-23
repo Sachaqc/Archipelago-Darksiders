@@ -5,14 +5,14 @@
             "Scalding Gallow to Black Throne 1": {
                 "vanilla target": "Black Throne 1"
             },
-            "Scalding Gallow to The Choking Grounds": {
-                "vanilla target": "The Choking Grounds"
+            "Scalding Gallow to Choking Grounds Access Tunnel 1": {
+                "vanilla target": "Choking Grounds Access Tunnel 1"
             },
             "Scalding Gallow to Drowned Pass Access Tunnel": {
                 "vanilla target": "Drowned Pass Access Tunnel"
             },
             "Scalding Gallow to Dry Road Access Tunnel 1": {
-                "vanilla target": "The Dry Road Access Tunnel 1"
+                "vanilla target": "Dry Road Access Tunnel 1"
             },
             "Scalding Gallow to Iron Canopy 1": {
                 "vanilla target": "Iron Canopy 1"
@@ -33,20 +33,20 @@
             "Trade fourth Heart of the Chosen": {}
         },
         "locations": {
-            "Scalding Gallow Abyssal Armor Piece Near Entrance": {
+            "Scalding Gallow Abyssal Armor Piece Near Library": {
                 "vanilla item": "Abyssal Armor Piece"
             },
             "Scalding Gallow Abyssal Armor Piece Under Central Platform": {
                 "vanilla item": "Abyssal Armor Piece"
             },
-            "Scalding Gallow Currency Chest 2nd Floor": {
+            "Scalding Gallow Chest 2nd Floor Near Library": {
                 "vanilla item": "Currency"
             },
-            "Scalding Gallow Currency Chest West Near Vulgrim": {
+            "Scalding Gallow Chest Near Vulgrim": {
                 "vanilla item": "Currency"
             },
-            "Scalding Gallow Wrath Chest Above Vulgrim": {
-                "vanilla item": "Wrath Core"
+            "Scalding Gallow Chest Above Vulgrim": {
+                "vanilla item": "Wrath Shard"
             }
         }
     }

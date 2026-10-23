@@ -1,59 +1,33 @@
 [
     {
-        "name": "The Broken Stair",
+        "name": "Twilight Cathedral Exterior 1",
         "entrances": {
-            "The Broken Stair to Twilight Cathedral Exterior": {
-                "vanilla target": "Twilight Cathedral Exterior"
+            "Twilight Cathedral Exterior 1 to Twilight Cathedral 1": {
+                "vanilla target": "Twilight Cathedral 1"
             },
-            "Twilight Cathedral Exterior to Serpent Hole": {
-                "vanilla target": "Serpent Holes"
-            },
-            "Twilight Cathedral Exterior to Vulgrim's Shop": {
-                "vanilla target": "Vulgrim's Shop"
+            "Twilight Cathedral Exterior 1 to Twilight Cathedral Exterior 2": {
+                "vanilla target": "Twilight Cathedral Exterior 2"
             }
         },
         "locations": {
-            "Broken Stair Soldier Artifact Near Entrance": {
+            "Twilight Cathedral Exterior Chest Blocked by Ice": {
                 "vanilla item": "Currency"
             },
-            "Broken Stair Access Tunnel Currency Chest": {
-                "vanilla item": "Currency"
+            "Twilight Cathedral Exterior Chest NE of Entrance": {
+                "vanilla item": "Health"
             },
-            "Broken Stair Beholder Key Chest": {
-                "vanilla item": "Currency"
-            },
-            "Broken Stair Currency Chest SE Down Stairs": {
-                "vanilla item": "Currency"
-            },
-            "Broken Stair Currency Chest SW 2nd Floor": {
-                "vanilla item": "Currency"
-            },
-            "Broken Stair Currency Chest after Geysers": {
-                "vanilla item": "Currency"
-            },
-            "Broken Stair Life Chest East Submerged Tunnel": {
-                "vanilla item": "Currency"
-            },
-            "Broken Stair Life Chest after Geysers": {
+            "Twilight Cathedral Exterior Chest South of Exterior": {
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "Twilight Cathedral Exterior",
-        "entrances": {
-            "Twilight Cathedral Exterior to Twilight Cathedral 1": {
-                "vanilla target": "Twilight Cathedral 1"
-            }
+        "name": "Twilight Cathedral Exterior 2",
+        "events": {
+            "Wicked K defeated": {}
         },
         "locations": {
-            "Twilight Cathedral Currency Chest Exterior Blocked by Ice": {
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Currency Chest NE of Exterior": {
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Currency Chest South of Exterior": {
+            "Twilight Cathedral Exterior Chest NW after Hooks": {
                 "vanilla item": "Currency"
             }
         }

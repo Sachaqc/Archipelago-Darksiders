@@ -1,19 +1,22 @@
 [
     {
-        "name": "The Crossroads",
+        "name": "Crossroads",
         "entrances": {
-            "The Crossroads to The Library": {
-                "vanilla target": "The Library"
+            "Crossroads to Library": {
+                "vanilla target": "Library"
             },
-            "The Crossroads to Serpent Holes": {
+            "Crossroads to Serpent Holes": {
                 "vanilla target": "Serpent Holes"
             },
-            "The Crossroads to Vulgrim's Shop": {
+            "Crossroads to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
             }
         },
         "locations": {
-            "Crossroads Currency Chest Down Stairs": {
+            "Crossroads Currency Chest Down Back Alley Stairs": {
+                "vanilla item": "Currency"
+            },
+            "Crossroads Currency Chest in North Building": {
                 "vanilla item": "Currency"
             },
             "Crossroads Currency Chest South Crater": {
@@ -22,20 +25,23 @@
             "Crossroads Currency Chest in Subway Station": {
                 "vanilla item": "Currency"
             },
-            "Crossroads Life Chest Behind Gholen West": {
+            "Crossroads Life Chest East Crater": {
                 "vanilla item": "Health"
             },
-            "Crossroads Life Chest Behind Gholen North": {
+            "Crossroads Life Chest in NE Back Alley": {
+                "vanilla item": "Health"
+            },
+            "Crossroads Life Chest West of Library": {
                 "vanilla item": "Health"
             },
             "Crossroads Rare Chest Blocked by Ice": {
                 "vanilla item": "Hellfire"
             },
-            "Crossroads Life Chest NE Crater": {
-                "vanilla item": "Health"
-            },
             "Crossroads Secret Chest Destroy Fire Hydrants": {
                 "vanilla item": "Currency"
+            },
+            "Crossroads Soldier Artifact in Subway Station": {
+                "vanilla item": "Soldier Artifact"
             }
         }
     }

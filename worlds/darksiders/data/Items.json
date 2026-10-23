@@ -181,7 +181,7 @@
         "Beholder Key": {
             "ID": 60,
             "progressive": false,
-            "number": 4,
+            "number": 5,
             "console": "/pickup_item items/item_dungeonkey"
         },
         "Heart of the Chosen": {
@@ -189,6 +189,33 @@
             "progressive": false,
             "number": 4,
             "console": "/pickup_item items/item_demonheart"
+        }
+    },
+    "Gauntlet Combos": {
+        "Air Tremor Smash": {
+            "ID": 180,
+            "progressive": true,
+            "number": 1
+        },
+        "Earthbreaker": {
+            "ID": 181,
+            "progressive": false,
+            "number": 1
+        },
+        "Meteor Launch": {
+            "ID": 182,
+            "progressive": false,
+            "number": 1
+        },
+        "Tremor Punch": {
+            "ID": 183,
+            "progressive": true,
+            "number": 1
+        },
+        "Tremor Smash": {
+            "ID": 184,
+            "progressive": true,
+            "number": 2
         }
     },
     "Gear": {
@@ -271,6 +298,33 @@
             "console": "/pickup_item ch_com/weapon_swordkey"
         }
     },
+    "Scythe Combos": {
+        "Air Reaper Blade": {
+            "ID": 170,
+            "progressive": true,
+            "number": 3
+        },
+        "Death's Rage": {
+            "ID": 171,
+            "progressive": false,
+            "number": 1
+        },
+        "Hell Razor": {
+            "ID": 172,
+            "progressive": true,
+            "number": 3
+        },
+        "Reaper Blade": {
+            "ID": 173,
+            "progressive": true,
+            "number": 2
+        },
+        "Reaper's Revenge": {
+            "ID": 174,
+            "progressive": false,
+            "number": 1
+        }
+    },
     "Secondary Weapons": {
         "Progressive Scythe": {
             "ID": 110,
@@ -315,37 +369,104 @@
             "progressive": false
         }
     },
+    "Sword Combos": {
+        "180 Orbit Slash": {
+            "ID": 160,
+            "progressive": false,
+            "number": 1
+        },
+        "Demon Edge": {
+            "ID": 161,
+            "progressive": true,
+            "number": 3
+        },
+        "Devil's Cross": {
+            "ID": 162,
+            "progressive": true,
+            "number": 3
+        },
+        "Flipsaw": {
+            "ID": 163,
+            "progressive": true,
+            "number": 3
+        },
+        "Harpoon Tackle": {
+            "ID": 164,
+            "progressive": true,
+            "number": 3
+        },
+        "Meteor Strike": {
+            "ID": 165,
+            "progressive": false,
+            "number": 1
+        },
+        "Power Strike": {
+            "ID": 166,
+            "progressive": true,
+            "number": 3
+        },
+        "Sword Uppercut": {
+            "ID": 167,
+            "progressive": true,
+            "number": 3
+        },
+        "Whirl Wind Combo": {
+            "ID": 168,
+            "progressive": false,
+            "number": 1
+        }
+    },
+    "Upgrades": {
+        "Impact Rounds": {
+            "ID": 130,
+            "progressive": false,
+            "number": 1
+        },"Progressive Ricochet": {
+            "ID": 131,
+            "progressive": true,
+            "number": 2
+        },
+        "Shredder": {
+            "ID": 132,
+            "progressive": false,
+            "number": 1
+        }
+    },
     "Wrath": {
         "Wrath Core": {
-            "ID": 130,
+            "ID": 140,
             "progressive": false,
             "console": "/pickup_item items/item_wrathstone"
         },
         "Wrath Shard": {
-            "ID": 131,
+            "ID": 141,
             "progressive": false,
             "console": "/pickup_item items/item_wrathshard"
         }
     },
     "Wrath Abilities": {
         "Affliction": {
-            "ID": 140,
-            "progressive": false,
+            "ID": 150,
+            "progressive": true,
+            "number": 2,
             "console": "/pickup_item wrath_affliction/wrath_affliction"
         },
         "Blade Geyser": {
-            "ID": 141,
-            "progressive": false,
+            "ID": 151,
+            "progressive": true,
+            "number": 2,
             "console": "/pickup_item wrath_bladegeyser/wrath_bladegeyser"
         },
         "Immolation": {
-            "ID": 142,
-            "progressive": false,
+            "ID": 152,
+            "progressive": true,
+            "number": 2,
             "console": "/pickup_item wrath_immolation/wrath_immolation"
         },
         "Stoneskin": {
-            "ID": 143,
-            "progressive": false,
+            "ID": 153,
+            "progressive": true,
+            "number": 2,
             "console": "/pickup_item wrath_stoneskin/wrath_stoneskin"
         }
     }
