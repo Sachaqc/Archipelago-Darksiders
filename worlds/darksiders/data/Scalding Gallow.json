@@ -31,14 +31,6 @@
                 "vanilla target": "Vulgrim's Shop"
             }
         },
-        "events": {
-            "Phantom General defeated": {},
-            "Samael's first Reward": {},
-            "Trade first Heart of the Chosen": {},
-            "Trade second Heart of the Chosen": {},
-            "Trade third Heart of the Chosen": {},
-            "Trade fourth Heart of the Chosen": {}
-        },
         "locations": {
             "Scalding Gallow Abyssal Armor Piece Near Library": {
                 "ID": 1507,
@@ -59,6 +51,28 @@
             "Scalding Gallow Chest Above Vulgrim": {
                 "ID": 1511,
                 "vanilla item": "Wrath Shard"
+            },
+            "Scalding Gallow Phantom General Defeated": {
+                "ID": 1512
+            },
+            "Scalding Gallow Trade first Heart of the Chosen": {
+                "ID": 1513,
+                "vanilla item": "Chaos Form"
+            },
+            "Scalding Gallow Trade second Heart of the Chosen": {
+                "ID": 1514,
+                "vanilla item": "Chronomancer"
+            },
+            "Scalding Gallow Trade third Heart of the Chosen": {
+                "ID": 1515,
+                "vanilla item": "Soul Bridge"
+            },
+            "Scalding Gallow Trade fourth Heart of the Chosen": {
+                "ID": 1516
+            },
+            "Scalding Gallow Samael's first Reward": {
+                "ID": 1517,
+                "vanilla item": "Shadowflight"
             }
         }
     }

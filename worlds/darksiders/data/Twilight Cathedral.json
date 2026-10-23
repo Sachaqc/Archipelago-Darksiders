@@ -26,12 +26,13 @@
     },
     {
         "name": "Twilight Cathedral Exterior 2",
-        "events": {
-            "Wicked K defeated": {}
-        },
         "locations": {
             "Twilight Cathedral Exterior Chest NW after Hooks": {
                 "ID": 1703,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral Exterior Wicked K defeated": {
+                "ID": 1704,
                 "vanilla item": "Currency"
             }
         }
@@ -45,31 +46,31 @@
         },
         "locations": {
             "Twilight Cathedral Soldier Artifact South Wing": {
-                "ID": 1704,
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Currency Chest South Wing Main Gallery": {
                 "ID": 1705,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest South Wing First Room": {
+            "Twilight Cathedral Currency Chest South Wing Main Gallery": {
                 "ID": 1706,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Rare Chest South Wing": {
+            "Twilight Cathedral Life Chest South Wing First Room": {
                 "ID": 1707,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Beholder Key Chest South Wing": {
+            "Twilight Cathedral Rare Chest South Wing": {
                 "ID": 1708,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Hoardseeker Chest South Wing": {
+            "Twilight Cathedral Beholder Key Chest South Wing": {
                 "ID": 1709,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Map Chest South Wing": {
+            "Twilight Cathedral Hoardseeker Chest South Wing": {
                 "ID": 1710,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral Map Chest South Wing": {
+                "ID": 1711,
                 "vanilla item": "Currency"
             }
         }
@@ -81,32 +82,33 @@
                 "vanilla target": "Twilight Cathedral 3"
             }
         },
-        "events": {
-            "The Jailer defeated": {}
-        },
         "locations": {
             "Twilight Cathedral Chained Cube": {
-                "ID": 1711,
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Champion Artifact North Wing": {
                 "ID": 1712,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest South Wing Conscript Room": {
+            "Twilight Cathedral Champion Artifact North Wing": {
                 "ID": 1713,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest North Wing Basement": {
+            "Twilight Cathedral Currency Chest South Wing Conscript Room": {
                 "ID": 1714,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest North Wing Under Crystal": {
+            "Twilight Cathedral Life Chest North Wing Basement": {
                 "ID": 1715,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest South Wing Conscript Room": {
+            "Twilight Cathedral Life Chest North Wing Under Crystal": {
                 "ID": 1716,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral Life Chest South Wing Conscript Room": {
+                "ID": 1717,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral The Jailer defeated": {
+                "ID": 1718,
                 "vanilla item": "Currency"
             }
         }
@@ -120,74 +122,76 @@
         },
         "locations": {
             "Twilight Cathedral Abyssal Armor Piece": {
-                "ID": 1717,
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Soldier Artifact Bridge Room": {
-                "ID": 1718,
-                "vanilla item": "Currency"
-            },
-            "Twilight Cathedral Beholder Key Chest Three Blades East Path": {
                 "ID": 1719,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest Below Abyssal Armor Chest": {
+            "Twilight Cathedral Soldier Artifact Bridge Room": {
                 "ID": 1720,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest East of Elevated Platforms": {
+            "Twilight Cathedral Beholder Key Chest Three Blades East Path": {
                 "ID": 1721,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest North after Lava Fall": {
+            "Twilight Cathedral Currency Chest Below Abyssal Armor Chest": {
                 "ID": 1722,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest Rot Mauler Room": {
+            "Twilight Cathedral Currency Chest East of Elevated Platforms": {
                 "ID": 1723,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Currency Chest South after Lava Fall": {
+            "Twilight Cathedral Currency Chest North after Lava Fall": {
                 "ID": 1724,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest after The Jailer": {
+            "Twilight Cathedral Currency Chest Rot Mauler Room": {
                 "ID": 1725,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest before Platform Room": {
+            "Twilight Cathedral Currency Chest South after Lava Fall": {
                 "ID": 1726,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Life Chest North of Three Statues": {
+            "Twilight Cathedral Life Chest after The Jailer": {
                 "ID": 1727,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Wrath Chest before Platform Room": {
+            "Twilight Cathedral Life Chest before Platform Room": {
                 "ID": 1728,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Wrath Chest Below Abyssal Armor Chest": {
+            "Twilight Cathedral Life Chest North of Three Statues": {
                 "ID": 1729,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Wrath Chest Three Blades East Path": {
+            "Twilight Cathedral Wrath Chest before Platform Room": {
                 "ID": 1730,
                 "vanilla item": "Currency"
             },
-            "Twilight Cathedral Secret Chest Light 8 Torches": {
+            "Twilight Cathedral Wrath Chest Below Abyssal Armor Chest": {
                 "ID": 1731,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral Wrath Chest Three Blades East Path": {
+                "ID": 1732,
+                "vanilla item": "Currency"
+            },
+            "Twilight Cathedral Secret Chest Light 8 Torches": {
+                "ID": 1733,
                 "vanilla item": "Currency"
             }
         }
     },
     {
         "name": "Twilight Cathedral Boss Room",
-        "events": {
+        "locations": {
             "Tiamat defeated": {
+                "ID": 1734,
                 "vanilla reward": "Heart of the Chosen"
             },
-            "Item Reward": {
+            "Tiamat Item Reward": {
+                "ID": 1735,
                 "vanilla item": "Lifestone"
             }
         }

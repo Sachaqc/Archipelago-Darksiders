@@ -90,49 +90,19 @@ def create_regular_locations(world: DSWorld) -> None:
 def create_events(world: DSWorld) -> None:
 
     black_throne_boss_room = world.get_region("Black Throne Boss Room")
-    dry_road = world.get_region("Dry Road")
     eden = world.get_region("Eden")
-    hollows_boss_room = world.get_region("Hollows Boss Room")
     leviathan_drift = world.get_region("Leviathan's Drift")
     #seraphim_hotel = world.get_region("Seraphim Hotel")
     silitha_loom = world.get_region("Silitha's Loom")
 
-    #anvil_ford.add_event(location_name = "Ulthane defeated", rule = HAS_CHAOS_FORM, location_type = DSLocation)
-    #anvil_ford_challenge_area.add_event(location_name = "Ulthane outscored", rule = HAS_CHAOS_FORM, location_type = DSLocation)
-    #anvil_ford_challenge_area.add_event(location_name = "Uriel 1 defeated", rule = HAS_CROSSBLADE, location_type = DSLocation)
     black_throne_boss_room.add_event(location_name = "Straga defeated", item_name = "Straga Defeated", rule = HAS_VOIDWALKER, location_type = DSLocation)
     black_throne_boss_room.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
-    dry_road.add_event(location_name = "Uriel 2 defeated", rule = Has("Armageddon Blade Shards", count = 1), location_type = DSLocation)
     eden.add_event(location_name = "Shadow War defeated", rule = HAS_MASK, location_type = DSLocation)
-    hollows_boss_room.add_event(location_name = "Griever defeated", item_name = "Heart of Chosen", rule = HAS_GAUNTLET, location_type = DSLocation)
-    hollows_boss_room.add_event(location_name = "Griever Item Reward", rule = HAS_GAUNTLET, location_type = DSLocation)
     leviathan_drift.add_event(location_name = "Abaddon Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
     leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of Chosen", rule = HAS_RUIN, location_type = DSLocation)
     leviathan_drift.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Phantom General defeated", location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Samael's first Reward", location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade first Heart of Chosen", rule = Has("Heart of Chosen", count = 1), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade second Heart of Chosen", rule = Has("Heart of Chosen", count = 2), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade third Heart of Chosen", rule = Has("Heart of Chosen", count = 3), location_type = DSLocation)
-    #scalding_gallow.add_event(location_name = "Trade fourth Heart of Chosen", rule = Has("Heart of Chosen", count = 4), location_type = DSLocation)
     silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
     silitha_loom.add_event(location_name = "Silitha Item Reward", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
-    #twilight_cathedral_2.add_event(location_name = "Jailer defeated", location_type = DSLocation)
-    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat defeated", item_name = "Heart of Chosen", rule = HAS_CROSSBLADE, location_type = DSLocation)
-    #twilight_cathedral_boss_room.add_event(location_name = "Tiamat Item Reward", rule = HAS_CROSSBLADE, location_type = DSLocation)
-
-def create_events_from_json(world: DSWorld, filename) -> None:
-
-    region_json = json_read(data_path(filename))
-
-    for region in region_json:
-        if 'events' in region:
-            this_region = world.get_region(region.get("name"))
-            for event_name, event_data in region.get("events").items():
-                if 'forced reward' in event_data:
-                    this_region.add_event(location_name = event_name, item_name = event_data.get("forced reward"), rule = event_data.get("rule"), location_type = DSLocation, item_type = DSItem)
-                else:
-                    this_region.add_event(location_name = event_name, rule = event_data.get("rule"), location_type = DSLocation)
 
 def create_locations_from_json(world: DSWorld, filename) -> None:
 

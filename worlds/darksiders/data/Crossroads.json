@@ -14,43 +14,43 @@
         },
         "locations": {
             "Crossroads Currency Chest Down Back Alley Stairs": {
-            "ID": 600,
+                "ID": 600,
                 "vanilla item": "Currency"
             },
             "Crossroads Currency Chest in North Building": {
-            "ID": 601,
+                "ID": 601,
                 "vanilla item": "Currency"
             },
             "Crossroads Currency Chest South Crater": {
-            "ID": 602,
+                "ID": 602,
                 "vanilla item": "Currency"
             },
             "Crossroads Currency Chest in Subway Station": {
-            "ID": 603,
+                "ID": 603,
                 "vanilla item": "Currency"
             },
             "Crossroads Life Chest East Crater": {
-            "ID": 604,
+                "ID": 604,
                 "vanilla item": "Health"
             },
             "Crossroads Life Chest in NE Back Alley": {
-            "ID": 605,
+                "ID": 605,
                 "vanilla item": "Health"
             },
             "Crossroads Life Chest West of Library": {
-            "ID": 606,
+                "ID": 606,
                 "vanilla item": "Health"
             },
             "Crossroads Rare Chest Blocked by Ice": {
-            "ID": 607,
+                "ID": 607,
                 "vanilla item": "Hellfire"
             },
             "Crossroads Secret Chest Destroy Fire Hydrants": {
-            "ID": 608,
+                "ID": 608,
                 "vanilla item": "Currency"
             },
             "Crossroads Soldier Artifact in Subway Station": {
-            "ID": 609,
+                "ID": 609,
                 "vanilla item": "Soldier Artifact"
             }
         }

@@ -131,6 +131,13 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
 def set_all_location_rules(world: DSWorld) -> None:
 
+    anvil_ford_ulthane_defeated = world.get_location("Anvil's Ford Ulthane defeated")
+    world.set_rule(anvil_ford_ulthane_defeated, HAS_CROSSBLADE)
+    anvil_ford_ulthane_outscored = world.get_location("Anvil's Ford Challenge Area Ulthane outscored")
+    world.set_rule(anvil_ford_ulthane_outscored, HAS_CHAOS_FORM)
+    anvil_ford_uriel_defeated = world.get_location("Anvil's Ford Challenge Area Uriel defeated")
+    world.set_rule(anvil_ford_uriel_defeated, HAS_CROSSBLADE)
+
     ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Rare Chest by Goremaw")
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW)
     ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Life Blocked by Ice")
@@ -142,6 +149,14 @@ def set_all_location_rules(world: DSWorld) -> None:
     broken_stairs_access_tunnel_artifact = world.get_location("Broken Stair Artifact Blocked by Ice")
     world.set_rule(broken_stairs_access_tunnel_artifact, HAS_GAUNTLET)
 
+    choking_grounds_aerial_brawl = world.get_location("Choking Grounds Aerial Brawl Reward")
+    world.set_rule(choking_grounds_aerial_brawl, HAS_MASK)
+    choking_grounds_speed_brawl = world.get_location("Choking Grounds Speed Brawl Reward")
+    world.set_rule(choking_grounds_speed_brawl, HAS_MASK)
+    choking_grounds_gory_end = world.get_location("Choking Grounds The Gory End Reward")
+    world.set_rule(choking_grounds_gory_end, HAS_MASK)
+    choking_grounds_venomous = world.get_location("Choking Grounds Venomous Reward")
+    world.set_rule(choking_grounds_venomous, HAS_MASK)
     choking_grounds_blade_shard_in_North_Building = world.get_location("Choking Grounds Armaggedon Blade Shard in North Building")
     world.set_rule(choking_grounds_blade_shard_in_North_Building, HAS_CROSSBLADE & HAS_GAUNTLET & HAS_MASK & HAS_SHADOWFLIGHT)
     choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Chest Top Floor of North Building")
@@ -163,12 +178,27 @@ def set_all_location_rules(world: DSWorld) -> None:
     drowned_pass_access_tunnel_champion_artifact = world.get_location("Drowned Pass Access Tunnel Champion Artifact")
     world.set_rule(drowned_pass_access_tunnel_champion_artifact, HAS_ABYSSAL_CHAIN)
 
+    dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
+    world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shards"))
+
+    hollows_griever_defeated = world.get_location('Griever defeated')
+    world.set_rule(hollows_griever_defeated, HAS_GAUNTLET)
+    hollows_griever_item_reward = world.get_location('Griever Item Reward')
+    world.set_rule(hollows_griever_item_reward, HAS_GAUNTLET)
     hollows_chest_under_goremaw = world.get_location('Hollows Currency Chest under Goremaw')
     world.set_rule(hollows_chest_under_goremaw, HAS_CROSSBLADE)
 
     library_artifact = world.get_location("Library Artifact on West Side")
     world.set_rule(library_artifact, HAS_SHADOWFLIGHT)
 
+    scalding_gallow_trade_first_heart = world.get_location('Scalding Gallow Trade first Heart of the Chosen')
+    world.set_rule(scalding_gallow_trade_first_heart, Has("Heart of the Chosen", count = 1))
+    scalding_gallow_trade_second_heart = world.get_location('Scalding Gallow Trade second Heart of the Chosen')
+    world.set_rule(scalding_gallow_trade_second_heart, Has("Heart of the Chosen", count = 2))
+    scalding_gallow_trade_third_heart = world.get_location('Scalding Gallow Trade third Heart of the Chosen')
+    world.set_rule(scalding_gallow_trade_third_heart, Has("Heart of the Chosen", count = 3))
+    scalding_gallow_trade_fourth_heart = world.get_location('Scalding Gallow Trade fourth Heart of the Chosen')
+    world.set_rule(scalding_gallow_trade_fourth_heart, Has("Heart of the Chosen", count = 4))
     scalding_gallow_abyssal_armor_chest_near_entrance = world.get_location("Scalding Gallow Abyssal Armor Piece Near Library")
     world.set_rule(scalding_gallow_abyssal_armor_chest_near_entrance, CAN_DETONATE_BOMBS)
     #scalding_gallow_wrath_chest = world.get_location("Scalding Gallow Wrath Chest Above Vulgrim")
@@ -181,6 +211,10 @@ def set_all_location_rules(world: DSWorld) -> None:
     serpent_hole_to_twilight_cathedral_chest = world.get_location("Serpent Hole to Twilight Cathedral Chest")
     world.set_rule(serpent_hole_to_twilight_cathedral_chest, HAS_SHADOWFLIGHT & HAS_MASK)
     
+    twilight_cathedral_tiamat_defeated = world.get_location('Tiamat defeated')
+    world.set_rule(twilight_cathedral_tiamat_defeated, HAS_CROSSBLADE)
+    twilight_cathedral_tiamat_item_reward = world.get_location('Tiamat Item Reward')
+    world.set_rule(twilight_cathedral_tiamat_item_reward, HAS_CROSSBLADE)
     twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral Champion Artifact North Wing")
     world.set_rule(twilight_cathedral_champion_artifact_north_wing, HAS_SHADOWFLIGHT)
     twilight_cathedral_chained_cube = world.get_location("Twilight Cathedral Chained Cube")

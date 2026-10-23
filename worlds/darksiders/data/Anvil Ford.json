@@ -20,8 +20,10 @@
                 "vanilla target": "Anvil's Ford Challenge Area"
             }
         },
-        "events": {
-            "Ulthane defeated": {}
+        "locations": {
+            "Anvil's Ford Ulthane defeated": {
+                "ID": 1
+            }
         }
     },
     {
@@ -31,46 +33,48 @@
                 "vanilla target": "Hollows Access Tunnel"
             }
         },
-        "events": {
-            "Ulthane outscored": {},
-            "Uriel 1 defeated": {}
-        },
         "locations": {
-            "Anvil Ford Challenge Currency Chest Lower Platform": {
-                "ID": 1,
+            "Anvil's Ford Challenge Area Chest Lower Platform": {
+                "ID": 2,
                 "vanilla item": "Currency"
             },
-            "Anvil Ford Challenge Life Chest Inside Large Crystal": {
-                "ID": 2,
-                "vanilla item": "Health"
-            },
-            "Anvil Ford Challenge Life Chest Inside Small Crystals": {
+            "Anvil's Ford Challenge Area Chest Inside Large Crystal": {
                 "ID": 3,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Life Chest after Toss": {
+            "Anvil's Ford Challenge Area Chest Inside Small Crystals": {
                 "ID": 4,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Life Chest before Toss": {
+            "Anvil's Ford Challenge Area Chest after Toss": {
                 "ID": 5,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Life Chest Elevator Shaft": {
+            "Anvil's Ford Challenge Area Chest before Toss": {
                 "ID": 6,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Life Chest East Uriel Arena": {
+            "Anvil's Ford Challenge Area Chest Elevator Shaft": {
                 "ID": 7,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Life Chest West Uriel Arena": {
+            "Anvil's Ford Challenge Area Chest East Uriel Arena": {
                 "ID": 8,
                 "vanilla item": "Health"
             },
-            "Anvil Ford Challenge Wrath Chest after Demonic Growth": {
+            "Anvil's Ford Challenge Area Chest West Uriel Arena": {
                 "ID": 9,
+                "vanilla item": "Health"
+            },
+            "Anvil's Ford Challenge Area Chest after Demonic Growth": {
+                "ID": 10,
                 "vanilla item": "Wrath Shard"
+            },
+            "Anvil's Ford Challenge Area Ulthane outscored": {
+                "ID": 11
+            },
+            "Anvil's Ford Challenge Area Uriel defeated": {
+                "ID": 12
             }
         }
     }

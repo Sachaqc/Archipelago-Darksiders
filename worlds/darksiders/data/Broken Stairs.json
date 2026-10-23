@@ -8,11 +8,11 @@
         },
         "locations": {
             "Broken Stair Artifact Blocked by Ice": {
-            "ID": 400,
+                "ID": 400,
                 "vanilla item": "Soldier Artifact"
             },
             "Broken Stair Access Tunnel Chest": {
-            "ID": 401,
+                "ID": 401,
                 "vanilla item": "Currency"
             }
         }
@@ -32,19 +32,19 @@
         },
         "locations": {
             "Broken Stair Artifact": {
-            "ID": 402,
+                "ID": 402,
                 "vanilla item": "Soldier Artifact"
             },
             "Broken Stair Chest after Waterway": {
-            "ID": 403,
+                "ID": 403,
                 "vanilla item": "Lifestone Shard"
             },
             "Broken Stair Chest inside Building": {
-            "ID": 404,
+                "ID": 404,
                 "vanilla item": "Currency"
             },
             "Broken Stair Chest near Vulgrim": {
-            "ID": 405,
+                "ID": 405,
                 "vanilla item": "Currency"
             }
         }
@@ -58,19 +58,19 @@
         },
         "locations": {
             "Broken Stair Chest at Highway's end": {
-            "ID": 406,
+                "ID": 406,
                 "vanilla item": "Lifestone Shard"
             },
             "Broken Stair Chest Bottom Floor of Last Building": {
-            "ID": 407,
+                "ID": 407,
                 "vanilla item": "Beholder Key"
             },
             "Broken Stair Chest Middle Floor of Last Building": {
-            "ID": 408,
+                "ID": 408,
                 "vanilla item": "Currency"
             },
             "Broken Stair Chest under Billboard": {
-            "ID": 409,
+                "ID": 409,
                 "vanilla item": "Currency"
             }
         }

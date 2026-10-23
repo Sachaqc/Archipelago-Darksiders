@@ -1,18 +1,19 @@
 [
     {
         "name": "Vulgrim's Shop",
-        "events": {
+        "locations": {
             "Trade All Soldier Artifacts": {
+                "ID": 1600,
                 "vanilla reward": "Lifestone Shard"
             },
             "Trade All Champion Artifacts": {
+                "ID": 1601,
                 "vanilla reward": "Lifestone Shard"
             },
             "Trade Overlord Artifact": {
+                "ID": 1602,
                 "vanilla reward": "Wrath Core"
-            }
-        },
-        "locations": {
+            },
             "Item1": {
                 "ID": 1603,
                 "vanilla item": "Weapon Master"
@@ -116,7 +117,7 @@
         },
         "locations": {
             "Serpent Hole to Anvil's Ford Chest": {
-                "ID": 1600,
+                "ID": 1618,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -130,7 +131,7 @@
         },
         "locations": {
             "Serpent Hole to Dry Road Chest": {
-                "ID": 1601,
+                "ID": 1619,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -144,7 +145,7 @@
         },
         "locations": {
             "Serpent Hole to Twilight Cathedral Chest": {
-                "ID": 1602,
+                "ID": 1620,
                 "vanilla item": "Lifestone Shard"
             }
         }

@@ -8,7 +8,7 @@
         },
         "locations": {
             "Dry Road Access Tunnel Currency Chest South of Entrance": {
-            "ID": 800,
+                "ID": 800,
                 "vanilla item": "Currency"
             }
         }
@@ -22,15 +22,15 @@
         },
         "locations": {
             "Dry Road Access Tunnel Currency Chest North of Chronosphere": {
-            "ID": 801,
+                "ID": 801,
                 "vanilla item": "Currency"
             },
             "Dry Road Access Tunnel Currency Chest Up the Stairs": {
-            "ID": 802,
+                "ID": 802,
                 "vanilla item": "Health"
             },
             "Dry Road Access Tunnel Soldier Artifact": {
-            "ID": 803,
+                "ID": 803,
                 "vanilla item": "Health"
             }
         }
@@ -48,21 +48,21 @@
                 "vanilla target": "Vulgrim's Shop"
             }
         },
-        "events": {
-            "Uriel 2 defeated": {}
-        },
         "locations": {
             "Dry Road Currency Chest South of Vulgrim": {
-            "ID": 804,
+                "ID": 804,
                 "vanilla item": "Currency"
             },
             "Dry Road Life Chest East of Artifact": {
-            "ID": 805,
+                "ID": 805,
                 "vanilla item": "Health"
             },
             "Dry Road Soldier Artifact": {
-            "ID": 806,
+                "ID": 806,
                 "vanilla item": "Health"
+            },
+            "Dry Road Uriel defeated": {
+                "ID": 807
             }
         }
     }

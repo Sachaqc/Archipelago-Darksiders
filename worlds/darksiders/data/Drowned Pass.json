@@ -14,11 +14,11 @@
         },
         "locations": {
             "Drowned Pass Access Tunnel Champion Artifact": {
-            "ID": 700,
+                "ID": 700,
                 "vanilla item": "Currency"
             },
             "Drowned Pass Access Tunnel Currency Chest East Nook": {
-            "ID": 701,
+                "ID": 701,
                 "vanilla item": "Currency"
             }
         }
@@ -32,31 +32,31 @@
         },
         "locations": {
             "Drowned Pass Abyssal Armor Piece": {
-            "ID": 702,
+                "ID": 702,
                 "vanilla item": "Currency"
             },
             "Drowned Pass Soldier Artifact Cave Under Waterfall": {
-            "ID": 703,
+                "ID": 703,
                 "vanilla item": "Currency"
             },
             "Drowned Pass Soldier Artifact Underwater Building": {
-            "ID": 704,
+                "ID": 704,
                 "vanilla item": "Currency"
             },
             "Drowned Pass Currency Chest after Submerged Cave": {
-            "ID": 705,
+                "ID": 705,
                 "vanilla item": "Health"
             },
             "Drowned Pass Currency Chest Building Semi Submerged": {
-            "ID": 706,
+                "ID": 706,
                 "vanilla item": "Health"
             },
             "Drowned Pass Life Chest after Crystal Switch Platform": {
-            "ID": 707,
+                "ID": 707,
                 "vanilla item": "Hellfire"
             },
             "Drowned Pass Wrath Chest Blocked by Ice": {
-            "ID": 708,
+                "ID": 708,
                 "vanilla item": "Health"
             }
         }

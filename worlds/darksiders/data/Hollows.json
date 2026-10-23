@@ -240,11 +240,13 @@
     },
     {
         "name": "Hollows Boss Room",
-        "events": {
+        "locations": {
             "Griever defeated": {
+                "ID": 1032,
                 "vanilla reward": "Heart of Chosen"
             },
-            "Item Reward": {
+            "Griever Item Reward": {
+                "ID": 1033,
                 "vanilla item": "Lifestone"
             }
         }
