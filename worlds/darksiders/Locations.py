@@ -22,8 +22,6 @@ def create_location_table_from_json(filename) -> None:
                 print(location)
                 LOCATION_NAME_TO_ID[location] = location_data.get("ID")
 
-#LOCATION_NAME_TO_ID = abyssal_armor_pieces | armaggedon_shards | artifacts | chained_cubes | chests
-
 LOCATION_NAME_TO_ID = {}
 
 create_location_table_from_json("Anvil Ford.json")
