@@ -11,6 +11,12 @@
             "Anvil's Ford Access Tunnel to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
             }
+        },
+        "locations": {
+            "Anvil's Ford Access Tunnel Chest Blocked by Ice": {
+                "ID": 1,
+                "vanilla item": "Wrath Shard"
+            }
         }
     },
     {
@@ -22,7 +28,7 @@
         },
         "locations": {
             "Anvil's Ford Ulthane defeated": {
-                "ID": 1
+                "ID": 2
             }
         }
     },
@@ -34,15 +40,11 @@
             }
         },
         "locations": {
-            "Anvil's Ford Challenge Area Chest Lower Platform": {
-                "ID": 2,
-                "vanilla item": "Currency"
-            },
-            "Anvil's Ford Challenge Area Chest Inside Large Crystal": {
+            "Anvil's Ford Challenge Area Chest Blocked by Ice near Entrance": {
                 "ID": 3,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Chest Inside Small Crystals": {
+            "Anvil's Ford Challenge Area Chest before Toss": {
                 "ID": 4,
                 "vanilla item": "Health"
             },
@@ -50,31 +52,35 @@
                 "ID": 5,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Chest before Toss": {
+            "Anvil's Ford Challenge Area Chest Elevator Shaft": {
                 "ID": 6,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Chest Elevator Shaft": {
+            "Anvil's Ford Challenge Area Central Chest after Demonic Growth": {
                 "ID": 7,
-                "vanilla item": "Health"
+                "vanilla item": "Currency"
             },
-            "Anvil's Ford Challenge Area Chest East Uriel Arena": {
+            "Anvil's Ford Challenge Area West Chest after Demonic Growth": {
                 "ID": 8,
-                "vanilla item": "Health"
-            },
-            "Anvil's Ford Challenge Area Chest West Uriel Arena": {
-                "ID": 9,
-                "vanilla item": "Health"
-            },
-            "Anvil's Ford Challenge Area Chest after Demonic Growth": {
-                "ID": 10,
                 "vanilla item": "Wrath Shard"
+            },
+            "Anvil's Ford Challenge Area West Platform Chest": {
+                "ID": 9,
+                "vanilla item": "Wrath Shard"
+            },
+            "Anvil's Ford Challenge Area Chest Blocked by Ice near Uriel": {
+                "ID": 10,
+                "vanilla item": "Health"
             },
             "Anvil's Ford Challenge Area Ulthane outscored": {
                 "ID": 11
             },
             "Anvil's Ford Challenge Area Uriel defeated": {
                 "ID": 12
+            },
+            "Anvil's Ford Challenge Area Uriel Arena Fountain Chest": {
+                "ID": 13,
+                "vanilla item": "Health"
             }
         }
     }

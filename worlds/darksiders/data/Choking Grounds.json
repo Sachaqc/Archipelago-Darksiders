@@ -9,9 +9,9 @@
         "locations": {
             "Choking Grounds Access Tunnel Abyssal Armor Chest": {
                 "ID": 500,
-                "vanilla item": "Currency"
+                "vanilla item": "Abyssal Armor Piece"
             },
-            "Choking Grounds Access Tunnel Chest in Lava River": {
+            "Choking Grounds Access Tunnel Lava River Chest": {
                 "ID": 501,
                 "vanilla item": "Currency"
             }
@@ -48,51 +48,51 @@
             "Choking Grounds Aerial Brawl Reward": {
                 "ID": 502
             },
-            "Choking Grounds Armaggedon Blade Shard in North Building": {
+            "Choking Grounds North Building Armaggedon Blade Shard": {
                 "ID": 503,
-                "vanilla item": "Soldier Artifact"
+                "vanilla item": "Armageddon Blade Shard"
             },
-            "Choking Grounds Artifact North of Vulgrim": {
+            "Choking Grounds North of Vulgrim Artifact": {
                 "ID": 504,
                 "vanilla item": "Soldier Artifact"
             },
-            "Choking Grounds Artifact South in Sarcophagus": {
+            "Choking Grounds South in Sarcophagus Artifact": {
                 "ID": 505,
                 "vanilla item": "Soldier Artifact"
             },
-            "Choking Grounds Chest Bottom Floor of North Building": {
+            "Choking Grounds Bottom Floor of North Building Chest": {
                 "ID": 506,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Chest NE South of the Ramp": {
+            "Choking Grounds NE South of the Ramp Chest": {
                 "ID": 507,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Chest South Down the Stairs": {
+            "Choking Grounds South Down the Stairs Chest": {
                 "ID": 508,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Chest Top Floor of North Building Blocked by Ice": {
+            "Choking Grounds Top Floor of North Building Chest Blocked by Ice": {
                 "ID": 509,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds Chest North of Cemetery": {
+            "Choking Grounds North of Cemetery Chest": {
                 "ID": 510,
                 "vanilla item": "Health"
             },
-            "Choking Grounds Chest Top Floor of North Building": {
+            "Choking Grounds Top Floor of North Building Chest": {
                 "ID": 511,
                 "vanilla item": "Lifestone Shard"
             },
-            "Choking Grounds Chest 2nd Floor of North Building": {
+            "Choking Grounds 2nd Floor of North Building Chest": {
                 "ID": 512,
                 "vanilla item": "Wrath Shard"
             },
-            "Choking Grounds Rare Chest of North Building": {
+            "Choking Grounds North Building Rare Chest": {
                 "ID": 513,
                 "vanilla item": "Empty Container"
             },
-            "Choking Grounds Secret Chest Destroy Gravestones with Crosses": {
+            "Choking Grounds Destroy Gravestones with Crosses Secret Chest": {
                 "ID": 514,
                 "vanilla item": "Lifestone Shard"
             },

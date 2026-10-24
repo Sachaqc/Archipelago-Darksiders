@@ -3,31 +3,24 @@
         "name": "Scalding Gallow",
         "entrances": {
             "Scalding Gallow to Black Throne 1": {
-                "ID": 1500,
                 "vanilla target": "Black Throne 1"
             },
             "Scalding Gallow to Choking Grounds Access Tunnel 1": {
-                "ID": 1501,
                 "vanilla target": "Choking Grounds Access Tunnel 1"
             },
             "Scalding Gallow to Drowned Pass Access Tunnel": {
-                "ID": 1502,
                 "vanilla target": "Drowned Pass Access Tunnel"
             },
             "Scalding Gallow to Dry Road Access Tunnel 1": {
-                "ID": 1503,
                 "vanilla target": "Dry Road Access Tunnel 1"
             },
             "Scalding Gallow to Iron Canopy 1": {
-                "ID": 1504,
                 "vanilla target": "Iron Canopy 1"
             },
             "Scalding Gallow to Serpent Holes": {
-                "ID": 1505,
                 "vanilla target": "Serpent Holes"
             },
             "Scalding Gallow to Vulgrim's Shop": {
-                "ID": 1506,
                 "vanilla target": "Vulgrim's Shop"
             }
         },

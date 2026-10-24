@@ -13,12 +13,16 @@
             }
         },
         "locations": {
-            "Drowned Pass Access Tunnel Champion Artifact": {
+            "Drowned Pass Access Tunnel First Chest": {
                 "ID": 700,
-                "vanilla item": "Currency"
+                "vanilla item": "Wrath Shard"
             },
-            "Drowned Pass Access Tunnel Currency Chest East Nook": {
+            "Drowned Pass Access Tunnel Artifact": {
                 "ID": 701,
+                "vanilla item": "Champion Artifact"
+            },
+            "Drowned Pass Access Tunnel West Nook Chest": {
+                "ID": 702,
                 "vanilla item": "Currency"
             }
         }
@@ -31,33 +35,53 @@
             }
         },
         "locations": {
-            "Drowned Pass Abyssal Armor Piece": {
-                "ID": 702,
-                "vanilla item": "Currency"
-            },
-            "Drowned Pass Soldier Artifact Cave Under Waterfall": {
+            "Drowned Pass Cave Under Waterfall Artifact": {
                 "ID": 703,
-                "vanilla item": "Currency"
+                "vanilla item": "Soldier Artifact"
             },
-            "Drowned Pass Soldier Artifact Underwater Building": {
+            "Drowned Pass Submerged Cave Abyssal Chest": {
                 "ID": 704,
+                "vanilla item": "Abyssal Armor Piece"
+            },
+            "Drowned Pass Submerged Cave Chest": {
+                "ID": 705,
                 "vanilla item": "Currency"
             },
-            "Drowned Pass Currency Chest after Submerged Cave": {
-                "ID": 705,
-                "vanilla item": "Health"
+            "Drowned Pass World of Pain Reward": {
+                "ID": 706
             },
-            "Drowned Pass Currency Chest Building Semi Submerged": {
-                "ID": 706,
-                "vanilla item": "Health"
-            },
-            "Drowned Pass Life Chest after Crystal Switch Platform": {
+            "Drowned Pass Chest Blocked by Ice": {
                 "ID": 707,
-                "vanilla item": "Hellfire"
+                "vanilla item": "Wrath Shard"
             },
-            "Drowned Pass Wrath Chest Blocked by Ice": {
-                "ID": 708,
-                "vanilla item": "Health"
+            "Drowned Pass Defender Reward": {
+                "ID": 708
+            },
+            "Drowned Pass Crystal Switch Platform Chest": {
+                "ID": 709,
+                "vanilla item": "Lifestone Shard"
+            },
+            "Drowned Pass Soldier Semi Submerged Building Artifact": {
+                "ID": 710,
+                "vanilla item": "Soldier Artifact"
+            },
+            "Drowned Pass Semi Submerged Building Chest": {
+                "ID": 711,
+                "vanilla item": "Currency"
+            },
+            "Drowned Pass Wrath of War Reward": {
+                "ID": 712
+            },
+            "Drowned Pass Armageddon Blade Shard": {
+                "ID": 713,
+                "vanilla item": "Armageddon Blade Shard"
+            },
+            "Drowned Pass Crystal Elevated Cliff Chest": {
+                "ID": 714,
+                "vanilla item": "Lifestone Shard"
+            },
+            "Drowned Pass Counter Killer Reward": {
+                "ID": 715
             }
         }
     }

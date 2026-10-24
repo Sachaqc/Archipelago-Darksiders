@@ -8,7 +8,7 @@ from rule_builder.rules import Has, HasAll, HasAny, Rule
 if TYPE_CHECKING:
     from .World import DSWorld
 
-CAN_BEAT_ABADDON = Has("Armageddon Blade Shards", count = 7) & HasAll("Mask of Shadows", "Ruin", "Shadowflight")
+CAN_BEAT_ABADDON = Has("Armageddon Blade Shard", count = 7) & HasAll("Mask of Shadows", "Ruin", "Shadowflight")
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Progressive Chaoseater", "Progressive Gauntlet", "Progressive Scythe")
 CAN_CLIMB_DEMONIC_GROWTH = True
 CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
@@ -22,6 +22,7 @@ CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
 CAN_SWIM = True
 CAN_TYROLEAN_TRAVERSE = True
 HAS_ABYSSAL_CHAIN = Has("Abyssal Chain")
+HAS_BLOCK_COUNTER = Has("Block Counter")
 HAS_CHAOS_FORM = Has("Chaos Form")
 HAS_CHRONOMANCER = Has("Chronomancer")
 HAS_CROSSBLADE = Has("Crossblade")
@@ -114,6 +115,9 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to Choking Grounds Access Tunnel 1")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
 
+    scalding_gallow_to_drowned_pass = world.get_entrance("Scalding Gallow to Drowned Pass Access Tunnel")
+    world.set_rule(scalding_gallow_to_drowned_pass, HAS_CROSSBLADE)
+
     scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road Access Tunnel 1")
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)
 
@@ -149,11 +153,17 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 def set_all_location_rules(world: DSWorld) -> None:
 
     anvil_ford_ulthane_defeated = world.get_location("Anvil's Ford Ulthane defeated")
-    world.set_rule(anvil_ford_ulthane_defeated, HAS_CROSSBLADE)
+    world.set_rule(anvil_ford_ulthane_defeated, HAS_CHAOS_FORM)
     anvil_ford_ulthane_outscored = world.get_location("Anvil's Ford Challenge Area Ulthane outscored")
     world.set_rule(anvil_ford_ulthane_outscored, HAS_CHAOS_FORM)
-    anvil_ford_uriel_defeated = world.get_location("Anvil's Ford Challenge Area Uriel defeated")
-    world.set_rule(anvil_ford_uriel_defeated, HAS_CROSSBLADE)
+    anvil_ford_chest_ice_entrance = world.get_location("Anvil's Ford Challenge Area Chest Blocked by Ice near Entrance")
+    world.set_rule(anvil_ford_chest_ice_entrance, HAS_GAUNTLET)
+    anvil_ford_west_chest = world.get_location("Anvil's Ford Challenge Area West Platform Chest")
+    world.set_rule(anvil_ford_west_chest, HAS_ABYSSAL_CHAIN)
+    anvil_ford_chest_ice_uriel = world.get_location("Anvil's Ford Challenge Area Chest Blocked by Ice near Uriel")
+    world.set_rule(anvil_ford_chest_ice_uriel, HAS_GAUNTLET)
+    anvil_ford_access_tunnel_chest_ice = world.get_location("Anvil's Ford Access Tunnel Chest Blocked by Ice")
+    world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
 
     ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Rare Chest by Goremaw")
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW)
@@ -174,13 +184,13 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(choking_grounds_gory_end, HAS_MASK)
     choking_grounds_venomous = world.get_location("Choking Grounds Venomous Reward")
     world.set_rule(choking_grounds_venomous, HAS_MASK)
-    choking_grounds_blade_shard_in_North_Building = world.get_location("Choking Grounds Armaggedon Blade Shard in North Building")
+    choking_grounds_blade_shard_in_North_Building = world.get_location("Choking Grounds North Building Armaggedon Blade Shard")
     world.set_rule(choking_grounds_blade_shard_in_North_Building, HAS_CROSSBLADE & HAS_GAUNTLET & HAS_MASK & HAS_SHADOWFLIGHT)
-    choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Chest Top Floor of North Building")
+    choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Top Floor of North Building Chest Blocked by Ice")
     world.set_rule(choking_grounds_chest_in_North_Building, HAS_GAUNTLET & HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
-    choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Chest Top Floor of North Building")
+    choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Top Floor of North Building Chest")
     world.set_rule(choking_grounds_chest_in_North_Building, HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
-    choking_grounds_rare_chest_in_North_Building = world.get_location("Choking Grounds Rare Chest of North Building")
+    choking_grounds_rare_chest_in_North_Building = world.get_location("Choking Grounds North Building Rare Chest")
     world.set_rule(choking_grounds_rare_chest_in_North_Building, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
     choking_grounds_access_tunnel_abyssal_chest = world.get_location("Choking Grounds Access Tunnel Abyssal Armor Chest")
     world.set_rule(choking_grounds_access_tunnel_abyssal_chest, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
@@ -190,13 +200,25 @@ def set_all_location_rules(world: DSWorld) -> None:
     #crossroads_artifact_in_water = world.get_location("Crossroads Soldier Artifact in Subway Station")
     #world.set_rule(crossroads_artifact_in_water, CAN_SWIM)
 
-    drowned_pass_chest_blocked_by_ice = world.get_location("Drowned Pass Wrath Chest Blocked by Ice")
+    drowned_pass_world_of_pain = world.get_location("Drowned Pass World of Pain Reward")
+    world.set_rule(drowned_pass_world_of_pain, HAS_MASK)
+    drowned_pass_defender = world.get_location("Drowned Pass Defender Reward")
+    world.set_rule(drowned_pass_defender, HAS_MASK)
+    drowned_pass_wrath_of_war = world.get_location("Drowned Pass Wrath of War Reward")
+    world.set_rule(drowned_pass_wrath_of_war, HAS_MASK)
+    drowned_pass_counter_killer = world.get_location("Drowned Pass Counter Killer Reward")
+    world.set_rule(drowned_pass_counter_killer, HAS_BLOCK_COUNTER & HAS_MASK)
+    drowned_pass_armageddon_shard = world.get_location("Drowned Pass Armageddon Blade Shard")
+    world.set_rule(drowned_pass_armageddon_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
+    drowned_pass_chest_blocked_by_ice = world.get_location("Drowned Pass Chest Blocked by Ice")
     world.set_rule(drowned_pass_chest_blocked_by_ice, HAS_GAUNTLET)
-    drowned_pass_access_tunnel_champion_artifact = world.get_location("Drowned Pass Access Tunnel Champion Artifact")
-    world.set_rule(drowned_pass_access_tunnel_champion_artifact, HAS_ABYSSAL_CHAIN)
+    drowned_pass_access_tunnel_artifact = world.get_location("Drowned Pass Access Tunnel Artifact")
+    world.set_rule(drowned_pass_access_tunnel_artifact, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT)
+    drowned_pass_access_tunnel_first_chest = world.get_location("Drowned Pass Access Tunnel First Chest")
+    world.set_rule(drowned_pass_access_tunnel_first_chest, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
 
     dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
-    world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shards"))
+    world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard"))
 
     hollows_griever_defeated = world.get_location('Griever defeated')
     world.set_rule(hollows_griever_defeated, HAS_GAUNTLET)
