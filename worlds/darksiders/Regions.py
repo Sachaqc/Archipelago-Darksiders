@@ -71,7 +71,7 @@ def connect_regions(world: DSWorld) -> None:
     black_throne_1_to_black_throne_boss_room.connect(black_throne_boss_room)
 
     create_entrances_from_json(world, "Broken Stairs.json")
-    create_entrances_from_json(world, "Choking grounds.json")
+    create_entrances_from_json(world, "Choking Grounds.json")
     create_entrances_from_json(world, "Crossroads.json")
     create_entrances_from_json(world, "Drowned Pass.json")
     create_entrances_from_json(world, "Dry Road.json")
