@@ -2,239 +2,257 @@
     {
         "name": "Hollows Access Tunnel",
         "entrances": {
-            "Hollows Access Tunnel to Hollows 1": {
-                "vanilla target": "Hollows 1"
+            "Hollows Access Tunnel to Hollows": {
+                "vanilla target": "Hollows Clock Room"
             }
         },
         "locations": {
-            "Hollows Access Tunnel Currency Chest Dead End": {
+            "Hollows Access Tunnel Waterfall Chest": {
                 "ID": 1000,
                 "vanilla item": "Currency"
             },
-            "Hollows Access Tunnel Currency Chest Stream Walkthrough": {
+            "Hollows Access Tunnel Dead End Chest": {
                 "ID": 1001,
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "Hollows 1",
+        "name": "Hollows Clock Room",
         "entrances": {
-            "Hollows 1 to Hollows 2": {
-                "vanilla target": "Hollows 2"
+            "Hollows Clock Room to Water Room": {
+                "vanilla target": "Hollows Water Room"
             },
-            "Hollows 1 to Hollows 5": {
-                "vanilla target": "Hollows 5"
+            "Hollows Clock Room to Train Wreck Area": {
+                "vanilla target": "Hollows Train Wreck Area"
             }
         },
         "locations": {
-            "Hollows Currency Chest Top Balcony": {
+            "Hollows South of Clock Chest": {
                 "ID": 1002,
                 "vanilla item": "Currency"
             },
-            "Hollows Currency Chest South of Clocktower": {
+            "Hollows Top of Stairwell Chest": {
                 "ID": 1003,
                 "vanilla item": "Currency"
             },
-            "Hollows Currency Chest Top of Stairwell": {
+            "Hollows Top Balcony Chest": {
                 "ID": 1004,
                 "vanilla item": "Currency"
             },
-            "Hollows Life Chest West Corridor": {
+            "Hollows West Corridor Chest": {
                 "ID": 1005,
-                "vanilla item": "Currency"
+                "vanilla item": "Health"
             }
         }
     },
     {
-        "name": "Hollows 2",
+        "name": "Hollows Water Room",
         "entrances": {
-            "Hollows 2 to Hollows 3": {
-                "vanilla target": "Hollows 3"
+            "Hollows Water Room to Maintenance Area": {
+                "vanilla target": "Hollows Maintenance Area"
+            },
+            "Hollows Water Room to Machinery Room": {
+                "vanilla target": "Hollows Machinery Room"
+            }
+        }
+    },
+    {
+        "name": "Hollows Maintenance Area",
+        "entrances": {
+            "Hollows Maintenance Area to Chained Cube Area": {
+                "vanilla target": "Hollows Chained Cube Area"
             }
         },
         "locations": {
-            "Hollows Abyssal Armor Piece": {
+            "Hollows under Stairs Chest": {
                 "ID": 1006,
                 "vanilla item": "Currency"
             },
-            "Hollows Beholder Key Chest in Current": {
+            "Hollows underwater Artifact": {
                 "ID": 1007,
-                "vanilla item": "Currency"
+                "vanilla item": "Soldier Artifact"
             },
-            "Hollows Currency Chest after Submerged Passage": {
+            "Hollows across the Flooded Hole Chest": {
                 "ID": 1008,
-                "vanilla item": "Currency"
+                "vanilla item": "Map"
             },
-            "Hollows Currency Chest SW of Gas": {
+            "Hollows Behind North Broken Wall Chest": {
                 "ID": 1009,
-                "vanilla item": "Currency"
+                "vanilla item": "Abyssal Armor Piece"
             },
-            "Hollows Life Chest South Wall Nook": {
+            "Hollows Behind South Broken Wall Chest": {
                 "ID": 1010,
-                "vanilla item": "Currency"
+                "vanilla item": "Health"
             },
-            "Hollows Rare Chest over Submerged Passage": {
+            "Hollows over Submerged Passage Chest": {
                 "ID": 1011,
+                "vanilla item": "Reaper"
+            },
+            "Hollows after Submerged Passage West Chest": {
+                "ID": 1012,
+                "vanilla item": "Wrath Shard"
+            },
+            "Hollows after Submerged Passage East Chest": {
+                "ID": 1013,
                 "vanilla item": "Currency"
             },
-            "Hollows Wrath Chest after Submerged Passage": {
-                "ID": 1012,
-                "vanilla item": "Currency"
+            "Hollows Beholder over Current Chest": {
+                "ID": 1014,
+                "vanilla item": "Beholder Key"
             }
         }
     },
     {
-        "name": "Hollows 3",
+        "name": "Hollows Chained Cube Area",
         "entrances": {
-            "Hollows 3 to Hollows 4": {
-                "vanilla target": "Hollows 4"
+            "Hollows Chained Cube Area to Hollows Machinery Room": {
+                "vanilla target": "Hollows Machinery Room"
             }
         },
         "locations": {
             "Hollows Chained Cube": {
-                "ID": 1013,
-                "vanilla item": "Currency"
-            },
-            "Hollows Beholder Key Chest after Chained Cube": {
-                "ID": 1014,
-                "vanilla item": "Currency"
-            },
-            "Hollows Life Chest after Chained Cube": {
                 "ID": 1015,
-                "vanilla item": "Currency"
-            }
-        }
-    },
-    {
-        "name": "Hollows 4",
-        "entrances": {
-            "Hollows 4 to Hollows 1": {
-                "vanilla target": "Hollows 1"
-            }
-        },
-        "locations": {
-            "Hollows Life Chest after Water-Filled Hallway": {
+                "vanilla item": "Tremor Gauntlet"
+            },
+            "Hollows South of Chained Cube Chest": {
                 "ID": 1016,
-                "vanilla item": "Currency"
+                "vanilla item": "Health"
             },
-            "Hollows Map Chest at Surface of Flooded Room": {
+            "Hollows East of Chained Cube Chest": {
                 "ID": 1017,
-                "vanilla item": "Currency"
+                "vanilla item": "Beholder Key"
+            }
+        }
+    },
+    {
+        "name": "Hollows Machinery Room",
+        "entrances": {
+            "Hollows Machinery Room to Water Room": {
+                "vanilla target": "Hollows Water Room"
             },
-            "Hollows Wrath Chest after Water-Filled Hallway": {
+            "Hollows Machinery Room to Chained Cube Area": {
+                "vanilla target": "Hollows Chained Cube Area"
+            }
+        },
+        "locations": {
+            "Hollows Machinery Room West Tunnel Chest": {
                 "ID": 1018,
-                "vanilla item": "Currency"
+                "vanilla item": "Wrath"
             },
-            "Hollows Soldier Artifact South of Platforms": {
+            "Hollows Machinery Room East Tunnel Chest": {
                 "ID": 1019,
-                "vanilla item": "Currency"
-            }
-        }
-    },
-    {
-        "name": "Hollows 5",
-        "entrances": {
-            "Hollows 5 to Hollows 6": {
-                "vanilla target": "Hollows 6"
+                "vanilla item": "Health"
             },
-            "Hollows 5 to Hollows 9": {
-                "vanilla target": "Hollows 9"
-            }
-        },
-        "locations": {
-            "Hollows Life Chest behind Train Cars": {
+            "Hollows Machinery Room South of Platforms Artifact": {
                 "ID": 1020,
-                "vanilla item": "Currency"
+                "vanilla item": "Soldier Artifact"
             }
         }
     },
     {
-        "name": "Hollows 6",
+        "name": "Hollows Train Wreck Area",
         "entrances": {
-            "Hollows 6 to Hollows 7": {
-                "vanilla target": "Hollows 7"
+            "Hollows Train Wreck Area to Locust Room": {
+                "vanilla target": "Hollows Locust Room"
+            },
+            "Hollows Train Wreck Area to Griever Tunnel": {
+                "vanilla target": "Hollows Griever Tunnel"
             }
         },
         "locations": {
-            "Hollows Currency Chest SE of Locust Room": {
+            "Hollows behind Train Cars Chest": {
                 "ID": 1021,
-                "vanilla item": "Currency"
-            },
-            "Hollows Life Chest North of Locust Room": {
+                "vanilla item": "Lifestone Shard"
+            }
+        }
+    },
+    {
+        "name": "Hollows Locust Room",
+        "entrances": {
+            "Hollows Hollows Locust Room to Flooded Room": {
+                "vanilla target": "Hollows Flooded Room"
+            }
+        },
+        "locations": {
+            "Hollows SE of Locust Room Chest": {
                 "ID": 1022,
                 "vanilla item": "Currency"
+            },
+            "Hollows Life North Corridor of Locust Room Chest": {
+                "ID": 1023,
+                "vanilla item": "Health"
+            },
+            "Hollows Pipe Leading North Artifact": {
+                "ID": 1024,
+                "vanilla item": "Champion Artifact"
             }
         }
     },
     {
-        "name": "Hollows 7",
+        "name": "Hollows Flooded Room",
         "entrances": {
-            "Hollows 7 to Hollows 8": {
-                "vanilla target": "Hollows 8"
+            "Hollows Flooded Room to above Flooded Room": {
+                "vanilla target": "Hollows above Flooded Room"
             }
         },
+        "locations": {
+            "Hollows Flooded Room Chest": {
+                "ID": 1025,
+                "vanilla item": "Beholder Key"
+            }
+        }
+    },
+    {
+        "name": "Hollows above Flooded Room",
         "locations": {
             "Hollows Currency Chest between Ice Blocks": {
-                "ID": 1023,
+                "ID": 1026,
                 "vanilla item": "Currency"
             }
         }
     },
     {
-        "name": "Hollows 8",
-        "locations": {
-            "Hollows Champion Artifact in Pipe Leading North": {
-                "ID": 1024,
-                "vanilla item": "Currency"
-            },
-            "Hollows Beholder Key Chest inside Floor Hole": {
-                "ID": 1025,
-                "vanilla item": "Currency"
-            }
-        }
-    },
-    {
-        "name": "Hollows 9",
+        "name": "Hollows Griever Tunnel",
         "entrances": {
-            "Hollows 9 to Hollows 10": {
-                "vanilla target": "Hollows 10"
+            "Hollows Griever Tunnel to Flooded Canyon": {
+                "vanilla target": "Hollows Flooded Canyon"
             }
         },
         "locations": {
-            "Hollows Life Chest in Griever Tunnel": {
-                "ID": 1026,
-                "vanilla item": "Currency"
-            },
-            "Hollows Currency Chest under Goremaw": {
+            "Hollows Griever Tunnel Chest": {
                 "ID": 1027,
-                "vanilla item": "Currency"
+                "vanilla item": "Health"
             },
-            "Hollows Hoardseeker Chest SW of Grappleclaws Room": {
+            "Hollows Chest under Goremaw": {
                 "ID": 1028,
                 "vanilla item": "Currency"
             },
-            "Hollows Life Chest West of Grappleclaws Room": {
+            "Hollows West of Goremaw Chest": {
                 "ID": 1029,
-                "vanilla item": "Currency"
+                "vanilla item": "Hoardseeker"
+            },
+            "Hollows West of Grappleclaws Room Chest": {
+                "ID": 1030,
+                "vanilla item": "Health"
             }
         }
     },
     {
-        "name": "Hollows 10",
+        "name": "Hollows Flooded Canyon",
         "entrances": {
-            "Hollows 10 to Hollows Boss Room": {
+            "Hollows Flooded Canyon to Boss Room": {
                 "vanilla target": "Hollows Boss Room"
             }
         },
         "locations": {
-            "Hollows Life Chest before Boss Room": {
-                "ID": 1030,
-                "vanilla item": "Currency"
-            },
-            "Hollows Wrath Chest over Flooded Room": {
+            "Hollows over Flooded Canyon Chest": {
                 "ID": 1031,
-                "vanilla item": "Currency"
+                "vanilla item": "Wrath Shard"
+            },
+            "Hollows before Boss Room Chest": {
+                "ID": 1032,
+                "vanilla item": "Health"
             }
         }
     },
@@ -242,11 +260,11 @@
         "name": "Hollows Boss Room",
         "locations": {
             "Griever defeated": {
-                "ID": 1032,
+                "ID": 1033,
                 "vanilla reward": "Heart of Chosen"
             },
             "Griever Item Reward": {
-                "ID": 1033,
+                "ID": 1034,
                 "vanilla item": "Lifestone"
             }
         }

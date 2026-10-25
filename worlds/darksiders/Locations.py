@@ -97,6 +97,10 @@ def create_events(world: DSWorld) -> None:
     black_throne_boss_room.add_event(location_name = "Straga defeated", item_name = "Straga Defeated", rule = HAS_VOIDWALKER, location_type = DSLocation)
     black_throne_boss_room.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
     eden.add_event(location_name = "Shadow War defeated", rule = HAS_MASK, location_type = DSLocation)
+
+    hollows_above_flooded_room = world.get_region("Hollows above Flooded Room")
+    hollows_above_flooded_room.add_event(location_name = "Stalactite fell", item_name = "Stalactite fell", rule = HAS_CROSSBLADE & HAS_GAUNTLET, location_type = DSLocation, item_type = DSItem)
+
     #leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of Chosen", rule = HAS_RUIN, #location_type = DSLocation)
     #leviathan_drift.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
     #silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
