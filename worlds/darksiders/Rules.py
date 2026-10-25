@@ -48,33 +48,49 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     anvil_ford_challenge_area_to_hollows_access_tunnel = world.get_entrance("Anvil's Ford Challenge Area to Hollows Access Tunnel")
     world.set_rule(anvil_ford_challenge_area_to_hollows_access_tunnel, HAS_CROSSBLADE)
+    anvil_ford_access_tunnel_to_sh = world.get_entrance("Anvil's Ford Access Tunnel to Serpent Holes")
+    world.set_rule(anvil_ford_access_tunnel_to_sh, HAS_SERPENT_HOLES)
 
     ashlands_1_to_ashlands_2 = world.get_entrance("Ashlands 1 to Ashlands 2")
     world.set_rule(ashlands_1_to_ashlands_2, CAN_SLOW_TIME_FROM_AFAR)
  
-    ashlands_access_tunnel_1_to_ashlands_access_tunnel_2 = world.get_entrance("Ashlands Access Tunnel 1 to Ashlands Access Tunnel 2")
-    world.set_rule(ashlands_access_tunnel_1_to_ashlands_access_tunnel_2, HAS_CROSSBLADE)
+    ashlands_access_tunnel_1_to_2 = world.get_entrance("Ashlands Access Tunnel 1 to 2")
+    world.set_rule(ashlands_access_tunnel_1_to_2, HAS_CROSSBLADE)
+    ashlands_access_tunnel_to_sh = world.get_entrance("Ashlands Access Tunnel to Serpent Holes")
+    world.set_rule(ashlands_access_tunnel_to_sh, HAS_SERPENT_HOLES)
  
     broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
+    broken_stairs_to_sh = world.get_entrance("Broken Stair to Serpent Holes")
+    world.set_rule(broken_stairs_to_sh, HAS_SERPENT_HOLES)
  
     broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
     world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
 
     choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair")
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
+    choking_grounds_to_sh = world.get_entrance("Choking Grounds to Serpent Holes")
+    world.set_rule(choking_grounds_to_sh, HAS_SERPENT_HOLES)
 
     choking_grounds_access_tunnel_1_to_2 = world.get_entrance("Choking Grounds Access Tunnel 1 to 2")
     world.set_rule(choking_grounds_access_tunnel_1_to_2, HAS_SHADOWFLIGHT)
 
     crossroads_to_library = world.get_entrance("Crossroads to Library")
     world.set_rule(crossroads_to_library, HAS_EARTHCALLER)
+    crossroads_to_sh = world.get_entrance("Crossroads to Serpent Holes")
+    world.set_rule(crossroads_to_sh, HAS_SERPENT_HOLES)
 
-    dry_road_to_ashlands_access_tunnel = world.get_entrance("Dry Road to Ashlands Access Tunnel 1")
-    world.set_rule(dry_road_to_ashlands_access_tunnel, CAN_HURT_GOREMAW)
+    drowned_pass_to_anvil_ford_access_tunnel = world.get_entrance("Drowned Pass to Anvil's Ford Access Tunnel")
+    world.set_rule(drowned_pass_to_anvil_ford_access_tunnel, HAS_EARTHCALLER)
 
-    dry_road_access_tunnel_1_to_dry_road_access_tunnel_2 = world.get_entrance("Dry Road Access Tunnel 1 to Dry Road Access Tunnel 2")
-    world.set_rule(dry_road_access_tunnel_1_to_dry_road_access_tunnel_2, HAS_GAUNTLET & HAS_CHRONOMANCER)
+    dry_road_to_ashlands = world.get_entrance("Dry Road to Ashlands")
+    world.set_rule(dry_road_to_ashlands, CAN_HURT_GOREMAW)
+    dry_road_to_vulgrim = world.get_entrance("Dry Road to Serpent Holes")
+    world.set_rule(dry_road_to_vulgrim, HAS_SERPENT_HOLES & HAS_SHADOWFLIGHT)
+    dry_road_to_vulgrim = world.get_entrance("Dry Road to Vulgrim's Shop")
+    world.set_rule(dry_road_to_vulgrim, HAS_SHADOWFLIGHT)
+    dry_road_access_tunnel_1_to_2 = world.get_entrance("Dry Road Access Tunnel 1 to 2")
+    world.set_rule(dry_road_access_tunnel_1_to_2, HAS_CHRONOMANCER & HAS_GAUNTLET)
 
     hollows_water_room_to_maintenance = world.get_entrance("Hollows Water Room to Maintenance Area")
     world.set_rule(hollows_water_room_to_maintenance, HAS_CROSSBLADE)
@@ -97,29 +113,26 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     hollows_9_to_hollows_10 = world.get_entrance("Hollows Griever Tunnel to Flooded Canyon")
     world.set_rule(hollows_9_to_hollows_10, HAS_GAUNTLET)
 
-    drowned_pass_to_anvil_ford_access_tunnel = world.get_entrance("Drowned Pass to Anvil's Ford Access Tunnel")
-    world.set_rule(drowned_pass_to_anvil_ford_access_tunnel, HAS_EARTHCALLER)
-
     leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
     world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
 
     scalding_gallow_to_black_throne_1 = world.get_entrance("Scalding Gallow to Black Throne")
     world.set_rule(scalding_gallow_to_black_throne_1, Has("Heart of the Chosen", count = 4))
-
     scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to Choking Grounds")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
-
     scalding_gallow_to_drowned_pass = world.get_entrance("Scalding Gallow to Drowned Pass")
     world.set_rule(scalding_gallow_to_drowned_pass, HAS_CROSSBLADE)
-
     scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road")
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)
-
     scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy")
     world.set_rule(scalding_gallow_to_iron_canopy, HAS_SOUL_BRIDGE)
+    scalding_gallow_to_sh = world.get_entrance("Scalding Gallow to Serpent Holes")
+    world.set_rule(scalding_gallow_to_sh, HAS_SERPENT_HOLES)
 
-    twilight_cathedral_exterior_1_to_2 = world.get_entrance("Twilight Cathedral Exterior 1 to Twilight Cathedral Exterior 2")
+    twilight_cathedral_exterior_1_to_2 = world.get_entrance("Twilight Cathedral Exterior 1 to 2")
     world.set_rule(twilight_cathedral_exterior_1_to_2, HAS_ABYSSAL_CHAIN)
+    twilight_cathedral_to_sh = world.get_entrance("Twilight Cathedral to Serpent Holes")
+    world.set_rule(twilight_cathedral_to_sh, HAS_SERPENT_HOLES)
     twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
     world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2))
     twilight_cathedral_entrance_to_NW = world.get_entrance("Twilight Cathedral Entrance to North Wing")
@@ -213,6 +226,8 @@ def set_all_location_rules(world: DSWorld) -> None:
 
     dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
     world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard"))
+    dry_road_voidwalker_chest = world.get_location("Dry Road Access Tunnel above Gate Chest")
+    world.set_rule(dry_road_voidwalker_chest, HAS_VOIDWALKER)
 
     hollows_griever_defeated = world.get_location('Griever defeated')
     world.set_rule(hollows_griever_defeated, HAS_GAUNTLET)

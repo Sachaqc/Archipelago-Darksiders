@@ -2,7 +2,7 @@
     {
         "name": "Ashlands Access Tunnel 1",
         "entrances": {
-            "Ashlands Access Tunnel 1 to Ashlands Access Tunnel 2": {
+            "Ashlands Access Tunnel 1 to 2": {
                 "vanilla target": "Ashlands Access Tunnel 2"
             }
         },
@@ -20,13 +20,13 @@
     {
         "name": "Ashlands Access Tunnel 2",
         "entrances": {
-            "Ashlands Access Tunnel 2 to Ashlands 1": {
+            "Ashlands Access Tunnel to Ashlands": {
                 "vanilla target": "Ashlands 1"
             },
-            "Ashlands Access Tunnel 2 to Serpent Holes": {
+            "Ashlands Access Tunnel to Serpent Holes": {
                 "vanilla target": "Serpent Holes"
             },
-            "Ashlands Access Tunnel 2 to Vulgrim's Shop": {
+            "Ashlands Access Tunnel to Vulgrim's Shop": {
                 "vanilla target": "Vulgrim's Shop"
             }
         },

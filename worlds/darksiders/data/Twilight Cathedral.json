@@ -2,11 +2,17 @@
     {
         "name": "Twilight Cathedral Exterior Main Area",
         "entrances": {
-            "Twilight Cathedral Exterior 1 to Twilight Cathedral 1": {
+            "Twilight Cathedral Exterior to Twilight Cathedral": {
                 "vanilla target": "Twilight Cathedral Entrance"
             },
-            "Twilight Cathedral Exterior 1 to Twilight Cathedral Exterior 2": {
+            "Twilight Cathedral Exterior 1 to 2": {
                 "vanilla target": "Twilight Cathedral Exterior North Edge"
+            },
+            "Twilight Cathedral to Serpent Holes": {
+                "vanilla target": "Serpent Holes"
+            },
+            "Twilight Cathedral to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
             }
         },
         "locations": {

@@ -153,25 +153,25 @@
             "number": 1,
             "console": "/pickup_item weapon_enhancements/common_transfixion"
         },
-        "Wars Glory": {
+        "War's Glory": {
             "ID": 50,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item weapon_enhancements/legendary_warswrath"
         },
-        "Strifes Offering": {
+        "Strife's Offering": {
             "ID": 51,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item weapon_enhancements/legendary_strifesprowess"
         },
-        "Furys Embrace": {
+        "Fury's Embrace": {
             "ID": 52,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item weapon_enhancements/legendary_furysmadness"
         },
-        "Deaths Blessing": {
+        "Death's Blessing": {
             "ID": 53,
             "progressive": false,
             "number": 1,
