@@ -57,6 +57,9 @@
             },
             "Ashlands Ash Titan Desert to North East Cliff": {
                 "vanilla target": "Ashlands North East Cliff"
+            },
+            "Ashlands Ash Titan Desert to West Cliff": {
+                "vanilla target": "Ashlands West Cliff"
             }
         }
     },
@@ -242,6 +245,15 @@
             "Ashlands Central Tower Top Floor Chest": {
                 "ID": 130,
                 "vanilla item": "Abyssal Armor Piece"
+            }
+        }
+    },
+    {
+        "name": "Ashlands West Cliff",
+        "locations": {
+            "Ashlands Armaggedon Blade Shard": {
+                "ID": 131,
+                "vanilla item": "Armageddon Blade Shard"
             }
         }
     }

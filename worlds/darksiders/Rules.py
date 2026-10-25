@@ -67,6 +67,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(ashlands_desert_to_east, HAS_RUIN)
     ashlands_desert_to_cliff = world.get_entrance("Ashlands Ash Titan Desert to North East Cliff")
     world.set_rule(ashlands_desert_to_cliff, HAS_RUIN & HAS_SHADOWFLIGHT)
+    ashlands_desert_to_west_cliff = world.get_entrance("Ashlands Ash Titan Desert to West Cliff")
+    world.set_rule(ashlands_desert_to_west_cliff, HAS_ABYSSAL_CHAIN & HAS_MASK & HAS_RUIN)
     ashlands_cliff_to_top = world.get_entrance("Ashlands North East Cliff to Central Tower Top Floor")
     world.set_rule(ashlands_cliff_to_top, HAS_ABYSSAL_CHAIN)
     ashlands_west_to_iron_canopy = world.get_entrance("Ashlands to Iron Canopy")
