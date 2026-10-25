@@ -26,16 +26,16 @@ LOCATION_NAME_TO_ID = {}
 
 create_location_table_from_json("Anvil Ford.json")
 create_location_table_from_json("Ashlands.json")
-#create_location_table_from_json("Black Throne.json")
+create_location_table_from_json("Black Throne.json")
 create_location_table_from_json("Broken Stairs.json")
 create_location_table_from_json("Choking Grounds.json")
 create_location_table_from_json("Crossroads.json")
 create_location_table_from_json("Drowned Pass.json")
 create_location_table_from_json("Dry Road.json")
-#create_location_table_from_json("Eden.json")
+create_location_table_from_json("Eden.json")
 create_location_table_from_json("Hollows.json")
-#create_location_table_from_json("Iron Canopy.json")
-#create_location_table_from_json("Leviathan Drift.json")
+create_location_table_from_json("Iron Canopy.json")
+create_location_table_from_json("Leviathan Drift.json")
 create_location_table_from_json("Library.json")
 create_location_table_from_json("Menu.json")
 create_location_table_from_json("Scalding Gallow.json")
@@ -68,12 +68,16 @@ def create_regular_locations(world: DSWorld) -> None:
 
     create_locations_from_json(world, "Anvil Ford.json")
     create_locations_from_json(world, "Ashlands.json")
+    #create_locations_from_json(world, "Black Throne.json")
     create_locations_from_json(world, "Broken Stairs.json")
     create_locations_from_json(world, "Choking Grounds.json")
     create_locations_from_json(world, "Crossroads.json")
     create_locations_from_json(world, "Drowned Pass.json")
     create_locations_from_json(world, "Dry Road.json")
+    #create_locations_from_json(world, "Eden.json")
     create_locations_from_json(world, "Hollows.json")
+    #create_locations_from_json(world, "Iron Canopy.json")
+    create_locations_from_json(world, "Leviathan Drift.json")
     create_locations_from_json(world, "Library.json")
     create_locations_from_json(world, "Menu.json")
     create_locations_from_json(world, "Scalding Gallow.json")
@@ -89,30 +93,16 @@ def create_regular_locations(world: DSWorld) -> None:
 
 def create_events(world: DSWorld) -> None:
 
-    black_throne_boss_room = world.get_region("Black Throne Boss Room")
-    eden = world.get_region("Eden")
-    #seraphim_hotel = world.get_region("Seraphim Hotel")
-    silitha_loom = world.get_region("Silitha's Loom")
-
-    black_throne_boss_room.add_event(location_name = "Straga defeated", item_name = "Straga Defeated", rule = HAS_VOIDWALKER, location_type = DSLocation)
-    black_throne_boss_room.add_event(location_name = "Straga Item Reward", rule = HAS_VOIDWALKER, location_type = DSLocation)
-    eden.add_event(location_name = "Shadow War defeated", rule = HAS_MASK, location_type = DSLocation)
-
     hollows_above_flooded_room = world.get_region("Hollows above Flooded Room")
     hollows_above_flooded_room.add_event(location_name = "Stalactite fell", item_name = "Stalactite fell", rule = HAS_CROSSBLADE & HAS_GAUNTLET, location_type = DSLocation, item_type = DSItem)
 
-    #leviathan_drift.add_event(location_name = "Stygian defeated", item_name = "Heart of Chosen", rule = HAS_RUIN, #location_type = DSLocation)
-    #leviathan_drift.add_event(location_name = "Stygian Item Reward", rule = HAS_RUIN, location_type = DSLocation)
-    #silitha_loom.add_event(location_name = "Silitha defeated", item_name = "Heart of Chosen", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
-    silitha_loom.add_event(location_name = "Silitha Item Reward", rule = HAS_ABYSSAL_CHAIN, location_type = DSLocation)
-
     leviathan_drift = world.get_region("Leviathan's Drift")
+    leviathan_drift.add_event(location_name = "Abaddon Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
+
     twilight_cathedral_conscript_room = world.get_region("Twilight Cathedral Conscript Room")
     twilight_cathedral_west_blade_path = world.get_region("Twilight Cathedral West Blade Path")
     twilight_cathedral_north_blade_path = world.get_region("Twilight Cathedral North Blade Path")
     twilight_cathedral_south_blade_path = world.get_region("Twilight Cathedral South Blade Path")
-
-    leviathan_drift.add_event(location_name = "Abaddon Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
     twilight_cathedral_conscript_room.add_event(location_name = "Crystal Blade", item_name = "Crystal Blade", location_type = DSLocation, item_type = DSItem)
     twilight_cathedral_west_blade_path.add_event(location_name = "West Crystal Blade", item_name = "West Crystal Blade", location_type = DSLocation, item_type = DSItem)
     twilight_cathedral_north_blade_path.add_event(location_name = "North Crystal Blade", item_name = "North Crystal Blade", location_type = DSLocation, item_type = DSItem)

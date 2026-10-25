@@ -3,7 +3,7 @@
         "name": "Scalding Gallow",
         "entrances": {
             "Scalding Gallow to Black Throne": {
-                "vanilla target": "Black Throne 1"
+                "vanilla target": "Black Throne"
             },
             "Scalding Gallow to Choking Grounds": {
                 "vanilla target": "Choking Grounds Access Tunnel 1"
@@ -13,9 +13,6 @@
             },
             "Scalding Gallow to Dry Road": {
                 "vanilla target": "Dry Road Access Tunnel 1"
-            },
-            "Scalding Gallow to Iron Canopy": {
-                "vanilla target": "Iron Canopy 1"
             },
             "Scalding Gallow to Serpent Holes": {
                 "vanilla target": "Serpent Holes"

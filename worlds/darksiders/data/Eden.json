@@ -1,58 +1,9 @@
 [
     {
-        "name": "Ashlands Access Tunnel 1",
+        "name": "Eden",
         "entrances": {
-            "Ashlands Access Tunnel 1 to Ashlands Access Tunnel 2": {
-                "vanilla target": "Ashlands Access Tunnel 2"
-            }
         },
         "locations": {
-            "Ashlands Access Tunnel Currency Chest by Three Goremaws": {
-                "vanilla item": "Currency"
-            },
-            "Ashlands Access Tunnel Rare Chest by Goremaw": {
-                "vanilla item": "Currency"
-            }
-        }
-    },
-    {
-        "name": "Ashlands Access Tunnel 2",
-        "entrances": {
-            "Ashlands Access Tunnel 2 to Ashlands 1": {
-                "vanilla target": "Ashlands 1"
-            },
-            "Ashlands Access Tunnel 2 to Serpent Holes": {
-                "vanilla target": "Serpent Holes"
-            },
-            "Ashlands Access Tunnel 2 to Vulgrim's Shop": {
-                "vanilla target": "Vulgrim's Shop"
-            }
-        },
-        "locations": {
-            "Ashlands Access Tunnel Life Blocked by Ice": {
-                "vanilla item": "Currency"
-            }
-        }
-    },
-    {
-        "name": "Ashlands 1",
-        "entrances": {
-            "Ashlands 1 to Ashlands 2": {
-                "vanilla target": "Ashlands 2"
-            }
-        }
-    },
-    {
-        "name": "Ashlands 2",
-        "entrances": {
-            "Ashlands to Leviathan's Drift": {
-                "vanilla target": "Leviathan's Drift"
-            }
-        },
-        "locations": {
-            "Ashlands Currency Chest up the Ramp": {
-                "vanilla item": "Currency"
-            }
         }
     }
 ]
