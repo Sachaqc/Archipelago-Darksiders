@@ -125,6 +125,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     scalding_gallow_to_sh = world.get_entrance("Scalding Gallow to Serpent Holes")
     world.set_rule(scalding_gallow_to_sh, HAS_SERPENT_HOLES)
 
+    serpent_hole_to_ashlands = world.get_entrance("Serpent Holes to Ashlands")
+    world.set_rule(serpent_hole_to_ashlands, HAS_SHADOWFLIGHT)
+    serpent_hole_to_dry_road_to_dry_road = world.get_entrance("Serpent Holes to Dry Road to Dry Road")
+    world.set_rule(serpent_hole_to_dry_road_to_dry_road, HAS_SHADOWFLIGHT)
+
     twilight_cathedral_exterior_1_to_2 = world.get_entrance("Twilight Cathedral Exterior 1 to 2")
     world.set_rule(twilight_cathedral_exterior_1_to_2, HAS_ABYSSAL_CHAIN)
     twilight_cathedral_to_sh = world.get_entrance("Twilight Cathedral to Serpent Holes")

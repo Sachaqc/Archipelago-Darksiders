@@ -79,10 +79,10 @@
     {
         "name": "Serpent Holes",
         "entrances": {
-            "Serpent Holes to Ashlands Access Tunnel 1": {
+            "Serpent Holes to Ashlands": {
                 "vanilla target": "Ashlands Access Tunnel 1"
             },
-            "Serpent Holes to Broken Stair 1": {
+            "Serpent Holes to Broken Stair": {
                 "vanilla target": "Broken Stair 1"
             },
             "Serpent Holes to Choking Grounds": {
