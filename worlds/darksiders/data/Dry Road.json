@@ -2,12 +2,12 @@
     {
         "name": "Dry Road Access Tunnel 1",
         "entrances": {
-            "Dry Road Access Tunnel 1 to Dry Road Access Tunnel 2": {
+            "Dry Road Access Tunnel 1 to 2": {
                 "vanilla target": "Dry Road Access Tunnel 2"
             }
         },
         "locations": {
-            "Dry Road Access Tunnel Currency Chest South of Entrance": {
+            "Dry Road Access Tunnel South of Entrance Chest": {
                 "ID": 800,
                 "vanilla item": "Currency"
             }
@@ -21,24 +21,28 @@
             }
         },
         "locations": {
-            "Dry Road Access Tunnel Currency Chest North of Chronosphere": {
+            "Dry Road Access Tunnel above Gate Chest": {
                 "ID": 801,
+                "vanilla item": "Death's Blessing"
+            },
+            "Dry Road Access Tunnel North of Chronosphere Chest": {
+                "ID": 802,
                 "vanilla item": "Currency"
             },
-            "Dry Road Access Tunnel Currency Chest Up the Stairs": {
-                "ID": 802,
-                "vanilla item": "Health"
-            },
-            "Dry Road Access Tunnel Soldier Artifact": {
+            "Dry Road Access Tunnel Up the Stairs Chest": {
                 "ID": 803,
-                "vanilla item": "Health"
+                "vanilla item": "Currency"
+            },
+            "Dry Road Access Tunnel Artifact": {
+                "ID": 804,
+                "vanilla item": "Soldier Artifact"
             }
         }
     },
     {
         "name": "Dry Road",
         "entrances": {
-            "Dry Road to Ashlands Access Tunnel 1": {
+            "Dry Road to Ashlands": {
                 "vanilla target": "Ashlands Access Tunnel 1"
             },
             "Dry Road to Serpent Holes": {
@@ -49,20 +53,20 @@
             }
         },
         "locations": {
-            "Dry Road Currency Chest South of Vulgrim": {
-                "ID": 804,
+            "Dry Road East Chest": {
+                "ID": 805,
+                "vanilla item": "Lifestone Shard"
+            },
+            "Dry Road South Chest": {
+                "ID": 806,
                 "vanilla item": "Currency"
             },
-            "Dry Road Life Chest East of Artifact": {
-                "ID": 805,
-                "vanilla item": "Health"
-            },
-            "Dry Road Soldier Artifact": {
-                "ID": 806,
-                "vanilla item": "Health"
+            "Dry Road Artifact": {
+                "ID": 807,
+                "vanilla item": "Soldier Artifact"
             },
             "Dry Road Uriel defeated": {
-                "ID": 807
+                "ID": 808
             }
         }
     }
