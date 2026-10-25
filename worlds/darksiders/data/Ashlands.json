@@ -7,11 +7,11 @@
             }
         },
         "locations": {
-            "Ashlands Access Tunnel Currency Chest by Three Goremaws": {
+            "Ashlands Access Tunnel Chest by Goreclaw": {
                 "ID": 100,
-                "vanilla item": "Currency"
+                "vanilla item": "Carnage"
             },
-            "Ashlands Access Tunnel Rare Chest by Goremaw": {
+            "Ashlands Access Tunnel Three Goremaws North Chest": {
                 "ID": 101,
                 "vanilla item": "Currency"
             }
@@ -31,9 +31,9 @@
             }
         },
         "locations": {
-            "Ashlands Access Tunnel Life Blocked by Ice": {
+            "Ashlands Access Tunnel Chest Blocked by Ice": {
                 "ID": 102,
-                "vanilla item": "Currency"
+                "vanilla item": "Lifestone Shard"
             }
         }
     },

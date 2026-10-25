@@ -45,7 +45,6 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     anvil_ford_to_anvil_ford_challenge_area = world.get_entrance("Anvil's Ford to Anvil's Ford Challenge Area")
     world.set_rule(anvil_ford_to_anvil_ford_challenge_area, HAS_CHAOS_FORM | HAS_GAUNTLET)
-
     anvil_ford_challenge_area_to_hollows_access_tunnel = world.get_entrance("Anvil's Ford Challenge Area to Hollows Access Tunnel")
     world.set_rule(anvil_ford_challenge_area_to_hollows_access_tunnel, HAS_CROSSBLADE)
     anvil_ford_access_tunnel_to_sh = world.get_entrance("Anvil's Ford Access Tunnel to Serpent Holes")
@@ -53,9 +52,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     ashlands_1_to_ashlands_2 = world.get_entrance("Ashlands 1 to Ashlands 2")
     world.set_rule(ashlands_1_to_ashlands_2, CAN_SLOW_TIME_FROM_AFAR)
- 
     ashlands_access_tunnel_1_to_2 = world.get_entrance("Ashlands Access Tunnel 1 to 2")
-    world.set_rule(ashlands_access_tunnel_1_to_2, HAS_CROSSBLADE)
+    world.set_rule(ashlands_access_tunnel_1_to_2, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
     ashlands_access_tunnel_to_sh = world.get_entrance("Ashlands Access Tunnel to Serpent Holes")
     world.set_rule(ashlands_access_tunnel_to_sh, HAS_SERPENT_HOLES)
  
@@ -63,7 +61,6 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
     broken_stairs_to_sh = world.get_entrance("Broken Stair to Serpent Holes")
     world.set_rule(broken_stairs_to_sh, HAS_SERPENT_HOLES)
- 
     broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
     world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
 
@@ -71,7 +68,6 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
     choking_grounds_to_sh = world.get_entrance("Choking Grounds to Serpent Holes")
     world.set_rule(choking_grounds_to_sh, HAS_SERPENT_HOLES)
-
     choking_grounds_access_tunnel_1_to_2 = world.get_entrance("Choking Grounds Access Tunnel 1 to 2")
     world.set_rule(choking_grounds_access_tunnel_1_to_2, HAS_SHADOWFLIGHT)
 
@@ -84,7 +80,7 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(drowned_pass_to_anvil_ford_access_tunnel, HAS_EARTHCALLER)
 
     dry_road_to_ashlands = world.get_entrance("Dry Road to Ashlands")
-    world.set_rule(dry_road_to_ashlands, CAN_HURT_GOREMAW)
+    world.set_rule(dry_road_to_ashlands, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
     dry_road_to_vulgrim = world.get_entrance("Dry Road to Serpent Holes")
     world.set_rule(dry_road_to_vulgrim, HAS_SERPENT_HOLES & HAS_SHADOWFLIGHT)
     dry_road_to_vulgrim = world.get_entrance("Dry Road to Vulgrim's Shop")
@@ -172,9 +168,11 @@ def set_all_location_rules(world: DSWorld) -> None:
     anvil_ford_access_tunnel_chest_ice = world.get_location("Anvil's Ford Access Tunnel Chest Blocked by Ice")
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
 
-    ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Rare Chest by Goremaw")
-    world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW)
-    ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Life Blocked by Ice")
+    ashlands_chest_by_goreclaw = world.get_location("Ashlands Access Tunnel Chest by Goreclaw")
+    world.set_rule(ashlands_chest_by_goreclaw, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
+    ashlands_chest_by_north_by_goremaws = world.get_location("Ashlands Access Tunnel Chest by Goreclaw")
+    world.set_rule(ashlands_chest_by_north_by_goremaws, HAS_ABYSSAL_CHAIN | HAS_SHADOWFLIGHT)
+    ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Chest Blocked by Ice")
     world.set_rule(ashlands_chest_blocked_by_ice, HAS_GAUNTLET)
 
 
