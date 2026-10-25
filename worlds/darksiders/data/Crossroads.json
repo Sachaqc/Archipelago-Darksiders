@@ -13,45 +13,45 @@
             }
         },
         "locations": {
-            "Crossroads Currency Chest Down Back Alley Stairs": {
+            "Crossroads South Crater Chest": {
                 "ID": 600,
                 "vanilla item": "Currency"
             },
-            "Crossroads Currency Chest in North Building": {
+            "Crossroads West of Library Chest": {
                 "ID": 601,
-                "vanilla item": "Currency"
+                "vanilla item": "Health"
             },
-            "Crossroads Currency Chest South Crater": {
+            "Crossroads Chest Blocked by Ice": {
                 "ID": 602,
-                "vanilla item": "Currency"
+                "vanilla item": "Hellfire"
             },
-            "Crossroads Currency Chest in Subway Station": {
+            "Crossroads Subway Station Artifact": {
                 "ID": 603,
+                "vanilla item": "Soldier Artifact"
+            },
+            "Crossroads Subway Station Chest": {
+                "ID": 604,
                 "vanilla item": "Currency"
             },
-            "Crossroads Life Chest East Crater": {
-                "ID": 604,
-                "vanilla item": "Health"
-            },
-            "Crossroads Life Chest in NE Back Alley": {
+            "Crossroads North Building Chest": {
                 "ID": 605,
-                "vanilla item": "Health"
+                "vanilla item": "Currency"
             },
-            "Crossroads Life Chest West of Library": {
+            "Crossroads Back Alley Chest": {
                 "ID": 606,
                 "vanilla item": "Health"
             },
-            "Crossroads Rare Chest Blocked by Ice": {
+            "Crossroads Back Alley Downstairs Chest": {
                 "ID": 607,
-                "vanilla item": "Hellfire"
-            },
-            "Crossroads Secret Chest Destroy Fire Hydrants": {
-                "ID": 608,
                 "vanilla item": "Currency"
             },
-            "Crossroads Soldier Artifact in Subway Station": {
+            "Crossroads East Crater Chest": {
+                "ID": 608,
+                "vanilla item": "Health"
+            },
+            "Crossroads Secret Chest Destroy Fire Hydrants": {
                 "ID": 609,
-                "vanilla item": "Soldier Artifact"
+                "vanilla item": "Currency"
             }
         }
     }

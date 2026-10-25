@@ -2,18 +2,18 @@
     {
         "name": "Choking Grounds Access Tunnel 1",
         "entrances": {
-            "Choking Grounds Access Tunnel 1 to Choking Grounds Access Tunnel 2": {
+            "Choking Grounds Access Tunnel 1 to 2": {
                 "vanilla target": "Choking Grounds Access Tunnel 2"
             }
         },
         "locations": {
-            "Choking Grounds Access Tunnel Abyssal Armor Chest": {
-                "ID": 500,
-                "vanilla item": "Abyssal Armor Piece"
-            },
             "Choking Grounds Access Tunnel Lava River Chest": {
-                "ID": 501,
+                "ID": 500,
                 "vanilla item": "Currency"
+            },
+            "Choking Grounds Access Tunnel Chest behind Portals": {
+                "ID": 501,
+                "vanilla item": "Abyssal Armor Piece"
             }
         }
     },
@@ -28,7 +28,7 @@
     {
         "name": "Choking Grounds",
         "entrances": {
-            "Choking Grounds to Broken Stair Access Tunnel": {
+            "Choking Grounds to Broken Stair": {
                 "vanilla target": "Broken Stair Access Tunnel"
             },
             "Choking Grounds to Serpent Holes": {
@@ -38,63 +38,57 @@
                 "vanilla target": "Vulgrim's Shop"
             }
         },
-        "events": {
-            "Choking Grounds Aerial Brawl Reward": {},
-            "Choking Grounds Speed Brawl Reward": {},
-            "Choking Grounds The Gory End Reward": {},
-            "Choking Grounds Venomous Reward": {}
-        },
         "locations": {
-            "Choking Grounds Aerial Brawl Reward": {
-                "ID": 502
+            "Choking Grounds South in Sarcophagus Artifact": {
+                "ID": 502,
+                "vanilla item": "Soldier Artifact"
             },
-            "Choking Grounds North Building Armaggedon Blade Shard": {
+            "Choking Grounds South Down the Stairs Chest": {
                 "ID": 503,
-                "vanilla item": "Armageddon Blade Shard"
+                "vanilla item": "Currency"
             },
             "Choking Grounds North of Vulgrim Artifact": {
                 "ID": 504,
                 "vanilla item": "Soldier Artifact"
             },
-            "Choking Grounds South in Sarcophagus Artifact": {
+            "Choking Grounds North of Cemetery Chest": {
                 "ID": 505,
-                "vanilla item": "Soldier Artifact"
+                "vanilla item": "Health"
             },
-            "Choking Grounds Bottom Floor of North Building Chest": {
+            "Choking Grounds NE South of the Ramp Chest": {
                 "ID": 506,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds NE South of the Ramp Chest": {
+            "Choking Grounds Bottom Floor of North Building Chest": {
                 "ID": 507,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds South Down the Stairs Chest": {
+            "Choking Grounds 2nd Floor of North Building Chest": {
                 "ID": 508,
-                "vanilla item": "Currency"
+                "vanilla item": "Wrath Shard"
             },
             "Choking Grounds Top Floor of North Building Chest Blocked by Ice": {
                 "ID": 509,
                 "vanilla item": "Currency"
             },
-            "Choking Grounds North of Cemetery Chest": {
-                "ID": 510,
-                "vanilla item": "Health"
-            },
             "Choking Grounds Top Floor of North Building Chest": {
-                "ID": 511,
+                "ID": 510,
                 "vanilla item": "Lifestone Shard"
-            },
-            "Choking Grounds 2nd Floor of North Building Chest": {
-                "ID": 512,
-                "vanilla item": "Wrath Shard"
             },
             "Choking Grounds North Building Rare Chest": {
-                "ID": 513,
+                "ID": 511,
                 "vanilla item": "Empty Container"
             },
+            "Choking Grounds North Building Armaggedon Blade Shard": {
+                "ID": 512,
+                "vanilla item": "Armageddon Blade Shard"
+            },
             "Choking Grounds Destroy Gravestones with Crosses Secret Chest": {
-                "ID": 514,
+                "ID": 513,
                 "vanilla item": "Lifestone Shard"
+            },
+            "Choking Grounds Aerial Brawl Reward": {
+                "ID": 514
             },
             "Choking Grounds Speed Brawl Reward": {
                 "ID": 515

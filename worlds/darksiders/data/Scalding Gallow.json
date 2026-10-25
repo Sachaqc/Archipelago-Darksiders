@@ -2,19 +2,19 @@
     {
         "name": "Scalding Gallow",
         "entrances": {
-            "Scalding Gallow to Black Throne 1": {
+            "Scalding Gallow to Black Throne": {
                 "vanilla target": "Black Throne 1"
             },
-            "Scalding Gallow to Choking Grounds Access Tunnel 1": {
+            "Scalding Gallow to Choking Grounds": {
                 "vanilla target": "Choking Grounds Access Tunnel 1"
             },
-            "Scalding Gallow to Drowned Pass Access Tunnel": {
+            "Scalding Gallow to Drowned Pass": {
                 "vanilla target": "Drowned Pass Access Tunnel"
             },
-            "Scalding Gallow to Dry Road Access Tunnel 1": {
+            "Scalding Gallow to Dry Road": {
                 "vanilla target": "Dry Road Access Tunnel 1"
             },
-            "Scalding Gallow to Iron Canopy 1": {
+            "Scalding Gallow to Iron Canopy": {
                 "vanilla target": "Iron Canopy 1"
             },
             "Scalding Gallow to Serpent Holes": {
@@ -25,46 +25,46 @@
             }
         },
         "locations": {
-            "Scalding Gallow Abyssal Armor Piece Near Library": {
-                "ID": 1507,
-                "vanilla item": "Abyssal Armor Piece"
-            },
-            "Scalding Gallow Abyssal Armor Piece Under Central Platform": {
-                "ID": 1508,
-                "vanilla item": "Abyssal Armor Piece"
-            },
             "Scalding Gallow Chest 2nd Floor Near Library": {
-                "ID": 1509,
+                "ID": 1500,
                 "vanilla item": "Currency"
             },
+            "Scalding Gallow Bombable Pillar Chest Near Library": {
+                "ID": 1501,
+                "vanilla item": "Abyssal Armor Piece"
+            },
             "Scalding Gallow Chest Near Vulgrim": {
-                "ID": 1510,
+                "ID": 1502,
                 "vanilla item": "Currency"
             },
             "Scalding Gallow Chest Above Vulgrim": {
-                "ID": 1511,
+                "ID": 1503,
                 "vanilla item": "Wrath Shard"
             },
+            "Scalding Gallow Under Central Platform Chest": {
+                "ID": 1504,
+                "vanilla item": "Abyssal Armor Piece"
+            },
             "Scalding Gallow Phantom General Defeated": {
-                "ID": 1512
+                "ID": 1505
             },
             "Scalding Gallow Trade first Heart of the Chosen": {
-                "ID": 1513,
+                "ID": 1506,
                 "vanilla item": "Chaos Form"
             },
             "Scalding Gallow Trade second Heart of the Chosen": {
-                "ID": 1514,
+                "ID": 1507,
                 "vanilla item": "Chronomancer"
             },
             "Scalding Gallow Trade third Heart of the Chosen": {
-                "ID": 1515,
+                "ID": 1508,
                 "vanilla item": "Soul Bridge"
             },
             "Scalding Gallow Trade fourth Heart of the Chosen": {
-                "ID": 1516
+                "ID": 1509
             },
             "Scalding Gallow Samael's first Reward": {
-                "ID": 1517,
+                "ID": 1510,
                 "vanilla item": "Shadowflight"
             }
         }

@@ -44,7 +44,7 @@ def set_all_rules(world: DSWorld) -> None:
 def set_all_entrance_rules(world: DSWorld) -> None:
 
     anvil_ford_to_anvil_ford_challenge_area = world.get_entrance("Anvil's Ford to Anvil's Ford Challenge Area")
-    world.set_rule(anvil_ford_to_anvil_ford_challenge_area, HAS_CHAOS_FORM)
+    world.set_rule(anvil_ford_to_anvil_ford_challenge_area, HAS_CHAOS_FORM | HAS_GAUNTLET)
 
     anvil_ford_challenge_area_to_hollows_access_tunnel = world.get_entrance("Anvil's Ford Challenge Area to Hollows Access Tunnel")
     world.set_rule(anvil_ford_challenge_area_to_hollows_access_tunnel, HAS_CROSSBLADE)
@@ -55,16 +55,16 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     ashlands_access_tunnel_1_to_ashlands_access_tunnel_2 = world.get_entrance("Ashlands Access Tunnel 1 to Ashlands Access Tunnel 2")
     world.set_rule(ashlands_access_tunnel_1_to_ashlands_access_tunnel_2, HAS_CROSSBLADE)
  
-    broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to Broken Stair 2")
+    broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
  
     broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
     world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
 
-    choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair Access Tunnel")
+    choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair")
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
 
-    choking_grounds_access_tunnel_1_to_2 = world.get_entrance("Choking Grounds Access Tunnel 1 to Choking Grounds Access Tunnel 2")
+    choking_grounds_access_tunnel_1_to_2 = world.get_entrance("Choking Grounds Access Tunnel 1 to 2")
     world.set_rule(choking_grounds_access_tunnel_1_to_2, HAS_SHADOWFLIGHT)
 
     crossroads_to_library = world.get_entrance("Crossroads to Library")
@@ -109,19 +109,19 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
     world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
 
-    scalding_gallow_to_black_throne_1 = world.get_entrance("Scalding Gallow to Black Throne 1")
+    scalding_gallow_to_black_throne_1 = world.get_entrance("Scalding Gallow to Black Throne")
     world.set_rule(scalding_gallow_to_black_throne_1, Has("Heart of the Chosen", count = 4))
 
-    scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to Choking Grounds Access Tunnel 1")
+    scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to Choking Grounds")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
 
-    scalding_gallow_to_drowned_pass = world.get_entrance("Scalding Gallow to Drowned Pass Access Tunnel")
+    scalding_gallow_to_drowned_pass = world.get_entrance("Scalding Gallow to Drowned Pass")
     world.set_rule(scalding_gallow_to_drowned_pass, HAS_CROSSBLADE)
 
-    scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road Access Tunnel 1")
+    scalding_gallow_to_dry_road_access_tunnel_1 = world.get_entrance("Scalding Gallow to Dry Road")
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)
 
-    scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy 1")
+    scalding_gallow_to_iron_canopy = world.get_entrance("Scalding Gallow to Iron Canopy")
     world.set_rule(scalding_gallow_to_iron_canopy, HAS_SOUL_BRIDGE)
 
     twilight_cathedral_exterior_1_to_2 = world.get_entrance("Twilight Cathedral Exterior 1 to Twilight Cathedral Exterior 2")
@@ -192,10 +192,10 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(choking_grounds_chest_in_North_Building, HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
     choking_grounds_rare_chest_in_North_Building = world.get_location("Choking Grounds North Building Rare Chest")
     world.set_rule(choking_grounds_rare_chest_in_North_Building, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
-    choking_grounds_access_tunnel_abyssal_chest = world.get_location("Choking Grounds Access Tunnel Abyssal Armor Chest")
+    choking_grounds_access_tunnel_abyssal_chest = world.get_location("Choking Grounds Access Tunnel Chest behind Portals")
     world.set_rule(choking_grounds_access_tunnel_abyssal_chest, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
 
-    crossroads_chest_blocked_by_ice = world.get_location("Crossroads Rare Chest Blocked by Ice")
+    crossroads_chest_blocked_by_ice = world.get_location("Crossroads Chest Blocked by Ice")
     world.set_rule(crossroads_chest_blocked_by_ice, HAS_GAUNTLET)
     #crossroads_artifact_in_water = world.get_location("Crossroads Soldier Artifact in Subway Station")
     #world.set_rule(crossroads_artifact_in_water, CAN_SWIM)
@@ -227,8 +227,10 @@ def set_all_location_rules(world: DSWorld) -> None:
     hollows_chest_under_goremaw = world.get_location('Hollows Currency Chest under Goremaw')
     world.set_rule(hollows_chest_under_goremaw, HAS_CROSSBLADE)
 
-    library_artifact = world.get_location("Library Artifact on West Side")
+    library_artifact = world.get_location("Library West Side Artifact")
     world.set_rule(library_artifact, HAS_SHADOWFLIGHT)
+    library_north_chest = world.get_location("Library North Chest after Hook")
+    world.set_rule(library_north_chest, HAS_ABYSSAL_CHAIN)
 
     scalding_gallow_trade_first_heart = world.get_location('Scalding Gallow Trade first Heart of the Chosen')
     world.set_rule(scalding_gallow_trade_first_heart, Has("Heart of the Chosen", count = 1))
@@ -238,11 +240,11 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(scalding_gallow_trade_third_heart, Has("Heart of the Chosen", count = 3))
     scalding_gallow_trade_fourth_heart = world.get_location('Scalding Gallow Trade fourth Heart of the Chosen')
     world.set_rule(scalding_gallow_trade_fourth_heart, Has("Heart of the Chosen", count = 4))
-    scalding_gallow_abyssal_armor_chest_near_entrance = world.get_location("Scalding Gallow Abyssal Armor Piece Near Library")
+    scalding_gallow_abyssal_armor_chest_near_entrance = world.get_location("Scalding Gallow Bombable Pillar Chest Near Library")
     world.set_rule(scalding_gallow_abyssal_armor_chest_near_entrance, CAN_DETONATE_BOMBS)
     #scalding_gallow_wrath_chest = world.get_location("Scalding Gallow Wrath Chest Above Vulgrim")
     #world.set_rule(scalding_gallow_wrath_chest, CAN_CLIMB_DEMONIC_GROWTH)
-    scalding_gallow_abyssal_armor_chest_under_central_platform = world.get_location("Scalding Gallow Abyssal Armor Piece Under Central Platform")
+    scalding_gallow_abyssal_armor_chest_under_central_platform = world.get_location("Scalding Gallow Under Central Platform Chest")
     world.set_rule(scalding_gallow_abyssal_armor_chest_under_central_platform, HAS_SHADOWFLIGHT) #CAN_DOUBLE_JUMP
 
     serpent_hole_to_anvil_ford_chest = world.get_location("Serpent Hole to Anvil\'s Ford Chest")

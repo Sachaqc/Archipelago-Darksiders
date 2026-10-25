@@ -2,7 +2,7 @@
     {
         "name": "Broken Stair Access Tunnel",
         "entrances": {
-            "Broken Stair Access Tunnel to Broken Stair 1": {
+            "Broken Stair Access Tunnel to Broken Stair": {
                 "vanilla target": "Broken Stair 1"
             }
         },
@@ -20,7 +20,7 @@
     {
         "name": "Broken Stair 1",
         "entrances": {
-            "Broken Stair 1 to Broken Stair 2": {
+            "Broken Stair 1 to 2": {
                 "vanilla target": "Broken Stair 2"
             },
             "The Broken Stair to Serpent Holes": {
@@ -31,21 +31,21 @@
             }
         },
         "locations": {
-            "Broken Stair Artifact": {
-                "ID": 402,
-                "vanilla item": "Soldier Artifact"
-            },
             "Broken Stair Chest after Waterway": {
-                "ID": 403,
+                "ID": 402,
                 "vanilla item": "Lifestone Shard"
+            },
+            "Broken Stair Chest near Vulgrim": {
+                "ID": 403,
+                "vanilla item": "Currency"
             },
             "Broken Stair Chest inside Building": {
                 "ID": 404,
                 "vanilla item": "Currency"
             },
-            "Broken Stair Chest near Vulgrim": {
+            "Broken Stair Artifact": {
                 "ID": 405,
-                "vanilla item": "Currency"
+                "vanilla item": "Soldier Artifact"
             }
         }
     },
@@ -61,15 +61,15 @@
                 "ID": 406,
                 "vanilla item": "Lifestone Shard"
             },
-            "Broken Stair Chest Bottom Floor of Last Building": {
+            "Broken Stair under Billboard Chest": {
                 "ID": 407,
-                "vanilla item": "Beholder Key"
-            },
-            "Broken Stair Chest Middle Floor of Last Building": {
-                "ID": 408,
                 "vanilla item": "Currency"
             },
-            "Broken Stair Chest under Billboard": {
+            "Broken Stair Bottom Floor of Last Building Chest": {
+                "ID": 408,
+                "vanilla item": "Beholder Key"
+            },
+            "Broken Stair Middle Floor of Last Building Chest": {
                 "ID": 409,
                 "vanilla item": "Currency"
             }

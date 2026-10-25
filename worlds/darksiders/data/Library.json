@@ -7,27 +7,27 @@
             }
         },
         "locations": {
-            "Library Artifact on West Side": {
+            "Library Entrance Chest": {
                 "ID": 1300,
-                "vanilla item": "Soldier Artifact"
+                "vanilla item": "Health"
             },
-            "Library Chest South of Fleshburners": {
+            "Library South of Fleshburners Chest": {
                 "ID": 1301,
                 "vanilla item": "Currency"
             },
-            "Library Life Chest Entrance": {
+            "Library Submarine Cave Chest": {
                 "ID": 1302,
-                "vanilla item": "Health"
-            },
-            "Library Life Chest Submarine Cave": {
-                "ID": 1303,
                 "vanilla item": "Lifestone Shard"
             },
-            "Library Life Chest North": {
+            "Library West Side Artifact": {
+                "ID": 1303,
+                "vanilla item": "Soldier Artifact"
+            },
+            "Library North Chest": {
                 "ID": 1304,
                 "vanilla item": "Health"
             },
-            "Library Wrath Chest North": {
+            "Library North Chest after Hook": {
                 "ID": 1305,
                 "vanilla item": "Wrath Shard"
             }
