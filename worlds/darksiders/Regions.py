@@ -46,6 +46,7 @@ def create_all_regions(world: DSWorld) -> None:
     create_region_from_json(world, "Drowned Pass.json")
     create_region_from_json(world, "Dry Road.json")
     create_region_from_json(world, "Hollows.json")
+    create_region_from_json(world, "Iron Canopy.json")
     create_region_from_json(world, "Library.json")
     create_region_from_json(world, "Menu.json")
     create_region_from_json(world, "Scalding Gallow.json")

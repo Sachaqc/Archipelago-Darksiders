@@ -7,7 +7,7 @@
             }
         },
         "locations": {
-            "Ashlands Access Tunnel Chest by Goreclaw": {
+            "Ashlands Access Tunnel Chest by Goremaw": {
                 "ID": 100,
                 "vanilla item": "Carnage"
             },
@@ -20,8 +20,11 @@
     {
         "name": "Ashlands Access Tunnel 2",
         "entrances": {
-            "Ashlands Access Tunnel to Ashlands": {
-                "vanilla target": "Ashlands 1"
+            "Ashlands Access Tunnel to Ashlands Desert": {
+                "vanilla target": "Ashlands Ash Titan Desert"
+            },
+            "Ashlands Access Tunnel to Central Tower Area": {
+                "vanilla target": "Ashlands Central Tower Area"
             },
             "Ashlands Access Tunnel to Serpent Holes": {
                 "vanilla target": "Serpent Holes"
@@ -38,24 +41,207 @@
         }
     },
     {
-        "name": "Ashlands 1",
+        "name": "Ashlands Ash Titan Desert",
         "entrances": {
-            "Ashlands 1 to Ashlands 2": {
-                "vanilla target": "Ashlands 2"
+            "Ashlands Ash Titan Desert to Central Tower Area": {
+                "vanilla target": "Ashlands Central Tower Area"
+            },
+            "Ashlands Ash Titan Desert to West Tower Area": {
+                "vanilla target": "Ashlands West Tower Area"
+            },
+            "Ashlands Ash Titan Desert to Northern Edge": {
+                "vanilla target": "Ashlands Northern Edge"
+            },
+            "Ashlands Ash Titan Desert to East Island": {
+                "vanilla target": "Ashlands East Island"
+            },
+            "Ashlands Ash Titan Desert to North East Cliff": {
+                "vanilla target": "Ashlands North East Cliff"
             }
         }
     },
     {
-        "name": "Ashlands 2",
+        "name": "Ashlands Central Tower Area",
         "entrances": {
-            "Ashlands to Leviathan's Drift": {
+            "Ashlands Central Tower Area to West Tower Area": {
+                "vanilla target": "Ashlands West Tower Area"
+            }
+        },
+        "locations": {
+            "Ashlands Chest up the Ramp": {
+                "ID": 103,
+                "vanilla item": "Currency"
+            },
+            "Ashlands Central Tower Middle Floor Chest": {
+                "ID": 104,
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Ashlands West Tower Area",
+        "entrances": {
+            "Ashlands West Tower to Cave Area": {
+                "vanilla target": "Ashlands Cave Area"
+            },
+            "Ashlands to Iron Canopy": {
+                "vanilla target": "Iron Canopy"
+            }
+        },
+        "locations": {
+            "Ashlands West Tower Middle Floor Chest": {
+                "ID": 105,
+                "vanilla item": "Possession"
+            },
+            "Ashlands West Tower under North Drill Artifact": {
+                "ID": 106,
+                "vanilla item": "Overlord Artifact"
+            }
+        }
+    },
+    {
+        "name": "Ashlands Cave Area",
+        "entrances": {
+            "Ashlands Cave Area to Goremaw Tunnel": {
+                "vanilla target": "Ashlands Goremaw Tunnel"
+            }
+        },
+        "locations": {
+            "Ashlands Cave Underwater Artifact": {
+                "ID": 107,
+                "vanilla item": "Soldier Artifact"
+            },
+            "Ashlands Cave North of First Goremaw Chest": {
+                "ID": 108,
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Ashlands Goremaw Tunnel",
+        "entrances": {
+            "Ashlands Goremaw Tunnel to Northern Edge": {
+                "vanilla target": "Ashlands Northern Edge"
+            }
+        },
+        "locations": {
+            "Ashlands Goremaw Tunnel Elevated Platform Chest": {
+                "ID": 109,
+                "vanilla item": "Lifestone Shard"
+            },
+            "Ashlands Goremaw Tunnel East Chest": {
+                "ID": 110,
+                "vanilla item": "Strife's Offering"
+            }
+        }
+    },
+    {
+        "name": "Ashlands Northern Edge",
+        "entrances": {
+            "Ashlands Northern Edge to Leviathan's Drift": {
                 "vanilla target": "Leviathan's Drift"
             }
         },
         "locations": {
-            "Ashlands Currency Chest up the Ramp": {
-                "ID": 103,
+            "Ashlands Northern Edge behind Wood Pillars Chest": {
+                "ID": 111,
                 "vanilla item": "Currency"
+            },
+            "Ashlands North Chest Blocked by Ice": {
+                "ID": 112,
+                "vanilla item": "Wrath Shard"
+            },
+            "Ashlands First Berzerker Arena Chest": {
+                "ID": 113,
+                "vanilla item": "Health"
+            },
+            "Ashlands passed Ash Titan Chest": {
+                "ID": 114,
+                "vanilla item": "Currency"
+            },
+            "Ashlands Second Berzerker East Arena Chest": {
+                "ID": 115,
+                "vanilla item": "Health"
+            },
+            "Ashlands Second Berzerker West Arena Chest": {
+                "ID": 116,
+                "vanilla item": "Wrath"
+            },
+            "Ashlands First Shooter Sequence under Stairs Chest": {
+                "ID": 117,
+                "vanilla item": "Health"
+            },
+            "Ashlands First Shooter Sequence before Drawbridge Chest": {
+                "ID": 118,
+                "vanilla item": "Health"
+            },
+            "Ashlands First Shooter Sequence Final Chest": {
+                "ID": 119,
+                "vanilla item": "Health"
+            },
+            "Ashlands Gladiator Arena East Chest": {
+                "ID": 120,
+                "vanilla item": "Health"
+            },
+            "Ashlands Gladiator Arena West Chest": {
+                "ID": 121,
+                "vanilla item": "Health"
+            },
+            "Ashlands Gladiator Champion defeated": {
+                "ID": 122,
+                "vanilla item": "Ruin"
+            },
+            "Ashlands Gladiator Arena Exit Chest": {
+                "ID": 123,
+                "vanilla item": "Currency"
+            },
+            "Ashlands North of Ash titan Chest": {
+                "ID": 124,
+                "vanilla item": "Currency"
+            },
+            "Ashlands Second Shooter Sequence South Chest": {
+                "ID": 125,
+                "vanilla item": "Health"
+            },
+            "Ashlands Second Shooter Sequence North Chest": {
+                "ID": 126,
+                "vanilla item": "Currency"
+            },
+            "Ashlands Second Shooter Sequence underwater Artifact": {
+                "ID": 127,
+                "vanilla item": "Soldier Artifact"
+            }
+        }
+    },
+    {
+        "name": "Ashlands East Island",
+        "locations": {
+            "Ashlands East Island Chest": {
+                "ID": 128,
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Ashlands North East Cliff",
+        "entrances": {
+            "Ashlands North East Cliff to Central Tower Top Floor": {
+                "vanilla target": "Ashlands Central Tower Top Floor"
+            }
+        },
+        "locations": {
+            "Ashlands North east Cliff Artifact": {
+                "ID": 129,
+                "vanilla item": "Soldier Artifact"
+            }
+        }
+    },
+    {
+        "name": "Ashlands Central Tower Top Floor",
+        "locations": {
+            "Ashlands Central Tower Top Floor Chest": {
+                "ID": 130,
+                "vanilla item": "Abyssal Armor Piece"
             }
         }
     }
