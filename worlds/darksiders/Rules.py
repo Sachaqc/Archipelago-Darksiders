@@ -3,25 +3,18 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from rule_builder.options import OptionFilter
-from rule_builder.rules import Has, HasAll, HasAny, Rule
+from rule_builder.rules import Has, HasAll, HasAny
 
 if TYPE_CHECKING:
     from .World import DSWorld
 
 CAN_BEAT_ABADDON = Has("Armageddon Blade Shard", count = 7) & HasAll("Mask of Shadows", "Ruin", "Shadowflight")
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Progressive Chaoseater", "Progressive Gauntlet", "Progressive Scythe")
-CAN_CLIMB_DEMONIC_GROWTH = True
 CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
-CAN_DOUBLE_JUMP = True
-CAN_DRAG_OBJECTS = True
-CAN_GRAB_BOMBS = True
 CAN_HIT_CRYSTAL_BLADES = HasAny("Crossblade", "Mercy")
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
-CAN_LEDGE_GRAB = True
 CAN_SLOW_TIME_FROM_AFAR = HasAll("Crossblade", "Chronomancer")
 CAN_SOUL_BRIDGE = HasAll("Ruin", "Soul Bridge")
-CAN_SWIM = True
-CAN_TYROLEAN_TRAVERSE = True
 HAS_ABYSSAL_CHAIN = Has("Abyssal Chain")
 HAS_BLOCK_COUNTER = Has("Block Counter")
 HAS_CHAOS_FORM = Has("Chaos Form")
