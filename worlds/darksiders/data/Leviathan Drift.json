@@ -32,6 +32,11 @@
                 "vanilla target": "Eden"
             }
         },
+        "events": {
+            "Abaddon the Destroyer defeated": {
+                "item": "Victory"
+            }
+        },
         "locations": {
             "Leviathan's Drift Armaggedon Blade Shard": {
                 "ID": 1204,

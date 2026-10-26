@@ -97,6 +97,11 @@
     },
     {
         "name": "Twilight Cathedral Conscript Room",
+        "events": {
+            "Twilight Cathedral Conscript Crystal Blade": {
+                "item": "Crystal Blade"
+            }
+        },
         "locations": {
             "Twilight Cathedral South Wing Conscript Room North Chest": {
                 "ID": 1712,
@@ -192,6 +197,11 @@
     },
     {
         "name": "Twilight Cathedral West Blade Path",
+        "events": {
+            "Twilight Cathedral West Crystal Blade": {
+                "item": "West Crystal Blade"
+            }
+        },
         "locations": {
             "Twilight Cathedral Bridge Room Artifact": {
                 "ID": 1722,
@@ -209,6 +219,11 @@
     },
     {
         "name": "Twilight Cathedral North Blade Path",
+        "events": {
+            "Twilight Cathedral North Crystal Blade": {
+                "item": "North Crystal Blade"
+            }
+        },
         "locations": {
             "Twilight Cathedral North Blade Path Platform Room Chest": {
                 "ID": 1725,
@@ -231,6 +246,11 @@
     },
     {
         "name": "Twilight Cathedral South Blade Path",
+        "events": {
+            "Twilight Cathedral South Crystal Blade": {
+                "item": "South Crystal Blade"
+            }
+        },
         "locations": {
             "Twilight Cathedral The Jailer defeated": {
                 "ID": 1728

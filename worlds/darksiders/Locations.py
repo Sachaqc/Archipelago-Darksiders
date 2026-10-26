@@ -6,7 +6,6 @@ from BaseClasses import Location
 from rule_builder.rules import Has
 
 from .Items import DSItem
-from .Rules import CAN_BEAT_ABADDON, HAS_ABYSSAL_CHAIN, HAS_CHAOS_FORM, HAS_CROSSBLADE, HAS_GAUNTLET, HAS_MASK, HAS_RUIN, HAS_VOIDWALKER
 from .Utils import data_path, json_read
 
 if TYPE_CHECKING:
@@ -19,7 +18,6 @@ def create_location_table_from_json(filename) -> None:
     for region in region_json:
         if 'locations' in region:
             for location, location_data in region.get("locations").items():
-                print(location)
                 LOCATION_NAME_TO_ID[location] = location_data.get("ID")
 
 LOCATION_NAME_TO_ID = {}
@@ -42,13 +40,6 @@ create_location_table_from_json("Scalding Gallow.json")
 create_location_table_from_json("Serpent Holes.json")
 create_location_table_from_json("Twilight Cathedral.json")
 
-#location_json = json_read(data_path("Anvil Ford.json"))
-
-#for Region, region_data in location_json.items():
-#    if 'locations' in region_data:
-#        for location, location_data in region_data.items():
-#            LOCATION_NAME_TO_ID[location] = location_data.get("ID")
-
 class DSLocation(Location):
 
     game = "Darksiders"
@@ -64,50 +55,53 @@ def create_all_locations(world: DSWorld) -> None:
 
 def create_regular_locations(world: DSWorld) -> None:
 
-    #seraphim_hotel = world.get_region("Seraphim Hotel")
-
     create_locations_from_json(world, "Anvil Ford.json")
     create_locations_from_json(world, "Ashlands.json")
-    #create_locations_from_json(world, "Black Throne.json")
+    create_locations_from_json(world, "Black Throne.json")
     create_locations_from_json(world, "Broken Stairs.json")
     create_locations_from_json(world, "Choking Grounds.json")
     create_locations_from_json(world, "Crossroads.json")
     create_locations_from_json(world, "Drowned Pass.json")
     create_locations_from_json(world, "Dry Road.json")
-    #create_locations_from_json(world, "Eden.json")
+    create_locations_from_json(world, "Eden.json")
     create_locations_from_json(world, "Hollows.json")
-    #create_locations_from_json(world, "Iron Canopy.json")
+    create_locations_from_json(world, "Iron Canopy.json")
     create_locations_from_json(world, "Leviathan Drift.json")
     create_locations_from_json(world, "Library.json")
     create_locations_from_json(world, "Menu.json")
     create_locations_from_json(world, "Scalding Gallow.json")
-
-    #seraphim_hotel_locations = get_location_names_with_ids([
-    #    'Seraphim Hotel Life Chest 1',
-    #    'Seraphim Hotel Life Chest 2'
-    #])
-    #seraphim_hotel.add_locations(seraphim_hotel_locations, DSLocation)
-
     create_locations_from_json(world, "Serpent Holes.json")
     create_locations_from_json(world, "Twilight Cathedral.json")
 
 def create_events(world: DSWorld) -> None:
 
-    hollows_above_flooded_room = world.get_region("Hollows above Flooded Room")
-    hollows_above_flooded_room.add_event(location_name = "Stalactite fell", item_name = "Stalactite fell", rule = HAS_CROSSBLADE & HAS_GAUNTLET, location_type = DSLocation, item_type = DSItem)
+    create_events_from_json(world, "Anvil Ford.json")
+    create_events_from_json(world, "Ashlands.json")
+    create_events_from_json(world, "Black Throne.json")
+    create_events_from_json(world, "Broken Stairs.json")
+    create_events_from_json(world, "Choking Grounds.json")
+    create_events_from_json(world, "Crossroads.json")
+    create_events_from_json(world, "Drowned Pass.json")
+    create_events_from_json(world, "Dry Road.json")
+    create_events_from_json(world, "Eden.json")
+    create_events_from_json(world, "Hollows.json")
+    create_events_from_json(world, "Iron Canopy.json")
+    create_events_from_json(world, "Leviathan Drift.json")
+    create_events_from_json(world, "Library.json")
+    create_events_from_json(world, "Menu.json")
+    create_events_from_json(world, "Scalding Gallow.json")
+    create_events_from_json(world, "Serpent Holes.json")
+    create_events_from_json(world, "Twilight Cathedral.json")
 
-    leviathan_drift = world.get_region("Leviathan's Drift")
-    leviathan_drift.add_event(location_name = "Abaddon Destroyer defeated", item_name = "Victory", rule = CAN_BEAT_ABADDON, location_type = DSLocation, item_type = DSItem)
+def create_events_from_json(world: DSWorld, filename) -> None:
 
-    twilight_cathedral_conscript_room = world.get_region("Twilight Cathedral Conscript Room")
-    twilight_cathedral_west_blade_path = world.get_region("Twilight Cathedral West Blade Path")
-    twilight_cathedral_north_blade_path = world.get_region("Twilight Cathedral North Blade Path")
-    twilight_cathedral_south_blade_path = world.get_region("Twilight Cathedral South Blade Path")
-    twilight_cathedral_conscript_room.add_event(location_name = "Crystal Blade", item_name = "Crystal Blade", location_type = DSLocation, item_type = DSItem)
-    twilight_cathedral_west_blade_path.add_event(location_name = "West Crystal Blade", item_name = "West Crystal Blade", location_type = DSLocation, item_type = DSItem)
-    twilight_cathedral_north_blade_path.add_event(location_name = "North Crystal Blade", item_name = "North Crystal Blade", location_type = DSLocation, item_type = DSItem)
-    twilight_cathedral_south_blade_path.add_event(location_name = "South Crystal Blade", item_name = "South Crystal Blade", location_type = DSLocation, item_type = DSItem)
+    region_json = json_read(data_path(filename))
 
+    for region in region_json:
+        if 'events' in region:
+            for event, event_data in region.get("events").items():
+                this_region = world.get_region(region_name = region.get("name"))
+                this_region.add_event(location_name = event, item_name = event_data.get("item"), location_type = DSLocation, item_type = DSItem)
 
 def create_locations_from_json(world: DSWorld, filename) -> None:
 

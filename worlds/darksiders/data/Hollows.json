@@ -205,6 +205,11 @@
     },
     {
         "name": "Hollows above Flooded Room",
+        "events": {
+            "Hollows Stalactite Fell": {
+                "item": "Stalactite Fell"
+            }
+        },
         "locations": {
             "Hollows Currency Chest between Ice Blocks": {
                 "ID": 1026,
