@@ -72,7 +72,7 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     ashlands_cliff_to_top = world.get_entrance("Ashlands North East Cliff to Central Tower Top Floor")
     world.set_rule(ashlands_cliff_to_top, HAS_ABYSSAL_CHAIN)
     ashlands_west_to_iron_canopy = world.get_entrance("Ashlands to Iron Canopy")
-    world.set_rule(ashlands_west_to_iron_canopy, CAN_SOUL_BRIDGE)
+    world.set_rule(ashlands_west_to_iron_canopy, CAN_SOUL_BRIDGE & HAS_ABYSSAL_CHAIN)
     ashlands_access_tunnel_1_to_2 = world.get_entrance("Ashlands Access Tunnel 1 to 2")
     world.set_rule(ashlands_access_tunnel_1_to_2, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
     ashlands_access_tunnel_to_desert = world.get_entrance("Ashlands Access Tunnel to Ashlands Desert")
