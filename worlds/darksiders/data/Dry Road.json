@@ -67,6 +67,10 @@
             },
             "Dry Road Uriel defeated": {
                 "ID": 808
+            },
+            "Dry Road Armaggedon Blade Shard": {
+                "ID": 809,
+                "vanilla item": "Armaggedon Blade Shard"
             }
         }
     }

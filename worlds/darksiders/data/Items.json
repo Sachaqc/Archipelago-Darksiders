@@ -182,7 +182,7 @@
         "Beholder Key": {
             "ID": 60,
             "progressive": false,
-            "number": 9,
+            "number": 10,
             "console": "/pickup_item items/item_dungeonkey"
         },
         "Heart of the Chosen": {

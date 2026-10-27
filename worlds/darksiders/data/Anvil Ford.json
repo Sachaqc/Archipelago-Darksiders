@@ -29,6 +29,10 @@
         "locations": {
             "Anvil's Ford Ulthane defeated": {
                 "ID": 2
+            },
+            "Anvil's Ford Reforge the Blade": {
+                "ID": 3,
+                "vanilla item": "Armageddon Blade"
             }
         }
     },
@@ -41,45 +45,45 @@
         },
         "locations": {
             "Anvil's Ford Challenge Area Chest Blocked by Ice near Entrance": {
-                "ID": 3,
-                "vanilla item": "Health"
-            },
-            "Anvil's Ford Challenge Area Chest before Toss": {
                 "ID": 4,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Chest after Toss": {
+            "Anvil's Ford Challenge Area Chest before Toss": {
                 "ID": 5,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Chest Elevator Shaft": {
+            "Anvil's Ford Challenge Area Chest after Toss": {
                 "ID": 6,
                 "vanilla item": "Health"
             },
-            "Anvil's Ford Challenge Area Central Chest after Demonic Growth": {
+            "Anvil's Ford Challenge Area Chest Elevator Shaft": {
                 "ID": 7,
+                "vanilla item": "Health"
+            },
+            "Anvil's Ford Challenge Area Central Chest after Demonic Growth": {
+                "ID": 8,
                 "vanilla item": "Currency"
             },
             "Anvil's Ford Challenge Area West Chest after Demonic Growth": {
-                "ID": 8,
-                "vanilla item": "Wrath Shard"
-            },
-            "Anvil's Ford Challenge Area West Platform Chest": {
                 "ID": 9,
                 "vanilla item": "Wrath Shard"
             },
-            "Anvil's Ford Challenge Area Chest Blocked by Ice near Uriel": {
+            "Anvil's Ford Challenge Area West Platform Chest": {
                 "ID": 10,
+                "vanilla item": "Wrath Shard"
+            },
+            "Anvil's Ford Challenge Area Chest Blocked by Ice near Uriel": {
+                "ID": 11,
                 "vanilla item": "Health"
             },
             "Anvil's Ford Challenge Area Ulthane outscored": {
-                "ID": 11
-            },
-            "Anvil's Ford Challenge Area Uriel defeated": {
                 "ID": 12
             },
+            "Anvil's Ford Challenge Area Uriel defeated": {
+                "ID": 13
+            },
             "Anvil's Ford Challenge Area Uriel Arena Fountain Chest": {
-                "ID": 13,
+                "ID": 14,
                 "vanilla item": "Health"
             }
         }

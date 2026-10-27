@@ -3,7 +3,7 @@
         "name": "Scalding Gallow",
         "entrances": {
             "Scalding Gallow to Black Throne": {
-                "vanilla target": "Black Throne"
+                "vanilla target": "Black Throne Central Hub"
             },
             "Scalding Gallow to Choking Grounds": {
                 "vanilla target": "Choking Grounds Access Tunnel 1"

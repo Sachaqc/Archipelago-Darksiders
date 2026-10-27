@@ -52,6 +52,10 @@
             "Crossroads Secret Chest Destroy Fire Hydrants": {
                 "ID": 609,
                 "vanilla item": "Currency"
+            },
+            "Crossroads Armageddon Blade Shard": {
+                "ID": 610,
+                "vanilla item": "Armageddon Blade Shard"
             }
         }
     }

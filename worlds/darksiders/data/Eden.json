@@ -2,8 +2,48 @@
     {
         "name": "Eden",
         "entrances": {
+            "Eden to Tree of Knowledge": {
+                "vanilla target": "Tree of Knowledge"
+            }
         },
         "locations": {
+            "Eden Spawn Chest": {
+                "ID": 900,
+                "vanilla item": "Currency"
+            },
+            "Eden before Shadow War Left Chest": {
+                "ID": 901,
+                "vanilla item": "Wrath"
+            },
+            "Eden before Shadow War Right Chest": {
+                "ID": 902,
+                "vanilla item": "Health"
+            },
+            "Eden Shadow War defeated": {
+                "ID": 903,
+                "vanilla item": "Health"
+            }
+        }
+    },
+    {
+        "name": "Tree of Knowledge",
+        "locations": {
+            "Tree of Knowledge behind Head Statue Chest": {
+                "ID": 904,
+                "vanilla item": "Currency"
+            },
+            "Tree of Knowledge Eastmost Chest": {
+                "ID": 905,
+                "vanilla item": "Currency"
+            },
+            "Tree of Knowledge behind Waterfall Chest": {
+                "ID": 906,
+                "vanilla item": "Abyssal Armor Piece"
+            },
+            "Tree of Knowledge underneath Stairs Chest": {
+                "ID": 907,
+                "vanilla item": "Wrath Shard"
+            }
         }
     }
 ]

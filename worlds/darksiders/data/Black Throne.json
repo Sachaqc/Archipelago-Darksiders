@@ -1,11 +1,294 @@
 [
     {
-        "name": "Black Throne",
+        "name": "Black Throne Central Hub",
         "entrances": {
-            
+            "Black Throne Central Hub to East Path": {
+                "vanilla target": "Black Throne East Path"
+            },
+            "Black Throne Central Hub to North Path": {
+                "vanilla target": "Black Throne North Path"
+            },
+            "Black Throne Central Hub to SW Loop": {
+                "vanilla target": "Black Throne SW Loop"
+            },
+            "Black Throne Central Hub to Last Path": {
+                "vanilla target": "Black Throne Last Path"
+            },
+            "Black Throne Central Hub to Boss Room": {
+                "vanilla target": "Black Throne Boss Room"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Path",
+        "entrances": {
+            "Black Throne East Path to End of First Room": {
+                "vanilla target": "Black Throne End of First Room"
+            }
         },
         "locations": {
-            
+            "Black Throne East Path above Entrance Chest": {
+                "ID": 200,
+                "vanilla item": "Map"
+            }
+        }
+    },
+    {
+        "name": "Black Throne End of First Room",
+        "entrances": {
+            "Black Throne First Room across the Bridge": {
+                "vanilla target": "Black Throne East Guardian First Floor"
+            }
+        },
+        "locations": {
+            "Black Throne East Path End of First Room Chest": {
+                "ID": 201,
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Guardian First Floor",
+        "entrances": {
+            "Black Throne East Guardian First Floor to Second": {
+                "vanilla target": "Black Throne East Guardian Second Floor"
+            }
+        },
+        "locations": {
+            "Black Throne East Guardian Exterior Left Chest": {
+                "ID": 202,
+                "vanilla item": "Wrath"
+            },
+            "Black Throne East Guardian Exterior Right Chest": {
+                "ID": 203,
+                "vanilla item": "Health"
+            },
+            "Black Throne Chained Cube Area Left of Entrance Chest": {
+                "ID": 204,
+                "vanilla item": "Health"
+            },
+            "Black Throne Chained Cube Area Right of Entrance Chest": {
+                "ID": 205,
+                "vanilla item": "Currency"
+            },
+            "Black Throne Chained Cube": {
+                "ID": 206,
+                "vanilla item": "Void Walker"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Guardian Second Floor",
+        "entrances": {
+            "Black Throne East Guardian Second Floor to Third": {
+                "vanilla target": "Black Throne East Guardian Third Floor"
+            },
+            "Black Throne East Guardian Second Floor to Fourth": {
+                "vanilla target": "Black Throne East Guardian Fourth Floor"
+            }
+        },
+        "locations": {
+            "Black Throne Over the Portal Chest": {
+                "ID": 207,
+                "vanilla item": "Currency"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Guardian Third Floor",
+        "locations": {
+            "Black Throne Third Floor Chest": {
+                "ID": 208,
+                "vanilla item": "Fury's Embrace"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Guardian Fourth Floor",
+        "entrances": {
+            "Black Throne East Guardian Fourth Floor to Fifth": {
+                "vanilla target": "Black Throne East Guardian Fifth Floor"
+            }
+        },
+        "locations": {
+            "Black Throne before East Guardian Left Chest": {
+                "ID": 209,
+                "vanilla item": "Health"
+            },
+            "Black Throne before East Guardian Right Chest": {
+                "ID": 210,
+                "vanilla item": "Wrath"
+            }
+        }
+    },
+    {
+        "name": "Black Throne East Guardian Fifth Floor",
+        "events": {
+            "Black Throne East Beam": {
+                "item": "East Beam"
+            }
+        }
+    },
+    {
+        "name": "Black Throne North Path",
+        "entrances": {
+            "Black Throne North Path to Guardian": {
+                "vanilla target": "Black Throne North Guardian"
+            }
+        },
+        "locations": {
+            "Black Throne North Path West Alcove Chest": {
+                "ID": 211,
+                "vanilla item": "Wrath Shard"
+            },
+            "Black Throne North Path Central Platform Chest": {
+                "ID": 212,
+                "vanilla item": "Currency"
+            },
+            "Black Throne North Guardian Exterior Left Chest": {
+                "ID": 213,
+                "vanilla item": "Wrath"
+            },
+            "Black Throne North Guardian Exterior Middle Chest": {
+                "ID": 214,
+                "vanilla item": "Health"
+            },
+            "Black Throne North Guardian Exterior Right Chest": {
+                "ID": 215,
+                "vanilla item": "Health"
+            },
+            "Black Throne North Guardian Collapsible Pit Chest": {
+                "ID": 216,
+                "vanilla item": "Beholder Key"
+            },
+            "Black Throne North Guardian Left of Beholder Chest": {
+                "ID": 217,
+                "vanilla item": "Health"
+            },
+            "Black Throne North Guardian Right of Beholder Chest": {
+                "ID": 218,
+                "vanilla item": "Wrath"
+            }
+        }
+    },
+    {
+        "name": "Black Throne North Guardian",
+        "events": {
+            "Black Throne North Beam": {
+                "item": "North Beam"
+            }
+        },
+        "locations": {
+            "Black Throne North Guardian Alcove Chest": {
+                "ID": 219,
+                "vanilla item": "Lifestone Shard"
+            },
+            "Black Throne North Guardian Alcove Blocked by Ice Chest": {
+                "ID": 220,
+                "vanilla item": "Hoardseeker"
+            },
+            "Black Throne North Guardian High Above Chest": {
+                "ID": 221,
+                "vanilla item": "Currency"
+            },
+            "Black Throne North Guardian Downstairs Chest": {
+                "ID": 222,
+                "vanilla item": "Health"
+            }
+        }
+    },
+    {
+        "name": "Black Throne SW Loop",
+        "locations": {
+            "Black Throne SW Loop Left of Entrance Chest": {
+                "ID": 223,
+                "vanilla item": "Currency"
+            },
+            "Black Throne SW Loop Artifact": {
+                "ID": 224,
+                "vanilla item": "Soldier Artifact"
+            },
+            "Black Throne SW Loop High above Chest": {
+                "ID": 225,
+                "vanilla item": "Beholder Key"
+            },
+            "Black Throne SW Loop West Alcove Chest": {
+                "ID": 226,
+                "vanilla item": "Abyssal Armor Piece"
+            },
+            "Black Throne SW Loop after Portals Chest": {
+                "ID": 227,
+                "vanilla item": "Wrath"
+            }
+        }
+    },
+    {
+        "name": "Black Throne Last Path",
+        "entrances": {
+            "Black Throne Last Path across the Bridge": {
+                "vanilla target": "Black Throne Last Guardian"
+            }
+        },
+        "locations": {
+            "Black Throne Last Path Gauntlet Left Chest": {
+                "ID": 228,
+                "vanilla item": "Wrath"
+            },
+            "Black Throne Last Path Gauntlet Right Chest": {
+                "ID": 229,
+                "vanilla item": "Health"
+            },
+            "Black Throne Last Path Gauntlet Artifact": {
+                "ID": 230,
+                "vanilla item": "Champion Artifact"
+            },
+            "Black Throne Last Path West Chest above Gauntlet": {
+                "ID": 231,
+                "vanilla item": "Currency"
+            },
+            "Black Throne Last Path South Chest above Gauntlet": {
+                "ID": 232,
+                "vanilla item": "Health"
+            }
+        }
+    },
+    {
+        "name": "Black Throne Last Guardian",
+        "events": {
+            "Black Throne Last Beam": {
+                "item": "Last Beam"
+            }
+        },
+        "locations": {
+            "Black Throne Last Guardian Exterior Left Chest": {
+                "ID": 233,
+                "vanilla item": "Wrath"
+            },
+            "Black Throne Last Guardian Exterior Right Chest": {
+                "ID": 234,
+                "vanilla item": "Health"
+            },
+            "Black Throne Last Guardian Entrance Chest": {
+                "ID": 235,
+                "vanilla item": "Currency"
+            },
+            "Black Throne Last Guardian Artifact": {
+                "ID": 236,
+                "vanilla item": "Soldier Artifact"
+            }
+        }
+    },
+    {
+        "name": "Black Throne Boss Room",
+        "locations": {
+            "Black Throne Below Central Hub Chest": {
+                "ID": 237,
+                "vanilla item": "Health"
+            },
+            "Straga defeated Item reward": {
+                "ID": 238,
+                "vanilla item": "Lifestone"
+            }
         }
     }
 ]

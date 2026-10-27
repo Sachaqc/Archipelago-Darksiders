@@ -72,6 +72,10 @@
             "Broken Stair Middle Floor of Last Building Chest": {
                 "ID": 409,
                 "vanilla item": "Currency"
+            },
+            "Broken Stair Armageddon Blade Shard": {
+                "ID": 410,
+                "vanilla item": "Armageddon Blade Shard"
             }
         }
     }
