@@ -58,20 +58,28 @@
                 "ID": 1613,
                 "vanilla item": "Empty Container"
             },
-            "Pcombo1": {
+            "Item12": {
                 "ID": 1614,
+                "vanilla item": "Hellraiser"
+            },
+            "Item13": {
+                "ID": 1615,
+                "vanilla item": "Harvester"
+            },
+            "Pcombo1": {
+                "ID": 1616,
                 "vanilla item": "180 Orbit Slash"
             },
             "Pcombo2": {
-                "ID": 1615,
+                "ID": 1617,
                 "vanilla item": "Demon Edge"
             },
             "Pcombo3": {
-                "ID": 1616,
+                "ID": 1618,
                 "vanilla item": "Devil's Cross"
             },
             "Pcombo4": {
-                "ID": 1617,
+                "ID": 1619,
                 "vanilla item": "Flipsaw"
             }
         }
@@ -117,7 +125,7 @@
         },
         "locations": {
             "Serpent Hole to Anvil's Ford Chest": {
-                "ID": 1618,
+                "ID": 1620,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -131,7 +139,7 @@
         },
         "locations": {
             "Serpent Hole to Dry Road Chest": {
-                "ID": 1619,
+                "ID": 1621,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -145,7 +153,7 @@
         },
         "locations": {
             "Serpent Hole to Twilight Cathedral Chest": {
-                "ID": 1620,
+                "ID": 1622,
                 "vanilla item": "Lifestone Shard"
             }
         }

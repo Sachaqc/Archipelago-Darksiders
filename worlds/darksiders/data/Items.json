@@ -47,6 +47,7 @@
         "Abyssal Armor Piece": {
             "ID": 10,
             "progressive": false,
+            "number": 10,
             "console": "/pickup_item armor/item_armorpiece"
         },
         "Abyssal Armor": {
@@ -76,7 +77,7 @@
         "Empty Container": {
             "ID": 30,
             "progressive": false,
-            "number": 7,
+            "number": 8,
             "console": "/pickup_item items/item_consumableslot"
         },
         "Life Essence": {
@@ -190,6 +191,16 @@
             "progressive": false,
             "number": 4,
             "console": "/pickup_item items/item_demonheart"
+        },
+        "Map": {
+            "ID": 62,
+            "progressive": false,
+            "number": 4
+        },
+        "Hoardseeker": {
+            "ID": 63,
+            "progressive": false,
+            "number": 4
         }
     },
     "Gauntlet Combos": {
@@ -270,31 +281,36 @@
         }
     },
     "Primary Weapons": {
-        "Progressive Chaoseater": {
-            "ID": 100,
-            "progressive": true,
-            "number": 4
-        },
-        "Chaoseater": {
-            "ID": 101,
-            "progressive": false,
-            "number": 1,
-            "console": "/pickup_item sword/warsword"
-        },
         "Armageddon Blade": {
-            "ID": 102,
+            "ID": 100,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item items/item_armageddonsword"
         },
         "Armageddon Blade Shard": {
-            "ID": 103,
+            "ID": 101,
             "progressive": false,
             "number": 7,
             "console": "/pickup_item items/item_swordpiece"
         },
-        "Sword Key": {
+        "Chaoseater": {
+            "ID": 102,
+            "progressive": false,
+            "number": 1,
+            "console": "/pickup_item sword/warsword"
+        },
+        "Chaoseater Level Up": {
+            "ID": 103,
+            "progressive": true,
+            "number": 3
+        },
+        "Progressive Sword": {
             "ID": 104,
+            "progressive": true,
+            "number": 2
+        },
+        "Sword Key": {
+            "ID": 105,
             "progressive": false,
             "console": "/pickup_item ch_com/weapon_swordkey"
         }
@@ -327,30 +343,35 @@
         }
     },
     "Secondary Weapons": {
-        "Progressive Scythe": {
-            "ID": 120,
-            "progressive": true,
-            "number": 4
-        },
         "Harvester": {
-            "ID": 121,
+            "ID": 120,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item harvester/harvester"
         },
         "Hellraiser": {
-            "ID": 122,
+            "ID": 121,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item hellraiser/hellraiser"
         },
-        "Progressive Gauntlet": {
+        "Gauntlet Level Up": {
+            "ID": 122,
+            "progressive": true,
+            "number": 3
+        },
+        "Progressive Scythe": {
             "ID": 123,
             "progressive": true,
-            "number": 4
+            "number": 2
+        },
+        "Scythe Level Up": {
+            "ID": 124,
+            "progressive": true,
+            "number": 3
         },
         "Tremor Gauntlet": {
-            "ID": 124,
+            "ID": 125,
             "progressive": false,
             "number": 1,
             "console": "/pickup_item gauntlets/weapon_gauntlets"
@@ -449,25 +470,25 @@
         "Affliction": {
             "ID": 170,
             "progressive": true,
-            "number": 2,
+            "number": 4,
             "console": "/pickup_item wrath_affliction/wrath_affliction"
         },
         "Blade Geyser": {
             "ID": 171,
             "progressive": true,
-            "number": 2,
+            "number": 4,
             "console": "/pickup_item wrath_bladegeyser/wrath_bladegeyser"
         },
         "Immolation": {
             "ID": 172,
             "progressive": true,
-            "number": 2,
+            "number": 4,
             "console": "/pickup_item wrath_immolation/wrath_immolation"
         },
         "Stoneskin": {
             "ID": 173,
             "progressive": true,
-            "number": 2,
+            "number": 4,
             "console": "/pickup_item wrath_stoneskin/wrath_stoneskin"
         }
     }
