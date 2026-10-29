@@ -266,7 +266,7 @@
         "locations": {
             "Griever defeated": {
                 "ID": 1033,
-                "vanilla reward": "Heart of Chosen"
+                "vanilla item": "Heart of the Chosen"
             },
             "Griever Item Reward": {
                 "ID": 1034,

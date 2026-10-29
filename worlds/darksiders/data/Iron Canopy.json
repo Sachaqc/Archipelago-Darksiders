@@ -240,13 +240,17 @@
                 "ID": 1128,
                 "vanilla item": "Health"
             },
-            "Iron Canopy Silitha defeated": {
+            "Silitha defeated": {
                 "ID": 1129,
                 "vanilla item": "Heart of the Chosen"
             },
-            "Iron Canopy Silitha Item Reward": {
+            "Silitha Item Reward": {
                 "ID": 1130,
                 "vanilla item": "Lifestone"
+            },
+            "Silitha Loom Artifact": {
+                "ID": 1131,
+                "vanilla item": "Soldier Artifact"
             }
         }
     }
