@@ -17,7 +17,7 @@
             },
             "Stygian defeated": {
                 "ID": 1202,
-                "vanilla reward": "Heart of Chosen"
+                "vanilla item": "Heart of the Chosen"
             },
             "Stygian Item Reward": {
                 "ID": 1203,
@@ -38,7 +38,7 @@
             }
         },
         "locations": {
-            "Leviathan's Drift Armaggedon Blade Shard": {
+            "Leviathan's Drift Armageddon Blade Shard": {
                 "ID": 1204,
                 "vanilla item": "Armageddon Blade Shard"
             }
