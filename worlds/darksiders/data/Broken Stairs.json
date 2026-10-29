@@ -9,7 +9,7 @@
         "locations": {
             "Broken Stair Artifact Blocked by Ice": {
                 "ID": 400,
-                "vanilla item": "Soldier Artifact"
+                "vanilla item": "Champion Artifact"
             },
             "Broken Stair Access Tunnel Chest": {
                 "ID": 401,

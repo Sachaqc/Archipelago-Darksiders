@@ -269,7 +269,7 @@
             },
             "Twilight Cathedral South Path Chest before Final Room": {
                 "ID": 1732,
-                "vanilla item": "Beholder Key"
+                "vanilla item": "Currency"
             },
             "Twilight Cathedral South Blade Room North Chest": {
                 "ID": 1733,
@@ -286,7 +286,7 @@
         "locations": {
             "Tiamat defeated": {
                 "ID": 1735,
-                "vanilla reward": "Heart of the Chosen"
+                "vanilla item": "Heart of the Chosen"
             },
             "Tiamat Item Reward": {
                 "ID": 1736,
