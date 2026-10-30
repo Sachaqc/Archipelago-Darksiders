@@ -47,7 +47,7 @@ class ShuffleArmor(Choice):
     option_armorsanity_pieces = 4
     option_armorsanity_armor = 5
 
-    default = option_vanilla
+    default = option_armorsanity_pieces
 
 class ShuffleArmorPieces(Range):
     """
@@ -76,7 +76,7 @@ class ShuffleArtifacts(Choice):
     option_own = 2
     option_artisanity = 3
 
-    default = option_artisanity
+    default = option_own
 
 class ShuffleSoldierArtifacts(Range):
     """
@@ -276,8 +276,7 @@ class ShuffleMoves(Choice):
     display_name = "Combos and Combat Moves"
     option_remove = 0
     option_vanilla = 1
-    option_own = 2
-    option_combosanity = 3
+    option_combosanity = 2
 
     default = option_combosanity
 
@@ -404,7 +403,7 @@ option_presets = {
         "sword": ShuffleSword.option_remove,
         "armageddon": 7,
         "scythe": ShuffleScythe.option_harvester,
-        "moves": ShuffleMoves.option_own,
+        "moves": ShuffleMoves.option_vanilla,
         "wrath_cores": 8,
         "wrath_shards": WrathShards.option_none
     },

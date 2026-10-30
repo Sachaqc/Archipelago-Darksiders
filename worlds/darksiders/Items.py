@@ -244,10 +244,8 @@ def create_all_items(world: DSWorld) -> None:
     number_of_items = len(shuffle_itempool) + len(world.get_pre_fill_items())
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
-    print(f"The world has created {len(shuffle_itempool)} items and is planning to place {len(world.get_pre_fill_items())} items before the generation. There are {len(world.multiworld.get_unfilled_locations(world.player))} locations to fill. Resulting in the world creating {needed_number_of_filler_items} filler items")
     shuffle_itempool += [world.create_filler() for _ in range(needed_number_of_filler_items)]
     world.multiworld.itempool += shuffle_itempool
-    #print(shuffle_itempool)
 
 def get_random_filler_item_name(world: DSWorld) -> str:
 
