@@ -5,6 +5,7 @@ from typing import Optional, TYPE_CHECKING
 from BaseClasses import CollectionState, Item, ItemClassification, Location
 from Fill import fill_restrictive
 
+from .Locations import ABYSSAL_ARMOR_PIECES_LOCATIONS, ARTIFACTS_LOCATIONS, DUNGEON_ITEMS_LOCATIONS, HEARTS_LOCATIONS, KEYS_LOCATIONS, ARMAGEDDON_LOCATIONS, SCYTHE_LOCATIONS, MOVES_LOCATIONS
 from .Utils import data_path, json_read
 
 if TYPE_CHECKING:
@@ -12,11 +13,16 @@ if TYPE_CHECKING:
 
 ITEM_NAME_TO_ID = {}
 
+item_name_groups = {}
+
 item_json = json_read(data_path("Items.json"))
 
 for item_group, item_group_data in item_json.items():
+    new_items = set()
     for item, item_data in item_group_data.items():
         ITEM_NAME_TO_ID[item] = item_data.get("ID")
+        new_items.add(item)
+    item_name_groups[item_group] = new_items
 
 class DSItem(Item):
 
@@ -60,50 +66,37 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
             classification = ItemClassification.useful
         case _: 
             classification = ItemClassification.filler
-
     return DSItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
 def create_all_items(world: DSWorld) -> None:
 
     shuffle_itempool: list[Item] = []
-    local_itempool: list[Item] = []
-    pre_fill_itempool: list[Item] = []
     item_json = json_read(data_path("Items.json"))
 
     for item, item_data in item_json.get("Abilities").items():
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.armor:
-        #case 0 is skipped because the pieces aren't obtainable
-        case 1:
-            for _ in range(item_json.get("Abyssal Armor").get("Abyssal Armor Piece").get("number")):
-                pre_fill_itempool.append(world.create_item("Abyssal Armor Piece"))
-        case 2:
-            for _ in range(world.options.armor_pieces):
-                local_itempool.append(world.create_item("Abyssal Armor Piece"))
-        case 3:
-            local_itempool.append(world.create_item("Abyssal Armor"))
-        case 4:
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case 2 | 4 :
             for _ in range(world.options.armor_pieces):
                 shuffle_itempool.append(world.create_item("Abyssal Armor Piece"))
-        case 5:
+        case 3 | 5 :
             shuffle_itempool.append(world.create_item("Abyssal Armor"))
 
     match world.options.artifacts:
-        #case 0 is skipped because the artifacts aren't obtainable
-        case 1:
-            for _ in range(item_json.get("Artifacts").get("Soldier Artifact").get("number")):
-                pre_fill_itempool.append(world.create_item("Soldier Artifact"))
-            for _ in range(item_json.get("Artifacts").get("Champion Artifact").get("number")):
-                pre_fill_itempool.append(world.create_item("Champion Artifact"))
-            pre_fill_itempool.append(world.create_item("Overlord Artifact"))
-        case 2:
-            for _ in range(world.options.soldier_artifacts):
-                local_itempool.append(world.create_item("Soldier Artifact"))
-            for _ in range(world.options.champion_artifacts):
-                local_itempool.append(world.create_item("Champion Artifact"))
-            local_itempool.append(world.create_item("Overlord Artifact"))
-        case 3:
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case _ :
             for _ in range(world.options.soldier_artifacts):
                 shuffle_itempool.append(world.create_item("Soldier Artifact"))
             for _ in range(world.options.champion_artifacts):
@@ -117,51 +110,38 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.keys:
-        #case 0 is skipped because the keys aren't obtainable
-        case 1:
-            for _ in range(item_json.get("Keys").get("Beholder Key").get("number")):
-                pre_fill_itempool.append(world.create_item("Beholder Key"))
-        case 2:
-            for _ in range(item_json.get("Keys").get("Beholder Key").get("number")):
-                pre_fill_itempool.append(world.create_item("Beholder Key"))
-        case 3:
-            for _ in range(item_json.get("Keys").get("Beholder Key").get("number")):
-                local_itempool.append(world.create_item("Beholder Key"))
-        case 4:
+        case 0 | 2 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            #case 2 is skipped because the items are not part of the randomization
+            pass
+        case 1 :
+            for location, vanilla_item in KEYS_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case _ :
             for _ in range(item_json.get("Keys").get("Beholder Key").get("number")):
                 shuffle_itempool.append(world.create_item("Beholder Key"))
 
     match world.options.hearts:
-        #case 0 is skipped because the hearts aren't obtainable
-        case 1:
-            for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")):
-                pre_fill_itempool.append(world.create_item("Heart of the Chosen"))
-        case 2:
-            for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")):
-                local_itempool.append(world.create_item("Heart of the Chosen"))
-        case 3:
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in HEARTS_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case _ :
             for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")):
                 shuffle_itempool.append(world.create_item("Heart of the Chosen"))
 
     match world.options.dungeon_items:
-        #case 0 is skipped because the maps and hoardseekers aren't obtainable
-        case 1:
-            for _ in range(item_json.get("Keys").get("Map").get("number")):
-                pre_fill_itempool.append(world.create_item("Map"))
-            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
-                pre_fill_itempool.append(world.create_item("Hoardseeker"))
-        #case 2 is skipped because the maps and hoardseekers have already been granted to the player
-        case 3:
-            for _ in range(item_json.get("Keys").get("Map").get("number")):
-                pre_fill_itempool.append(world.create_item("Map"))
-            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
-                pre_fill_itempool.append(world.create_item("Hoardseeker"))
-        case 4:
-            for _ in range(item_json.get("Keys").get("Map").get("number")):
-                local_itempool.append(world.create_item("Map"))
-            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
-                local_itempool.append(world.create_item("Hoardseeker"))
-        case 5:
+        case 0 | 2 | 3 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            #case 2 is skipped because the items are not part of the randomization
+            #case 3 is skipped because the items are not part of the randomization
+            pass
+        case 1 :
+            for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case _ :
             for _ in range(item_json.get("Keys").get("Map").get("number")):
                 shuffle_itempool.append(world.create_item("Map"))
             for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
@@ -169,6 +149,7 @@ def create_all_items(world: DSWorld) -> None:
 
     for item, item_data in item_json.get("Gear").items():
         shuffle_itempool.append(world.create_item(item))
+
 
     for _ in range(world.options.lifestones):
         shuffle_itempool.append(world.create_item("Lifestone"))
@@ -180,29 +161,31 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item('Lifestone Shard'))
 
     match world.options.sword:
-        #case 0 is skipped because Chaoseaster isn't obtainable
-        case 1:
-            for _ in range(item_json.get("Primary Weapons").get("Armageddon Blade Shard").get("number")):
-                pre_fill_itempool.append(world.create_item("Armageddon Blade Shard"))
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Chaoseater'))
-            pre_fill_itempool.append(world.create_item("Armageddon Blade"))
-        case 2:
+        case 2 :
             for _ in range(world.options.armageddon):
                 shuffle_itempool.append(world.create_item('Armageddon Blade Shard'))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Chaoseater'))
-            pre_fill_itempool.append(world.create_item("Armageddon Blade"))
-        case 3:
+        case 3 :
             shuffle_itempool.append(world.create_item('Progressive Sword'))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Progressive Sword'))
 
     match world.options.scythe:
-        #case 0 is skipped because Hellraiser and Harvester isn't obtainable
-        case 1:
-            pre_fill_itempool.append(world.create_item("Hellraiser"))
-            pre_fill_itempool.append(world.create_item("Harvester"))
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in SCYTHE_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case 2:
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Hellraiser'))
@@ -224,28 +207,13 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item("Gauntlet Level Up"))
 
     match world.options.moves:
-        #case 0 is skipped because combos and moves are removed from the game
-        case 1:
-            for item, item_data in item_json.get("Gauntlet Combos").items():
-                for _ in range(item_data.get("number")):
-                    pre_fill_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Scythe Combos").items():
-                for _ in range(item_data.get("number")):
-                    pre_fill_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Sword Combos").items():
-                for _ in range(item_data.get("number")):
-                    pre_fill_itempool.append(world.create_item(item))
-        case 2:
-            for item, item_data in item_json.get("Gauntlet Combos").items():
-                for _ in range(item_data.get("number")):
-                    local_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Scythe Combos").items():
-                for _ in range(item_data.get("number")):
-                    local_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Sword Combos").items():
-                for _ in range(item_data.get("number")):
-                    local_itempool.append(world.create_item(item))
-        case 3:
+        case 0 :
+            #case 0 is skipped because the items aren't obtainable with the currently selected options
+            pass
+        case 1 :
+            for location, vanilla_item in MOVES_LOCATIONS.items():
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case 2 :
             for item, item_data in item_json.get("Gauntlet Combos").items():
                 for _ in range(item_data.get("number")):
                     shuffle_itempool.append(world.create_item(item))
@@ -273,16 +241,13 @@ def create_all_items(world: DSWorld) -> None:
         for _ in range(item_data.get("number")):
             shuffle_itempool.append(world.create_item(item))
     
-    number_of_items = len(shuffle_itempool) + len(pre_fill_itempool) + len(local_itempool)
-    #print(f"Il y a {number_of_items} items dont {len(shuffle_itempool)} à mélanger, {len(pre_fill_itempool)} à pré-remplir et {len(local_itempool)} à placer localement.")
+    number_of_items = len(shuffle_itempool) + len(world.get_pre_fill_items())
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
-    #print(f"On compte {needed_number_of_filler_items} fillers à placer.")
+    print(f"The world has created {len(shuffle_itempool)} items and is planning to place {len(world.get_pre_fill_items())} items before the generation. There are {len(world.multiworld.get_unfilled_locations(world.player))} locations to fill. Resulting in the world creating {needed_number_of_filler_items} filler items")
     shuffle_itempool += [world.create_filler() for _ in range(needed_number_of_filler_items)]
     world.multiworld.itempool += shuffle_itempool
-    #print(f"Shuffled item pool of length {len(shuffle_itempool)} : {shuffle_itempool}")
-    #print(f"Local item pool of length {len(local_itempool)} : {local_itempool}")
-    #print(f"Pre fill item pool of length {len(pre_fill_itempool)} : {pre_fill_itempool}")
+    #print(shuffle_itempool)
 
 def get_random_filler_item_name(world: DSWorld) -> str:
 
@@ -303,10 +268,8 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
                     available_locations.append(world.get_location(location))
                 if world.options.keys == 2:
                     if location_data.get("vanilla item") == "Beholder Key":
-                        #print(location, location_data)
                         items_to_place.append(world.create_item("Beholder Key"))
                 if world.options.dungeon_items == 3:
-                    #print(location, location_data)
                     if location_data.get("vanilla item") == "Map":
                         items_to_place.append(world.create_item("Map"))
                     if location_data.get("vanilla item") == "Hoardseeker":
@@ -314,18 +277,10 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
 
     all_state_base = CollectionState(world.multiworld)
     for item in world.multiworld.itempool:
-        all_state_base.collect(item)
-    for item in items_to_place:
-        all_state_base.collect(item)
-    #for region in region_json:
-        #if "events" in region:
-            #for event, event_data in region.get("events").items():
-                #all_state_base.collect(DSItem(event_data.get("item"), ItemClassification.progression, None, world.player))
+        all_state_base.collect(item, prevent_sweep = True)
     all_state_base.sweep_for_advancements()
 
     world.random.shuffle(available_locations)
-    #world.random.shuffle(items_to_place)
-    #print(items_to_place)
 
     if items_to_place:
         fill_restrictive(multiworld = world.multiworld, base_state = all_state_base, locations = available_locations, item_pool = items_to_place, single_player_placement = True, lock = True, allow_excluded = True)

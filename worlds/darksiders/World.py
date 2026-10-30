@@ -6,7 +6,7 @@ from typing import Any
 from BaseClasses import Item
 from worlds.AutoWorld import World
 
-from . import Items, Locations, Options, Regions, Rules, WebWorld
+from . import Locations, Items, Events, Options, Regions, Rules, WebWorld
 
 class DSWorld(World):
     """Darksiders is an hack-and-slash action-adventure game where the player takes the role of War, one of the four horsemen of the Apocalypse stranded alone on Earth after the event of the Apocalypse."""
@@ -22,10 +22,35 @@ class DSWorld(World):
     location_name_to_item = Locations.LOCATION_NAME_TO_ITEM
     item_name_to_id = Items.ITEM_NAME_TO_ID
 
+    def generate_early(self) -> None:
+
+        options = self.options
+
+        if self.options.armor == 2 :
+            options.local_items.value.add("Abyssal Armor Piece")
+        elif self.options.armor == 3:
+            options.local_items.value.add("Abyssal Armor")
+
+        if self.options.artifacts == 2 :
+            options.local_items.value.add("Soldier Artifact")
+            options.local_items.value.add("Champion Artifact")
+            options.local_items.value.add("Overlord Artifact")
+
+        if self.options.keys == 3 :
+            options.local_items.value.add("Beholder Key")
+
+        if self.options.hearts == 2 :
+            options.local_items.value.add("Heart of the Chosen")
+
+        if self.options.dungeon_items == 4 :
+            options.local_items.value.add("Hoardseeker")
+            options.local_items.value.add("Map")
+
     def create_regions(self) -> None:
 
         Regions.create_and_connect_regions(self)
         Locations.create_all_locations(self)
+        Events.create_all_events(self)
 
     def create_items(self) -> None:
 
@@ -37,63 +62,26 @@ class DSWorld(World):
 
     def pre_fill(self) -> None:
 
-        Locations.place_vanilla_items(self)
-        print("Prefilling Ashlands")
-        Items.prefill_dungeon(self, "Ashlands.json")
-        print("Prefilling Broken Stairs")
         Items.prefill_dungeon(self, "Broken Stairs.json")
-        print("Prefilling Twilight Cathedral")
         Items.prefill_dungeon(self, "Twilight Cathedral.json")
-        print("Prefilling Hollows")
         Items.prefill_dungeon(self, "Hollows.json")
-        print("Prefilling Iron Canopy")
         Items.prefill_dungeon(self, "Iron Canopy.json")
-        print("Prefilling Black Throne")
         Items.prefill_dungeon(self, "Black Throne.json")
+
+        #for location in self.get_locations():
+        #    if location.item is not None:
+        #        print(f"Location : {location} has this item : {location.item}")
 
     def get_pre_fill_items(self) -> list[Item]:
 
         pre_fill_items = []
-
-        if self.options.armor == 1:
-            for _, vanilla_item in Locations.ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.artifacts == 1:
-            for _, vanilla_item in Locations.ARTIFACTS_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.keys == 1 or self.options.keys == 2 :
+        if self.options.keys == 2 :
             for _, vanilla_item in Locations.KEYS_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
+                pre_fill_items.append(self.create_item(vanilla_item))
 
-        if self.options.hearts == 1:
-            for _, vanilla_item in Locations.HEARTS_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.dungeon_items == 1 or self.options.dungeon_items == 3:
+        if self.options.dungeon_items == 3:
             for _, vanilla_item in Locations.DUNGEON_ITEMS_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.sword == 1:
-            for _, vanilla_item in Locations.ARMAGEDDON_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.scythe == 1:
-            for _, vanilla_item in Locations.SCYTHE_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
-
-        if self.options.moves == 1:
-            for _, vanilla_item in Locations.MOVES_LOCATIONS.items():
-                new_item = self.create_item(vanilla_item)
-                pre_fill_items.append(new_item)
+                pre_fill_items.append(self.create_item(vanilla_item))
         return pre_fill_items
 
     def fill_slot_data(self) -> Mapping[str, Any]:
