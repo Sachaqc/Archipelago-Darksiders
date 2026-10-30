@@ -11,9 +11,6 @@
             "Black Throne Central Hub to SW Loop": {
                 "vanilla target": "Black Throne SW Loop"
             },
-            "Black Throne Central Hub to Last Path": {
-                "vanilla target": "Black Throne Last Path"
-            },
             "Black Throne Central Hub to Boss Room": {
                 "vanilla target": "Black Throne Boss Room"
             }
@@ -73,7 +70,7 @@
             },
             "Black Throne Chained Cube": {
                 "ID": 206,
-                "vanilla item": "Void Walker"
+                "vanilla item": "Voidwalker"
             }
         }
     },
@@ -199,6 +196,11 @@
     },
     {
         "name": "Black Throne SW Loop",
+        "entrances": {
+            "Black Throne SW Loop to Last Path": {
+                "vanilla target": "Black Throne Last Path"
+            }
+        },
         "locations": {
             "Black Throne SW Loop Left of Entrance Chest": {
                 "ID": 223,
