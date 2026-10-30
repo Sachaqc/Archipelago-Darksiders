@@ -38,11 +38,17 @@ class DSWorld(World):
     def pre_fill(self) -> None:
 
         Locations.place_vanilla_items(self)
+        print("Prefilling Ashlands")
         Items.prefill_dungeon(self, "Ashlands.json")
+        print("Prefilling Broken Stairs")
         Items.prefill_dungeon(self, "Broken Stairs.json")
+        print("Prefilling Twilight Cathedral")
         Items.prefill_dungeon(self, "Twilight Cathedral.json")
+        print("Prefilling Hollows")
         Items.prefill_dungeon(self, "Hollows.json")
+        print("Prefilling Iron Canopy")
         Items.prefill_dungeon(self, "Iron Canopy.json")
+        print("Prefilling Black Throne")
         Items.prefill_dungeon(self, "Black Throne.json")
 
     def get_pre_fill_items(self) -> list[Item]:
@@ -88,7 +94,6 @@ class DSWorld(World):
             for _, vanilla_item in Locations.MOVES_LOCATIONS.items():
                 new_item = self.create_item(vanilla_item)
                 pre_fill_items.append(new_item)
-        print(f"The World's pre-fill item list is : {pre_fill_items}")
         return pre_fill_items
 
     def fill_slot_data(self) -> Mapping[str, Any]:

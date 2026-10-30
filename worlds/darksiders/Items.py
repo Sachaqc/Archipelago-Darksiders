@@ -311,9 +311,6 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
                         items_to_place.append(world.create_item("Map"))
                     if location_data.get("vanilla item") == "Hoardseeker":
                         items_to_place.append(world.create_item("Hoardseeker"))
-    
-    #print(available_locations)
-    #print(items_to_place)
 
     all_state_base = CollectionState(world.multiworld)
     for item in world.multiworld.itempool:
@@ -325,6 +322,10 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
             for event, event_data in region.get("events").items():
                 all_state_base.collect(DSItem(event_data.get("item"), ItemClassification.progression, None, world.player))
     all_state_base.sweep_for_advancements()
+
+    world.random.shuffle(available_locations)
+    #world.random.shuffle(items_to_place)
+    #print(items_to_place)
 
     if items_to_place:
         fill_restrictive(multiworld = world.multiworld, base_state = all_state_base, locations = available_locations, item_pool = items_to_place, single_player_placement = True, lock = True, allow_excluded = True)
