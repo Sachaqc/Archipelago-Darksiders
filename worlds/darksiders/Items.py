@@ -45,7 +45,7 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
         case name if name in item_json.get("Health"):
             classification = ItemClassification.useful
         case name if name in item_json.get("Primary Weapons"):
-            if name == "Progressive Chaoseater":
+            if name == "Chaoseater" or name == "Chaoseater Level Up":
                 classification = ItemClassification.useful
             else:
                 classification = ItemClassification.progression
@@ -299,7 +299,7 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
     for region in region_json:
         if "locations" in region:
             for location, location_data in region.get("locations").items():
-                if world.get_location(location).can_fill:
+                if world.get_location(location).item is None:
                     available_locations.append(world.get_location(location))
                 if world.options.keys == 2:
                     if location_data.get("vanilla item") == "Beholder Key":
@@ -317,10 +317,10 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
         all_state_base.collect(item)
     for item in items_to_place:
         all_state_base.collect(item)
-    for region in region_json:
-        if "events" in region:
-            for event, event_data in region.get("events").items():
-                all_state_base.collect(DSItem(event_data.get("item"), ItemClassification.progression, None, world.player))
+    #for region in region_json:
+        #if "events" in region:
+            #for event, event_data in region.get("events").items():
+                #all_state_base.collect(DSItem(event_data.get("item"), ItemClassification.progression, None, world.player))
     all_state_base.sweep_for_advancements()
 
     world.random.shuffle(available_locations)
