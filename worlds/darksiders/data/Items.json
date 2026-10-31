@@ -74,7 +74,7 @@
         }
     },
     "Consumables": {
-        "Empty Container": {
+        "Empty Vessel": {
             "ID": 30,
             "progressive": false,
             "number": 8,

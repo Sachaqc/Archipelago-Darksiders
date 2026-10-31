@@ -262,6 +262,8 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(ashlands_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
     ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Chest Blocked by Ice")
     world.set_rule(ashlands_chest_blocked_by_ice, HAS_GAUNTLET)
+    ashlands_chest_above_goremaws = world.get_location("Ashlands Access Tunnel Above Three Goremaws Chest")
+    world.set_rule(ashlands_chest_blocked_by_ice, HAS_ABYSSAL_CHAIN)
 
     black_throne_map_chest = world.get_location("Black Throne East Path above Entrance Chest")
     world.set_rule(black_throne_map_chest, HAS_CROSSBLADE & HAS_VOIDWALKER)

@@ -104,7 +104,7 @@ def create_all_items(world: DSWorld) -> None:
             shuffle_itempool.append(world.create_item("Overlord Artifact"))
 
     for _ in range(world.options.containers - 1):#War starts with a container
-        shuffle_itempool.append(world.create_item("Empty Container"))
+        shuffle_itempool.append(world.create_item("Empty Vessel"))
 
     for item, item_data in item_json.get("Enhancements").items():
         shuffle_itempool.append(world.create_item(item))

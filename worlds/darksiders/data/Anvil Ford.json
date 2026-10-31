@@ -77,7 +77,8 @@
                 "vanilla item": "Health"
             },
             "Anvil's Ford Challenge Area Ulthane outscored": {
-                "ID": 12
+                "ID": 12,
+                "vanilla item": "Combat Lore"
             },
             "Anvil's Ford Challenge Area Uriel defeated": {
                 "ID": 13

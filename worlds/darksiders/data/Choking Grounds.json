@@ -13,7 +13,7 @@
             },
             "Choking Grounds Access Tunnel Chest behind Portals": {
                 "ID": 501,
-                "vanilla item": "Abyssal Armor Piece"
+                "vanilla item": "Empty Vessel"
             }
         }
     },
@@ -69,15 +69,15 @@
             },
             "Choking Grounds Top Floor of North Building Chest Blocked by Ice": {
                 "ID": 509,
-                "vanilla item": "Currency"
+                "vanilla item": "Lifestone Shard"
             },
             "Choking Grounds Top Floor of North Building Chest": {
                 "ID": 510,
-                "vanilla item": "Lifestone Shard"
+                "vanilla item": "Currency"
             },
             "Choking Grounds North Building Rare Chest": {
                 "ID": 511,
-                "vanilla item": "Empty Container"
+                "vanilla item": "Empty Vessel"
             },
             "Choking Grounds North Building Armageddon Blade Shard": {
                 "ID": 512,
@@ -98,6 +98,10 @@
             },
             "Choking Grounds Venomous Reward": {
                 "ID": 517
+            },
+            "Choking Grounds Free the Tormented Warden": {
+                "ID": 518,
+                "vanilla item": "Ravager"
             }
         }
     }

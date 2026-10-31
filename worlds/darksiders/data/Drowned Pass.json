@@ -57,31 +57,39 @@
             "Drowned Pass Defender Reward": {
                 "ID": 708
             },
-            "Drowned Pass Crystal Switch Platform Chest": {
+            "Drowned Pass Defender 3/6 Skeletons Survive Reward": {
                 "ID": 709,
+                "vanilla item": "Empty Vessel"
+            },
+            "Drowned Pass Crystal Switch Platform Chest": {
+                "ID": 710,
                 "vanilla item": "Lifestone Shard"
             },
             "Drowned Pass Semi Submerged Building Artifact": {
-                "ID": 710,
+                "ID": 711,
                 "vanilla item": "Soldier Artifact"
             },
             "Drowned Pass Semi Submerged Building Chest": {
-                "ID": 711,
+                "ID": 712,
                 "vanilla item": "Currency"
             },
             "Drowned Pass Wrath of War Reward": {
-                "ID": 712
+                "ID": 713
             },
             "Drowned Pass Armageddon Blade Shard": {
-                "ID": 713,
+                "ID": 714,
                 "vanilla item": "Armageddon Blade Shard"
             },
             "Drowned Pass Crystal Elevated Cliff Chest": {
-                "ID": 714,
+                "ID": 715,
                 "vanilla item": "Lifestone Shard"
             },
             "Drowned Pass Counter Killer Reward": {
-                "ID": 715
+                "ID": 716
+            },
+            "Drowned Pass Free the Tormented Warden": {
+                "ID": 717,
+                "vanilla item": "Abyssal Armor Piece"
             }
         }
     }
