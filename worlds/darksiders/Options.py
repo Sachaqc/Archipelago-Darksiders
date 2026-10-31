@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 
-from Options import Choice, Range, Toggle, OptionGroup, PerGameCommonOptions
+from Options import Choice, Range, Toggle, OptionGroup, PerGameCommonOptions, Visibility
 
 class DifficultyLevel(Choice):
     """Difficulty level for Darksiders Warmastered Edition."""
@@ -12,6 +12,7 @@ class DifficultyLevel(Choice):
     option_apocalyptic = 2
 
     default = option_normal
+    visibility = Visibility.none
 
 class LogicRules(Choice):
     """
@@ -27,6 +28,7 @@ class LogicRules(Choice):
     option_glitched = 2
 
     default = option_hard
+    visibility = Visibility.none
 
 class ShuffleArmor(Choice):
     """
@@ -60,6 +62,7 @@ class ShuffleArmorPieces(Range):
     range_end = 10
 
     default = 10
+    visibility = Visibility.none
 
 class ShuffleArtifacts(Choice):
     """
@@ -89,6 +92,7 @@ class ShuffleSoldierArtifacts(Range):
     range_end = 20
 
     default = 20
+    visibility = Visibility.none
 
 class ShuffleChampionArtifacts(Range):
     """
@@ -101,6 +105,7 @@ class ShuffleChampionArtifacts(Range):
     range_end = 6
 
     default = 6
+    visibility = Visibility.none
 
 class Containers(Range):
     """Determines the number of Containers available in the game. Containers hold consumables."""
@@ -160,6 +165,7 @@ class BlackThroneAccess(Range):
     range_end = 4
 
     default = 4
+    visibility = Visibility.none
 
 class ShuffleKeys(Choice):
     """
@@ -215,6 +221,7 @@ class ShuffleWeapons(Choice):
     option_start_with_gauntlet = 3
 
     default = option_start_with_sword
+    visibility = Visibility.none
 
 class ShuffleSword(Choice):
     """
@@ -244,6 +251,7 @@ class Armageddon(Range):
     range_end = 7
 
     default = 7
+    visibility = Visibility.none
 
 class ShuffleScythe(Choice):
     """
