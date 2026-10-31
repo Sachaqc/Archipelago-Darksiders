@@ -14,73 +14,343 @@
                 "ID": 1602,
                 "vanilla reward": "Wrath Core"
             },
-            "Item1": {
+            "Items1": {
                 "ID": 1603,
-                "vanilla item": "Weapon Master"
+                "vanilla item": "Weapon Master",
+                "vanilla cost": 1000
             },
             "Item2": {
                 "ID": 1604,
-                "vanilla item": "Bane"
+                "vanilla item": "Bane",
+                "vanilla cost": 5000
             },
-            "Item3": {
+            "Item3.1": {
                 "ID": 1605,
-                "vanilla item": "Wrath Shard"
+                "vanilla item": "Progressive Ricochet",
+                "vanilla cost": 500
+            },
+            "Item3.2": {
+                "ID": 1606,
+                "vanilla item": "Progressive Ricochet",
+                "vanilla cost": 1500
             },
             "Item4": {
-                "ID": 1606,
-                "vanilla item": "Wrath Core"
+                "ID": 1607,
+                "vanilla item": "Shredder",
+                "vanilla cost": 5000
             },
             "Item5": {
-                "ID": 1607,
-                "vanilla item": "Rage"
+                "ID": 1608,
+                "vanilla item": "Impact Rounds",
+                "vanilla cost": 4000
             },
             "Item6": {
-                "ID": 1608,
-                "vanilla item": "Greater Rage"
+                "ID": 1609,
+                "vanilla item": "Wrath Shard",
+                "vanilla cost": 2500
             },
             "Item7": {
-                "ID": 1609,
-                "vanilla item": "Life Essence"
+                "ID": 1610,
+                "vanilla item": "Wrath Core",
+                "vanilla cost": 10000
             },
             "Item8": {
-                "ID": 1610,
-                "vanilla item": "Greater Life Essence"
+                "ID": 1611,
+                "vanilla item": "Rage",
+                "vanilla cost": 500
             },
             "Item9": {
-                "ID": 1611,
-                "vanilla item": "Possession"
+                "ID": 1612,
+                "vanilla item": "Greater Rage",
+                "vanilla cost": 1500
             },
             "Item10": {
-                "ID": 1612,
-                "vanilla item": "Undying"
+                "ID": 1613,
+                "vanilla item": "Life Essence",
+                "vanilla cost": 500
             },
             "Item11": {
-                "ID": 1613,
-                "vanilla item": "Empty Container"
+                "ID": 1614,
+                "vanilla item": "Greater Life Essence",
+                "vanilla cost": 1500
             },
             "Item12": {
-                "ID": 1614,
-                "vanilla item": "Hellraiser"
+                "ID": 1615,
+                "vanilla item": "Possession",
+                "vanilla cost": 1500
             },
             "Item13": {
-                "ID": 1615,
-                "vanilla item": "Harvester"
-            },
-            "Pcombo1": {
                 "ID": 1616,
-                "vanilla item": "180 Orbit Slash"
+                "vanilla item": "Undying",
+                "vanilla cost": 3000
             },
-            "Pcombo2": {
+            "Item14": {
                 "ID": 1617,
-                "vanilla item": "Demon Edge"
+                "vanilla item": "Empty Vessel",
+                "vanilla cost": 2000
             },
-            "Pcombo3": {
+            "Sword1.1": {
                 "ID": 1618,
-                "vanilla item": "Devil's Cross"
+                "vanilla item": "Demon Edge",
+                "vanilla cost": 400
             },
-            "Pcombo4": {
+            "Sword1.2": {
                 "ID": 1619,
-                "vanilla item": "Flipsaw"
+                "vanilla item": "Demon Edge",
+                "vanilla cost": 800
+            },
+            "Sword1.3": {
+                "ID": 1620,
+                "vanilla item": "Demon Edge",
+                "vanilla cost": 1600
+            },
+            "Sword2": {
+                "ID": 1621,
+                "vanilla item": "180 Orbit Slash",
+                "vanilla cost": 600
+            },
+            "Sword3": {
+                "ID": 1622,
+                "vanilla item": "Whirl Wind Combo",
+                "vanilla cost": 900
+            },
+            "Sword4.1": {
+                "ID": 1623,
+                "vanilla item": "Harpoon Tackle",
+                "vanilla cost": 600
+            },
+            "Sword4.2": {
+                "ID": 1624,
+                "vanilla item": "Harpoon Tackle",
+                "vanilla cost": 1200
+            },
+            "Sword4.3": {
+                "ID": 1625,
+                "vanilla item": "Harpoon Tackle",
+                "vanilla cost": 2400
+            },
+            "Sword5.1": {
+                "ID": 1626,
+                "vanilla item": "Flipsaw",
+                "vanilla cost": 800
+            },
+            "Sword5.2": {
+                "ID": 1627,
+                "vanilla item": "Flipsaw",
+                "vanilla cost": 1200
+            },
+            "Sword5.3": {
+                "ID": 1628,
+                "vanilla item": "Flipsaw",
+                "vanilla cost": 1600
+            },
+            "Sword6": {
+                "ID": 1629,
+                "vanilla item": "Meteor Strike",
+                "vanilla cost": 200
+            },
+            "Sword7.1": {
+                "ID": 1630,
+                "vanilla item": "Power Strike",
+                "vanilla cost": 300
+            },
+            "Sword7.2": {
+                "ID": 1631,
+                "vanilla item": "Power Strike",
+                "vanilla cost": 600
+            },
+            "Sword7.3": {
+                "ID": 1632,
+                "vanilla item": "Power Strike",
+                "vanilla cost": 1200
+            },
+            "Sword8.1": {
+                "ID": 1633,
+                "vanilla item": "Sword Uppercut",
+                "vanilla cost": 600
+            },
+            "Sword8.2": {
+                "ID": 1634,
+                "vanilla item": "Sword Uppercut",
+                "vanilla cost": 1200
+            },
+            "Sword9.1": {
+                "ID": 1635,
+                "vanilla item": "Devil's Cross",
+                "vanilla cost": 900
+            },
+            "Sword9.2": {
+                "ID": 1636,
+                "vanilla item": "Devil's Cross",
+                "vanilla cost": 1800
+            },
+            "Weapons1": {
+                "ID": 1637,
+                "vanilla item": "Hellraiser",
+                "vanilla cost": 0
+            },
+            "Weapons2": {
+                "ID": 1638,
+                "vanilla item": "Harvester",
+                "vanilla cost": 0
+            },
+            "Weapons3": {
+                "ID": 1639,
+                "vanilla item": "Death's Rage",
+                "vanilla cost": 900
+            },
+            "Weapons4": {
+                "ID": 1640,
+                "vanilla item": "Reaper's Revenge",
+                "vanilla cost": 1200
+            },
+            "Weapons5.1": {
+                "ID": 1641,
+                "vanilla item": "Air Reaper Blade",
+                "vanilla cost": 400
+            },
+            "Weapons5.2": {
+                "ID": 1642,
+                "vanilla item": "Air Reaper Blade",
+                "vanilla cost": 800
+            },
+            "Weapons5.3": {
+                "ID": 1643,
+                "vanilla item": "Air Reaper Blade",
+                "vanilla cost": 1600
+            },
+            "Weapons6.1": {
+                "ID": 1644,
+                "vanilla item": "Reaper Blade",
+                "vanilla cost": 900
+            },
+            "Weapons6.2": {
+                "ID": 1645,
+                "vanilla item": "Reaper Blade"
+            },
+            "Weapons7.1": {
+                "ID": 1646,
+                "vanilla item": "Hell Razor",
+                "vanilla cost": 400
+            },
+            "Weapons7.2": {
+                "ID": 1647,
+                "vanilla item": "Hell Razor",
+                "vanilla cost": 800
+            },
+            "Weapons7.3": {
+                "ID": 1648,
+                "vanilla item": "Hell Razor",
+                "vanilla cost": 1600
+            },
+            "Weapons8": {
+                "ID": 1649,
+                "vanilla item": "Meteor Launch",
+                "vanilla cost": 900
+            },
+            "Weapons9": {
+                "ID": 1650,
+                "vanilla item": "Earthbreaker",
+                "vanilla cost": 900
+            },
+            "Weapons10.1": {
+                "ID": 1651,
+                "vanilla item": "Tremor Smash",
+                "vanilla cost": 600
+            },
+            "Weapons10.2": {
+                "ID": 1652,
+                "vanilla item": "Tremor Smash",
+                "vanilla cost": 1200
+            },
+            "Weapons11.1": {
+                "ID": 1653,
+                "vanilla item": "Air Tremor Smash",
+                "vanilla cost": 600
+            },
+            "Weapons11.2": {
+                "ID": 1654,
+                "vanilla item": "Air Tremor Smash",
+                "vanilla cost": 1200
+            },
+            "Weapons11.3": {
+                "ID": 1655,
+                "vanilla item": "Air Tremor Smash"
+            },
+            "Weapons12.1": {
+                "ID": 1656,
+                "vanilla item": "Tremor Punch",
+                "vanilla cost": 400
+            },
+            "Weapons12.2": {
+                "ID": 1657,
+                "vanilla item": "Tremor Punch",
+                "vanilla cost": 800
+            },
+            "Weapons12.3": {
+                "ID": 1658,
+                "vanilla item": "Tremor Punch",
+                "vanilla cost": 1600
+            },
+            "Wrath1.1": {
+                "ID": 1659,
+                "vanilla item": "Blade Geyser",
+                "vanilla cost": 5000
+            },
+            "Wrath1.2": {
+                "ID": 1660,
+                "vanilla item": "Blade Geyser",
+                "vanilla cost": 7500
+            },
+            "Wrath1.3": {
+                "ID": 1661,
+                "vanilla item": "Blade Geyser",
+                "vanilla cost": 12500
+            },
+            "Wrath2.1": {
+                "ID": 1662,
+                "vanilla item": "Stoneskin",
+                "vanilla cost": 3500
+            },
+            "Wrath2.2": {
+                "ID": 1663,
+                "vanilla item": "Stoneskin",
+                "vanilla cost": 5000
+            },
+            "Wrath2.3": {
+                "ID": 1664,
+                "vanilla item": "Stoneskin",
+                "vanilla cost": 8000
+            },
+            "Wrath3.1": {
+                "ID": 1665,
+                "vanilla item": "Immolation",
+                "vanilla cost": 5000
+            },
+            "Wrath3.2": {
+                "ID": 1666,
+                "vanilla item": "Immolation",
+                "vanilla cost": 7500
+            },
+            "Wrath3.3": {
+                "ID": 1667,
+                "vanilla item": "Immolation",
+                "vanilla cost": 12500
+            },
+            "Wrath4.1": {
+                "ID": 1668,
+                "vanilla item": "Affliction",
+                "vanilla cost": 5000
+            },
+            "Wrath4.2": {
+                "ID": 1669,
+                "vanilla item": "Affliction",
+                "vanilla cost": 7500
+            },
+            "Wrath4.3": {
+                "ID": 1670,
+                "vanilla item": "Affliction",
+                "vanilla cost": 12500
             }
         }
     },
@@ -125,7 +395,7 @@
         },
         "locations": {
             "Serpent Hole to Anvil's Ford Chest": {
-                "ID": 1620,
+                "ID": 1671,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -139,7 +409,7 @@
         },
         "locations": {
             "Serpent Hole to Dry Road Chest": {
-                "ID": 1621,
+                "ID": 1672,
                 "vanilla item": "Wrath Shard"
             }
         }
@@ -153,7 +423,7 @@
         },
         "locations": {
             "Serpent Hole to Twilight Cathedral Chest": {
-                "ID": 1622,
+                "ID": 1673,
                 "vanilla item": "Lifestone Shard"
             }
         }
