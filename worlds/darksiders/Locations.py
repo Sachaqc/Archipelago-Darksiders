@@ -92,6 +92,12 @@ def create_regular_locations(world: DSWorld) -> None:
     create_locations_from_json(world, "Serpent Holes.json")
     create_locations_from_json(world, "Twilight Cathedral.json")
 
+    if world.options.hearts == "remove":
+        world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade first Heart of the Chosen"))
+        world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade second Heart of the Chosen"))
+        world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade third Heart of the Chosen"))
+        world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade fourth Heart of the Chosen"))
+
 def create_locations_from_json(world: DSWorld, filename) -> None:
 
     region_json = json_read(data_path(filename))
