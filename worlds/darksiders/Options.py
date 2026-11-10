@@ -225,7 +225,7 @@ class ShuffleWeapons(Choice):
 
 class ShuffleSword(Choice):
     """
-    Determines the Sword primary weapon available in the game and its behaviour.
+    Determines the primary weapon available in the game and its behaviour.
     Remove : The Chaoseater is removed from the item pool. If Weapons option is "Start with Sword", the Armageddon blade is unlocked from the start and all Armageddon Blade Shards are removed from the item pool and their location are added to the pool.
     Vanilla : Chaoseater is part of the item pool unless Weapons option is "Start with Sword". The Armageddon Blade needs 7 shards before it can be reforged. All the Shards are at their vanilla location.
     Shards : Randomizes the number of shards required to reforge the Armageddon Blade. Their location are added to the pool. Chaoseater is part of the item pool unless Weapons option is "Start with Sword".
