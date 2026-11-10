@@ -56,6 +56,10 @@
             "Crossroads Armageddon Blade Shard": {
                 "ID": 610,
                 "vanilla item": "Armageddon Blade Shard"
+            },
+            "Crossroads Wicked K defeated": {
+                "ID": 611,
+                "vanilla item": "Currency"
             }
         }
     }

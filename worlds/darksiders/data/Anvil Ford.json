@@ -86,6 +86,10 @@
             "Anvil's Ford Challenge Area Uriel Arena Fountain Chest": {
                 "ID": 14,
                 "vanilla item": "Health"
+            },
+            "Anvil's Ford Challenge Area Wicked K defeated": {
+                "ID": 15,
+                "vanilla item": "Currency"
             }
         }
     }

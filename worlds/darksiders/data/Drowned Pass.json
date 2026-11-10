@@ -90,6 +90,10 @@
             "Drowned Pass Free the Tormented Warden": {
                 "ID": 717,
                 "vanilla item": "Abyssal Armor Piece"
+            },
+            "Drowned Pass Wicked K defeated": {
+                "ID": 718,
+                "vanilla item": "Currency"
             }
         }
     }

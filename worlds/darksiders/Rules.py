@@ -2,8 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.options import OptionFilter
-from rule_builder.rules import Has, HasAll, HasAny
+from rule_builder.rules import CanReachRegion, Has, HasAll, HasAny
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -245,6 +244,8 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7) & HAS_GAUNTLET)
     anvil_ford_access_tunnel_chest_ice = world.get_location("Anvil's Ford Access Tunnel Chest Blocked by Ice")
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
+    anvil_ford_wicked_k = world.get_location("Anvil's Ford Challenge Area Wicked K defeated")
+    world.set_rule(anvil_ford_wicked_k, CanReachRegion("Hollows Clock Room"))
 
     ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Chest by Goremaw")
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
@@ -263,7 +264,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Chest Blocked by Ice")
     world.set_rule(ashlands_chest_blocked_by_ice, HAS_GAUNTLET)
     ashlands_chest_above_goremaws = world.get_location("Ashlands Access Tunnel Above Three Goremaws Chest")
-    world.set_rule(ashlands_chest_blocked_by_ice, HAS_ABYSSAL_CHAIN)
+    world.set_rule(ashlands_chest_above_goremaws, HAS_ABYSSAL_CHAIN)
 
     black_throne_map_chest = world.get_location("Black Throne East Path above Entrance Chest")
     world.set_rule(black_throne_map_chest, HAS_CROSSBLADE & HAS_VOIDWALKER)
@@ -324,6 +325,8 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(crossroads_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK & HAS_SHADOWFLIGHT)
     #crossroads_artifact_in_water = world.get_location("Crossroads Soldier Artifact in Subway Station")
     #world.set_rule(crossroads_artifact_in_water, CAN_SWIM)
+    crossroads_wicked_k = world.get_location("Crossroads Wicked K defeated")
+    world.set_rule(crossroads_wicked_k, CanReachRegion("Drowned Pass"))
 
     drowned_pass_world_of_pain = world.get_location("Drowned Pass World of Pain Reward")
     world.set_rule(drowned_pass_world_of_pain, HAS_MASK)
@@ -341,6 +344,8 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(drowned_pass_access_tunnel_artifact, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT)
     drowned_pass_access_tunnel_first_chest = world.get_location("Drowned Pass Access Tunnel First Chest")
     world.set_rule(drowned_pass_access_tunnel_first_chest, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    drowned_pass_wicked_k = world.get_location("Drowned Pass Wicked K defeated")
+    world.set_rule(drowned_pass_wicked_k, CanReachRegion("Anvil's Ford"))
 
     dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
     world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard"))
