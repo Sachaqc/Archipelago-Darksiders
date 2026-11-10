@@ -175,7 +175,7 @@ class TestDungeonItemsSanity(DSTestBase):
         with self.subTest("Test that there are exactly 4 Hoardseekers in the pool"):
             self.assertEqual(len(hoardseekers), 4)
 
-        with self.subTest("Test that all Hoardseekers are part of the local item pool"):
+        with self.subTest("Test that all Hoardseekers are not part of the local item pool"):
             self.assertNotIn("Hoardseeker", self.multiworld.worlds[1].options.local_items)
 
     def test_map_anywhere(self) -> None:
@@ -184,5 +184,5 @@ class TestDungeonItemsSanity(DSTestBase):
         with self.subTest("Test that there are exactly 4 Maps in the pool"):
             self.assertEqual(len(maps), 4)
 
-        with self.subTest("Test that all Maps are part of the local item pool"):
+        with self.subTest("Test that all Maps are not part of the local item pool"):
             self.assertNotIn("Map", self.multiworld.worlds[1].options.local_items)
