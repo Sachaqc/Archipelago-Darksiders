@@ -74,3 +74,13 @@ def create_region_from_json(world: DSWorld, filename) -> None:
     for region in region_json:
         new_region = Region(region["name"], world.player, world.multiworld)
         world.multiworld.regions += [new_region]
+
+def get_region_list_from_json(world: DSWorld, filename) -> list[Region]:
+
+    region_json = json_read(data_path(filename))
+    region_list = []
+
+    for region in region_json:
+        region_list.append(world.get_region(region.get("name")))
+
+    return region_list

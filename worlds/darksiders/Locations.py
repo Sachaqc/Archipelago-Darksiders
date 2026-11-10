@@ -102,6 +102,18 @@ def create_locations_from_json(world: DSWorld, filename) -> None:
             region_locations = get_location_names_with_ids(location_names = region.get("locations"))
             this_region.add_locations(locations = region_locations, location_type = DSLocation)
 
+def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
+
+    region_json = json_read(data_path(filename))
+    location_list = []
+
+    for region in region_json:
+        if "locations" in region:
+            for location, _ in region.get("locations").items():
+                location_list.append(world.get_location(location))
+
+    return location_list
+
 def place_vanilla_items(world: DSWorld) -> None:
 
     if world.options.armor == 1:
