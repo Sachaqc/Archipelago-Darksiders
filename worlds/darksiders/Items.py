@@ -250,8 +250,12 @@ def create_all_items(world: DSWorld) -> None:
 def get_random_filler_item_name(world: DSWorld) -> str:
 
     item_json = json_read(data_path("Items.json"))
+    consumables = item_json.get("Consumables").keys()
+    filler_consumables = [item for item in consumables if item != "Empty Vessel"]
+    souls = item_json.get("Souls").keys()
+    fillers = list(filler_consumables | souls)
 
-    return world.random.choice(list(item_json.get("Consumables").keys() | item_json.get("Souls").keys()))
+    return world.random.choice(fillers)
 
 def prefill_dungeon(world: DSWorld, filename) -> None:
 

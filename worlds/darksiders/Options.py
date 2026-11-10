@@ -35,9 +35,9 @@ class ShuffleArmor(Choice):
     Determines how to obtain the Abyssal Armor and how it is shuffled into the item pool.
     Remove : The Abyssal Armor and all its pieces are removed from the item pool. Their location are added to the pool.
     Vanilla : The Abyssal Armor is automatically obtained after collecting all 10 Pieces. The Abyssal Armor Pieces remain at their vanilla locations.
-    Own (Pieces) : The Abyssal Armor Pieces are shuffled into their own world. Their location are added to the pool.
+    Own (Pieces) : The Abyssal Armor is automatically obtained after collecting all Pieces. The Abyssal Armor Pieces are shuffled into their own world. Their location are added to the pool.
     Own (Armor) : The Abyssal Armor is shuffled into its own world. The Abyssal Armor Pieces are removed from the item pool. Their location are added to the pool.
-    Armorsanity (Pieces) : The Abyssal Armor Pieces are shuffled anywhere in the multiworld. Their location are added to the pool.
+    Armorsanity (Pieces) : The Abyssal Armor is automatically obtained after collecting all Pieces. The Abyssal Armor Pieces are shuffled anywhere in the multiworld. Their location are added to the pool.
     Armorsanity (Armor) : The Abyssal Armor is shuffled anywhere in the multiworld. The Abyssal Armor Pieces are removed from the item pool. Their location are added to the pool.
     """
 
@@ -111,7 +111,7 @@ class Containers(Range):
     """Determines the number of Containers available in the game. Containers hold consumables."""
 
     display_name = "Containers"
-    range_start = 0
+    range_start = 1
     range_end = 8
 
     default = 8
