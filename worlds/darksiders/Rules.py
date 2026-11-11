@@ -340,7 +340,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(crossroads_chest_blocked_by_ice, HAS_GAUNTLET)
     crossroads_blade_shard = world.get_location("Crossroads Armageddon Blade Shard")
     world.set_rule(crossroads_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK & HAS_SHADOWFLIGHT)
-    #crossroads_artifact_in_water = world.get_location("Crossroads Soldier Artifact in Subway Station")
+    #crossroads_artifact_in_water = world.get_location("Crossroads Subway Station Artifact")
     #world.set_rule(crossroads_artifact_in_water, CAN_SWIM)
     crossroads_wicked_k = world.get_location("Crossroads Wicked K defeated")
     world.set_rule(crossroads_wicked_k, CanReachRegion("Drowned Pass"))
