@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.rules import CanReachRegion, Has, HasAll, HasAny
+from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -88,23 +88,30 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(black_throne_4_to_5, HAS_VOIDWALKER)
     black_throne_central_to_north = world.get_entrance("Black Throne Central Hub to North Path")
     world.set_rule(black_throne_central_to_north, Has("East Beam") & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-    black_throne_north_to_guardian = world.get_entrance("Black Throne North Path to Guardian")
-    world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     black_throne_central_to_loop = world.get_entrance("Black Throne Central Hub to SW Loop")
     world.set_rule(black_throne_central_to_loop, HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-    black_throne_central_to_last = world.get_entrance("Black Throne SW Loop to Last Path")
-    world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     black_throne_across_last_bridge = world.get_entrance("Black Throne Last Path across the Bridge")
     world.set_rule(black_throne_across_last_bridge, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     black_throne_central_to_boss = world.get_entrance("Black Throne Central Hub to Boss Room")
     world.set_rule(black_throne_central_to_boss, HasAll("East Beam", "North Beam", "Last Beam"))
+    black_throne_north_to_guardian = world.get_entrance("Black Throne North Path to Guardian")
+    black_throne_central_to_last = world.get_entrance("Black Throne SW Loop to Last Path")
+    if world.options.keys != "remove":
+        world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+        world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    else:
+        world.set_rule(black_throne_north_to_guardian, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+        world.set_rule(black_throne_central_to_last, HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+        
+        
  
     broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
     broken_stairs_to_sh = world.get_entrance("Broken Stair to Serpent Holes")
     world.set_rule(broken_stairs_to_sh, HAS_SERPENT_HOLES)
-    broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
-    world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
+    if world.options.keys != "remove":
+        broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
+        world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
 
     choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair")
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
@@ -137,22 +144,25 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(hollows_water_room_to_maintenance, HAS_CROSSBLADE)
     hollows_1_to_hollows_5 = world.get_entrance("Hollows Clock Room to Train Wreck Area")
     world.set_rule(hollows_1_to_hollows_5, HAS_GAUNTLET & HAS_SHADOWFLIGHT)
-    hollows_2_to_hollows_3 = world.get_entrance("Hollows Maintenance Area to Chained Cube Area")
-    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4))
     hollows_2_to_4 = world.get_entrance("Hollows Water Room to Machinery Room")
     world.set_rule(hollows_2_to_4, HAS_GAUNTLET)
-    hollows_3_to_hollows_4 = world.get_entrance("Hollows Chained Cube Area to Hollows Machinery Room")
-    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5) & HAS_GAUNTLET)
     hollows_4_to_2 = world.get_entrance("Hollows Machinery Room to Water Room")
     world.set_rule(hollows_4_to_2, HAS_GAUNTLET & HAS_SHADOWFLIGHT)
     hollows_5_to_hollows_6 = world.get_entrance("Hollows Train Wreck Area to Locust Room")
     world.set_rule(hollows_5_to_hollows_6, HAS_CROSSBLADE)
-    hollows_5_to_hollows_9 = world.get_entrance("Hollows Train Wreck Area to Griever Tunnel")
-    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6))
     hollows_7_to_8 = world.get_entrance("Hollows Flooded Room to above Flooded Room")
     world.set_rule(hollows_7_to_8, HAS_SHADOWFLIGHT)
     hollows_9_to_hollows_10 = world.get_entrance("Hollows Griever Tunnel to Flooded Canyon")
     world.set_rule(hollows_9_to_hollows_10, HAS_GAUNTLET)
+    hollows_3_to_hollows_4 = world.get_entrance("Hollows Chained Cube Area to Hollows Machinery Room")
+    if world.options.keys != "remove":
+        hollows_2_to_hollows_3 = world.get_entrance("Hollows Maintenance Area to Chained Cube Area")
+        world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4))
+        world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5) & HAS_GAUNTLET)
+        hollows_5_to_hollows_9 = world.get_entrance("Hollows Train Wreck Area to Griever Tunnel")
+        world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6))
+    else:
+        world.set_rule(hollows_3_to_hollows_4, HAS_GAUNTLET)
 
     iron_canopy_cocoon_to_past_spider = world.get_entrance("Iron Canopy Cocoon Area to Past the Spider Area")
     world.set_rule(iron_canopy_cocoon_to_past_spider, (CAN_SLOW_TIME_FROM_AFAR & HAS_GAUNTLET) | HAS_ABYSSAL_CHAIN)
@@ -160,8 +170,6 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(iron_canopy_cocoon_to_beneath_spider, HAS_ABYSSAL_CHAIN)
     iron_canopy_cocoon_to_trench = world.get_entrance("Iron Canopy Cocoon Area to Infested Building")
     world.set_rule(iron_canopy_cocoon_to_trench, HAS_ABYSSAL_CHAIN)
-    iron_canopy_trench_to_webbed_floor = world.get_entrance("Iron Canopy Infested Building to Webbed Floor Building")
-    world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7))
     iron_canopy_webbed_floor_to_back_alley = world.get_entrance("Iron Canopy Webbed Floor Building to South Alley")
     world.set_rule(iron_canopy_webbed_floor_to_back_alley, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
     iron_canopy_south_alley_to_top_floors = world.get_entrance("Iron Canopy South Alley to Webbed Floor Building Top Floors")
@@ -172,21 +180,22 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(iron_canopy_top_floors_to_chained_cube, HAS_ABYSSAL_CHAIN)
     iron_canopy_chained_cube_to_above = world.get_entrance("Iron Canopy Chained Cube Area to above")
     world.set_rule(iron_canopy_chained_cube_to_above, HAS_ABYSSAL_CHAIN)
-    iron_canopy_above_to_top_floor = world.get_entrance("Iron Canopy above Chained Cube Area to Webbed Floor Building Top Floors")
-    world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8))
-    iron_canopy_top_floor_to_above = world.get_entrance("Iron Canopy Webbed Floor Building Top Floors to above Chained Cube Area")
-    world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8))
     iron_canopy_broodmother_to_above = world.get_entrance("Iron Canopy Broodmother Area to above Chained Cube Area")
     world.set_rule(iron_canopy_broodmother_to_above, HAS_ABYSSAL_CHAIN & HAS_GAUNTLET & HAS_SHADOWFLIGHT)
+    if world.options.keys != "remove":
+        iron_canopy_trench_to_webbed_floor = world.get_entrance("Iron Canopy Infested Building to Webbed Floor Building")
+        world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7))
+        iron_canopy_above_to_top_floor = world.get_entrance("Iron Canopy above Chained Cube Area to Webbed Floor Building Top Floors")
+        world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8))
+        iron_canopy_top_floor_to_above = world.get_entrance("Iron Canopy Webbed Floor Building Top Floors to above Chained Cube Area")
+        world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8))
+
 
     leviathan_drift_to_upper = world.get_entrance("Leviathan's Drift to Upper Area")
     world.set_rule(leviathan_drift_to_upper, HAS_MASK & HAS_SHADOWFLIGHT)
     #leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
     #world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
 
-    if world.options.hearts != "remove":
-        scalding_gallow_to_black_throne = world.get_entrance("Scalding Gallow to Black Throne")
-        world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4))
     scalding_gallow_to_choking_grounds = world.get_entrance("Scalding Gallow to Choking Grounds")
     world.set_rule(scalding_gallow_to_choking_grounds, HAS_SHADOWFLIGHT)
     scalding_gallow_to_drowned_pass = world.get_entrance("Scalding Gallow to Drowned Pass")
@@ -195,6 +204,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(scalding_gallow_to_dry_road_access_tunnel_1, HAS_GAUNTLET)
     scalding_gallow_to_sh = world.get_entrance("Scalding Gallow to Serpent Holes")
     world.set_rule(scalding_gallow_to_sh, HAS_SERPENT_HOLES)
+    scalding_gallow_to_black_throne = world.get_entrance("Scalding Gallow to Black Throne")
+    if world.options.hearts != "remove":
+        world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4))
+    else:
+        world.set_rule(scalding_gallow_to_black_throne, CanReachLocation("Scalding Gallow Phantom General Defeated"))
 
     serpent_hole_to_ashlands = world.get_entrance("Serpent Holes to Ashlands")
     world.set_rule(serpent_hole_to_ashlands, HAS_SHADOWFLIGHT)
@@ -205,8 +219,6 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(twilight_cathedral_exterior_1_to_2, HAS_ABYSSAL_CHAIN)
     twilight_cathedral_to_sh = world.get_entrance("Twilight Cathedral to Serpent Holes")
     world.set_rule(twilight_cathedral_to_sh, HAS_SERPENT_HOLES)
-    twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
-    world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2))
     twilight_cathedral_entrance_to_NW = world.get_entrance("Twilight Cathedral Entrance to North Wing")
     world.set_rule(twilight_cathedral_entrance_to_NW, Has("Crystal Blade"))
     twilight_cathedral_NW_to_abyssal = world.get_entrance("Twilight Cathedral North Wing to Abyssal Chest Area")
@@ -221,13 +233,17 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(twilight_cathedral_three_statues_to_north, HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
     twilight_cathedral_three_statues_to_east = world.get_entrance("Twilight Cathedral Three Statues to East Path")
     world.set_rule(twilight_cathedral_three_statues_to_east, HasAll("West Crystal Blade", "North Crystal Blade"))
-    twilight_cathedral_three_statues_to_south = world.get_entrance("Twilight Cathedral Three Statues to South Path")
-    world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3))
     twilight_cathedral_three_statues_to_north_wing = world.get_entrance("Twilight Cathedral Three Statues to North Wing")
     world.set_rule(twilight_cathedral_three_statues_to_north_wing, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
     twilight_cathedral_north_wing_to_boss_room = world.get_entrance("Twilight Cathedral North Wing to Boss Room")
     world.set_rule(twilight_cathedral_north_wing_to_boss_room, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
-
+    twilight_cathedral_three_statues_to_south = world.get_entrance("Twilight Cathedral Three Statues to South Path")
+    if world.options.keys != "remove":
+        twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
+        world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2))
+        world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3))
+    else: 
+        world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE)
 
 def set_all_location_rules(world: DSWorld) -> None:
 
