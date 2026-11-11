@@ -61,5 +61,5 @@ class TestHeartsSanity(DSTestBase):
         with self.subTest("Test that there are exactly 4 Hearts of the Chosen in the pool"):
             self.assertEqual(len(hearts), 4)
 
-        with self.subTest("Test that all Hearts of the Chosen are not part of the local item pool"):
+        with self.subTest("Test that no Hearts of the Chosen are part of the local item pool"):
             self.assertNotIn("Heart of the Chosen", self.multiworld.worlds[1].options.local_items)

@@ -137,7 +137,7 @@ class TestArtifactArtisanity(DSTestBase):
         with self.subTest("Test that the number of Soldier Artifact in the pool is exactly as the Options expect"):
             self.assertEqual(len(soldier_artifacts), 15)
 
-        with self.subTest("Test that all Soldier Artifact are not part of the local item pool"):
+        with self.subTest("Test that no Soldier Artifact are part of the local item pool"):
             self.assertNotIn("Soldier Artifact", self.multiworld.worlds[1].options.local_items)
 
     def test_champion_artifacts_shuffled(self) -> None:
@@ -146,7 +146,7 @@ class TestArtifactArtisanity(DSTestBase):
         with self.subTest("Test that the number of Champion Artifact in the pool is exactly as the Options expect"):
             self.assertEqual(len(champion_artifacts), 2)
 
-        with self.subTest("Test that all Champion Artifact are not part of the local item pool"):
+        with self.subTest("Test that no Champion Artifact are part of the local item pool"):
             self.assertNotIn("Champion Artifact", self.multiworld.worlds[1].options.local_items)
 
     def test_overlord_artifact_shuffled(self) -> None:
@@ -155,5 +155,5 @@ class TestArtifactArtisanity(DSTestBase):
         with self.subTest("Test that there is exactly one Overlord Artifact in the pool"):
             self.assertEqual(len(overlord_artifacts), 1)
 
-        with self.subTest("Test that all Overlord Artifact are not part of the local item pool"):
+        with self.subTest("Test that no Overlord Artifact are part of the local item pool"):
             self.assertNotIn("Overlord Artifact", self.multiworld.worlds[1].options.local_items)

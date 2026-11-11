@@ -116,7 +116,7 @@ class TestArmorPieceSanity(DSTestBase):
         with self.subTest("Test that the number of Abyssal Armor Piece in the pool is exactly as the Options expect"):
             self.assertEqual(len(armor_pieces), 7)
 
-        with self.subTest("Test that the Abyssal Armor Pieces are not part of the local item pool"):
+        with self.subTest("Test that no Abyssal Armor Pieces are part of the local item pool"):
             self.assertNotIn("Abyssal Armor Piece", self.multiworld.worlds[1].options.local_items)
 
     def test_armor_absent(self) -> None:
@@ -149,5 +149,5 @@ class TestArmorArmorSanity(DSTestBase):
         with self.subTest("Test that there is exactly 1 Abyssal Armor in the pool"):
             self.assertEqual(len(armor), 1)
 
-        with self.subTest("Test that the Abyssal Armor is not part of the local item pool"):
+        with self.subTest("Test that no Abyssal Armor is part of the local item pool"):
             self.assertNotIn("Abyssal Armor", self.multiworld.worlds[1].options.local_items)
