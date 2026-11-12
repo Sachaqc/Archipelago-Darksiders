@@ -195,23 +195,23 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
 
     match world.options.scythe:
-        case 0 :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case 1 :
+        case "remove":
+            if world.options.weapons == "start_with_scythe":
+                world.multiworld.push_precollected(world.create_item('Hellraiser'))
+        case "vanilla":
             for location, vanilla_item in SCYTHE_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case 2:
-            if world.options.weapons != 2:
+        case "hellraiser":
+            if world.options.weapons != "start_with_scythe":
                 shuffle_itempool.append(world.create_item('Hellraiser'))
             else:
                 world.multiworld.push_precollected(world.create_item('Hellraiser'))
-        case 3:
+        case "harvester":
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Harvester'))
             else:
                 world.multiworld.push_precollected(world.create_item('Harvester'))
-        case 4:
+        case "progressive":
             shuffle_itempool.append(world.create_item('Progressive Scythe'))
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Progressive Scythe'))

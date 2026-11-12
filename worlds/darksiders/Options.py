@@ -256,8 +256,8 @@ class Armageddon(Range):
 class ShuffleScythe(Choice):
     """
     Determines the Scythe secondary weapon available in the game and its behaviour.
-    Remove : The Hellraiser and Harvester are removed from the item pool. Their location are added to the pool. If Weapons option is "Start with Scythe", this option is ignored.
-    Vanilla : The Hellraiser and Harvester can be bought from Vulgrim. If Weapons option is "Start with Scythe", this option is ignored.
+    Remove : The Hellraiser and Harvester are removed from the item pool. Their location are added to the pool. If Weapons option is "Start with Scythe", this option is ignored and the player starts with Hellraiser.
+    Vanilla : The Hellraiser and Harvester can be bought from Vulgrim.
     Hellraiser : Only the Hellraiser is added to the item pool. The Harvester is unavailable. Their location are added to the pool. If Weapons option is "Start with Scythe", this option makes the player start with Hellraiser.
     Harvester : The Hellraiser is unavailable. Only the Harvester is added to the item pool. Their location are added to the pool. If Weapons option is "Start with Scythe", this option makes the player start with Harvester.
     Progressive : The first Progressive Scythe unlocked will always be Hellraiser. The second unlock will be Harvester. Their location are added to the pool. If Weapons option is "Start with Scythe", this option makes the player start with Hellraiser and adds only one Progressive Scythe to the item pool.
