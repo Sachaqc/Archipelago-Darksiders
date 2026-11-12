@@ -46,6 +46,15 @@ class TestStartScytheRemoved(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestScytheRemoved(DSTestBase):
     options = {
         "scythe": "remove",
@@ -90,6 +99,15 @@ class TestScytheRemoved(DSTestBase):
         with self.subTest("Test that no Progressive Scythe has been precollected"):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
+
+    def test_scythe_lvl_absent(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are no Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 0)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
 
 class TestStartScytheVanilla(DSTestBase):
     options = {
@@ -142,6 +160,15 @@ class TestStartScytheVanilla(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestScytheVanilla(DSTestBase):
     options = {
         "scythe": "vanilla",
@@ -193,6 +220,15 @@ class TestScytheVanilla(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestStartScytheHellraiser(DSTestBase):
     options = {
         "scythe": "hellraiser",
@@ -237,6 +273,15 @@ class TestStartScytheHellraiser(DSTestBase):
         with self.subTest("Test that no Progressive Scythe has been precollected"):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
+
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
 
 class TestScytheHellraiser(DSTestBase):
     options = {
@@ -283,6 +328,15 @@ class TestScytheHellraiser(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestStartScytheHarvester(DSTestBase):
     options = {
         "scythe": "harvester",
@@ -327,6 +381,15 @@ class TestStartScytheHarvester(DSTestBase):
         with self.subTest("Test that no Progressive Scythe has been precollected"):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
+
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
 
 class TestScytheHarvester(DSTestBase):
     options = {
@@ -373,6 +436,15 @@ class TestScytheHarvester(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertFalse(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestStartScytheProgressive(DSTestBase):
     options = {
         "scythe": "progressive", 
@@ -418,6 +490,15 @@ class TestStartScytheProgressive(DSTestBase):
             item = self.world.create_item("Progressive Scythe")
             self.assertTrue(item in self.multiworld.precollected_items[1])
 
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))
+
 class TestScytheProgressive(DSTestBase):
     options = {
         "scythe": "progressive",
@@ -462,3 +543,12 @@ class TestScytheProgressive(DSTestBase):
         with self.subTest("Test that the Progressive Scythe has not been precollected"):
             item = self.world.create_item("Harvester")
             self.assertFalse(item in self.multiworld.precollected_items[1])
+
+    def test_scythe_lvl_shuffled(self) -> None:
+        scythe_lvl = self.get_items_by_name("Scythe Level Up")
+
+        with self.subTest("Test that there are exactly 3 Scythe Level Up in the pool"):
+            self.assertEqual(len(scythe_lvl), 3)
+
+        with self.subTest("Test that no Scythe Level Up are placed at any location"):
+            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Scythe Level Up"))

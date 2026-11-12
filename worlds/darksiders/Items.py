@@ -198,33 +198,41 @@ def create_all_items(world: DSWorld) -> None:
         case "remove":
             if world.options.weapons == "start_with_scythe":
                 world.multiworld.push_precollected(world.create_item('Hellraiser'))
+                for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+                    shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case "vanilla":
             for location, vanilla_item in SCYTHE_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case "hellraiser":
             if world.options.weapons != "start_with_scythe":
                 shuffle_itempool.append(world.create_item('Hellraiser'))
             else:
                 world.multiworld.push_precollected(world.create_item('Hellraiser'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case "harvester":
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Harvester'))
             else:
                 world.multiworld.push_precollected(world.create_item('Harvester'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case "progressive":
             shuffle_itempool.append(world.create_item('Progressive Scythe'))
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Progressive Scythe'))
             else:
                 world.multiworld.push_precollected(world.create_item('Progressive Scythe'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
 
     if world.options.weapons != 3:
         shuffle_itempool.append(world.create_item("Tremor Gauntlet"))
     else:
         world.multiworld.push_precollected(world.create_item('Tremor Gauntlet'))
 
-    for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
-        shuffle_itempool.append(world.create_item("Scythe Level Up"))
     for _ in range(item_json.get("Secondary Weapons").get("Gauntlet Level Up").get("number")):
         shuffle_itempool.append(world.create_item("Gauntlet Level Up"))
 
