@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 
-from Options import Choice, Range, Toggle, OptionGroup, PerGameCommonOptions, Visibility
+from Options import Choice, Range, Toggle, OptionGroup, PerGameCommonOptions, Visibility, StartInventoryPool
 
 class DifficultyLevel(Choice):
     """Difficulty level for Darksiders Warmastered Edition."""
@@ -314,6 +314,7 @@ class WrathShards(Choice):
 
 @dataclass
 class DSOptions(PerGameCommonOptions):
+    start_inventory_from_pool: StartInventoryPool
     difficulty_level: DifficultyLevel
     logic_rules: LogicRules
     armor: ShuffleArmor
@@ -364,7 +365,7 @@ option_groups = [
             Lifestones,
             LifestonesShards,
             WrathCores,
-            WrathShards
+            WrathShards,
         ],
     ),
 ]
