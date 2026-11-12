@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny
+from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny, HasAnyCount
 
 if TYPE_CHECKING:
     from .World import DSWorld
 
-CAN_BEAT_ABADDON = HasAll("Armageddon Blade", "Mask of Shadows", "Ruin")
-CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Progressive Chaoseater", "Tremor Gauntlet", "Progressive Scythe")
+CAN_BEAT_ABADDON = HasAll("Mask of Shadows", "Ruin") & HasAnyCount({"Armageddon Blade":1, "Progressive Sword":2})
+CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Chaoseater", "Progressive Sword", "Tremor Gauntlet", "Progressive Scythe")
 CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
 CAN_HIT_CRYSTAL_BLADES = HasAny("Crossblade", "Mercy")
 CAN_HURT_GOREMAW = HasAny("Crossblade", "Mercy")
@@ -257,12 +257,16 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(anvil_ford_west_chest, HAS_ABYSSAL_CHAIN)
     anvil_ford_chest_ice_uriel = world.get_location("Anvil's Ford Challenge Area Chest Blocked by Ice near Uriel")
     world.set_rule(anvil_ford_chest_ice_uriel, HAS_GAUNTLET)
-    anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
-    world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7) & HAS_GAUNTLET)
     anvil_ford_access_tunnel_chest_ice = world.get_location("Anvil's Ford Access Tunnel Chest Blocked by Ice")
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
     anvil_ford_wicked_k = world.get_location("Anvil's Ford Challenge Area Wicked K defeated")
     world.set_rule(anvil_ford_wicked_k, CanReachRegion("Hollows Clock Room"))
+    if world.options.sword == "shards":
+        anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
+        world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = world.options.armageddon.value) & HAS_GAUNTLET)
+    if world.options.sword == "vanilla":
+        anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
+        world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7) & HAS_GAUNTLET)
 
     ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Chest by Goremaw")
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
@@ -364,8 +368,9 @@ def set_all_location_rules(world: DSWorld) -> None:
     drowned_pass_wicked_k = world.get_location("Drowned Pass Wicked K defeated")
     world.set_rule(drowned_pass_wicked_k, CanReachRegion("Anvil's Ford"))
 
-    dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
-    world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard"))
+    if world.options.sword == "vanilla" or world.options.sword == "shards":
+        dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
+        world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard", count = 1))
     dry_road_blade_shard = world.get_location("Dry Road Armageddon Blade Shard")
     world.set_rule(dry_road_blade_shard, HAS_MASK)
     dry_road_voidwalker_chest = world.get_location("Dry Road Access Tunnel above Gate Chest")

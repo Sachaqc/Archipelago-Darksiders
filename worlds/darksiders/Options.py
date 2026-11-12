@@ -215,7 +215,7 @@ class ShuffleWeapons(Choice):
     Determines your starting weapon. The others are shuffled in the item pool. Their location are added to the pool.
     """
 
-    display_name = "Weapons"
+    display_name = "Starting Weapon"
     option_start_with_sword = 1
     option_start_with_scythe = 2
     option_start_with_gauntlet = 3
@@ -226,10 +226,10 @@ class ShuffleWeapons(Choice):
 class ShuffleSword(Choice):
     """
     Determines the primary weapon available in the game and its behaviour.
-    Remove : The Chaoseater is removed from the item pool. If Weapons option is "Start with Sword", the Armageddon blade is unlocked from the start and all Armageddon Blade Shards are removed from the item pool and their location are added to the pool.
-    Vanilla : Chaoseater is part of the item pool unless Weapons option is "Start with Sword". The Armageddon Blade needs 7 shards before it can be reforged. All the Shards are at their vanilla location.
-    Shards : Randomizes the number of shards required to reforge the Armageddon Blade. Their location are added to the pool. Chaoseater is part of the item pool unless Weapons option is "Start with Sword".
-    Progressive : The first Progressive Sword unlocked will always be Chaoseater. The second unlock will be Armageddon Blade. The location of the Armageddon Blade Shards are added to the pool. If Weapons option is "Start with Sword", this option makes the player start with Chaoseater and adds only one Progressive Sword to the item pool.
+    Remove : Either start with the Armageddon Blade or shuffles it depending on the Starting Weapon option. All Armageddon Blade Shards are removed from the item pool and their location contain shuffled items.
+    Vanilla : Either start with Chaoseater or shuffles it depending on the Starting Weapon option. The Armageddon Blade needs 7 shards before it can be reforged at Ultane. All the Shards are at their vanilla location.
+    Shards : Either start with Chaoseater or shuffles it depending on the Starting Weapon option. Randomizes the number of shards required to reforge the Armageddon Blade and their vanilla location contain shuffled items.
+    Progressive : Either start with Chaoseater and shuffles a Progressive Sword or shuffles 2 Progressive Sword depending on the Starting Weapon option. All Armageddon Blade Shards are removed from the item pool and their location contain shuffled items.
     """
 
     display_name = "Sword"
@@ -331,6 +331,7 @@ class DSOptions(PerGameCommonOptions):
     lifestones_shards: LifestonesShards
     weapons: ShuffleWeapons
     sword: ShuffleSword
+    armageddon: Armageddon
     scythe: ShuffleScythe
     moves: ShuffleMoves
     wrath_cores: WrathCores
@@ -409,7 +410,7 @@ option_presets = {
         "lifestones": 9,
         "lifestones_shards": LifestonesShards.option_none,
         "weapons": ShuffleWeapons.option_start_with_sword,
-        "sword": ShuffleSword.option_remove,
+        "sword": ShuffleSword.option_vanilla,
         "armageddon": 7,
         "scythe": ShuffleScythe.option_harvester,
         "moves": ShuffleMoves.option_vanilla,

@@ -51,7 +51,7 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
         case name if name in item_json.get("Health"):
             classification = ItemClassification.useful
         case name if name in item_json.get("Primary Weapons"):
-            if name == "Chaoseater" or name == "Chaoseater Level Up":
+            if name == "Chaoseater Level Up":
                 classification = ItemClassification.useful
             else:
                 classification = ItemClassification.progression
@@ -161,23 +161,38 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item('Lifestone Shard'))
 
     match world.options.sword:
-        case 0 :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case 1 :
+        case "remove" :
+            if world.options.weapons != "start_with_sword":
+                shuffle_itempool.append(world.create_item('Armageddon Blade'))
+            else:
+                world.multiworld.push_precollected(world.create_item('Armageddon Blade'))
+        case "vanilla" :
             for location, vanilla_item in ARMAGEDDON_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Chaoseater'))
-        case 2 :
+            else:
+                world.multiworld.push_precollected(world.create_item('Chaoseater'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+        case "shards" :
+            world.get_location("Anvil's Ford Reforge the Blade").place_locked_item(world.create_item("Armageddon Blade"))
             for _ in range(world.options.armageddon):
                 shuffle_itempool.append(world.create_item('Armageddon Blade Shard'))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Chaoseater'))
-        case 3 :
+            else:
+                world.multiworld.push_precollected(world.create_item('Chaoseater'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+        case "progressive" :
             shuffle_itempool.append(world.create_item('Progressive Sword'))
             if world.options.weapons != 1:
                 shuffle_itempool.append(world.create_item('Progressive Sword'))
+            else:
+                world.multiworld.push_precollected(world.create_item('Progressive Sword'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
 
     match world.options.scythe:
         case 0 :
@@ -189,18 +204,25 @@ def create_all_items(world: DSWorld) -> None:
         case 2:
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Hellraiser'))
+            else:
+                world.multiworld.push_precollected(world.create_item('Hellraiser'))
         case 3:
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Harvester'))
+            else:
+                world.multiworld.push_precollected(world.create_item('Harvester'))
         case 4:
             shuffle_itempool.append(world.create_item('Progressive Scythe'))
             if world.options.weapons != 2:
                 shuffle_itempool.append(world.create_item('Progressive Scythe'))
-    
-    shuffle_itempool.append(world.create_item("Tremor Gauntlet"))
+            else:
+                world.multiworld.push_precollected(world.create_item('Progressive Scythe'))
 
-    for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
-        shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+    if world.options.weapons != 3:
+        shuffle_itempool.append(world.create_item("Tremor Gauntlet"))
+    else:
+        world.multiworld.push_precollected(world.create_item('Tremor Gauntlet'))
+
     for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
         shuffle_itempool.append(world.create_item("Scythe Level Up"))
     for _ in range(item_json.get("Secondary Weapons").get("Gauntlet Level Up").get("number")):

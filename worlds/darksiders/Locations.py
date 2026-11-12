@@ -98,6 +98,10 @@ def create_regular_locations(world: DSWorld) -> None:
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade third Heart of the Chosen"))
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade fourth Heart of the Chosen"))
 
+    #world.options.sword == "remove" or 
+    if world.options.sword == "progressive":
+        world.get_region("Anvil's Ford").locations.remove(world.get_location("Anvil's Ford Reforge the Blade"))
+
 def create_locations_from_json(world: DSWorld, filename) -> None:
 
     region_json = json_read(data_path(filename))
@@ -147,7 +151,7 @@ def place_vanilla_items(world: DSWorld) -> None:
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.sword == 1:
+    if world.options.sword == "vanilla":
         for location, vanilla_item in ARMAGEDDON_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
