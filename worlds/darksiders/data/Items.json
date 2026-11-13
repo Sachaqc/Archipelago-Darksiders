@@ -227,7 +227,7 @@
         "Tremor Smash": {
             "ID": 74,
             "progressive": true,
-            "number": 3
+            "number": 2
         }
     },
     "Gear": {
@@ -405,7 +405,7 @@
         "Devil's Cross": {
             "ID": 142,
             "progressive": true,
-            "number": 3
+            "number": 2
         },
         "Flipsaw": {
             "ID": 143,
@@ -430,7 +430,7 @@
         "Sword Uppercut": {
             "ID": 147,
             "progressive": true,
-            "number": 3
+            "number": 2
         },
         "Whirl Wind Combo": {
             "ID": 148,
