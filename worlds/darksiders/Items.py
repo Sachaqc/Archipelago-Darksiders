@@ -6,7 +6,7 @@ from BaseClasses import CollectionState, Item, ItemClassification, Location
 from Fill import fill_restrictive
 
 from .Locations import ABYSSAL_ARMOR_PIECES_LOCATIONS, ARTIFACTS_LOCATIONS, DUNGEON_ITEMS_LOCATIONS, HEARTS_LOCATIONS, KEYS_LOCATIONS, ARMAGEDDON_LOCATIONS, SCYTHE_LOCATIONS, MOVES_LOCATIONS
-from .Utils import data_path, json_read
+from .Utils import json_read
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -15,7 +15,7 @@ ITEM_NAME_TO_ID = {}
 
 item_name_groups = {}
 
-item_json = json_read(data_path("Items.json"))
+item_json = json_read("Items.json")
 
 for item_group, item_group_data in item_json.items():
     new_items = set()
@@ -30,7 +30,7 @@ class DSItem(Item):
 
 def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem:
 
-    item_json = json_read(data_path("Items.json"))
+    item_json = json_read("Items.json")
 
     match name:
         case name if name in item_json.get("Abilities"):
@@ -71,7 +71,7 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
 def create_all_items(world: DSWorld) -> None:
 
     shuffle_itempool: list[Item] = []
-    item_json = json_read(data_path("Items.json"))
+    item_json = json_read("Items.json")
 
     for item, item_data in item_json.get("Abilities").items():
         shuffle_itempool.append(world.create_item(item))
@@ -284,7 +284,7 @@ def create_all_items(world: DSWorld) -> None:
 
 def get_random_filler_item_name(world: DSWorld) -> str:
 
-    item_json = json_read(data_path("Items.json"))
+    item_json = json_read("Items.json")
     consumables = item_json.get("Consumables").keys()
     filler_consumables = [item for item in consumables if item != "Empty Vessel"]
     souls = item_json.get("Souls").keys()
@@ -294,7 +294,7 @@ def get_random_filler_item_name(world: DSWorld) -> str:
 
 def prefill_dungeon(world: DSWorld, filename) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
     available_locations: list[Location] = []
     items_to_place: list[Item] = []
 

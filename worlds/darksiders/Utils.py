@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-import json, os
+import orjson, pkgutil
+from NetUtils import decode
+import Utils
 
-def data_path(*args):
-    return os.path.join(os.path.dirname(__file__), 'data', *args)
-
-def json_read(filepath):
-
-    with open(filepath, 'r', encoding='utf-8') as file:
-        return json.load(file)
+def json_read(file_name: str):
+    data: bytes | None = pkgutil.get_data(__name__, "data/" + file_name)
+    assert data is not None, "Expected data to be bytes, got None"
+    return orjson.loads(data)

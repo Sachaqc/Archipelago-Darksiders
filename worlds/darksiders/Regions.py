@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Entrance, Region
 
-from .Utils import data_path, json_read
+from .Utils import json_read
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -56,7 +56,7 @@ def connect_regions(world: DSWorld) -> None:
 
 def create_entrances_from_json(world: DSWorld, filename) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
 
     for region in region_json:
         if 'entrances' in region:
@@ -69,7 +69,7 @@ def create_entrances_from_json(world: DSWorld, filename) -> None:
 
 def create_region_from_json(world: DSWorld, filename) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
 
     for region in region_json:
         new_region = Region(region["name"], world.player, world.multiworld)
@@ -77,7 +77,7 @@ def create_region_from_json(world: DSWorld, filename) -> None:
 
 def get_region_list_from_json(world: DSWorld, filename) -> list[Region]:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
     region_list = []
 
     for region in region_json:

@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Location
 
-from .Utils import data_path, json_read
+from .Utils import json_read
 
 if TYPE_CHECKING:
     from .World import DSWorld
 
-def create_location_table_from_json(filename) -> None:
+def create_location_table_from_json(filename: str) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
 
     for region in region_json:
         if 'locations' in region:
@@ -49,7 +49,7 @@ ARMAGEDDON_LOCATIONS = {}
 SCYTHE_LOCATIONS = {}
 MOVES_LOCATIONS = {}
 
-item_json = json_read(data_path("Items.json"))
+item_json = json_read("Items.json")
 
 ABYSSAL_ARMOR_PIECES_LOCATIONS = {location: item for location, item in LOCATION_NAME_TO_ITEM.items() if item in item_json.get("Abyssal Armor")}
 ARTIFACTS_LOCATIONS = {location: item for location, item in LOCATION_NAME_TO_ITEM.items() if item in item_json.get("Artifacts")}
@@ -98,13 +98,12 @@ def create_regular_locations(world: DSWorld) -> None:
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade third Heart of the Chosen"))
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade fourth Heart of the Chosen"))
 
-    #world.options.sword == "remove" or 
-    if world.options.sword == "progressive":
+    if world.options.sword == "remove" or world.options.sword == "progressive":
         world.get_region("Anvil's Ford").locations.remove(world.get_location("Anvil's Ford Reforge the Blade"))
 
 def create_locations_from_json(world: DSWorld, filename) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
 
     for region in region_json:
         if 'locations' in region:
@@ -114,7 +113,7 @@ def create_locations_from_json(world: DSWorld, filename) -> None:
 
 def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
     location_list = []
 
     for region in region_json:

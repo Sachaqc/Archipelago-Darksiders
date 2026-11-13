@@ -6,7 +6,7 @@ from BaseClasses import Location
 
 from .Items import DSItem
 from .Locations import DSLocation
-from .Utils import data_path, json_read
+from .Utils import json_read
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -33,7 +33,7 @@ def create_all_events(world: DSWorld) -> None:
 
 def create_events_from_json(world: DSWorld, filename) -> None:
 
-    region_json = json_read(data_path(filename))
+    region_json = json_read(filename)
 
     for region in region_json:
         if 'events' in region:
