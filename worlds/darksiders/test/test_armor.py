@@ -8,22 +8,10 @@ class TestArmorRemoved(DSTestBase):
         }
 
     def test_armor_pieces_absent(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
-
-        with self.subTest("Test that there are no Abyssal Armor Piece in the pool"):
-            self.assertEqual(len(armor_pieces), 0)
-
-        with self.subTest("Test that no Abyssal Armor Piece are placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor Piece"))
+        self.absent_item("Abyssal Armor Piece")
 
     def test_armor_absent(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is no Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 0)
-
-        with self.subTest("Test that no Abyssal Armor is placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor"))
+        self.absent_item("Abyssal Armor")
 
 class TestArmorVanilla(DSTestBase):
     options = {
@@ -32,29 +20,11 @@ class TestArmorVanilla(DSTestBase):
         }
 
     def test_armor_pieces_vanilla(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
+        self.vanilla_item("Abyssal Armor Piece", ABYSSAL_ARMOR_PIECES_LOCATIONS, count = 10)
 
-        with self.subTest("Test that there is no Abyssal Armor in the pool"):
-            self.assertEqual(len(armor_pieces), 0)
-
-        with self.subTest("Test that Abyssal Armor Pieces are placed at all their vanilla location"):
-            self.assertTrue(all(Location for Location in self.multiworld.get_locations() if Location.name in ABYSSAL_ARMOR_PIECES_LOCATIONS and Location.item and Location.item.name == "Abyssal Armor Piece"))
-    
-        with self.subTest("Test that no Abyssal Armor Piece is placed outside its vanilla location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.name not in ABYSSAL_ARMOR_PIECES_LOCATIONS and Location.item and Location.item.name == "Abyssal Armor Piece"))
-    
-        with self.subTest("Test that there are exactly 10 Abyssal Armor Pieces vanilla location"):
-            PIECES_LOCATIONS = {location: item for location, item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items() if item == "Abyssal Armor Piece"}
-            self.assertEqual(len(PIECES_LOCATIONS), 10)
-
-    def test_armor_vanilla(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is no Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 0)
-    
-        with self.subTest("Test that no Abyssal Armor is placed outside its vanilla location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.name not in ABYSSAL_ARMOR_PIECES_LOCATIONS and Location.item and Location.item.name == "Abyssal Armor"))
+    def test_armor_absent(self) -> None:
+        #This is game client only
+        self.absent_item("Abyssal Armor")
 
 class TestArmorOwnPieces(DSTestBase):
     options = {
@@ -63,22 +33,10 @@ class TestArmorOwnPieces(DSTestBase):
         }
 
     def test_armor_pieces_shuffled_own(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
-
-        with self.subTest("Test that the number of Abyssal Armor Piece in the pool is exactly as the Options expect"):
-            self.assertEqual(len(armor_pieces), 7)
-
-        with self.subTest("Test that all Abyssal Armor Piece are part of the local item pool"):
-            self.assertIn("Abyssal Armor Piece", self.multiworld.worlds[1].options.local_items)
+        self.shuffled_item_local("Abyssal Armor Piece", count = 7)
 
     def test_armor_absent(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is no Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 0)
-
-        with self.subTest("Test that no Abyssal Armor is placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor"))
+        self.absent_item("Abyssal Armor")
 
 class TestArmorOwnArmor(DSTestBase):
     options = {
@@ -87,22 +45,10 @@ class TestArmorOwnArmor(DSTestBase):
         }
 
     def test_armor_pieces_absent(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
+        self.absent_item("Abyssal Armor Piece")
 
-        with self.subTest("Test that there are no Abyssal Armor Piece in the pool"):
-            self.assertEqual(len(armor_pieces), 0)
-
-        with self.subTest("Test that no Abyssal Armor Piece are placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor Piece"))
-
-    def test_armor_absent(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is exactly 1 Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 1)
-
-        with self.subTest("Test that the Abyssal Armor is part of the local item pool"):
-            self.assertIn("Abyssal Armor", self.multiworld.worlds[1].options.local_items)
+    def test_armor_shuffled_own(self) -> None:
+        self.shuffled_item_local("Abyssal Armor")
 
 class TestArmorPieceSanity(DSTestBase):
     options = {
@@ -111,22 +57,10 @@ class TestArmorPieceSanity(DSTestBase):
         }
 
     def test_armor_pieces_shuffled_own(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
-
-        with self.subTest("Test that the number of Abyssal Armor Piece in the pool is exactly as the Options expect"):
-            self.assertEqual(len(armor_pieces), 7)
-
-        with self.subTest("Test that no Abyssal Armor Pieces are part of the local item pool"):
-            self.assertNotIn("Abyssal Armor Piece", self.multiworld.worlds[1].options.local_items)
+        self.shuffled_item("Abyssal Armor Piece", count = 7)
 
     def test_armor_absent(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is no Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 0)
-
-        with self.subTest("Test that no Abyssal Armor is placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor"))
+        self.absent_item("Abyssal Armor")
 
 class TestArmorArmorSanity(DSTestBase):
     options = {
@@ -135,19 +69,7 @@ class TestArmorArmorSanity(DSTestBase):
         }
 
     def test_armor_pieces_absent(self) -> None:
-        armor_pieces = self.get_items_by_name("Abyssal Armor Piece")
+        self.absent_item("Abyssal Armor Piece")
 
-        with self.subTest("Test that there are no Abyssal Armor Piece in the pool"):
-            self.assertEqual(len(armor_pieces), 0)
-
-        with self.subTest("Test that no Abyssal Armor Piece are placed at any location"):
-            self.assertFalse(any(Location for Location in self.multiworld.get_locations() if Location.item and Location.item.name == "Abyssal Armor Piece"))
-
-    def test_armor_absent(self) -> None:
-        armor = self.get_items_by_name("Abyssal Armor")
-
-        with self.subTest("Test that there is exactly 1 Abyssal Armor in the pool"):
-            self.assertEqual(len(armor), 1)
-
-        with self.subTest("Test that no Abyssal Armor is part of the local item pool"):
-            self.assertNotIn("Abyssal Armor", self.multiworld.worlds[1].options.local_items)
+    def test_armor_shuffled(self) -> None:
+        self.shuffled_item("Abyssal Armor")

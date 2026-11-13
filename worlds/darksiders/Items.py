@@ -103,7 +103,8 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item("Champion Artifact"))
             shuffle_itempool.append(world.create_item("Overlord Artifact"))
 
-    for _ in range(world.options.containers - 1):#War starts with a container
+    world.multiworld.push_precollected(world.create_item("Empty Vessel"))#War starts with a container
+    for _ in range(world.options.containers - 1):
         shuffle_itempool.append(world.create_item("Empty Vessel"))
 
     for item, item_data in item_json.get("Enhancements").items():
@@ -133,14 +134,18 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item("Heart of the Chosen"))
 
     match world.options.dungeon_items:
-        case 0 | 2 | 3 :
+        case "remove" | "region" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
-            #case 2 is skipped because the items are not part of the randomization
             #case 3 is skipped because the items are not part of the randomization
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+        case "start_with" :
+            for _ in range(item_json.get("Keys").get("Map").get("number")):
+                world.multiworld.push_precollected(world.create_item("Map"))
+            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
+                world.multiworld.push_precollected(world.create_item("Hoardseeker"))
         case _ :
             for _ in range(item_json.get("Keys").get("Map").get("number")):
                 shuffle_itempool.append(world.create_item("Map"))
