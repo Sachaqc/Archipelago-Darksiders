@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny, HasAnyCount
+from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny, HasAnyCount, OptionFilter
+
+from .Options import ShuffleKeys, ShuffleHearts, ShuffleSword
 
 if TYPE_CHECKING:
     from .World import DSWorld
@@ -95,23 +97,16 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     black_throne_central_to_boss = world.get_entrance("Black Throne Central Hub to Boss Room")
     world.set_rule(black_throne_central_to_boss, HasAll("East Beam", "North Beam", "Last Beam"))
     black_throne_north_to_guardian = world.get_entrance("Black Throne North Path to Guardian")
+    world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     black_throne_central_to_last = world.get_entrance("Black Throne SW Loop to Last Path")
-    if world.options.keys != "remove":
-        world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-        world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-    else:
-        world.set_rule(black_throne_north_to_guardian, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-        world.set_rule(black_throne_central_to_last, HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-        
-        
+    world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
  
     broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
     broken_stairs_to_sh = world.get_entrance("Broken Stair to Serpent Holes")
     world.set_rule(broken_stairs_to_sh, HAS_SERPENT_HOLES)
-    if world.options.keys != "remove":
-        broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
-        world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1))
+    broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
+    world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
 
     choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair")
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
@@ -155,14 +150,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     hollows_9_to_hollows_10 = world.get_entrance("Hollows Griever Tunnel to Flooded Canyon")
     world.set_rule(hollows_9_to_hollows_10, HAS_GAUNTLET)
     hollows_3_to_hollows_4 = world.get_entrance("Hollows Chained Cube Area to Hollows Machinery Room")
-    if world.options.keys != "remove":
-        hollows_2_to_hollows_3 = world.get_entrance("Hollows Maintenance Area to Chained Cube Area")
-        world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4))
-        world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5) & HAS_GAUNTLET)
-        hollows_5_to_hollows_9 = world.get_entrance("Hollows Train Wreck Area to Griever Tunnel")
-        world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6))
-    else:
-        world.set_rule(hollows_3_to_hollows_4, HAS_GAUNTLET)
+    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HAS_GAUNTLET)
+    hollows_2_to_hollows_3 = world.get_entrance("Hollows Maintenance Area to Chained Cube Area")
+    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    hollows_5_to_hollows_9 = world.get_entrance("Hollows Train Wreck Area to Griever Tunnel")
+    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
 
     iron_canopy_cocoon_to_past_spider = world.get_entrance("Iron Canopy Cocoon Area to Past the Spider Area")
     world.set_rule(iron_canopy_cocoon_to_past_spider, (CAN_SLOW_TIME_FROM_AFAR & HAS_GAUNTLET) | HAS_ABYSSAL_CHAIN)
@@ -182,13 +174,12 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     world.set_rule(iron_canopy_chained_cube_to_above, HAS_ABYSSAL_CHAIN)
     iron_canopy_broodmother_to_above = world.get_entrance("Iron Canopy Broodmother Area to above Chained Cube Area")
     world.set_rule(iron_canopy_broodmother_to_above, HAS_ABYSSAL_CHAIN & HAS_GAUNTLET & HAS_SHADOWFLIGHT)
-    if world.options.keys != "remove":
-        iron_canopy_trench_to_webbed_floor = world.get_entrance("Iron Canopy Infested Building to Webbed Floor Building")
-        world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7))
-        iron_canopy_above_to_top_floor = world.get_entrance("Iron Canopy above Chained Cube Area to Webbed Floor Building Top Floors")
-        world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8))
-        iron_canopy_top_floor_to_above = world.get_entrance("Iron Canopy Webbed Floor Building Top Floors to above Chained Cube Area")
-        world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8))
+    iron_canopy_trench_to_webbed_floor = world.get_entrance("Iron Canopy Infested Building to Webbed Floor Building")
+    world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    iron_canopy_above_to_top_floor = world.get_entrance("Iron Canopy above Chained Cube Area to Webbed Floor Building Top Floors")
+    world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    iron_canopy_top_floor_to_above = world.get_entrance("Iron Canopy Webbed Floor Building Top Floors to above Chained Cube Area")
+    world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
 
 
     leviathan_drift_to_upper = world.get_entrance("Leviathan's Drift to Upper Area")
@@ -205,10 +196,7 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     scalding_gallow_to_sh = world.get_entrance("Scalding Gallow to Serpent Holes")
     world.set_rule(scalding_gallow_to_sh, HAS_SERPENT_HOLES)
     scalding_gallow_to_black_throne = world.get_entrance("Scalding Gallow to Black Throne")
-    if world.options.hearts != "remove":
-        world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4))
-    else:
-        world.set_rule(scalding_gallow_to_black_throne, CanReachLocation("Scalding Gallow Phantom General Defeated"))
+    world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
 
     serpent_hole_to_ashlands = world.get_entrance("Serpent Holes to Ashlands")
     world.set_rule(serpent_hole_to_ashlands, HAS_SHADOWFLIGHT)
@@ -238,12 +226,9 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     twilight_cathedral_north_wing_to_boss_room = world.get_entrance("Twilight Cathedral North Wing to Boss Room")
     world.set_rule(twilight_cathedral_north_wing_to_boss_room, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
     twilight_cathedral_three_statues_to_south = world.get_entrance("Twilight Cathedral Three Statues to South Path")
-    if world.options.keys != "remove":
-        twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
-        world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2))
-        world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3))
-    else: 
-        world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE)
+    world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
+    world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
 
 def set_all_location_rules(world: DSWorld) -> None:
 
@@ -261,12 +246,9 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
     anvil_ford_wicked_k = world.get_location("Anvil's Ford Challenge Area Wicked K defeated")
     world.set_rule(anvil_ford_wicked_k, CanReachRegion("Hollows Clock Room"))
-    if world.options.sword == "shards":
+    if world.options.sword != "remove" and world.options.sword != "progressive":
         anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
-        world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = world.options.armageddon.value) & HAS_GAUNTLET)
-    if world.options.sword == "vanilla":
-        anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
-        world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7) & HAS_GAUNTLET)
+        world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7, options = [OptionFilter(ShuffleSword, "vanilla", "eq")], filtered_resolution = True) & Has("Armageddon Blade Shard", count = world.options.armageddon.value, options = [OptionFilter(ShuffleSword, "shards", "eq")], filtered_resolution = True) & HAS_GAUNTLET)
 
     ashlands_chest_by_goremaw = world.get_location("Ashlands Access Tunnel Chest by Goremaw")
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
@@ -465,13 +447,13 @@ def set_all_location_rules(world: DSWorld) -> None:
 
     if world.options.hearts != "remove":
         scalding_gallow_trade_first_heart = world.get_location("Scalding Gallow Trade first Heart of the Chosen")
-        world.set_rule(scalding_gallow_trade_first_heart, Has("Heart of the Chosen", count = 1))
+        world.set_rule(scalding_gallow_trade_first_heart, Has("Heart of the Chosen", count = 1, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
         scalding_gallow_trade_second_heart = world.get_location("Scalding Gallow Trade second Heart of the Chosen")
-        world.set_rule(scalding_gallow_trade_second_heart, Has("Heart of the Chosen", count = 2))
+        world.set_rule(scalding_gallow_trade_second_heart, Has("Heart of the Chosen", count = 2, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
         scalding_gallow_trade_third_heart = world.get_location("Scalding Gallow Trade third Heart of the Chosen")
-        world.set_rule(scalding_gallow_trade_third_heart, Has("Heart of the Chosen", count = 3))
+        world.set_rule(scalding_gallow_trade_third_heart, Has("Heart of the Chosen", count = 3, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
         scalding_gallow_trade_fourth_heart = world.get_location("Scalding Gallow Trade fourth Heart of the Chosen")
-        world.set_rule(scalding_gallow_trade_fourth_heart, Has("Heart of the Chosen", count = 4))
+        world.set_rule(scalding_gallow_trade_fourth_heart, Has("Heart of the Chosen", count = 4, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
     scalding_gallow_pillar_chest = world.get_location("Scalding Gallow Bombable Pillar Chest Near Library")
     world.set_rule(scalding_gallow_pillar_chest, CAN_DETONATE_BOMBS)
     #scalding_gallow_wrath_chest = world.get_location("Scalding Gallow Wrath Chest Above Vulgrim")
