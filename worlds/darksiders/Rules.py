@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.rules import CanReachLocation, CanReachRegion, Has, HasAll, HasAny, HasAnyCount, OptionFilter
+from rule_builder.rules import CanReachRegion, Has, HasAll, HasAny, HasAnyCount, OptionFilter
 
 from .Options import ShuffleKeys, ShuffleHearts, ShuffleSword
 

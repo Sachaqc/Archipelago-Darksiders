@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from BaseClasses import Location
-
 from .Items import DSItem
 from .Locations import DSLocation
 from .Utils import json_read
