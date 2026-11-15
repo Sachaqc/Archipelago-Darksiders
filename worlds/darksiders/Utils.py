@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 import orjson, pkgutil
-from NetUtils import decode
-import Utils
 
 def json_read(file_name: str):
     data: bytes | None = pkgutil.get_data(__name__, "data/" + file_name)
