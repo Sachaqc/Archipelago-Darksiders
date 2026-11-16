@@ -68,10 +68,6 @@ class DSWorld(World):
         Items.prefill_dungeon(self, "Iron Canopy.json")
         Items.prefill_dungeon(self, "Black Throne.json")
 
-        #for location in self.get_locations():
-        #    if location.item is not None:
-        #        print(f"Location : {location} has this item : {location.item}")
-
     def get_pre_fill_items(self) -> list[Item]:
 
         pre_fill_items = []
