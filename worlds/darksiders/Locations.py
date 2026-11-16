@@ -125,27 +125,27 @@ def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
 
 def place_vanilla_items(world: DSWorld) -> None:
 
-    if world.options.armor == 1:
+    if world.options.armor == "vanilla" :
         for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.artifacts == 1:
+    if world.options.artifacts == "vanilla" :
         for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.keys == 1:
+    if world.options.keys == "vanilla" :
         for location, vanilla_item in KEYS_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.hearts == 1:
+    if world.options.hearts == "vanilla" :
         for location, vanilla_item in HEARTS_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.dungeon_items == 1:
+    if world.options.dungeon_items == "vanilla" :
         for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
@@ -155,12 +155,12 @@ def place_vanilla_items(world: DSWorld) -> None:
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.scythe == 1:
+    if world.options.scythe == "vanilla" :
         for location, vanilla_item in SCYTHE_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)
 
-    if world.options.moves == 1:
+    if world.options.moves == "vanilla" :
         for location, vanilla_item in MOVES_LOCATIONS.items():
             new_item = world.create_item(vanilla_item)
             world.get_location(location).place_locked_item(new_item)

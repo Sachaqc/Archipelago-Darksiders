@@ -26,23 +26,23 @@ class DSWorld(World):
 
         options = self.options
 
-        if self.options.armor == 2 :
+        if self.options.armor == "own_pieces" :
             options.local_items.value.add("Abyssal Armor Piece")
-        elif self.options.armor == 3:
+        elif self.options.armor == "own_armor" :
             options.local_items.value.add("Abyssal Armor")
 
-        if self.options.artifacts == 2 :
+        if self.options.artifacts == "own" :
             options.local_items.value.add("Soldier Artifact")
             options.local_items.value.add("Champion Artifact")
             options.local_items.value.add("Overlord Artifact")
 
-        if self.options.keys == 3 :
+        if self.options.keys == "own" :
             options.local_items.value.add("Beholder Key")
 
-        if self.options.hearts == 2 :
+        if self.options.hearts == "own" :
             options.local_items.value.add("Heart of the Chosen")
 
-        if self.options.dungeon_items == 4 :
+        if self.options.dungeon_items == "own" :
             options.local_items.value.add("Hoardseeker")
             options.local_items.value.add("Map")
 
@@ -75,11 +75,11 @@ class DSWorld(World):
     def get_pre_fill_items(self) -> list[Item]:
 
         pre_fill_items = []
-        if self.options.keys == 2 :
+        if self.options.keys == "region" :
             for _, vanilla_item in Locations.KEYS_LOCATIONS.items():
                 pre_fill_items.append(self.create_item(vanilla_item))
 
-        if self.options.dungeon_items == 3:
+        if self.options.dungeon_items == "region" :
             for _, vanilla_item in Locations.DUNGEON_ITEMS_LOCATIONS.items():
                 pre_fill_items.append(self.create_item(vanilla_item))
         return pre_fill_items
