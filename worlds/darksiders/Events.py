@@ -33,8 +33,8 @@ def create_events_from_json(world: DSWorld, filename) -> None:
 
     region_json = json_read(filename)
 
-    for region in region_json:
-        if 'events' in region:
-            for event, event_data in region.get("events").items():
+    for region in region_json :
+        if 'events' in region :
+            for event, event_data in region.get("events").items() :
                 this_region = world.get_region(region_name = region.get("name"))
                 this_region.add_event(location_name = event, item_name = event_data.get("item"), location_type = DSLocation, item_type = DSItem)

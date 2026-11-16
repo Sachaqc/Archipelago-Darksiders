@@ -9,7 +9,7 @@ from .Options import ShuffleKeys, ShuffleHearts, ShuffleSword
 if TYPE_CHECKING:
     from .World import DSWorld
 
-CAN_BEAT_ABADDON = HasAll("Mask of Shadows", "Ruin") & HasAnyCount({"Armageddon Blade":1, "Progressive Sword":2})
+CAN_BEAT_ABADDON = HasAll("Mask of Shadows", "Ruin") & HasAnyCount({"Armageddon Blade" : 1, "Progressive Sword" : 2})
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Chaoseater", "Progressive Sword", "Tremor Gauntlet", "Progressive Scythe")
 CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
 CAN_HIT_CRYSTAL_BLADES = HasAny("Crossblade", "Mercy")
@@ -246,7 +246,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
     anvil_ford_wicked_k = world.get_location("Anvil's Ford Challenge Area Wicked K defeated")
     world.set_rule(anvil_ford_wicked_k, CanReachRegion("Hollows Clock Room"))
-    if world.options.sword != "remove" and world.options.sword != "progressive":
+    if world.options.sword == "vanilla" or world.options.sword == "shards" :
         anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
         world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7, options = [OptionFilter(ShuffleSword, "vanilla", "eq")], filtered_resolution = True) & Has("Armageddon Blade Shard", count = world.options.armageddon.value, options = [OptionFilter(ShuffleSword, "shards", "eq")], filtered_resolution = True) & HAS_GAUNTLET)
 

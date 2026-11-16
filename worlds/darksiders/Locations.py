@@ -13,9 +13,9 @@ def create_location_table_from_json(filename: str) -> None:
 
     region_json = json_read(filename)
 
-    for region in region_json:
-        if 'locations' in region:
-            for location, location_data in region.get("locations").items():
+    for region in region_json :
+        if 'locations' in region :
+            for location, location_data in region.get("locations").items() :
                 LOCATION_NAME_TO_ID[location] = location_data.get("ID")
                 LOCATION_NAME_TO_ITEM[location] = location_data.get("vanilla item")
 
@@ -92,21 +92,21 @@ def create_regular_locations(world: DSWorld) -> None:
     create_locations_from_json(world, "Serpent Holes.json")
     create_locations_from_json(world, "Twilight Cathedral.json")
 
-    if world.options.hearts == "remove":
+    if world.options.hearts == "remove" :
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade first Heart of the Chosen"))
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade second Heart of the Chosen"))
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade third Heart of the Chosen"))
         world.get_region("Scalding Gallow").locations.remove(world.get_location("Scalding Gallow Trade fourth Heart of the Chosen"))
 
-    if world.options.sword == "remove" or world.options.sword == "progressive":
+    if world.options.sword == "remove" or world.options.sword == "progressive" :
         world.get_region("Anvil's Ford").locations.remove(world.get_location("Anvil's Ford Reforge the Blade"))
 
 def create_locations_from_json(world: DSWorld, filename) -> None:
 
     region_json = json_read(filename)
 
-    for region in region_json:
-        if 'locations' in region:
+    for region in region_json :
+        if 'locations' in region :
             this_region = world.get_region(region_name = region.get("name"))
             region_locations = get_location_names_with_ids(location_names = region.get("locations"))
             this_region.add_locations(locations = region_locations, location_type = DSLocation)
@@ -116,51 +116,9 @@ def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
     region_json = json_read(filename)
     location_list = []
 
-    for region in region_json:
-        if "locations" in region:
-            for location, _ in region.get("locations").items():
+    for region in region_json :
+        if "locations" in region :
+            for location, _ in region.get("locations").items() :
                 location_list.append(world.get_location(location))
 
     return location_list
-
-def place_vanilla_items(world: DSWorld) -> None:
-
-    if world.options.armor == "vanilla" :
-        for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.artifacts == "vanilla" :
-        for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.keys == "vanilla" :
-        for location, vanilla_item in KEYS_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.hearts == "vanilla" :
-        for location, vanilla_item in HEARTS_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.dungeon_items == "vanilla" :
-        for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.sword == "vanilla":
-        for location, vanilla_item in ARMAGEDDON_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.scythe == "vanilla" :
-        for location, vanilla_item in SCYTHE_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)
-
-    if world.options.moves == "vanilla" :
-        for location, vanilla_item in MOVES_LOCATIONS.items():
-            new_item = world.create_item(vanilla_item)
-            world.get_location(location).place_locked_item(new_item)

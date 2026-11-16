@@ -17,9 +17,9 @@ item_name_groups = {}
 
 item_json = json_read("Items.json")
 
-for item_group, item_group_data in item_json.items():
+for item_group, item_group_data in item_json.items() :
     new_items = set()
-    for item, item_data in item_group_data.items():
+    for item, item_data in item_group_data.items() :
         ITEM_NAME_TO_ID[item] = item_data.get("ID")
         new_items.add(item)
     item_name_groups[item_group] = new_items
@@ -31,33 +31,33 @@ class DSItem(Item):
 def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem:
 
     match name:
-        case name if name in item_name_groups["Abilities"]:
+        case name if name in item_name_groups["Abilities"] :
             classification = ItemClassification.progression
-        case name if name in item_name_groups["Abyssal Armor"]:
+        case name if name in item_name_groups["Abyssal Armor"] :
             classification = ItemClassification.useful
-        case name if name in item_name_groups["Artifacts"]:
+        case name if name in item_name_groups["Artifacts"] :
             classification = ItemClassification.progression_skip_balancing
-        case name if name in item_name_groups["Enhancements"]:
+        case name if name in item_name_groups["Enhancements"] :
             classification = ItemClassification.useful
-        case name if name in ["Beholder Key", "Heart of the Chosen"]:
+        case name if name in ["Beholder Key", "Heart of the Chosen"] :
             classification = ItemClassification.progression
-        case name if name in item_name_groups["Keys"]:
+        case name if name in item_name_groups["Keys"] :
             classification = ItemClassification.useful
-        case name if name in item_name_groups["Gear"]:
+        case name if name in item_name_groups["Gear"] :
             classification = ItemClassification.progression
-        case name if name in item_name_groups["Health"]:
+        case name if name in item_name_groups["Health"] :
             classification = ItemClassification.useful
-        case name if name == "Chaoseater Level Up":
+        case name if name == "Chaoseater Level Up" :
             classification = ItemClassification.useful
-        case name if name in item_name_groups["Primary Weapons"]:
+        case name if name in item_name_groups["Primary Weapons"] :
             classification = ItemClassification.progression
-        case name if name == "Tremor Gauntlet":
+        case name if name == "Tremor Gauntlet" :
             classification = ItemClassification.progression
-        case name if name in item_name_groups["Secondary Weapons"]:
+        case name if name in item_name_groups["Secondary Weapons"] :
             classification = ItemClassification.useful
-        case name if name in item_name_groups["Wrath"]:
+        case name if name in item_name_groups["Wrath"] :
             classification = ItemClassification.useful
-        case name if name in item_name_groups["Wrath Abilities"]:
+        case name if name in item_name_groups["Wrath Abilities"] :
             classification = ItemClassification.useful
         case _: 
             classification = ItemClassification.filler
@@ -70,7 +70,7 @@ def create_all_items(world: DSWorld) -> None:
     for item, item_data in item_json.get("Abilities").items():
         shuffle_itempool.append(world.create_item(item))
 
-    match world.options.armor:
+    match world.options.armor :
         case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
@@ -83,7 +83,7 @@ def create_all_items(world: DSWorld) -> None:
         case "own_armor" | "armorsanity_armor" :
             shuffle_itempool.append(world.create_item("Abyssal Armor"))
 
-    match world.options.artifacts:
+    match world.options.artifacts :
         case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
@@ -98,176 +98,186 @@ def create_all_items(world: DSWorld) -> None:
             shuffle_itempool.append(world.create_item("Overlord Artifact"))
 
     world.multiworld.push_precollected(world.create_item("Empty Vessel"))#War starts with a container
-    for _ in range(world.options.containers - 1):
+    for _ in range(world.options.containers - 1) :
         shuffle_itempool.append(world.create_item("Empty Vessel"))
 
-    for item, item_data in item_json.get("Enhancements").items():
+    for item, item_data in item_json.get("Enhancements").items() :
         shuffle_itempool.append(world.create_item(item))
 
-    match world.options.keys:
+    match world.options.keys :
         case "remove" | "region" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             #case 2 is skipped because the items are not part of the randomization
             pass
         case "vanilla" :
-            for location, vanilla_item in KEYS_LOCATIONS.items():
+            for location, vanilla_item in KEYS_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
-            for _ in range(item_json.get("Keys").get("Beholder Key").get("number")):
+            for _ in range(item_json.get("Keys").get("Beholder Key").get("number")) :
                 shuffle_itempool.append(world.create_item("Beholder Key"))
 
-    match world.options.hearts:
+    match world.options.hearts :
         case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
         case "vanilla" :
-            for location, vanilla_item in HEARTS_LOCATIONS.items():
+            for location, vanilla_item in HEARTS_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
-            for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")):
+            for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")) :
                 shuffle_itempool.append(world.create_item("Heart of the Chosen"))
 
-    match world.options.dungeon_items:
+    match world.options.dungeon_items :
         case "remove" | "region" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             #case 3 is skipped because the items are not part of the randomization
             pass
         case "vanilla" :
-            for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items():
+            for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "start_with" :
-            for _ in range(item_json.get("Keys").get("Map").get("number")):
+            for _ in range(item_json.get("Keys").get("Map").get("number")) :
                 world.multiworld.push_precollected(world.create_item("Map"))
-            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
+            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")) :
                 world.multiworld.push_precollected(world.create_item("Hoardseeker"))
         case _ :
-            for _ in range(item_json.get("Keys").get("Map").get("number")):
+            for _ in range(item_json.get("Keys").get("Map").get("number")) :
                 shuffle_itempool.append(world.create_item("Map"))
-            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")):
+            for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")) :
                 shuffle_itempool.append(world.create_item("Hoardseeker"))
 
-    for item, item_data in item_json.get("Gear").items():
+    for item, item_data in item_json.get("Gear").items() :
         shuffle_itempool.append(world.create_item(item))
 
-
-    for _ in range(world.options.lifestones):
+    for _ in range(world.options.lifestones) :
         shuffle_itempool.append(world.create_item("Lifestone"))
 
-    if world.options.lifestones_shards > 0:
+    if world.options.lifestones_shards > 0 :
         starting_health = 1
-        for _ in range(10 - starting_health - world.options.lifestones):
-            for _ in range(world.options.lifestones_shards*2):
+        for _ in range(10 - starting_health - world.options.lifestones) :
+            for _ in range(world.options.lifestones_shards*2) :
                 shuffle_itempool.append(world.create_item('Lifestone Shard'))
 
-    match world.options.sword:
-        case "remove" :
-            if world.options.weapons != "start_with_sword":
-                shuffle_itempool.append(world.create_item('Armageddon Blade'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Armageddon Blade'))
-        case "vanilla" :
-            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items():
+    match world.options.weapons, world.options.sword :
+        case "start_with_sword", "remove" :
+            world.multiworld.push_precollected(world.create_item('Armageddon Blade'))
+        case _, "remove" :
+            shuffle_itempool.append(world.create_item('Armageddon Blade'))
+        case "start_with_sword", "vanilla" :
+            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-            if world.options.weapons != 1:
-                shuffle_itempool.append(world.create_item('Chaoseater'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Chaoseater'))
+            world.multiworld.push_precollected(world.create_item('Chaoseater'))
             for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
-        case "shards" :
+        case _, "vanilla" :
+            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items() :
+                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
+            shuffle_itempool.append(world.create_item('Chaoseater'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+        case "start_with_sword", "shards" :
             world.get_location("Anvil's Ford Reforge the Blade").place_locked_item(world.create_item("Armageddon Blade"))
-            for _ in range(world.options.armageddon):
+            for _ in range(world.options.armageddon) :
                 shuffle_itempool.append(world.create_item('Armageddon Blade Shard'))
-            if world.options.weapons != 1:
-                shuffle_itempool.append(world.create_item('Chaoseater'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Chaoseater'))
-            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
+            world.multiworld.push_precollected(world.create_item('Chaoseater'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
-        case "progressive" :
+        case _, "shards" :
+            world.get_location("Anvil's Ford Reforge the Blade").place_locked_item(world.create_item("Armageddon Blade"))
+            for _ in range(world.options.armageddon) :
+                shuffle_itempool.append(world.create_item('Armageddon Blade Shard'))
+            shuffle_itempool.append(world.create_item('Chaoseater'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+        case "start_with_sword", "progressive" :
+            world.multiworld.push_precollected(world.create_item('Progressive Sword'))
             shuffle_itempool.append(world.create_item('Progressive Sword'))
-            if world.options.weapons != 1:
-                shuffle_itempool.append(world.create_item('Progressive Sword'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Progressive Sword'))
-            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
+        case _, "progressive" :
+            shuffle_itempool.append(world.create_item('Progressive Sword'))
+            shuffle_itempool.append(world.create_item('Progressive Sword'))
+            for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
 
-    match world.options.scythe:
-        case "remove":
-            if world.options.weapons == "start_with_scythe":
-                world.multiworld.push_precollected(world.create_item('Hellraiser'))
-                for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
-                    shuffle_itempool.append(world.create_item("Scythe Level Up"))
-        case "vanilla":
+    match world.options.weapons, world.options.scythe :
+        case "start_with_scythe", "remove" :
+            world.multiworld.push_precollected(world.create_item('Hellraiser'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
+        case _, "vanilla" :
             for location, vanilla_item in SCYTHE_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
-        case "hellraiser":
-            if world.options.weapons != "start_with_scythe":
-                shuffle_itempool.append(world.create_item('Hellraiser'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Hellraiser'))
-            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+        case "start_with_scythe", "hellraiser" :
+            world.multiworld.push_precollected(world.create_item('Hellraiser'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
-        case "harvester":
-            if world.options.weapons != 2:
-                shuffle_itempool.append(world.create_item('Harvester'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Harvester'))
-            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+        case _, "hellraiser" :
+            shuffle_itempool.append(world.create_item('Hellraiser'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
-        case "progressive":
+        case "start_with_scythe", "harvester" :
+            world.multiworld.push_precollected(world.create_item('Harvester'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
+        case _, "harvester" :
+            shuffle_itempool.append(world.create_item('Harvester'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
+        case "start_with_scythe", "progressive" :
             shuffle_itempool.append(world.create_item('Progressive Scythe'))
-            if world.options.weapons != 2:
-                shuffle_itempool.append(world.create_item('Progressive Scythe'))
-            else:
-                world.multiworld.push_precollected(world.create_item('Progressive Scythe'))
-            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")):
+            world.multiworld.push_precollected(world.create_item('Progressive Scythe'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
+                shuffle_itempool.append(world.create_item("Scythe Level Up"))
+        case _, "progressive" :
+            shuffle_itempool.append(world.create_item('Progressive Scythe'))
+            shuffle_itempool.append(world.create_item('Progressive Scythe'))
+            for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
 
-    if world.options.weapons != 3:
-        shuffle_itempool.append(world.create_item("Tremor Gauntlet"))
-    else:
+    if world.options.weapons == "start_with_gauntlet" :
         world.multiworld.push_precollected(world.create_item('Tremor Gauntlet'))
+    else:
+        shuffle_itempool.append(world.create_item("Tremor Gauntlet"))
 
-    for _ in range(item_json.get("Secondary Weapons").get("Gauntlet Level Up").get("number")):
+    for _ in range(item_json.get("Secondary Weapons").get("Gauntlet Level Up").get("number")) :
         shuffle_itempool.append(world.create_item("Gauntlet Level Up"))
 
-    match world.options.moves:
+    match world.options.moves :
         case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
         case "vanilla" :
-            for location, vanilla_item in MOVES_LOCATIONS.items():
+            for location, vanilla_item in MOVES_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
-            for item, item_data in item_json.get("Gauntlet Combos").items():
-                for _ in range(item_data.get("number")):
+            for item, item_data in item_json.get("Gauntlet Combos").items() :
+                for _ in range(item_data.get("number")) :
                     shuffle_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Scythe Combos").items():
-                for _ in range(item_data.get("number")):
+            for item, item_data in item_json.get("Scythe Combos").items() :
+                for _ in range(item_data.get("number")) :
                     shuffle_itempool.append(world.create_item(item))
-            for item, item_data in item_json.get("Sword Combos").items():
-                for _ in range(item_data.get("number")):
+            for item, item_data in item_json.get("Sword Combos").items() :
+                for _ in range(item_data.get("number")) :
                     shuffle_itempool.append(world.create_item(item))
 
-    for item, item_data in item_json.get("Upgrades").items():
-        for _ in range(item_data.get("number")):
+    for item, item_data in item_json.get("Upgrades").items() :
+        for _ in range(item_data.get("number")) :
             shuffle_itempool.append(world.create_item(item))
 
-    for _ in range(world.options.wrath_cores):
+    for _ in range(world.options.wrath_cores) :
         shuffle_itempool.append(world.create_item('Wrath Core'))
 
-    if world.options.wrath_cores > 0:
+    if world.options.wrath_cores > 0 :
         starting_wrath = 2
-        for _ in range(10 - starting_wrath - world.options.wrath_cores):
-            for _ in range(world.options.wrath_cores*2):
+        for _ in range(10 - starting_wrath - world.options.wrath_cores) :
+            for _ in range(world.options.wrath_cores*2) :
                 shuffle_itempool.append(world.create_item('Wrath Shard'))
 
-    for item, item_data in item_json.get("Wrath Abilities").items():
-        for _ in range(item_data.get("number")):
+    for item, item_data in item_json.get("Wrath Abilities").items() :
+        for _ in range(item_data.get("number")) :
             shuffle_itempool.append(world.create_item(item))
     
     number_of_items = len(shuffle_itempool) + len(world.get_pre_fill_items())
@@ -291,26 +301,26 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
     available_locations: list[Location] = []
     items_to_place: list[Item] = []
 
-    for region in region_json:
-        if "locations" in region:
-            for location, location_data in region.get("locations").items():
-                if world.get_location(location).item is None:
+    for region in region_json :
+        if "locations" in region :
+            for location, location_data in region.get("locations").items() :
+                if world.get_location(location).item is None :
                     available_locations.append(world.get_location(location))
-                if world.options.keys == 2:
-                    if location_data.get("vanilla item") == "Beholder Key":
+                if world.options.keys == "region" :
+                    if location_data.get("vanilla item") == "Beholder Key" :
                         items_to_place.append(world.create_item("Beholder Key"))
-                if world.options.dungeon_items == 3:
-                    if location_data.get("vanilla item") == "Map":
+                if world.options.dungeon_items == "region" :
+                    if location_data.get("vanilla item") == "Map" :
                         items_to_place.append(world.create_item("Map"))
-                    if location_data.get("vanilla item") == "Hoardseeker":
+                    if location_data.get("vanilla item") == "Hoardseeker" :
                         items_to_place.append(world.create_item("Hoardseeker"))
 
     all_state_base = CollectionState(world.multiworld)
-    for item in world.multiworld.itempool:
+    for item in world.multiworld.itempool :
         all_state_base.collect(item, prevent_sweep = True)
     all_state_base.sweep_for_advancements()
 
     world.random.shuffle(available_locations)
 
-    if items_to_place:
+    if items_to_place :
         fill_restrictive(multiworld = world.multiworld, base_state = all_state_base, locations = available_locations, item_pool = items_to_place, single_player_placement = True, lock = True, allow_excluded = True)
