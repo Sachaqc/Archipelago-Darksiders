@@ -30,39 +30,34 @@ class DSItem(Item):
 
 def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem:
 
-    item_json = json_read("Items.json")
-
     match name:
-        case name if name in item_json.get("Abilities"):
+        case name if name in item_name_groups["Abilities"]:
             classification = ItemClassification.progression
-        case name if name in item_json.get("Abyssal Armor"):
+        case name if name in item_name_groups["Abyssal Armor"]:
             classification = ItemClassification.useful
-        case name if name in item_json.get("Artifacts"):
+        case name if name in item_name_groups["Artifacts"]:
+            classification = ItemClassification.progression_skip_balancing
+        case name if name in item_name_groups["Enhancements"]:
+            classification = ItemClassification.useful
+        case name if name in ["Beholder Key", "Heart of the Chosen"]:
             classification = ItemClassification.progression
-        case name if name in item_json.get("Enhancements"):
+        case name if name in item_name_groups["Keys"]:
             classification = ItemClassification.useful
-        case name if name in item_json.get("Keys"):
-            if name == "Beholder Key" or name == "Heart of the Chosen":
-                classification = ItemClassification.progression
-            else:
-                classification = ItemClassification.useful
-        case name if name in item_json.get("Gear"):
+        case name if name in item_name_groups["Gear"]:
             classification = ItemClassification.progression
-        case name if name in item_json.get("Health"):
+        case name if name in item_name_groups["Health"]:
             classification = ItemClassification.useful
-        case name if name in item_json.get("Primary Weapons"):
-            if name == "Chaoseater Level Up":
-                classification = ItemClassification.useful
-            else:
-                classification = ItemClassification.progression
-        case name if name in item_json.get("Secondary Weapons"):
-            if name == "Tremor Gauntlet":
-                classification = ItemClassification.progression
-            else:
-                classification = ItemClassification.useful
-        case name if name in item_json.get("Wrath"):
+        case name if name == "Chaoseater Level Up":
             classification = ItemClassification.useful
-        case name if name in item_json.get("Wrath Abilities"):
+        case name if name in item_name_groups["Primary Weapons"]:
+            classification = ItemClassification.progression
+        case name if name == "Tremor Gauntlet":
+            classification = ItemClassification.progression
+        case name if name in item_name_groups["Secondary Weapons"]:
+            classification = ItemClassification.useful
+        case name if name in item_name_groups["Wrath"]:
+            classification = ItemClassification.useful
+        case name if name in item_name_groups["Wrath Abilities"]:
             classification = ItemClassification.useful
         case _: 
             classification = ItemClassification.filler
@@ -71,29 +66,28 @@ def create_item_with_correct_classification(world: DSWorld, name: str) -> DSItem
 def create_all_items(world: DSWorld) -> None:
 
     shuffle_itempool: list[Item] = []
-    item_json = json_read("Items.json")
 
     for item, item_data in item_json.get("Abilities").items():
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.armor:
-        case 0 :
+        case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case 2 | 4 :
+        case "own_pieces" | "armorsanity_pieces" :
             for _ in range(world.options.armor_pieces):
                 shuffle_itempool.append(world.create_item("Abyssal Armor Piece"))
-        case 3 | 5 :
+        case "own_armor" | "armorsanity_armor" :
             shuffle_itempool.append(world.create_item("Abyssal Armor"))
 
     match world.options.artifacts:
-        case 0 :
+        case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
@@ -111,11 +105,11 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.keys:
-        case 0 | 2 :
+        case "remove" | "region" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             #case 2 is skipped because the items are not part of the randomization
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in KEYS_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
@@ -123,10 +117,10 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item("Beholder Key"))
 
     match world.options.hearts:
-        case 0 :
+        case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in HEARTS_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case _ :
@@ -242,13 +236,13 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item("Gauntlet Level Up"))
 
     match world.options.moves:
-        case 0 :
+        case "remove" :
             #case 0 is skipped because the items aren't obtainable with the currently selected options
             pass
-        case 1 :
+        case "vanilla" :
             for location, vanilla_item in MOVES_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case 2 :
+        case _ :
             for item, item_data in item_json.get("Gauntlet Combos").items():
                 for _ in range(item_data.get("number")):
                     shuffle_itempool.append(world.create_item(item))
@@ -284,7 +278,6 @@ def create_all_items(world: DSWorld) -> None:
 
 def get_random_filler_item_name(world: DSWorld) -> str:
 
-    item_json = json_read("Items.json")
     consumables = item_json.get("Consumables").keys()
     filler_consumables = [item for item in consumables if item != "Empty Vessel"]
     souls = item_json.get("Souls").keys()
