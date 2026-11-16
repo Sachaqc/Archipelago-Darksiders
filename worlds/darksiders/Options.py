@@ -277,7 +277,6 @@ class ShuffleMoves(Choice):
     Determines the Combos and Combat Moves available in the game and how they are shuffled.
     Remove : War is left with it's starting moves for each weapon. The location of all the moves are added to the pool.
     Vanilla : The Combos and Combat Moves can be bought from Vulgrim.
-    Own : The Combos and Combat Moves are shuffled into their own world. Their location are added to the pool.
     Combosanity : The Combos and Combat Moves are shuffled anywhere in the multiworld. Their location are added to the pool.
     """
 
