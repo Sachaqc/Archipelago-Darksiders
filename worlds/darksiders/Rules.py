@@ -485,5 +485,3 @@ def set_all_location_rules(world: DSWorld) -> None:
 def set_completion_condition(world: DSWorld) -> None:
 
     world.set_completion_rule(Has("Victory"))
-
-#TODO class DSWorld(CachedRuleBuilderWorld): ...
