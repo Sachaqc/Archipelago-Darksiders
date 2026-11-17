@@ -18,10 +18,10 @@ class TestDungeonItemsVanilla(DSTestBase):
         }
 
     def test_hoardseeker_vanilla(self) -> None:
-        self.vanilla_item("Hoardseeker", DUNGEON_ITEMS_LOCATIONS, count = 4)
+        self.vanilla_item("Hoardseeker", DUNGEON_ITEMS_LOCATIONS)
 
     def test_map_vanilla(self) -> None:
-        self.vanilla_item("Map", DUNGEON_ITEMS_LOCATIONS, count = 4)
+        self.vanilla_item("Map", DUNGEON_ITEMS_LOCATIONS)
 
 class TestDungeonItemsStart(DSTestBase):
     options = {

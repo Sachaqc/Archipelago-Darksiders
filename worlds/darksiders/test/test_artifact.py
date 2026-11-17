@@ -25,10 +25,10 @@ class TestArtifactVanilla(DSTestBase):
         }
 
     def test_soldier_artifacts_vanilla(self) -> None:
-        self.vanilla_item("Soldier Artifact", ARTIFACTS_LOCATIONS, count = 20)
+        self.vanilla_item("Soldier Artifact", ARTIFACTS_LOCATIONS)
 
     def test_champion_artifacts_vanilla(self) -> None:
-        self.vanilla_item("Champion Artifact", ARTIFACTS_LOCATIONS, count = 6)
+        self.vanilla_item("Champion Artifact", ARTIFACTS_LOCATIONS)
 
     def test_overlord_artifact_vanilla(self) -> None:
         self.vanilla_item("Overlord Artifact", ARTIFACTS_LOCATIONS)

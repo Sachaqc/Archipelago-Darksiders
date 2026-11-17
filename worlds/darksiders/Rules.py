@@ -9,7 +9,7 @@ from .Options import ShuffleKeys, ShuffleHearts, ShuffleSword
 if TYPE_CHECKING:
     from .World import DSWorld
 
-CAN_BEAT_ABADDON = HasAll("Mask of Shadows", "Ruin") & HasAnyCount({"Armageddon Blade" : 1, "Progressive Sword" : 2})
+CAN_BEAT_ABADDON = HasAll("Mask of Shadows", "Ruin") & HasAnyCount({"Armageddon Blade" : 1, "Progressive Sword" : 2}, options = [OptionFilter(ShuffleSword, "vanilla", "ne")], filtered_resolution = True)
 CAN_BREAK_CHAINED_CUBES = HasAny("Armageddon Blade", "Chaoseater", "Progressive Sword", "Tremor Gauntlet", "Progressive Scythe")
 CAN_DETONATE_BOMBS = HasAny("Crossblade", "Mercy")
 CAN_HIT_CRYSTAL_BLADES = HasAny("Crossblade", "Mercy")
@@ -97,16 +97,16 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     black_throne_central_to_boss = world.get_entrance("Black Throne Central Hub to Boss Room")
     world.set_rule(black_throne_central_to_boss, HasAll("East Beam", "North Beam", "Last Beam"))
     black_throne_north_to_guardian = world.get_entrance("Black Throne North Path to Guardian")
-    world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    world.set_rule(black_throne_north_to_guardian, Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True) & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     black_throne_central_to_last = world.get_entrance("Black Throne SW Loop to Last Path")
-    world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    world.set_rule(black_throne_central_to_last, Has("Beholder Key", count = 10, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True) & HasAll("East Beam", "North Beam") & HAS_ABYSSAL_CHAIN & HAS_CROSSBLADE & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
  
     broken_stairs_1_to_2 = world.get_entrance("Broken Stair 1 to 2")
     world.set_rule(broken_stairs_1_to_2, HAS_SHADOWFLIGHT)
     broken_stairs_to_sh = world.get_entrance("Broken Stair to Serpent Holes")
     world.set_rule(broken_stairs_to_sh, HAS_SERPENT_HOLES)
     broken_stairs_2_to_twilight_cathedral = world.get_entrance("Broken Stair 2 to Twilight Cathedral")
-    world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(broken_stairs_2_to_twilight_cathedral, Has("Beholder Key", count = 1, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
 
     choking_grounds_to_broken_stairs_access_tunnel = world.get_entrance("Choking Grounds to Broken Stair")
     world.set_rule(choking_grounds_to_broken_stairs_access_tunnel, HAS_EARTHCALLER)
@@ -150,11 +150,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     hollows_9_to_hollows_10 = world.get_entrance("Hollows Griever Tunnel to Flooded Canyon")
     world.set_rule(hollows_9_to_hollows_10, HAS_GAUNTLET)
     hollows_3_to_hollows_4 = world.get_entrance("Hollows Chained Cube Area to Hollows Machinery Room")
-    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True) & HAS_GAUNTLET)
+    world.set_rule(hollows_3_to_hollows_4, Has("Beholder Key", count = 5, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True) & HAS_GAUNTLET)
     hollows_2_to_hollows_3 = world.get_entrance("Hollows Maintenance Area to Chained Cube Area")
-    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(hollows_2_to_hollows_3, Has("Beholder Key", count = 4, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
     hollows_5_to_hollows_9 = world.get_entrance("Hollows Train Wreck Area to Griever Tunnel")
-    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(hollows_5_to_hollows_9, Has("Beholder Key", count = 6, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
 
     iron_canopy_cocoon_to_past_spider = world.get_entrance("Iron Canopy Cocoon Area to Past the Spider Area")
     world.set_rule(iron_canopy_cocoon_to_past_spider, (CAN_SLOW_TIME_FROM_AFAR & HAS_GAUNTLET) | HAS_ABYSSAL_CHAIN)
@@ -175,11 +175,11 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     iron_canopy_broodmother_to_above = world.get_entrance("Iron Canopy Broodmother Area to above Chained Cube Area")
     world.set_rule(iron_canopy_broodmother_to_above, HAS_ABYSSAL_CHAIN & HAS_GAUNTLET & HAS_SHADOWFLIGHT)
     iron_canopy_trench_to_webbed_floor = world.get_entrance("Iron Canopy Infested Building to Webbed Floor Building")
-    world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(iron_canopy_trench_to_webbed_floor, Has("Beholder Key", count = 7, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
     iron_canopy_above_to_top_floor = world.get_entrance("Iron Canopy above Chained Cube Area to Webbed Floor Building Top Floors")
-    world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(iron_canopy_above_to_top_floor, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
     iron_canopy_top_floor_to_above = world.get_entrance("Iron Canopy Webbed Floor Building Top Floors to above Chained Cube Area")
-    world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(iron_canopy_top_floor_to_above, Has("Beholder Key", count = 8, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
 
 
     leviathan_drift_to_upper = world.get_entrance("Leviathan's Drift to Upper Area")
@@ -196,7 +196,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     scalding_gallow_to_sh = world.get_entrance("Scalding Gallow to Serpent Holes")
     world.set_rule(scalding_gallow_to_sh, HAS_SERPENT_HOLES)
     scalding_gallow_to_black_throne = world.get_entrance("Scalding Gallow to Black Throne")
-    world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
+    if world.options.hearts != "vanilla" :
+        world.set_rule(scalding_gallow_to_black_throne, Has("Heart of the Chosen", count = 4, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
 
     serpent_hole_to_ashlands = world.get_entrance("Serpent Holes to Ashlands")
     world.set_rule(serpent_hole_to_ashlands, HAS_SHADOWFLIGHT)
@@ -226,9 +227,9 @@ def set_all_entrance_rules(world: DSWorld) -> None:
     twilight_cathedral_north_wing_to_boss_room = world.get_entrance("Twilight Cathedral North Wing to Boss Room")
     world.set_rule(twilight_cathedral_north_wing_to_boss_room, HasAll("West Crystal Blade", "North Crystal Blade", "South Crystal Blade"))
     twilight_cathedral_three_statues_to_south = world.get_entrance("Twilight Cathedral Three Statues to South Path")
-    world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(twilight_cathedral_three_statues_to_south, HAS_CROSSBLADE & Has("Beholder Key", count = 3, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
     twilight_cathedral_SW_to_conscript = world.get_entrance("Twilight Cathedral Entrance to Twilight Cathedral Conscript Room")
-    world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2, options = [OptionFilter(ShuffleKeys, "remove", "ne")], filtered_resolution = True))
+    world.set_rule(twilight_cathedral_SW_to_conscript, Has("Beholder Key", count = 2, options = [OptionFilter(ShuffleKeys, "region", "eq")], filtered_resolution = True) & Has("Beholder Key", count = 9, options = [OptionFilter(ShuffleKeys, "keysanity", "eq")], filtered_resolution = True))
 
 def set_all_location_rules(world: DSWorld) -> None:
 
@@ -246,7 +247,7 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(anvil_ford_access_tunnel_chest_ice, HAS_GAUNTLET)
     anvil_ford_wicked_k = world.get_location("Anvil's Ford Challenge Area Wicked K defeated")
     world.set_rule(anvil_ford_wicked_k, CanReachRegion("Hollows Clock Room"))
-    if world.options.sword == "vanilla" or world.options.sword == "shards" :
+    if world.options.sword == "shards" :
         anvil_ford_reforge = world.get_location("Anvil's Ford Reforge the Blade")
         world.set_rule(anvil_ford_reforge, Has("Armageddon Blade Shard", count = 7, options = [OptionFilter(ShuffleSword, "vanilla", "eq")], filtered_resolution = True) & Has("Armageddon Blade Shard", count = world.options.armageddon.value, options = [OptionFilter(ShuffleSword, "shards", "eq")], filtered_resolution = True) & HAS_GAUNTLET)
 
@@ -254,39 +255,29 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(ashlands_chest_by_goremaw, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
     ashlands_chest_north_by_goremaw = world.get_location("Ashlands Access Tunnel Chest by Goremaw")
     world.set_rule(ashlands_chest_north_by_goremaw, HAS_ABYSSAL_CHAIN | HAS_SHADOWFLIGHT)
-    ashlands_chest_drill_artifact = world.get_location("Ashlands West Tower under North Drill Artifact")
-    world.set_rule(ashlands_chest_drill_artifact, CAN_SLOW_TIME_FROM_AFAR & HAS_ABYSSAL_CHAIN)
     ashlands_elevated_chest = world.get_location("Ashlands Goremaw Tunnel Elevated Platform Chest")
     world.set_rule(ashlands_elevated_chest, HAS_SHADOWFLIGHT)
     ashlands_east_chest = world.get_location("Ashlands Goremaw Tunnel East Chest")
     world.set_rule(ashlands_east_chest, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT)
     ashlands_north_chest_blocked_by_ice = world.get_location("Ashlands North Chest Blocked by Ice")
     world.set_rule(ashlands_north_chest_blocked_by_ice, HAS_GAUNTLET & HAS_RUIN)
-    ashlands_blade_shard = world.get_location("Ashlands Armageddon Blade Shard")
-    world.set_rule(ashlands_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
     ashlands_chest_blocked_by_ice = world.get_location("Ashlands Access Tunnel Chest Blocked by Ice")
     world.set_rule(ashlands_chest_blocked_by_ice, HAS_GAUNTLET)
     ashlands_chest_above_goremaws = world.get_location("Ashlands Access Tunnel Above Three Goremaws Chest")
     world.set_rule(ashlands_chest_above_goremaws, HAS_ABYSSAL_CHAIN)
+    if world.options.artifacts != "vanilla" :
+        ashlands_chest_drill_artifact = world.get_location("Ashlands West Tower under North Drill Artifact")
+        world.set_rule(ashlands_chest_drill_artifact, CAN_SLOW_TIME_FROM_AFAR & HAS_ABYSSAL_CHAIN)
+    if world.options.sword != "vanilla" :
+        ashlands_blade_shard = world.get_location("Ashlands Armageddon Blade Shard")
+        world.set_rule(ashlands_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
 
-    black_throne_map_chest = world.get_location("Black Throne East Path above Entrance Chest")
-    world.set_rule(black_throne_map_chest, HAS_CROSSBLADE & HAS_VOIDWALKER)
-    black_throne_map_chest = world.get_location("Black Throne East Path above Entrance Chest")
-    world.set_rule(black_throne_map_chest, HAS_SHADOWFLIGHT)
     black_throne_north_central = world.get_location("Black Throne North Path Central Platform Chest")
     world.set_rule(black_throne_north_central, Has("North Beam") & HAS_ABYSSAL_CHAIN)
     black_throne_north_alcove = world.get_location("Black Throne North Guardian Alcove Chest")
     world.set_rule(black_throne_north_alcove, HAS_VOIDWALKER)
-    black_throne_north_ice_alcove = world.get_location("Black Throne North Guardian Alcove Blocked by Ice Chest")
-    world.set_rule(black_throne_north_ice_alcove, HAS_GAUNTLET)
     black_throne_north_high = world.get_location("Black Throne North Guardian Alcove Chest")
     world.set_rule(black_throne_north_high, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-    black_throne_last_artifact = world.get_location("Black Throne SW Loop Artifact")
-    world.set_rule(black_throne_last_artifact, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
-    black_throne_last_high = world.get_location("Black Throne SW Loop High above Chest")
-    world.set_rule(black_throne_last_high, HAS_ABYSSAL_CHAIN & HAS_VOIDWALKER)
-    black_throne_west_alcove = world.get_location("Black Throne SW Loop West Alcove Chest")
-    world.set_rule(black_throne_west_alcove, HAS_ABYSSAL_CHAIN & HAS_VOIDWALKER)
     black_throne_last_guardian = world.get_location("Black Throne Last Beam")
     world.set_rule(black_throne_last_guardian, HAS_CHRONOMANCER & HAS_CROSSBLADE & HAS_VOIDWALKER)
     black_throne_west_gauntlet = world.get_location("Black Throne Last Path West Chest above Gauntlet")
@@ -295,13 +286,29 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(black_throne_south_gauntlet, HAS_SHADOWFLIGHT)
     black_throne_straga_item_reward = world.get_location("Straga defeated Item reward")
     world.set_rule(black_throne_straga_item_reward, HAS_VOIDWALKER)
-
-    broken_stairs_artifact = world.get_location("Broken Stair Artifact")
-    world.set_rule(broken_stairs_artifact, HAS_SHADOWFLIGHT)
-    broken_stairs_blade_shard = world.get_location("Broken Stair Armageddon Blade Shard")
-    world.set_rule(broken_stairs_blade_shard, HAS_MASK)
-    broken_stairs_access_tunnel_artifact = world.get_location("Broken Stair Artifact Blocked by Ice")
-    world.set_rule(broken_stairs_access_tunnel_artifact, HAS_GAUNTLET)
+    if world.options.armor != "vanilla" :
+        black_throne_west_alcove = world.get_location("Black Throne SW Loop West Alcove Chest")
+        world.set_rule(black_throne_west_alcove, HAS_ABYSSAL_CHAIN & HAS_VOIDWALKER)
+    if world.options.artifacts != "vanilla" :
+        black_throne_last_artifact = world.get_location("Black Throne SW Loop Artifact")
+        world.set_rule(black_throne_last_artifact, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    if world.options.dungeon_items != "vanilla" :
+        black_throne_map_chest = world.get_location("Black Throne East Path above Entrance Chest")
+        world.set_rule(black_throne_map_chest, HAS_CROSSBLADE & HAS_VOIDWALKER)
+        black_throne_north_ice_alcove = world.get_location("Black Throne North Guardian Alcove Blocked by Ice Chest")
+        world.set_rule(black_throne_north_ice_alcove, HAS_GAUNTLET)
+    if world.options.keys != "vanilla" :
+        black_throne_last_high = world.get_location("Black Throne SW Loop High above Chest")
+        world.set_rule(black_throne_last_high, HAS_ABYSSAL_CHAIN & HAS_VOIDWALKER)
+        
+    if world.options.artifacts != "vanilla" :
+        broken_stairs_artifact = world.get_location("Broken Stair Artifact")
+        world.set_rule(broken_stairs_artifact, HAS_SHADOWFLIGHT)
+        broken_stairs_access_tunnel_artifact = world.get_location("Broken Stair Artifact Blocked by Ice")
+        world.set_rule(broken_stairs_access_tunnel_artifact, HAS_GAUNTLET)
+    if world.options.sword != "vanilla" :
+        broken_stairs_blade_shard = world.get_location("Broken Stair Armageddon Blade Shard")
+        world.set_rule(broken_stairs_blade_shard, HAS_MASK)
 
     choking_grounds_aerial_brawl = world.get_location("Choking Grounds Aerial Brawl Reward")
     world.set_rule(choking_grounds_aerial_brawl, HAS_MASK)
@@ -311,8 +318,6 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(choking_grounds_gory_end, HAS_MASK)
     choking_grounds_venomous = world.get_location("Choking Grounds Venomous Reward")
     world.set_rule(choking_grounds_venomous, HAS_MASK)
-    choking_grounds_blade_shard = world.get_location("Choking Grounds North Building Armageddon Blade Shard")
-    world.set_rule(choking_grounds_blade_shard, HAS_CROSSBLADE & HAS_GAUNTLET & HAS_MASK & HAS_SHADOWFLIGHT)
     choking_grounds_iced_chest = world.get_location("Choking Grounds Top Floor of North Building Chest Blocked by Ice")
     world.set_rule(choking_grounds_iced_chest, HAS_GAUNTLET & HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
     choking_grounds_chest_in_North_Building = world.get_location("Choking Grounds Top Floor of North Building Chest")
@@ -321,15 +326,17 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(choking_grounds_rare_chest_in_North_Building, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_CROSSBLADE)
     choking_grounds_abyssal_chest = world.get_location("Choking Grounds Access Tunnel Chest behind Portals")
     world.set_rule(choking_grounds_abyssal_chest, HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
+    if world.options.sword != "vanilla" :
+        choking_grounds_blade_shard = world.get_location("Choking Grounds North Building Armageddon Blade Shard")
+        world.set_rule(choking_grounds_blade_shard, HAS_CROSSBLADE & HAS_GAUNTLET & HAS_MASK & HAS_SHADOWFLIGHT)
 
     crossroads_chest_blocked_by_ice = world.get_location("Crossroads Chest Blocked by Ice")
     world.set_rule(crossroads_chest_blocked_by_ice, HAS_GAUNTLET)
-    crossroads_blade_shard = world.get_location("Crossroads Armageddon Blade Shard")
-    world.set_rule(crossroads_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK & HAS_SHADOWFLIGHT)
-    #crossroads_artifact_in_water = world.get_location("Crossroads Subway Station Artifact")
-    #world.set_rule(crossroads_artifact_in_water, CAN_SWIM)
     crossroads_wicked_k = world.get_location("Crossroads Wicked K defeated")
     world.set_rule(crossroads_wicked_k, CanReachRegion("Drowned Pass"))
+    if world.options.sword != "vanilla" :
+        crossroads_blade_shard = world.get_location("Crossroads Armageddon Blade Shard")
+        world.set_rule(crossroads_blade_shard, HAS_ABYSSAL_CHAIN & HAS_MASK & HAS_SHADOWFLIGHT)
 
     drowned_pass_world_of_pain = world.get_location("Drowned Pass World of Pain Reward")
     world.set_rule(drowned_pass_world_of_pain, HAS_MASK)
@@ -339,24 +346,27 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(drowned_pass_wrath_of_war, HAS_MASK)
     drowned_pass_counter_killer = world.get_location("Drowned Pass Counter Killer Reward")
     world.set_rule(drowned_pass_counter_killer, HAS_BLOCK_COUNTER & HAS_MASK)
-    drowned_pass_armageddon_shard = world.get_location("Drowned Pass Armageddon Blade Shard")
-    world.set_rule(drowned_pass_armageddon_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
     drowned_pass_chest_blocked_by_ice = world.get_location("Drowned Pass Chest Blocked by Ice")
     world.set_rule(drowned_pass_chest_blocked_by_ice, HAS_GAUNTLET)
-    drowned_pass_access_tunnel_artifact = world.get_location("Drowned Pass Access Tunnel Artifact")
-    world.set_rule(drowned_pass_access_tunnel_artifact, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT)
     drowned_pass_access_tunnel_first_chest = world.get_location("Drowned Pass Access Tunnel First Chest")
     world.set_rule(drowned_pass_access_tunnel_first_chest, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT & HAS_VOIDWALKER)
     drowned_pass_wicked_k = world.get_location("Drowned Pass Wicked K defeated")
     world.set_rule(drowned_pass_wicked_k, CanReachRegion("Anvil's Ford"))
-
-    if world.options.sword == "vanilla" or world.options.sword == "shards":
-        dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
-        world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard", count = 1))
-    dry_road_blade_shard = world.get_location("Dry Road Armageddon Blade Shard")
-    world.set_rule(dry_road_blade_shard, HAS_MASK)
+    if world.options.artifacts != "vanilla" :
+        drowned_pass_access_tunnel_artifact = world.get_location("Drowned Pass Access Tunnel Artifact")
+        world.set_rule(drowned_pass_access_tunnel_artifact, HAS_ABYSSAL_CHAIN & HAS_SHADOWFLIGHT)
+    if world.options.sword != "vanilla" :
+        drowned_pass_armageddon_shard = world.get_location("Drowned Pass Armageddon Blade Shard")
+        world.set_rule(drowned_pass_armageddon_shard, HAS_ABYSSAL_CHAIN & HAS_MASK)
+    
     dry_road_voidwalker_chest = world.get_location("Dry Road Access Tunnel above Gate Chest")
     world.set_rule(dry_road_voidwalker_chest, HAS_VOIDWALKER)
+    if world.options.sword != "vanilla" :
+        dry_road_blade_shard = world.get_location("Dry Road Armageddon Blade Shard")
+        world.set_rule(dry_road_blade_shard, HAS_MASK)
+    if world.options.sword == "shards":
+        dry_road_uriel_defeated = world.get_location("Dry Road Uriel defeated")
+        world.set_rule(dry_road_uriel_defeated, Has("Armageddon Blade Shard", count = 1))
 
     eden_spawn_chest = world.get_location("Eden Spawn Chest")
     world.set_rule(eden_spawn_chest, HAS_MASK)
@@ -367,22 +377,26 @@ def set_all_location_rules(world: DSWorld) -> None:
     tree_behind_head = world.get_location("Tree of Knowledge Eastmost Chest")
     world.set_rule(tree_behind_head, HAS_MASK)
 
-    hollows_griever_defeated = world.get_location("Griever defeated")
-    world.set_rule(hollows_griever_defeated, HAS_GAUNTLET)
     hollows_griever_item_reward = world.get_location("Griever Item Reward")
     world.set_rule(hollows_griever_item_reward, HAS_GAUNTLET)
-    hollows_across_flooded_room_chest = world.get_location("Hollows across the Flooded Hole Chest")
-    world.set_rule(hollows_across_flooded_room_chest, HAS_GAUNTLET)
-    hollows_across_flooded_room_chest = world.get_location("Hollows Machinery Room South of Platforms Artifact")
-    world.set_rule(hollows_across_flooded_room_chest, HAS_SHADOWFLIGHT)
-    hollows_locust_room_artifact = world.get_location("Hollows Pipe Leading North Artifact")
-    world.set_rule(hollows_locust_room_artifact, Has("Stalactite Fell"))
-    hollows_flooded_room_chest = world.get_location("Hollows Flooded Room Chest")
-    world.set_rule(hollows_flooded_room_chest, Has("Stalactite Fell"))
     hollows_chest_under_goremaw = world.get_location("Hollows Chest under Goremaw")
     world.set_rule(hollows_chest_under_goremaw, CAN_HURT_GOREMAW)
     hollows_stalactite = world.get_location("Hollows Stalactite Fell")
     world.set_rule(hollows_stalactite, HAS_CROSSBLADE & HAS_GAUNTLET)
+    if world.options.artifacts != "vanilla" :
+        hollows_locust_room_artifact = world.get_location("Hollows Pipe Leading North Artifact")
+        world.set_rule(hollows_locust_room_artifact, Has("Stalactite Fell"))
+        hollows_across_flooded_room_chest = world.get_location("Hollows Machinery Room South of Platforms Artifact")
+        world.set_rule(hollows_across_flooded_room_chest, HAS_SHADOWFLIGHT)
+    if world.options.dungeon_items != "vanilla" :
+        hollows_across_flooded_room_chest = world.get_location("Hollows across the Flooded Hole Chest")
+        world.set_rule(hollows_across_flooded_room_chest, HAS_GAUNTLET)
+    if world.options.hearts != "vanilla" :
+        hollows_griever_defeated = world.get_location("Griever defeated")
+        world.set_rule(hollows_griever_defeated, HAS_GAUNTLET)
+    if world.options.keys != "vanilla" :
+        hollows_flooded_room_chest = world.get_location("Hollows Flooded Room Chest")
+        world.set_rule(hollows_flooded_room_chest, Has("Stalactite Fell"))
 
     iron_canopy_left = world.get_location("Iron Canopy Cocoon Area South Platform Left Chest")
     world.set_rule(iron_canopy_left, HAS_ABYSSAL_CHAIN)
@@ -392,24 +406,16 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(iron_canopy_right, HAS_ABYSSAL_CHAIN)
     iron_canopy_roof_chest = world.get_location("Iron Canopy Past the Spider Area Up on the Roof Chest")
     world.set_rule(iron_canopy_roof_chest, HAS_ABYSSAL_CHAIN)
-    iron_canopy_top_floor = world.get_location("Iron Canopy Infested Building Top Floor Chest")
-    world.set_rule(iron_canopy_top_floor, CAN_SLOW_TIME_FROM_AFAR)
     iron_canopy_balcony = world.get_location("Iron Canopy Webbed Floor Building West Balcony Chest")
     world.set_rule(iron_canopy_balcony, CAN_HURT_GOREMAW)
-    iron_canopy_south_left = world.get_location("Iron Canopy West Building Left Chest")
-    world.set_rule(iron_canopy_south_left, HAS_ABYSSAL_CHAIN)
     iron_canopy_south_middle = world.get_location("Iron Canopy West Building Middle Chest")
     world.set_rule(iron_canopy_south_middle, HAS_ABYSSAL_CHAIN)
     iron_canopy_south_right = world.get_location("Iron Canopy West Building Right Chest")
     world.set_rule(iron_canopy_south_right, HAS_ABYSSAL_CHAIN)
-    iron_canopy_top_floor_artifact = world.get_location("Iron Canopy Webbed Floor Building Top Floors Artifact")
-    world.set_rule(iron_canopy_top_floor_artifact, HAS_ABYSSAL_CHAIN)
     iron_canopy_north_collapsible = world.get_location("Iron Canopy Chained Cube Area past Collapsible Floor Chest")
     world.set_rule(iron_canopy_north_collapsible, HAS_ABYSSAL_CHAIN)
     iron_canopy_chained_cube = world.get_location("Iron Canopy Chained Cube")
     world.set_rule(iron_canopy_chained_cube, CAN_BREAK_CHAINED_CUBES)
-    iron_canopy_beyond_goremaw_1 = world.get_location("Iron Canopy above Chained Cube Area First Chest beyond Goremaws")
-    world.set_rule(iron_canopy_beyond_goremaw_1, HAS_ABYSSAL_CHAIN & HAS_CHRONOMANCER & HAS_SHADOWFLIGHT)
     iron_canopy_beyond_goremaw_2 = world.get_location("Iron Canopy above Chained Cube Area Second Chest beyond Goremaws")
     world.set_rule(iron_canopy_beyond_goremaw_2, HAS_ABYSSAL_CHAIN & HAS_CHRONOMANCER & HAS_SHADOWFLIGHT)
     iron_canopy_above_gauntlet = world.get_location("Iron Canopy Broodmother Area Above Gauntlet Chest")
@@ -426,26 +432,46 @@ def set_all_location_rules(world: DSWorld) -> None:
     world.set_rule(iron_canopy_broodmother, HAS_ABYSSAL_CHAIN & HAS_GAUNTLET)
     iron_canopy_silitha_chest = world.get_location("Iron Canopy Silitha's Loom Chest before Boss Fight")
     world.set_rule(iron_canopy_silitha_chest, HAS_ABYSSAL_CHAIN)
-    iron_canopy_silitha_defeated = world.get_location("Silitha defeated")
-    world.set_rule(iron_canopy_silitha_defeated, HAS_ABYSSAL_CHAIN)
     iron_canopy_silitha_item_reward = world.get_location("Silitha Item Reward")
     world.set_rule(iron_canopy_silitha_item_reward, HAS_ABYSSAL_CHAIN)
+    if world.options.artifacts != "vanilla" :
+        iron_canopy_top_floor_artifact = world.get_location("Iron Canopy Webbed Floor Building Top Floors Artifact")
+        world.set_rule(iron_canopy_top_floor_artifact, HAS_ABYSSAL_CHAIN)
+    if world.options.dungeon_items != "vanilla" :
+        iron_canopy_south_left = world.get_location("Iron Canopy West Building Left Chest")
+        world.set_rule(iron_canopy_south_left, HAS_ABYSSAL_CHAIN)
+    if world.options.hearts != "vanilla" :
+        iron_canopy_silitha_defeated = world.get_location("Silitha defeated")
+        world.set_rule(iron_canopy_silitha_defeated, HAS_ABYSSAL_CHAIN)
+    if world.options.keys != "vanilla" :
+        iron_canopy_top_floor = world.get_location("Iron Canopy Infested Building Top Floor Chest")
+        world.set_rule(iron_canopy_top_floor, CAN_SLOW_TIME_FROM_AFAR)
+        iron_canopy_beyond_goremaw_1 = world.get_location("Iron Canopy above Chained Cube Area First Chest beyond Goremaws")
+        world.set_rule(iron_canopy_beyond_goremaw_1, HAS_ABYSSAL_CHAIN & HAS_CHRONOMANCER & HAS_SHADOWFLIGHT)
 
     leviathan_drift_abaddon_defeated = world.get_location("Abaddon the Destroyer defeated")
     world.set_rule(leviathan_drift_abaddon_defeated, CAN_BEAT_ABADDON)
-    leviathan_drift_stygian_defeated = world.get_location("Stygian defeated")
-    world.set_rule(leviathan_drift_stygian_defeated, HAS_MERCY & HAS_RUIN)
     leviathan_drift_stygian_item_reward = world.get_location("Stygian Item Reward")
     world.set_rule(leviathan_drift_stygian_item_reward, HAS_MERCY & HAS_RUIN)
-    leviathan_drift_blade_shard = world.get_location("Leviathan's Drift Armageddon Blade Shard")
-    world.set_rule(leviathan_drift_blade_shard, HAS_MASK)
+    if world.options.sword != "vanilla" :
+        leviathan_drift_blade_shard = world.get_location("Leviathan's Drift Armageddon Blade Shard")
+        world.set_rule(leviathan_drift_blade_shard, HAS_MASK)
+    if world.options.hearts != "vanilla" :
+        leviathan_drift_stygian_defeated = world.get_location("Stygian defeated")
+        world.set_rule(leviathan_drift_stygian_defeated, HAS_MERCY & HAS_RUIN)
 
-    library_artifact = world.get_location("Library West Side Artifact")
-    world.set_rule(library_artifact, HAS_SHADOWFLIGHT)
     library_north_chest = world.get_location("Library North Chest after Hook")
     world.set_rule(library_north_chest, HAS_ABYSSAL_CHAIN)
+    if world.options.artifacts != "vanilla" :
+        library_artifact = world.get_location("Library West Side Artifact")
+        world.set_rule(library_artifact, HAS_SHADOWFLIGHT)
 
-    if world.options.hearts != "remove":
+    if world.options.armor != "vanilla" :
+        scalding_gallow_pillar_chest = world.get_location("Scalding Gallow Bombable Pillar Chest Near Library")
+        world.set_rule(scalding_gallow_pillar_chest, CAN_DETONATE_BOMBS)
+        scalding_gallow_under_central_platform = world.get_location("Scalding Gallow Under Central Platform Chest")
+        world.set_rule(scalding_gallow_under_central_platform, HAS_SHADOWFLIGHT)
+    if world.options.hearts == "heartsanity" :
         scalding_gallow_trade_first_heart = world.get_location("Scalding Gallow Trade first Heart of the Chosen")
         world.set_rule(scalding_gallow_trade_first_heart, Has("Heart of the Chosen", count = 1, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
         scalding_gallow_trade_second_heart = world.get_location("Scalding Gallow Trade second Heart of the Chosen")
@@ -454,32 +480,30 @@ def set_all_location_rules(world: DSWorld) -> None:
         world.set_rule(scalding_gallow_trade_third_heart, Has("Heart of the Chosen", count = 3, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
         scalding_gallow_trade_fourth_heart = world.get_location("Scalding Gallow Trade fourth Heart of the Chosen")
         world.set_rule(scalding_gallow_trade_fourth_heart, Has("Heart of the Chosen", count = 4, options = [OptionFilter(ShuffleHearts, "remove", "ne")], filtered_resolution = True))
-    scalding_gallow_pillar_chest = world.get_location("Scalding Gallow Bombable Pillar Chest Near Library")
-    world.set_rule(scalding_gallow_pillar_chest, CAN_DETONATE_BOMBS)
-    #scalding_gallow_wrath_chest = world.get_location("Scalding Gallow Wrath Chest Above Vulgrim")
-    #world.set_rule(scalding_gallow_wrath_chest, CAN_CLIMB_DEMONIC_GROWTH)
-    scalding_gallow_under_central_platform = world.get_location("Scalding Gallow Under Central Platform Chest")
-    world.set_rule(scalding_gallow_under_central_platform, HAS_SHADOWFLIGHT) #CAN_DOUBLE_JUMP
 
     serpent_hole_to_anvil_ford_chest = world.get_location("Serpent Hole to Anvil's Ford Chest")
     world.set_rule(serpent_hole_to_anvil_ford_chest, HAS_ABYSSAL_CHAIN)
     serpent_hole_to_twilight_cathedral_chest = world.get_location("Serpent Hole to Twilight Cathedral Chest")
     world.set_rule(serpent_hole_to_twilight_cathedral_chest, HAS_SHADOWFLIGHT & HAS_MASK)
     
-    twilight_cathedral_tiamat_defeated = world.get_location("Tiamat defeated")
-    world.set_rule(twilight_cathedral_tiamat_defeated, HAS_CROSSBLADE)
     twilight_cathedral_tiamat_item_reward = world.get_location("Tiamat Item Reward")
     world.set_rule(twilight_cathedral_tiamat_item_reward, HAS_CROSSBLADE)
-    twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral North Wing Artifact")
-    world.set_rule(twilight_cathedral_champion_artifact_north_wing, HAS_SHADOWFLIGHT)
     twilight_cathedral_chained_cube = world.get_location("Twilight Cathedral Chained Cube")
     world.set_rule(twilight_cathedral_chained_cube, CAN_BREAK_CHAINED_CUBES)
-    twilight_cathedral_SW_beholder = world.get_location("Twilight Cathedral South Wing Beholder Key Chest")
-    world.set_rule(twilight_cathedral_SW_beholder, HAS_CROSSBLADE)
     twilight_cathedral_chest_blocked_by_ice = world.get_location("Twilight Cathedral Exterior Chest Blocked by Ice")
     world.set_rule(twilight_cathedral_chest_blocked_by_ice, HAS_GAUNTLET)
-    twilight_cathedral_hoardseeker = world.get_location("Twilight Cathedral South Wing Hoardseeker Chest")
-    world.set_rule(twilight_cathedral_hoardseeker, CAN_DETONATE_BOMBS & HAS_SHADOWFLIGHT)
+    if world.options.artifacts != "vanilla" :
+        twilight_cathedral_champion_artifact_north_wing = world.get_location("Twilight Cathedral North Wing Artifact")
+        world.set_rule(twilight_cathedral_champion_artifact_north_wing, HAS_SHADOWFLIGHT)
+    if world.options.dungeon_items != "vanilla" :
+        twilight_cathedral_hoardseeker = world.get_location("Twilight Cathedral South Wing Hoardseeker Chest")
+        world.set_rule(twilight_cathedral_hoardseeker, CAN_DETONATE_BOMBS & HAS_SHADOWFLIGHT)
+    if world.options.keys != "vanilla" :
+        twilight_cathedral_SW_beholder = world.get_location("Twilight Cathedral South Wing Beholder Key Chest")
+        world.set_rule(twilight_cathedral_SW_beholder, HAS_CROSSBLADE)
+    if world.options.hearts != "vanilla" :
+        twilight_cathedral_tiamat_defeated = world.get_location("Tiamat defeated")
+        world.set_rule(twilight_cathedral_tiamat_defeated, HAS_CROSSBLADE)
 
     if world.options.artifacts == "artisanity" :
         vulgrim_shop_soldier_artifact = world.get_location("Trade All Soldier Artifacts")

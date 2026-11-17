@@ -20,7 +20,7 @@ class TestArmorVanilla(DSTestBase):
         }
 
     def test_armor_pieces_vanilla(self) -> None:
-        self.vanilla_item("Abyssal Armor Piece", ABYSSAL_ARMOR_PIECES_LOCATIONS, count = 10)
+        self.vanilla_item("Abyssal Armor Piece", ABYSSAL_ARMOR_PIECES_LOCATIONS)
 
     def test_armor_absent(self) -> None:
         #This is game client only

@@ -5,7 +5,6 @@ from typing import TYPE_CHECKING
 from BaseClasses import CollectionState, Item, ItemClassification, Location
 from Fill import fill_restrictive
 
-from .Locations import ABYSSAL_ARMOR_PIECES_LOCATIONS, ARTIFACTS_LOCATIONS, DUNGEON_ITEMS_LOCATIONS, HEARTS_LOCATIONS, KEYS_LOCATIONS, ARMAGEDDON_LOCATIONS, SCYTHE_LOCATIONS, MOVES_LOCATIONS
 from .Utils import json_read
 
 if TYPE_CHECKING:
@@ -71,31 +70,23 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.armor :
-        case "remove" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case "vanilla" :
-            for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "armorsanity_pieces" :
             for _ in range(world.options.armor_pieces):
                 shuffle_itempool.append(world.create_item("Abyssal Armor Piece"))
         case "armorsanity_armor" :
             shuffle_itempool.append(world.create_item("Abyssal Armor"))
+        case _ :
+            pass
 
     match world.options.artifacts :
-        case "remove" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case "vanilla" :
-            for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "artisanity" :
             for _ in range(world.options.soldier_artifacts):
                 shuffle_itempool.append(world.create_item("Soldier Artifact"))
             for _ in range(world.options.champion_artifacts):
                 shuffle_itempool.append(world.create_item("Champion Artifact"))
             shuffle_itempool.append(world.create_item("Overlord Artifact"))
+        case _ :
+            pass
 
     world.multiworld.push_precollected(world.create_item("Empty Vessel"))#War starts with a container
     for _ in range(world.options.containers - 1) :
@@ -105,36 +96,20 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item(item))
 
     match world.options.keys :
-        case "remove" | "region" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            #case 2 is skipped because the items are not part of the randomization
-            pass
-        case "vanilla" :
-            for location, vanilla_item in KEYS_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "keysanity" :
             for _ in range(item_json.get("Keys").get("Beholder Key").get("number")) :
                 shuffle_itempool.append(world.create_item("Beholder Key"))
+        case _ :
+            pass
 
     match world.options.hearts :
-        case "remove" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case "vanilla" :
-            for location, vanilla_item in HEARTS_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "heartsanity" :
             for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")) :
                 shuffle_itempool.append(world.create_item("Heart of the Chosen"))
+        case _ :
+            pass
 
     match world.options.dungeon_items :
-        case "remove" | "region" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            #case 3 is skipped because the items are not part of the randomization
-            pass
-        case "vanilla" :
-            for location, vanilla_item in DUNGEON_ITEMS_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "start_with" :
             for _ in range(item_json.get("Keys").get("Map").get("number")) :
                 world.multiworld.push_precollected(world.create_item("Map"))
@@ -145,6 +120,8 @@ def create_all_items(world: DSWorld) -> None:
                 shuffle_itempool.append(world.create_item("Map"))
             for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")) :
                 shuffle_itempool.append(world.create_item("Hoardseeker"))
+        case _ :
+            pass
 
     for item, item_data in item_json.get("Gear").items() :
         shuffle_itempool.append(world.create_item(item))
@@ -164,14 +141,10 @@ def create_all_items(world: DSWorld) -> None:
         case _, "remove" :
             shuffle_itempool.append(world.create_item('Armageddon Blade'))
         case "start_with_sword", "vanilla" :
-            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
             world.multiworld.push_precollected(world.create_item('Chaoseater'))
             for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")):
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
         case _, "vanilla" :
-            for location, vanilla_item in ARMAGEDDON_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
             shuffle_itempool.append(world.create_item('Chaoseater'))
             for _ in range(item_json.get("Primary Weapons").get("Chaoseater Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Chaoseater Level Up"))
@@ -206,8 +179,6 @@ def create_all_items(world: DSWorld) -> None:
             for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case _, "vanilla" :
-            for location, vanilla_item in SCYTHE_LOCATIONS.items():
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
             for _ in range(item_json.get("Secondary Weapons").get("Scythe Level Up").get("number")) :
                 shuffle_itempool.append(world.create_item("Scythe Level Up"))
         case "start_with_scythe", "hellraiser" :
@@ -246,12 +217,6 @@ def create_all_items(world: DSWorld) -> None:
         shuffle_itempool.append(world.create_item("Gauntlet Level Up"))
 
     match world.options.moves :
-        case "remove" :
-            #case 0 is skipped because the items aren't obtainable with the currently selected options
-            pass
-        case "vanilla" :
-            for location, vanilla_item in MOVES_LOCATIONS.items() :
-                world.get_location(location).place_locked_item(world.create_item(vanilla_item))
         case "combosanity" :
             for item, item_data in item_json.get("Gauntlet Combos").items() :
                 for _ in range(item_data.get("number")) :
@@ -262,6 +227,8 @@ def create_all_items(world: DSWorld) -> None:
             for item, item_data in item_json.get("Sword Combos").items() :
                 for _ in range(item_data.get("number")) :
                     shuffle_itempool.append(world.create_item(item))
+        case _ :
+            pass
 
     for item, item_data in item_json.get("Upgrades").items() :
         for _ in range(item_data.get("number")) :
@@ -305,15 +272,16 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
     for region in region_json :
         if "locations" in region :
             for location, location_data in region.get("locations").items() :
-                if world.get_location(location).item is None :
-                    available_locations.append(world.get_location(location))
-                if world.options.keys == "region" :
-                    if location_data.get("vanilla item") == "Beholder Key" :
+                if location in (region_location.name for region_location in list(world.get_region(region.get("name")).get_locations())) :
+                    if world.get_location(location).item is None :
+                        available_locations.append(world.get_location(location))
+                if world.options.keys == 2:
+                    if location_data.get("vanilla item") == "Beholder Key":
                         items_to_place.append(world.create_item("Beholder Key"))
-                if world.options.dungeon_items == "region" :
-                    if location_data.get("vanilla item") == "Map" :
+                if world.options.dungeon_items == 3:
+                    if location_data.get("vanilla item") == "Map":
                         items_to_place.append(world.create_item("Map"))
-                    if location_data.get("vanilla item") == "Hoardseeker" :
+                    if location_data.get("vanilla item") == "Hoardseeker":
                         items_to_place.append(world.create_item("Hoardseeker"))
 
     all_state_base = CollectionState(world.multiworld)
@@ -325,3 +293,4 @@ def prefill_dungeon(world: DSWorld, filename) -> None:
 
     if items_to_place :
         fill_restrictive(multiworld = world.multiworld, base_state = all_state_base, locations = available_locations, item_pool = items_to_place, single_player_placement = True, lock = True, allow_excluded = True)
+    del available_locations

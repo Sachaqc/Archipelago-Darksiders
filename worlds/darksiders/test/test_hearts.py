@@ -15,7 +15,7 @@ class TestHeartsVanilla(DSTestBase):
         }
 
     def test_hearts_vanilla(self) -> None:
-        self.vanilla_item("Heart of the Chosen", HEARTS_LOCATIONS, count = 4)
+        self.vanilla_item("Heart of the Chosen", HEARTS_LOCATIONS)
 
 class TestHeartsSanity(DSTestBase):
     options = {

@@ -56,7 +56,7 @@ class TestStartSwordVanilla(DSTestBase):
         self.vanilla_item("Armageddon Blade", ARMAGEDDON_LOCATIONS)
 
     def test_armageddon_shards_vanilla(self) -> None:
-        self.vanilla_item("Armageddon Blade Shard", ARMAGEDDON_LOCATIONS, count = 7)
+        self.vanilla_item("Armageddon Blade Shard", ARMAGEDDON_LOCATIONS)
 
     def test_chaoseater_vanilla(self) -> None:
         self.start_with_item("Chaoseater")
@@ -78,7 +78,7 @@ class TestSwordVanilla(DSTestBase):
         self.vanilla_item("Armageddon Blade", ARMAGEDDON_LOCATIONS)
 
     def test_armageddon_shards_vanilla(self) -> None:
-        self.vanilla_item("Armageddon Blade Shard", ARMAGEDDON_LOCATIONS, count = 7)
+        self.vanilla_item("Armageddon Blade Shard", ARMAGEDDON_LOCATIONS)
 
     def test_chaoseater_shuffled(self) -> None:
         self.shuffled_item("Chaoseater")

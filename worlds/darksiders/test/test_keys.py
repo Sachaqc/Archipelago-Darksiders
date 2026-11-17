@@ -15,7 +15,7 @@ class TestKeysVanilla(DSTestBase):
         }
 
     def test_key_vanilla(self) -> None:
-        self.vanilla_item("Beholder Key", KEYS_LOCATIONS, count = 10)
+        self.vanilla_item("Beholder Key", KEYS_LOCATIONS)
 
 class TestKeysRegion(DSTestBase):
     options = {

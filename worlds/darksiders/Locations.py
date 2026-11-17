@@ -103,13 +103,34 @@ def create_regular_locations(world: DSWorld) -> None:
 
 def create_locations_from_json(world: DSWorld, filename) -> None:
 
+    vanilla_locations = []
+
+    if world.options.armor == "vanilla" :
+        vanilla_locations.extend(ABYSSAL_ARMOR_PIECES_LOCATIONS)
+    if world.options.artifacts == "vanilla" :
+        vanilla_locations.extend(ARTIFACTS_LOCATIONS)
+    if world.options.dungeon_items == "vanilla" :
+        vanilla_locations.extend(DUNGEON_ITEMS_LOCATIONS)
+    if world.options.hearts == "vanilla" :
+        vanilla_locations.extend(HEARTS_LOCATIONS)
+    if world.options.keys == "vanilla" :
+        vanilla_locations.extend(KEYS_LOCATIONS)
+    if world.options.sword == "vanilla" :
+        vanilla_locations.extend(ARMAGEDDON_LOCATIONS)
+    if world.options.scythe == "vanilla" :
+        vanilla_locations.extend(SCYTHE_LOCATIONS)
+    if world.options.moves == "vanilla" :
+        vanilla_locations.extend(MOVES_LOCATIONS)
+
     region_json = json_read(filename)
 
     for region in region_json :
         if 'locations' in region :
             this_region = world.get_region(region_name = region.get("name"))
-            region_locations = get_location_names_with_ids(location_names = region.get("locations"))
-            this_region.add_locations(locations = region_locations, location_type = DSLocation)
+            filtered_locations = [location for location, _ in region.get("locations").items() if location not in vanilla_locations]
+            if filtered_locations :
+                region_locations = get_location_names_with_ids(location_names = filtered_locations)
+                this_region.add_locations(locations = region_locations, location_type = DSLocation)
 
 def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
 
@@ -119,6 +140,7 @@ def get_location_list_from_json(world: DSWorld, filename) -> list[Location]:
     for region in region_json :
         if "locations" in region :
             for location, _ in region.get("locations").items() :
-                location_list.append(world.get_location(location))
+                if location in (region_location.name for region_location in list(world.get_region(region.get("name")).get_locations())) :
+                    location_list.append(world.get_location(location))
 
     return location_list

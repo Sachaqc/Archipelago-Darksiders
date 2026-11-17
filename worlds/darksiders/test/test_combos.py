@@ -37,29 +37,29 @@ class TestComboVanilla(DSTestBase):
         }
 
     def test_sword_combos_vanilla(self) -> None:
-        self.vanilla_item("180 Orbit Slash", MOVES_LOCATIONS, count = 1)
-        self.vanilla_item("Demon Edge",MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Devil's Cross", MOVES_LOCATIONS, count = 2)#War starts with this move's level 1 unlocked by default
-        self.vanilla_item("Flipsaw", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Harpoon Tackle", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Meteor Strike", MOVES_LOCATIONS, count = 1)
-        self.vanilla_item("Power Strike", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Sword Uppercut", MOVES_LOCATIONS, count = 2)#War starts with this move's level 1 unlocked by default
-        self.vanilla_item("Whirl Wind Combo", MOVES_LOCATIONS, count = 1)
+        self.vanilla_item("180 Orbit Slash", MOVES_LOCATIONS)
+        self.vanilla_item("Demon Edge",MOVES_LOCATIONS)
+        self.vanilla_item("Devil's Cross", MOVES_LOCATIONS)#War starts with this move's level 1 unlocked by default
+        self.vanilla_item("Flipsaw", MOVES_LOCATIONS)
+        self.vanilla_item("Harpoon Tackle", MOVES_LOCATIONS)
+        self.vanilla_item("Meteor Strike", MOVES_LOCATIONS)
+        self.vanilla_item("Power Strike", MOVES_LOCATIONS)
+        self.vanilla_item("Sword Uppercut", MOVES_LOCATIONS)#War starts with this move's level 1 unlocked by default
+        self.vanilla_item("Whirl Wind Combo", MOVES_LOCATIONS)
 
     def test_scythe_combos_vanilla(self) -> None:
-        self.vanilla_item("Air Reaper Blade", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Death's Rage", MOVES_LOCATIONS, count = 1)
-        self.vanilla_item("Hell Razor", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Reaper Blade", MOVES_LOCATIONS, count = 2)
-        self.vanilla_item("Reaper's Revenge", MOVES_LOCATIONS, count = 1)
+        self.vanilla_item("Air Reaper Blade", MOVES_LOCATIONS)
+        self.vanilla_item("Death's Rage", MOVES_LOCATIONS)
+        self.vanilla_item("Hell Razor", MOVES_LOCATIONS)
+        self.vanilla_item("Reaper Blade", MOVES_LOCATIONS)
+        self.vanilla_item("Reaper's Revenge", MOVES_LOCATIONS)
 
     def test_gauntlet_combos_vanilla(self) -> None:
-        self.vanilla_item("Air Tremor Smash", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Earthbreaker", MOVES_LOCATIONS, count = 1)
-        self.vanilla_item("Meteor Launch", MOVES_LOCATIONS, count = 1)
-        self.vanilla_item("Tremor Punch", MOVES_LOCATIONS, count = 3)
-        self.vanilla_item("Tremor Smash", MOVES_LOCATIONS, count = 2)#War starts with this move's level 1 unlocked by default
+        self.vanilla_item("Air Tremor Smash", MOVES_LOCATIONS)
+        self.vanilla_item("Earthbreaker", MOVES_LOCATIONS)
+        self.vanilla_item("Meteor Launch", MOVES_LOCATIONS)
+        self.vanilla_item("Tremor Punch", MOVES_LOCATIONS)
+        self.vanilla_item("Tremor Smash", MOVES_LOCATIONS)#War starts with this move's level 1 unlocked by default
 
 class TestComboAnywhere(DSTestBase):
     options = {
