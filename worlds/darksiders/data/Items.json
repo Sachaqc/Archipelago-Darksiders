@@ -476,7 +476,7 @@
         "Blade Geyser": {
             "ID": 171,
             "progressive": true,
-            "number": 4,
+            "number": 3,
             "console": "/pickup_item wrath_bladegeyser/wrath_bladegeyser"
         },
         "Immolation": {

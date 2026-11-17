@@ -276,6 +276,7 @@ def create_all_items(world: DSWorld) -> None:
             for _ in range(world.options.wrath_cores*2) :
                 shuffle_itempool.append(world.create_item('Wrath Shard'))
 
+    world.multiworld.push_precollected(world.create_item('Blade Geyser'))
     for item, item_data in item_json.get("Wrath Abilities").items() :
         for _ in range(item_data.get("number")) :
             shuffle_itempool.append(world.create_item(item))
