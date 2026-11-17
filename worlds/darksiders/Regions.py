@@ -58,11 +58,11 @@ def create_entrances_from_json(world: DSWorld, filename) -> None:
 
     region_json = json_read(filename)
 
-    for region in region_json:
-        if 'entrances' in region:
+    for region in region_json :
+        if 'entrances' in region :
             this_region = world.get_region(region.get("name"))
-            for entrance_name, entrance_data in region.get("entrances").items():
-                new_entrance = Entrance(world.player, entrance_name, this_region)
+            for entrance_name, entrance_data in region.get("entrances").items() :
+                new_entrance = Entrance(world.player, name = entrance_name, parent = this_region)
                 this_region.exits.append(new_entrance)
                 new_target = world.get_region(entrance_data.get("vanilla target"))
                 new_entrance.connect(new_target)
