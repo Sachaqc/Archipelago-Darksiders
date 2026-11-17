@@ -90,7 +90,7 @@ def create_all_items(world: DSWorld) -> None:
         case "vanilla" :
             for location, vanilla_item in ARTIFACTS_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case _ :
+        case "artisanity" :
             for _ in range(world.options.soldier_artifacts):
                 shuffle_itempool.append(world.create_item("Soldier Artifact"))
             for _ in range(world.options.champion_artifacts):
@@ -112,7 +112,7 @@ def create_all_items(world: DSWorld) -> None:
         case "vanilla" :
             for location, vanilla_item in KEYS_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case _ :
+        case "keysanity" :
             for _ in range(item_json.get("Keys").get("Beholder Key").get("number")) :
                 shuffle_itempool.append(world.create_item("Beholder Key"))
 
@@ -123,7 +123,7 @@ def create_all_items(world: DSWorld) -> None:
         case "vanilla" :
             for location, vanilla_item in HEARTS_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case _ :
+        case "heartsanity" :
             for _ in range(item_json.get("Keys").get("Heart of the Chosen").get("number")) :
                 shuffle_itempool.append(world.create_item("Heart of the Chosen"))
 
@@ -140,7 +140,7 @@ def create_all_items(world: DSWorld) -> None:
                 world.multiworld.push_precollected(world.create_item("Map"))
             for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")) :
                 world.multiworld.push_precollected(world.create_item("Hoardseeker"))
-        case _ :
+        case "anywhere" :
             for _ in range(item_json.get("Keys").get("Map").get("number")) :
                 shuffle_itempool.append(world.create_item("Map"))
             for _ in range(item_json.get("Keys").get("Hoardseeker").get("number")) :
@@ -252,7 +252,7 @@ def create_all_items(world: DSWorld) -> None:
         case "vanilla" :
             for location, vanilla_item in MOVES_LOCATIONS.items() :
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case _ :
+        case "combosanity" :
             for item, item_data in item_json.get("Gauntlet Combos").items() :
                 for _ in range(item_data.get("number")) :
                     shuffle_itempool.append(world.create_item(item))
