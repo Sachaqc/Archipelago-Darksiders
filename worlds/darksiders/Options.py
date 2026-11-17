@@ -35,8 +35,6 @@ class ShuffleArmor(Choice):
     Determines how to obtain the Abyssal Armor and how it is shuffled into the item pool.
     Remove : The Abyssal Armor and all its pieces are removed from the item pool. Their location are added to the pool.
     Vanilla : The Abyssal Armor is automatically obtained after collecting all 10 Pieces. The Abyssal Armor Pieces remain at their vanilla locations.
-    Own (Pieces) : The Abyssal Armor is automatically obtained after collecting all Pieces. The Abyssal Armor Pieces are shuffled into their own world. Their location are added to the pool.
-    Own (Armor) : The Abyssal Armor is shuffled into its own world. The Abyssal Armor Pieces are removed from the item pool. Their location are added to the pool.
     Armorsanity (Pieces) : The Abyssal Armor is automatically obtained after collecting all Pieces. The Abyssal Armor Pieces are shuffled anywhere in the multiworld. Their location are added to the pool.
     Armorsanity (Armor) : The Abyssal Armor is shuffled anywhere in the multiworld. The Abyssal Armor Pieces are removed from the item pool. Their location are added to the pool.
     """
@@ -44,10 +42,8 @@ class ShuffleArmor(Choice):
     display_name = "Abyssal Armor"
     option_remove = 0
     option_vanilla = 1
-    option_own_pieces = 2
-    option_own_armor = 3
-    option_armorsanity_pieces = 4
-    option_armorsanity_armor = 5
+    option_armorsanity_pieces = 2
+    option_armorsanity_armor = 3
 
     default = option_armorsanity_pieces
 
@@ -69,17 +65,15 @@ class ShuffleArtifacts(Choice):
     Determines how the Artifacts are shuffled into the item pool.
     Remove : The Artifacts are removed from the item pool. Their location are added to the pool.
     Vanilla : The Artifacts remain at their vanilla locations.
-    Own : The Artifacts are shuffled into their own world. Their location are added to the pool.
     Artisanity : The Artifacts are shuffled anywhere in the multiworld. Their location are added to the pool.
     """
 
     display_name = "Artifacts"
     option_remove = 0
     option_vanilla = 1
-    option_own = 2
-    option_artisanity = 3
+    option_artisanity = 2
 
-    default = option_own
+    default = option_artisanity
 
 class ShuffleSoldierArtifacts(Range):
     """
@@ -123,7 +117,6 @@ class ShuffleMapHoardseeker(Choice):
     Vanilla : The Map and Hoardseeker remain at their vanilla locations.
     Start With : The Map and Hoardseeker are available from the start. Their location are added to the pool.
     Region : The Map and Hoardseeker are shuffled into their relevant region (Ashlands, Black Throne, Hollows, Iron Canopy and Twilight Cathedral). Their location are added to the pool.
-    Own : The Map and Hoardseeker are shuffled into their own world. Their location are added to the pool.
     Anywhere : The Map and Hoardseeker are shuffled anywhere in the multiworld. Their location are added to the pool.
     """
 
@@ -132,8 +125,7 @@ class ShuffleMapHoardseeker(Choice):
     option_vanilla = 1
     option_start_with = 2
     option_region = 3
-    option_own = 4
-    option_anywhere = 5
+    option_anywhere = 4
 
     default = option_start_with
 
@@ -142,15 +134,13 @@ class ShuffleHearts(Choice):
     Determines where the Hearts of the Chosen get shuffled.
     Remove : The Hearts of the Chosen are removed from the item pool. Their location are added to the pool. The Samael rewards are removed from the locations. The Black Throne is reachable after defeating the Phantom General.
     Vanilla : The Hearts of the Chosen remain at their vanilla locations.
-    Own : The Hearts of the Chosen are shuffled into their own world. Their location are added to the pool.
     Heartsanity : The Hearts of the Chosen are shuffled anywhere in the multiworld. Their location are added to the pool.
     """
 
     display_name = "Hearts of the Chosen"
     option_remove = 0
     option_vanilla = 1
-    option_own = 2
-    option_heartsanity = 3
+    option_heartsanity = 2
 
     default = option_vanilla
 
@@ -173,7 +163,6 @@ class ShuffleKeys(Choice):
     Remove : The Beholder Keys are removed from the item pool. Their location are added to the pool. All Beholder Doors are automatically unlocked.
     Vanilla : The Beholder Keys remain at their vanilla locations.
     Region : The Beholder Keys are shuffled into their relevant region (2 in Black Throne, 1 in Broken Stairs, 3 in Hollows, 2 in Iron Canopy and 2 in Twilight Cathedral). Their location are added to the pool.
-    Own : The Beholder Keys are shuffled into their own world. Their location are added to the pool.
     Keysanity : The Beholder Keys are shuffled anywhere in the multiworld. Their location are added to the pool.
     """
 
@@ -181,8 +170,7 @@ class ShuffleKeys(Choice):
     option_remove = 0
     option_vanilla = 1
     option_region = 2
-    option_own = 3
-    option_keysanity = 4
+    option_keysanity = 3
 
     default = option_region
 
@@ -396,7 +384,7 @@ option_presets = {
     "Easy": {
         "difficulty_level": DifficultyLevel.option_easy,
         "logic_rules": LogicRules.option_casual,
-        "armor": ShuffleArmor.option_own_armor,
+        "armor": ShuffleArmor.option_vanilla,
         "armor_pieces": 10,
         "artifacts": ShuffleArtifacts.option_remove,
         "soldier_artifacts": 20,

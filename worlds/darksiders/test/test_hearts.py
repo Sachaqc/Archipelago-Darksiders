@@ -17,14 +17,6 @@ class TestHeartsVanilla(DSTestBase):
     def test_hearts_vanilla(self) -> None:
         self.vanilla_item("Heart of the Chosen", HEARTS_LOCATIONS, count = 4)
 
-class TestHeartsOwn(DSTestBase):
-    options = {
-        "hearts": "own"
-        }
-
-    def test_hearts_own(self) -> None:
-        self.shuffled_item_local("Heart of the Chosen", count = 4)
-
 class TestHeartsSanity(DSTestBase):
     options = {
         "hearts": "heartsanity"

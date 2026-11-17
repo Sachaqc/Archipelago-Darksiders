@@ -61,17 +61,6 @@ class TestDungeonItemsRegion(DSTestBase):
         
         self.shuffled_item_regions("Map", regions, counts)
 
-class TestDungeonItemsOwn(DSTestBase):
-    options = {
-        "dungeon_items": "own"
-        }
-
-    def test_hoardseeker_own(self) -> None:
-        self.shuffled_item_local("Hoardseeker", count = 4)
-
-    def test_map_own(self) -> None:
-        self.shuffled_item_local("Map", count = 4)
-
 class TestDungeonItemsSanity(DSTestBase):
     options = {
         "dungeon_items": "anywhere"

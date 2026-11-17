@@ -33,22 +33,6 @@ class TestArtifactVanilla(DSTestBase):
     def test_overlord_artifact_vanilla(self) -> None:
         self.vanilla_item("Overlord Artifact", ARTIFACTS_LOCATIONS)
 
-class TestArtifactOwn(DSTestBase):
-    options = {
-        "artifacts": "own",
-        "soldier_artifacts": 15,
-        "champion_artifacts": 2
-        }
-
-    def test_soldier_artifacts_shuffled_own(self) -> None:
-        self.shuffled_item_local("Soldier Artifact", count = 15)
-
-    def test_champion_artifacts_shuffled_own(self) -> None:
-        self.shuffled_item_local("Champion Artifact", count = 2)
-
-    def test_overlord_artifact_shuffled_own(self) -> None:
-        self.shuffled_item_local("Overlord Artifact")
-
 class TestArtifactArtisanity(DSTestBase):
     options = {
         "artifacts": "artisanity",

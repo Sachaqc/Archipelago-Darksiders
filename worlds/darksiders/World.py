@@ -22,30 +22,6 @@ class DSWorld(World):
     location_name_to_item = Locations.LOCATION_NAME_TO_ITEM
     item_name_to_id = Items.ITEM_NAME_TO_ID
 
-    def generate_early(self) -> None:
-
-        options = self.options
-
-        if self.options.armor == "own_pieces" :
-            options.local_items.value.add("Abyssal Armor Piece")
-        elif self.options.armor == "own_armor" :
-            options.local_items.value.add("Abyssal Armor")
-
-        if self.options.artifacts == "own" :
-            options.local_items.value.add("Soldier Artifact")
-            options.local_items.value.add("Champion Artifact")
-            options.local_items.value.add("Overlord Artifact")
-
-        if self.options.keys == "own" :
-            options.local_items.value.add("Beholder Key")
-
-        if self.options.hearts == "own" :
-            options.local_items.value.add("Heart of the Chosen")
-
-        if self.options.dungeon_items == "own" :
-            options.local_items.value.add("Hoardseeker")
-            options.local_items.value.add("Map")
-
     def create_regions(self) -> None:
 
         Regions.create_and_connect_regions(self)

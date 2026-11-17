@@ -77,10 +77,10 @@ def create_all_items(world: DSWorld) -> None:
         case "vanilla" :
             for location, vanilla_item in ABYSSAL_ARMOR_PIECES_LOCATIONS.items():
                 world.get_location(location).place_locked_item(world.create_item(vanilla_item))
-        case "own_pieces" | "armorsanity_pieces" :
+        case "armorsanity_pieces" :
             for _ in range(world.options.armor_pieces):
                 shuffle_itempool.append(world.create_item("Abyssal Armor Piece"))
-        case "own_armor" | "armorsanity_armor" :
+        case "armorsanity_armor" :
             shuffle_itempool.append(world.create_item("Abyssal Armor"))
 
     match world.options.artifacts :

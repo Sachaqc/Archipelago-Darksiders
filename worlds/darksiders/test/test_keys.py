@@ -34,14 +34,6 @@ class TestKeysRegion(DSTestBase):
 
         self.shuffled_item_regions("Beholder Key", regions, counts)
 
-class TestKeysOwn(DSTestBase):
-    options = {
-        "keys": "own"
-        }
-
-    def test_key_own(self) -> None:
-        self.shuffled_item_local("Beholder Key", count = 10)
-
 class TestKeysSanity(DSTestBase):
     options = {
         "keys": "keysanity"
