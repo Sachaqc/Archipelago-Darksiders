@@ -481,6 +481,14 @@ def set_all_location_rules(world: DSWorld) -> None:
     twilight_cathedral_hoardseeker = world.get_location("Twilight Cathedral South Wing Hoardseeker Chest")
     world.set_rule(twilight_cathedral_hoardseeker, CAN_DETONATE_BOMBS & HAS_SHADOWFLIGHT)
 
+    if world.options.artifacts == "artisanity" :
+        vulgrim_shop_soldier_artifact = world.get_location("Trade All Soldier Artifacts")
+        world.set_rule(vulgrim_shop_soldier_artifact, Has("Soldier Artifact", count = world.options.soldier_artifacts.value))
+        vulgrim_shop_champion_artifact = world.get_location("Trade All Champion Artifacts")
+        world.set_rule(vulgrim_shop_champion_artifact, Has("Champion Artifact", count = world.options.champion_artifacts.value))
+        vulgrim_shop_overlord_artifact = world.get_location("Trade Overlord Artifact")
+        world.set_rule(vulgrim_shop_overlord_artifact, Has("Overlord Artifact"))
+
 
 def set_completion_condition(world: DSWorld) -> None:
 
