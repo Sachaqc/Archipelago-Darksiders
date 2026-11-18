@@ -122,6 +122,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     drowned_pass_to_anvil_ford_access_tunnel = world.get_entrance("Drowned Pass to Anvil's Ford Access Tunnel")
     world.set_rule(drowned_pass_to_anvil_ford_access_tunnel, HAS_EARTHCALLER)
+    drowned_pass_to_sh = world.get_entrance("Drowned Pass Access Tunnel to Serpent Holes")
+    world.set_rule(drowned_pass_to_sh, HAS_SERPENT_HOLES)
 
     dry_road_to_ashlands = world.get_entrance("Dry Road to Ashlands")
     world.set_rule(dry_road_to_ashlands, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
