@@ -4,6 +4,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from BaseClasses import Item
+from Utils import visualize_regions
 from worlds.AutoWorld import World
 
 from . import Locations, Items, Events, Options, Regions, Rules, WebWorld
@@ -43,6 +44,9 @@ class DSWorld(World):
         Items.prefill_dungeon(self, "Hollows.json")
         Items.prefill_dungeon(self, "Iron Canopy.json")
         Items.prefill_dungeon(self, "Black Throne.json")
+
+    def post_fill(self) -> None:
+        visualize_regions(self.multiworld.get_region("Menu", self.player), "my_world.puml", show_entrance_rules = True)
 
     def get_pre_fill_items(self) -> list[Item]:
 
