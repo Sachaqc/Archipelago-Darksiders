@@ -202,3 +202,8 @@ _speedups.html
 .LSOverride
 Thumbs.db
 [Dd]esktop.ini
+/worlds/tracker
+/worlds/tracker_addons
+/worlds/tracker_debug
+/fuzz_output
+fuzz.py
