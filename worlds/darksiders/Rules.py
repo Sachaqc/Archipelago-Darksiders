@@ -127,8 +127,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     dry_road_to_ashlands = world.get_entrance("Dry Road to Ashlands")
     world.set_rule(dry_road_to_ashlands, CAN_HURT_GOREMAW & HAS_SHADOWFLIGHT)
-    dry_road_to_vulgrim = world.get_entrance("Dry Road to Serpent Holes")
-    world.set_rule(dry_road_to_vulgrim, HAS_SERPENT_HOLES & HAS_SHADOWFLIGHT)
+    dry_road_to_sh = world.get_entrance("Dry Road to Serpent Holes")
+    world.set_rule(dry_road_to_sh, HAS_SERPENT_HOLES & HAS_SHADOWFLIGHT)
     dry_road_to_vulgrim = world.get_entrance("Dry Road to Vulgrim's Shop")
     world.set_rule(dry_road_to_vulgrim, HAS_SHADOWFLIGHT)
     dry_road_access_tunnel_1_to_2 = world.get_entrance("Dry Road Access Tunnel 1 to 2")
@@ -186,6 +186,8 @@ def set_all_entrance_rules(world: DSWorld) -> None:
 
     leviathan_drift_to_upper = world.get_entrance("Leviathan's Drift to Upper Area")
     world.set_rule(leviathan_drift_to_upper, HAS_MASK & HAS_SHADOWFLIGHT)
+    leviathan_drift_to_sh = world.get_entrance("Leviathan's Drift to Serpent Holes")
+    world.set_rule(leviathan_drift_to_sh, HAS_SERPENT_HOLES)
     #leviathan_drift_to_eden = world.get_entrance("Leviathan's Drift to Eden")
     #world.set_rule(leviathan_drift_to_eden, HAS_RUIN & HAS_MASK & HAS_SHADOWFLIGHT)
 
