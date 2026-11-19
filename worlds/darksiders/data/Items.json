@@ -102,7 +102,8 @@
         },
         "Undying": {
             "ID": 36,
-            "progressive": false
+            "progressive": false,
+            "console": "/pickup_item consumables/consume_resurrection"
         }
     },
     "Enhancements": {
