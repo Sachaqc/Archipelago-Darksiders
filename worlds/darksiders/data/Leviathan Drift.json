@@ -4,6 +4,12 @@
         "entrances": {
             "Leviathan's Drift to Upper Area": {
                 "vanilla target": "Leviathan's Drift Upper Area"
+            },
+            "Leviathan's Drift to Serpent Holes": {
+                "vanilla target": "Serpent Holes"
+            },
+            "Leviathan's Drift to Vulgrim's Shop": {
+                "vanilla target": "Vulgrim's Shop"
             }
         },
         "locations": {
